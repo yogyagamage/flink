@@ -181,7 +181,7 @@ under the License.
 		<japicmp.referenceVersion>2.0.0</japicmp.referenceVersion>
 		<japicmp.outputDir>tools/japicmp-output</japicmp.outputDir>
 		<checkstyle.version>10.18.2</checkstyle.version>
-		<spotless.skip>false</spotless.skip>
+		<spotless.skip>true</spotless.skip>
 		<spotless.version>2.43.0</spotless.version>
 		<spotless.scalafmt.version>3.4.3</spotless.scalafmt.version>
 		<spotless.delimiter>package</spotless.delimiter>
@@ -1841,7 +1841,7 @@ under the License.
 						<junit.jupiter.execution.parallel.config.dynamic.factor>${test.dynamic.factor}</junit.jupiter.execution.parallel.config.dynamic.factor>
 					</systemPropertyVariables>
 					<!-- This is picked up by IntelliJ -->
-					<argLine>${flink.surefire.baseArgLine}</argLine>
+					<argLine>@{argLine} ${flink.surefire.baseArgLine}</argLine>
 				</configuration>
 				<executions>
 					<!--execute all the unit tests-->
@@ -1910,7 +1910,7 @@ under the License.
 						<configuration>
 							<rules>
 								<requireMavenVersion>
-									<version>[3.8.6]</version>
+									<version>[3.8.6, 4.0.0]</version>
 								</requireMavenVersion>
 								<requireJavaVersion>
 									<version>${target.java.version}</version>

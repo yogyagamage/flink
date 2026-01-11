@@ -41,7 +41,7 @@ under the License.
 		hanging of surefire for jdk8 and jdk11
 		-->
 		<surefire.module.config.jdk21></surefire.module.config.jdk21>
-		<surefire.module.config> ${surefire.module.config.jdk21} <!--
+		<surefire.module.config>@{argLine} ${surefire.module.config.jdk21} <!--
 			required by JmxServer
 			-->--add-exports=java.rmi/sun.rmi.registry=ALL-UNNAMED <!--
 			PluginConfigTest (CommonTestUtils#setEnv)
@@ -184,6 +184,26 @@ under the License.
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.14</version>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
