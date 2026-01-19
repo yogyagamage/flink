@@ -42,8 +42,10 @@ import org.apache.flink.types.ColumnList;
 import org.apache.flink.types.Row;
 import org.apache.flink.types.RowKind;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.HashMap;
@@ -333,6 +335,20 @@ public class ProcessTableFunctionTestUtils {
     public static class EmptyArgFunction extends AppendProcessTableFunctionBase {
         public void eval() {
             collectObjects("empty");
+        }
+    }
+
+    /** Testing function. */
+    public static class IntervalDayArgFunction extends AppendProcessTableFunctionBase {
+        public void eval(Duration d) {
+            collectObjects(d);
+        }
+    }
+
+    /** Testing function. */
+    public static class IntervalYearArgFunction extends AppendProcessTableFunctionBase {
+        public void eval(Period p) {
+            collectObjects(p);
         }
     }
 
@@ -923,6 +939,20 @@ public class ProcessTableFunctionTestUtils {
                 @ArgumentHint({SET_SEMANTIC_TABLE, OPTIONAL_PARTITION_BY}) Row in2)
                 throws Exception {
             collectObjects(in1, in2);
+        }
+    }
+
+    /** Testing function. */
+    public static class MultiInputWithScalarArgsFunction extends AppendProcessTableFunctionBase {
+        public void eval(
+                Context ctx,
+                Map<String, String> m,
+                @ArgumentHint(SET_SEMANTIC_TABLE) Row in1,
+                Integer i,
+                @ArgumentHint({SET_SEMANTIC_TABLE, OPTIONAL_PARTITION_BY}) Row in2,
+                @DataTypeHint("ROW<b BOOLEAN, s STRING>") Row r)
+                throws Exception {
+            collectObjects(in1, in2, m, i, r);
         }
     }
 

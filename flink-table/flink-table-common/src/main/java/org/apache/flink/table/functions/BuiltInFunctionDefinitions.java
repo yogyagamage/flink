@@ -912,6 +912,19 @@ public final class BuiltInFunctionDefinitions {
                             TypeStrategies.aggArg0(LogicalTypeMerging::findAvgAggType, true))
                     .build();
 
+    public static final BuiltInFunctionDefinition INTERNAL_WELFORD_M2 =
+            BuiltInFunctionDefinition.newBuilder()
+                    .name("$WELFORD_M2$1")
+                    .kind(AGGREGATE)
+                    .inputTypeStrategy(
+                            sequence(
+                                    Collections.singletonList("value"),
+                                    Collections.singletonList(logical(LogicalTypeFamily.NUMERIC))))
+                    .outputTypeStrategy(explicit(DataTypes.DOUBLE()))
+                    .runtimeProvided()
+                    .internal()
+                    .build();
+
     public static final BuiltInFunctionDefinition COLLECT =
             BuiltInFunctionDefinition.newBuilder()
                     .name("collect")
@@ -2404,20 +2417,7 @@ public final class BuiltInFunctionDefinitions {
             BuiltInFunctionDefinition.newBuilder()
                     .name("TO_TIMESTAMP_LTZ")
                     .kind(SCALAR)
-                    .inputTypeStrategy(
-                            or(
-                                    sequence(logical(LogicalTypeFamily.CHARACTER_STRING)),
-                                    sequence(
-                                            logical(LogicalTypeFamily.CHARACTER_STRING),
-                                            logical(LogicalTypeFamily.CHARACTER_STRING)),
-                                    sequence(
-                                            logical(LogicalTypeFamily.CHARACTER_STRING),
-                                            logical(LogicalTypeFamily.CHARACTER_STRING),
-                                            logical(LogicalTypeFamily.CHARACTER_STRING)),
-                                    sequence(logical(LogicalTypeFamily.NUMERIC)),
-                                    sequence(
-                                            logical(LogicalTypeFamily.NUMERIC),
-                                            logical(LogicalTypeFamily.INTEGER_NUMERIC))))
+                    .inputTypeStrategy(SpecificInputTypeStrategies.TO_TIMESTAMP_LTZ)
                     .outputTypeStrategy(SpecificTypeStrategies.TO_TIMESTAMP_LTZ)
                     .runtimeClass(
                             "org.apache.flink.table.runtime.functions.scalar.ToTimestampLtzFunction")

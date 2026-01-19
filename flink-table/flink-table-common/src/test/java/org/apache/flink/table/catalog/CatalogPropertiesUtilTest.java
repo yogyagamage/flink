@@ -20,7 +20,9 @@ package org.apache.flink.table.catalog;
 
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.api.Schema;
+import org.apache.flink.table.catalog.CatalogMaterializedTable.LogicalRefreshMode;
 import org.apache.flink.table.catalog.CatalogMaterializedTable.RefreshMode;
+import org.apache.flink.table.catalog.CatalogMaterializedTable.RefreshStatus;
 import org.apache.flink.table.expressions.DefaultSqlFactory;
 
 import org.junit.jupiter.api.Test;
@@ -158,12 +160,12 @@ class CatalogPropertiesUtilTest {
                                 .schema(schema)
                                 .comment("some comment")
                                 .distribution(unknownDist)
-                                .definitionQuery("SELECT 1, 'two'")
+                                .originalQuery("SELECT 1, 'two'")
+                                .expandedQuery("SELECT 1, 'two'")
                                 .freshness(IntervalFreshness.ofHour("123"))
-                                .logicalRefreshMode(
-                                        CatalogMaterializedTable.LogicalRefreshMode.CONTINUOUS)
-                                .refreshMode(CatalogMaterializedTable.RefreshMode.CONTINUOUS)
-                                .refreshStatus(CatalogMaterializedTable.RefreshStatus.ACTIVATED)
+                                .logicalRefreshMode(LogicalRefreshMode.CONTINUOUS)
+                                .refreshMode(RefreshMode.CONTINUOUS)
+                                .refreshStatus(RefreshStatus.ACTIVATED)
                                 .refreshHandlerDescription("description")
                                 .build(),
                         resolvedSchema,

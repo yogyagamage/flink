@@ -138,7 +138,7 @@ under the License.
 		<!-- Overwrite default values from parent pom.
 			 IntelliJ IDEA is (sometimes?) using those values to choose target language level
 			 and thus is changing back to java 1.6 on each maven re-import -->
-		<maven.compiler.source>${target.java.version}</maven.compiler.source>
+		<maven.compiler.source>${source.java.version}</maven.compiler.source>
 		<maven.compiler.target>${target.java.version}</maven.compiler.target>
 		<scala.macros.version>2.1.1</scala.macros.version>
 		<scala.version>2.12.20</scala.version>
@@ -151,7 +151,7 @@ under the License.
 		<avro.version>1.11.4</avro.version>
 		<!-- Version for transitive Jackson dependencies that are not used within Flink itself.-->
 		<jackson.mapper.asl.version>1.9.14.jdk17-redhat-00001</jackson.mapper.asl.version>
-		<jackson-bom.version>2.18.2</jackson-bom.version>
+		<jackson-bom.version>2.20.1</jackson-bom.version>
 		<javax.activation.api.version>1.2.0</javax.activation.api.version>
 		<jaxb.api.version>2.3.1</jaxb.api.version>
 		<junit4.version>4.13.2</junit4.version>
@@ -178,7 +178,7 @@ under the License.
 		<minikdc.version>3.2.4</minikdc.version>
 		<hive.version>2.3.10</hive.version>
 		<orc.version>1.5.6</orc.version>
-		<japicmp.referenceVersion>2.0.0</japicmp.referenceVersion>
+		<japicmp.referenceVersion>2.2.0</japicmp.referenceVersion>
 		<japicmp.outputDir>tools/japicmp-output</japicmp.outputDir>
 		<checkstyle.version>10.18.2</checkstyle.version>
 		<spotless.skip>true</spotless.skip>
@@ -2265,7 +2265,7 @@ under the License.
 					<configuration>
 						<quiet>true</quiet>
 						<detectOfflineLinks>false</detectOfflineLinks>
-						<release>11</release>
+						<release>${target.java.version}</release>
 						<additionalJOptions>
 							<additionalJOption>-Xdoclint:none</additionalJOption>
 							<additionalJOption>--allow-script-in-comments</additionalJOption>

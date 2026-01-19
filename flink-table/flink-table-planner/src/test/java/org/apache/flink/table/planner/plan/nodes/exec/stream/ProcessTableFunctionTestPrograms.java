@@ -28,6 +28,8 @@ import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctio
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.ContextFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.DescriptorFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.EmptyArgFunction;
+import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.IntervalDayArgFunction;
+import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.IntervalYearArgFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.InvalidPassThroughTimersFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.InvalidRowKindFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.InvalidRowSemanticTableTimersFunction;
@@ -35,6 +37,7 @@ import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctio
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.ListStateFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.MapStateFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.MultiInputFunction;
+import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.MultiInputWithScalarArgsFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.MultiStateFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.NamedTimersFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.ProcessTableFunctionTestUtils.NonNullMapStateFunction;
@@ -383,6 +386,30 @@ public class ProcessTableFunctionTestPrograms {
                                     .consumedValues("+I[{empty}]")
                                     .build())
                     .runSql("INSERT INTO sink SELECT * FROM f()")
+                    .build();
+
+    public static final TableTestProgram PROCESS_INTERVAL_DAY_ARGS =
+            TableTestProgram.of("process-interval-day-args", "interval argument")
+                    .setupTemporarySystemFunction("f", IntervalDayArgFunction.class)
+                    .setupSql(BASIC_VALUES)
+                    .setupTableSink(
+                            SinkTestStep.newBuilder("sink")
+                                    .addSchema(BASE_SINK_SCHEMA)
+                                    .consumedValues("+I[{PT1S}]")
+                                    .build())
+                    .runSql("INSERT INTO sink SELECT * FROM f(d => INTERVAL '1' SECOND)")
+                    .build();
+
+    public static final TableTestProgram PROCESS_INTERVAL_YEAR_ARGS =
+            TableTestProgram.of("process-interval-year-args", "interval argument")
+                    .setupTemporarySystemFunction("f", IntervalYearArgFunction.class)
+                    .setupSql(BASIC_VALUES)
+                    .setupTableSink(
+                            SinkTestStep.newBuilder("sink")
+                                    .addSchema(BASE_SINK_SCHEMA)
+                                    .consumedValues("+I[{P1Y}]")
+                                    .build())
+                    .runSql("INSERT INTO sink SELECT * FROM f(p => INTERVAL '1' YEAR)")
                     .build();
 
     public static final TableTestProgram PROCESS_ROW_SEMANTIC_TABLE_PASS_THROUGH =
@@ -1389,6 +1416,36 @@ public class ProcessTableFunctionTestPrograms {
                                     .build())
                     .runSql(
                             "INSERT INTO sink SELECT * FROM f(in1 => TABLE t PARTITION BY name, in2 => TABLE city PARTITION BY name)")
+                    .build();
+
+    public static final TableTestProgram PROCESS_MULTI_INPUT_WITH_SCALAR_ARGS =
+            TableTestProgram.of(
+                            "process-multi-input-scalar-args",
+                            "takes multiple tables and some scalar arguments")
+                    .setupTemporarySystemFunction("f", MultiInputWithScalarArgsFunction.class)
+                    .setupSql(MULTI_VALUES)
+                    .setupSql(CITY_VALUES)
+                    .setupTableSink(
+                            SinkTestStep.newBuilder("sink")
+                                    .addSchema(MULTI_BASE_SINK_SCHEMA)
+                                    .consumedValues(
+                                            "+I[Bob, Bob, {null, +I[Bob, London], {A=1, B=2}, 12, +I[true, Hello]}]",
+                                            "+I[Bob, Bob, {+I[Bob, 12], null, {A=1, B=2}, 12, +I[true, Hello]}]",
+                                            "+I[Alice, Alice, {null, +I[Alice, Berlin], {A=1, B=2}, 12, +I[true, Hello]}]",
+                                            "+I[Alice, Alice, {+I[Alice, 42], null, {A=1, B=2}, 12, +I[true, Hello]}]",
+                                            "+I[Charly, Charly, {null, +I[Charly, Paris], {A=1, B=2}, 12, +I[true, Hello]}]",
+                                            "+I[Bob, Bob, {+I[Bob, 99], null, {A=1, B=2}, 12, +I[true, Hello]}]",
+                                            "+I[Bob, Bob, {+I[Bob, 100], null, {A=1, B=2}, 12, +I[true, Hello]}]",
+                                            "+I[Alice, Alice, {+I[Alice, 400], null, {A=1, B=2}, 12, +I[true, Hello]}]")
+                                    .build())
+                    .runSql(
+                            "INSERT INTO sink SELECT * FROM f("
+                                    + "m => MAP['A', '1', 'B', '2'],"
+                                    + "in1 => TABLE t PARTITION BY name,"
+                                    + "i => 12,"
+                                    + "in2 => TABLE city PARTITION BY name,"
+                                    + "r => ROW(TRUE, 'Hello')"
+                                    + ")")
                     .build();
 
     public static final TableTestProgram PROCESS_MULTI_INPUT_RESTORE =

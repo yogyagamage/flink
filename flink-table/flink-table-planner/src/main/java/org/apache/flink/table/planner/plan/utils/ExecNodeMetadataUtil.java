@@ -36,6 +36,7 @@ import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecHashAggrega
 import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecHashJoin;
 import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecLimit;
 import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecLookupJoin;
+import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecMLPredictTableFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecMatch;
 import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecNestedLoopJoin;
 import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecOverAggregate;
@@ -47,6 +48,7 @@ import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecSortLimit;
 import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecTableSourceScan;
 import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecUnion;
 import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecValues;
+import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecVectorSearchTableFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.batch.BatchExecWindowTableFunction;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.StreamExecAsyncCalc;
 import org.apache.flink.table.planner.plan.nodes.exec.stream.StreamExecAsyncCorrelate;
@@ -201,6 +203,8 @@ public final class ExecNodeMetadataUtil {
                     add(BatchExecMatch.class);
                     add(BatchExecOverAggregate.class);
                     add(BatchExecRank.class);
+                    add(BatchExecVectorSearchTableFunction.class);
+                    add(BatchExecMLPredictTableFunction.class);
                 }
             };
 

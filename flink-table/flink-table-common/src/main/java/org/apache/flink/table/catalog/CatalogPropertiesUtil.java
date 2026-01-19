@@ -22,6 +22,9 @@ import org.apache.flink.annotation.Internal;
 import org.apache.flink.table.api.Schema;
 import org.apache.flink.table.api.Schema.Builder;
 import org.apache.flink.table.api.TableException;
+import org.apache.flink.table.catalog.CatalogMaterializedTable.LogicalRefreshMode;
+import org.apache.flink.table.catalog.CatalogMaterializedTable.RefreshMode;
+import org.apache.flink.table.catalog.CatalogMaterializedTable.RefreshStatus;
 import org.apache.flink.table.catalog.Column.ComputedColumn;
 import org.apache.flink.table.catalog.Column.MetadataColumn;
 import org.apache.flink.table.catalog.exceptions.CatalogException;
@@ -139,7 +142,7 @@ public final class CatalogPropertiesUtil {
                     properties, resolvedMaterializedTable.getResolvedSchema(), sqlFactory);
 
             final String comment = resolvedMaterializedTable.getComment();
-            if (comment != null && comment.length() > 0) {
+            if (comment != null && !comment.isEmpty()) {
                 properties.put(COMMENT, comment);
             }
 
@@ -154,7 +157,8 @@ public final class CatalogPropertiesUtil {
 
             properties.putAll(resolvedMaterializedTable.getOptions());
 
-            properties.put(DEFINITION_QUERY, resolvedMaterializedTable.getDefinitionQuery());
+            properties.put(ORIGINAL_QUERY, resolvedMaterializedTable.getOriginalQuery());
+            properties.put(EXPANDED_QUERY, resolvedMaterializedTable.getExpandedQuery());
 
             IntervalFreshness intervalFreshness =
                     resolvedMaterializedTable.getDefinitionFreshness();
@@ -280,20 +284,19 @@ public final class CatalogPropertiesUtil {
 
             final Map<String, String> options = deserializeOptions(properties);
 
-            final String definitionQuery = properties.get(DEFINITION_QUERY);
+            final String originalQuery = properties.get(ORIGINAL_QUERY);
+            final String expandedQuery = properties.get(EXPANDED_QUERY);
 
             final String freshnessInterval = properties.get(FRESHNESS_INTERVAL);
             final IntervalFreshness.TimeUnit timeUnit =
                     IntervalFreshness.TimeUnit.valueOf(properties.get(FRESHNESS_UNIT));
             final IntervalFreshness freshness = IntervalFreshness.of(freshnessInterval, timeUnit);
 
-            final CatalogMaterializedTable.LogicalRefreshMode logicalRefreshMode =
-                    CatalogMaterializedTable.LogicalRefreshMode.valueOf(
-                            properties.get(LOGICAL_REFRESH_MODE));
-            final CatalogMaterializedTable.RefreshMode refreshMode =
-                    CatalogMaterializedTable.RefreshMode.valueOf(properties.get(REFRESH_MODE));
-            final CatalogMaterializedTable.RefreshStatus refreshStatus =
-                    CatalogMaterializedTable.RefreshStatus.valueOf(properties.get(REFRESH_STATUS));
+            final LogicalRefreshMode logicalRefreshMode =
+                    LogicalRefreshMode.valueOf(properties.get(LOGICAL_REFRESH_MODE));
+            final RefreshMode refreshMode = RefreshMode.valueOf(properties.get(REFRESH_MODE));
+            final RefreshStatus refreshStatus =
+                    RefreshStatus.valueOf(properties.get(REFRESH_STATUS));
 
             final @Nullable String refreshHandlerDesc = properties.get(REFRESH_HANDLER_DESC);
             final @Nullable String refreshHandlerStringBytes =
@@ -313,7 +316,8 @@ public final class CatalogPropertiesUtil {
                     .distribution(distribution)
                     .options(options)
                     .snapshot(snapshot)
-                    .definitionQuery(definitionQuery)
+                    .originalQuery(originalQuery)
+                    .expandedQuery(expandedQuery)
                     .freshness(freshness)
                     .logicalRefreshMode(logicalRefreshMode)
                     .refreshMode(refreshMode)
@@ -405,7 +409,9 @@ public final class CatalogPropertiesUtil {
 
     private static final String SNAPSHOT = "snapshot";
 
-    private static final String DEFINITION_QUERY = "definition-query";
+    private static final String ORIGINAL_QUERY = "original-query";
+
+    private static final String EXPANDED_QUERY = "expanded-query";
 
     private static final String FRESHNESS_INTERVAL = "freshness-interval";
 
@@ -450,7 +456,8 @@ public final class CatalogPropertiesUtil {
     }
 
     private static boolean isMaterializedTableAttribute(String key) {
-        return key.equals(DEFINITION_QUERY)
+        return key.equals(ORIGINAL_QUERY)
+                || key.equals(EXPANDED_QUERY)
                 || key.equals(FRESHNESS_INTERVAL)
                 || key.equals(FRESHNESS_UNIT)
                 || key.equals(LOGICAL_REFRESH_MODE)
