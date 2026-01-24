@@ -1,0 +1,573 @@
+[ {
+  "caller" : "org.apache.flink.api.java.ClosureCleaner.clean(java.lang.Object, org.apache.flink.api.common.ExecutionConfig$ClosureCleanerLevel, boolean, java.util.Set)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.ClassUtils.isPrimitiveOrWrapper(java.lang.Class)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.setReferences(boolean)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.addDefaultSerializer(java.lang.Class, com.esotericsoftware.kryo.Serializer)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.addDefaultSerializer(java.lang.Class, java.lang.Class)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.getNextRegistrationId()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.setRegistrationRequired(boolean)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.checkKryoInitialized()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.setClassLoader(java.lang.ClassLoader)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.createInstance()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.newInstance(java.lang.Class)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.KryoRegistration.getSerializer(com.esotericsoftware.kryo.Kryo)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.SerializerFactory.ReflectionSerializerFactory.newSerializer(com.esotericsoftware.kryo.Kryo, java.lang.Class, java.lang.Class)"
+}, {
+  "caller" : "org.apache.flink.util.Utils.getGenericTypeTree(java.lang.Class, int)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.repeat(char, int)"
+}, {
+  "caller" : "org.apache.flink.api.common.io.compression.ZStandardInputStreamFactory.create(java.io.InputStream)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.compressors.zstandard.ZstdCompressorInputStream.<init>(java.io.InputStream)"
+}, {
+  "caller" : "org.apache.flink.util.MultipleParameterTool.fromArgs(java.lang.String[])",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.commons.lang3.math.NumberUtils.isNumber(java.lang.String)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.hiddenSensitiveDataInMark(org.snakeyaml.engine.v2.exceptions.Mark)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.Mark.getName()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.hiddenSensitiveDataInMark(org.snakeyaml.engine.v2.exceptions.Mark)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.Mark.getLine()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.hiddenSensitiveDataInMark(org.snakeyaml.engine.v2.exceptions.Mark)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.Mark.getColumn()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.TypeExtractor.isValidPojoField(java.lang.reflect.Field, java.lang.Class, java.util.List)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.commons.lang3.ClassUtils.primitiveToWrapper(java.lang.Class)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.configureKryoLogging()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.minlog.Log.setLogger(com.esotericsoftware.minlog.Log$Logger)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.configureKryoLogging()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.minlog.Log.TRACE()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException.getContext()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException.getContextMark()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException.getProblemMark()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException.getProblem()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.Mark.getName()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.Mark.getLine()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.Mark.getColumn()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException.getCause()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.YamlEngineException.<init>(java.lang.String, java.lang.Throwable)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException.getStackTrace()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.wrapExceptionToHiddenSensitiveData(org.snakeyaml.engine.v2.exceptions.MarkedYamlEngineException)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.exceptions.YamlEngineException.setStackTrace(java.lang.StackTraceElement[])"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.deserialize(org.apache.flink.core.memory.DataInputView)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.readClassAndObject(com.esotericsoftware.kryo.io.Input)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.deserialize(org.apache.flink.core.memory.DataInputView)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.io.KryoBufferUnderflowException.getMessage()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.deserialize(org.apache.flink.core.memory.DataInputView)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.KryoException.getCause()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer.write(com.esotericsoftware.kryo.Kryo, com.esotericsoftware.kryo.io.Output, java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.getGraphContext()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer.write(com.esotericsoftware.kryo.Kryo, com.esotericsoftware.kryo.io.Output, java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.util.ObjectMap.get(java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer.write(com.esotericsoftware.kryo.Kryo, com.esotericsoftware.kryo.io.Output, java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.util.ObjectMap.put(java.lang.Object, java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer.write(com.esotericsoftware.kryo.Kryo, com.esotericsoftware.kryo.io.Output, java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.KryoException.<init>(java.lang.String, java.lang.Throwable)"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.GroupCombineOperatorBase.executeOnCollections(java.util.List, org.apache.flink.api.common.functions.RuntimeContext, org.apache.flink.api.common.ExecutionConfig)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.ArrayUtils.addAll(int[], int[])"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.GroupCombineOperatorBase.executeOnCollections(java.util.List, org.apache.flink.api.common.functions.RuntimeContext, org.apache.flink.api.common.ExecutionConfig)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.ArrayUtils.addAll(boolean[], boolean[])"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.Serializers.DummyAvroKryoSerializerClass.<init>()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Serializer.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer.<init>()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Serializer.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.NoFetchingInput.read(byte[], int, int)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.KryoException.<init>(java.lang.Throwable)"
+}, {
+  "caller" : "org.apache.flink.util.ParameterTool.fromArgs(java.lang.String[])",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.math.NumberUtils.isNumber(java.lang.String)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.NoFetchingInput.readBytes(byte[], int, int)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.KryoException.<init>(java.lang.Throwable)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.loadYamlFile(java.io.File)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.Load.loadFromInputStream(java.io.InputStream)"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.unpackEntry(org.apache.commons.compress.archivers.tar.TarArchiveInputStream, org.apache.commons.compress.archivers.tar.TarArchiveEntry, java.io.File)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.tar.TarArchiveEntry.getName()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.unpackEntry(org.apache.commons.compress.archivers.tar.TarArchiveInputStream, org.apache.commons.compress.archivers.tar.TarArchiveEntry, java.io.File)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.tar.TarArchiveEntry.isDirectory()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.unpackEntry(org.apache.commons.compress.archivers.tar.TarArchiveInputStream, org.apache.commons.compress.archivers.tar.TarArchiveEntry, java.io.File)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.tar.TarArchiveEntry.getDirectoryEntries()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.unpackEntry(org.apache.commons.compress.archivers.tar.TarArchiveInputStream, org.apache.commons.compress.archivers.tar.TarArchiveEntry, java.io.File)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.tar.TarArchiveEntry.isSymbolicLink()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.unpackEntry(org.apache.commons.compress.archivers.tar.TarArchiveInputStream, org.apache.commons.compress.archivers.tar.TarArchiveEntry, java.io.File)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.tar.TarArchiveEntry.getLinkName()"
+}, {
+  "caller" : "org.apache.flink.api.common.io.compression.Bzip2InputStreamFactory.create(java.io.InputStream)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream.<init>(java.io.InputStream)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.NoFetchingInput.skip(int)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.KryoException.<init>(java.lang.Throwable)"
+}, {
+  "caller" : "org.apache.flink.api.common.io.compression.XZInputStreamFactory.create(java.io.InputStream)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.compressors.xz.XZCompressorInputStream.<init>(java.io.InputStream, boolean)"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractZipFileWithPermissions(java.lang.String, java.lang.String)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.zip.ZipFile.<init>(java.lang.String)"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractZipFileWithPermissions(java.lang.String, java.lang.String)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.zip.ZipFile.getEntries()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractZipFileWithPermissions(java.lang.String, java.lang.String)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.zip.ZipArchiveEntry.getName()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractZipFileWithPermissions(java.lang.String, java.lang.String)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.zip.ZipFile.close()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractZipFileWithPermissions(java.lang.String, java.lang.String)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.zip.ZipArchiveEntry.isDirectory()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractZipFileWithPermissions(java.lang.String, java.lang.String)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.zip.ZipArchiveEntry.getUnixMode()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractZipFileWithPermissions(java.lang.String, java.lang.String)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.zip.ZipArchiveEntry.isUnixSymlink()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractZipFileWithPermissions(java.lang.String, java.lang.String)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.zip.ZipFile.getInputStream(org.apache.commons.compress.archivers.zip.ZipArchiveEntry)"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.util.JoinHashMap.insertOrReplace(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.map.AbstractHashedMap.HashEntry.getValue()"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.util.JoinHashMap.insertOrReplace(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.map.AbstractHashedMap.HashEntry.setValue(java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.OuterJoinOperatorBase.OuterJoinListIterator.nextGroups(org.apache.flink.api.common.operators.base.OuterJoinOperatorBase$OuterJoinType)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.iterators.ListIteratorWrapper.<init>(java.util.Iterator)"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.OuterJoinOperatorBase.OuterJoinListIterator.nextGroups(org.apache.flink.api.common.operators.base.OuterJoinOperatorBase$OuterJoinType)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.ResettableIterator.next()"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.OuterJoinOperatorBase.OuterJoinListIterator.nextGroups(org.apache.flink.api.common.operators.base.OuterJoinOperatorBase$OuterJoinType)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.ResettableIterator.reset()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueComparator.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueComparator.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.util.DefaultInstantiatorStrategy.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueComparator.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.objenesis.strategy.StdInstantiatorStrategy.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueComparator.checkKryoInitialized()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.util.DefaultInstantiatorStrategy.setFallbackInstantiatorStrategy(org.objenesis.strategy.InstantiatorStrategy)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueComparator.checkKryoInitialized()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.setInstantiatorStrategy(org.objenesis.strategy.InstantiatorStrategy)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueComparator.checkKryoInitialized()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.register(java.lang.Class)"
+}, {
+  "caller" : "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.<init>(java.lang.String, int, java.lang.String, java.util.Set)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.utils.Sets.newHashSet(java.lang.Object[])"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.NoFetchingInput.require(int)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.KryoException.<init>(java.lang.String)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.NoFetchingInput.require(int)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.io.KryoBufferUnderflowException.<init>(java.lang.String)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.FlinkConfigRepresenter.<init>(org.snakeyaml.engine.v2.api.DumpSettings)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.representer.StandardRepresenter.<init>(org.snakeyaml.engine.v2.api.DumpSettings)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.KryoUtils.copy(java.lang.Object, java.lang.Object, com.esotericsoftware.kryo.Kryo, org.apache.flink.api.common.typeutils.TypeSerializer)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.copy(java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.convertToObject(java.lang.String, java.lang.Class)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.Load.loadFromString(java.lang.String)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.copy(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.copy(java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.copy(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.io.Output.<init>(java.io.OutputStream)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.copy(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.writeObject(com.esotericsoftware.kryo.io.Output, java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.copy(java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.io.Output.close()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.copy(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.io.Input.<init>(java.io.InputStream)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.copy(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.readObject(com.esotericsoftware.kryo.io.Input, java.lang.Class)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.NoFetchingInput.<init>(java.io.InputStream)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.io.Input.<init>(java.io.InputStream, int)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.getKryoInstance()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.util.DefaultInstantiatorStrategy.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.getKryoInstance()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.objenesis.strategy.StdInstantiatorStrategy.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.getKryoInstance()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.util.DefaultInstantiatorStrategy.setFallbackInstantiatorStrategy(org.objenesis.strategy.InstantiatorStrategy)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.getKryoInstance()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.getKryoInstance()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.setInstantiatorStrategy(org.objenesis.strategy.InstantiatorStrategy)"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.util.JoinHashMap.<init>(org.apache.flink.api.common.typeutils.TypeSerializer, org.apache.flink.api.common.typeutils.TypeComparator)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.map.AbstractHashedMap.<init>(int)"
+}, {
+  "caller" : "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.<clinit>()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.utils.Sets.newHashSet(java.lang.Object[])"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.MinlogForwarder.<init>(org.slf4j.Logger)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.minlog.Log.Logger.<init>()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.toYAMLString(java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.Dump.dumpToString(java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.toYAMLString(java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.DumpSettings.getBestLineBreak()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.KryoUtils.applyRegistrations(com.esotericsoftware.kryo.Kryo, java.util.Collection, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.register(java.lang.Class, com.esotericsoftware.kryo.Serializer, int)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.KryoUtils.applyRegistrations(com.esotericsoftware.kryo.Kryo, java.util.Collection, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.register(java.lang.Class, int)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.KryoUtils.applyRegistrations(com.esotericsoftware.kryo.Kryo, java.util.Collection, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.getRegistration(int)"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.GroupReduceOperatorBase.executeOnCollections(java.util.List, org.apache.flink.api.common.functions.RuntimeContext, org.apache.flink.api.common.ExecutionConfig)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.ArrayUtils.addAll(int[], int[])"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.GroupReduceOperatorBase.executeOnCollections(java.util.List, org.apache.flink.api.common.functions.RuntimeContext, org.apache.flink.api.common.ExecutionConfig)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.ArrayUtils.addAll(boolean[], boolean[])"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.deepCopySerializer(org.apache.flink.api.common.SerializableSerializer)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.exception.CloneFailedException.<init>(java.lang.String, java.lang.Throwable)"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.util.JoinHashMap.Prober.lookupMatch(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.map.AbstractHashedMap.HashEntry.getValue()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractTarFileUsingJava(java.lang.String, java.lang.String, boolean)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream.<init>(java.io.InputStream)"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractTarFileUsingJava(java.lang.String, java.lang.String, boolean)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.tar.TarArchiveInputStream.<init>(java.io.InputStream)"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractTarFileUsingJava(java.lang.String, java.lang.String, boolean)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry()"
+}, {
+  "caller" : "org.apache.flink.util.CompressionUtils.extractTarFileUsingJava(java.lang.String, java.lang.String, boolean)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.compress.archivers.tar.TarArchiveInputStream.close()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.serialize(java.lang.Object, org.apache.flink.core.memory.DataOutputView)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.io.Output.<init>(java.io.OutputStream)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.serialize(java.lang.Object, org.apache.flink.core.memory.DataOutputView)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.io.Output.position()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.serialize(java.lang.Object, org.apache.flink.core.memory.DataOutputView)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.writeClassAndObject(com.esotericsoftware.kryo.io.Output, java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.serialize(java.lang.Object, org.apache.flink.core.memory.DataOutputView)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.io.Output.flush()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.serialize(java.lang.Object, org.apache.flink.core.memory.DataOutputView)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.io.Output.reset()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer.serialize(java.lang.Object, org.apache.flink.core.memory.DataOutputView)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.KryoException.getCause()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.PojoTypeInfo.toString()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.join(java.lang.Iterable, java.lang.String)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.DumpSettings.builder()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.DumpSettingsBuilder.setDefaultFlowStyle(org.snakeyaml.engine.v2.common.FlowStyle)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.DumpSettingsBuilder.setSplitLines(boolean)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.schema.CoreSchema.<init>()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.DumpSettingsBuilder.setSchema(org.snakeyaml.engine.v2.schema.Schema)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.DumpSettingsBuilder.build()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.Dump.<init>(org.snakeyaml.engine.v2.api.DumpSettings, org.snakeyaml.engine.v2.representer.BaseRepresenter)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.LoadSettings.builder()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.LoadSettingsBuilder.setSchema(org.snakeyaml.engine.v2.schema.Schema)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.LoadSettingsBuilder.build()"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.<clinit>()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.Load.<init>(org.snakeyaml.engine.v2.api.LoadSettings)"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.OuterJoinOperatorBase.OuterJoinListIterator.next()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.ResettableIterator.hasNext()"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.OuterJoinOperatorBase.OuterJoinListIterator.next()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.iterators.ListIteratorWrapper.<init>(java.util.Iterator)"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.OuterJoinOperatorBase.OuterJoinListIterator.next()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.ResettableIterator.next()"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.base.OuterJoinOperatorBase.OuterJoinListIterator.next()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.collections.ResettableIterator.reset()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.KryoUtils.copy(java.lang.Object, com.esotericsoftware.kryo.Kryo, org.apache.flink.api.common.typeutils.TypeSerializer)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.copy(java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.convertAndDumpYamlFromFlatMap(java.util.Map)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.Dump.dumpToString(java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.configuration.YamlParserUtils.convertAndDumpYamlFromFlatMap(java.util.Map)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.snakeyaml.engine.v2.api.DumpSettings.getBestLineBreak()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer.read(com.esotericsoftware.kryo.Kryo, com.esotericsoftware.kryo.io.Input, java.lang.Class)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.getGraphContext()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer.read(com.esotericsoftware.kryo.Kryo, com.esotericsoftware.kryo.io.Input, java.lang.Class)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.util.ObjectMap.get(java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer.read(com.esotericsoftware.kryo.Kryo, com.esotericsoftware.kryo.io.Input, java.lang.Class)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.getClassLoader()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer.read(com.esotericsoftware.kryo.Kryo, com.esotericsoftware.kryo.io.Input, java.lang.Class)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.util.ObjectMap.put(java.lang.Object, java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.kryo.JavaSerializer.read(com.esotericsoftware.kryo.Kryo, com.esotericsoftware.kryo.io.Input, java.lang.Class)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.KryoException.<init>(java.lang.String, java.lang.Throwable)"
+}, {
+  "caller" : "org.apache.flink.util.Utils.getSerializerTree(org.apache.flink.api.common.typeinfo.TypeInformation, int)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.repeat(char, int)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueSerializer.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueSerializer.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.util.DefaultInstantiatorStrategy.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueSerializer.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.objenesis.strategy.StdInstantiatorStrategy.<init>()"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueSerializer.checkKryoInitialized()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.util.DefaultInstantiatorStrategy.setFallbackInstantiatorStrategy(org.objenesis.strategy.InstantiatorStrategy)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueSerializer.checkKryoInitialized()",
+  "covered" : false,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.setInstantiatorStrategy(org.objenesis.strategy.InstantiatorStrategy)"
+}, {
+  "caller" : "org.apache.flink.api.java.typeutils.runtime.ValueSerializer.checkKryoInitialized()",
+  "covered" : true,
+  "thirdPartyMethod" : "com.esotericsoftware.kryo.Kryo.getNextRegistrationId()"
+}, {
+  "caller" : "org.apache.flink.api.common.operators.Keys.ExpressionKeys.toString()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.join(java.lang.Iterable, char)"
+} ]
