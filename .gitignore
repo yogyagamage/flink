@@ -24,6 +24,9 @@ tmp
 *.jar
 *.zip
 *.log
+!flink-core/all_pipeline_logs/flink/agent_flink.log
+!flink-core/all_pipeline_logs/flink/flink.log
+!flink-core/all_pipeline_logs/flink/prompts_flink.log
 *.pyc
 .DS_Store
 build-target
