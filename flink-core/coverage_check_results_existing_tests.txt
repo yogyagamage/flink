@@ -1,0 +1,51 @@
+================================================================================
+JACOCO COVERAGE CHECK RESULTS
+================================================================================
+
+================================================================================
+COVERED Call Sites (Dynamically Reachable)
+================================================================================
+Count: 4
+
+1.
+  Caller: org.apache.flink.configuration.YamlParserUtils.FlinkConfigRepresenter.representDuration(java.lang.Object)
+  Target: org.snakeyaml.engine.v2.api.DumpSettings.getDefaultScalarStyle()
+  Details: Covered on lines: [279] (method boundary: 277-282)
+
+2.
+  Caller: org.apache.flink.configuration.YamlParserUtils.FlinkConfigRepresenter.representDuration(java.lang.Object)
+  Target: org.snakeyaml.engine.v2.nodes.ScalarNode.<init>(org.snakeyaml.engine.v2.nodes.Tag, java.lang.String, org.snakeyaml.engine.v2.common.ScalarStyle)
+  Details: Covered on lines: [279] (method boundary: 277-282)
+
+3.
+  Caller: org.apache.flink.configuration.YamlParserUtils.FlinkConfigRepresenter.representEnum(java.lang.Object)
+  Target: org.snakeyaml.engine.v2.api.DumpSettings.getDefaultScalarStyle()
+  Details: Covered on lines: [288] (method boundary: 288+)
+
+4.
+  Caller: org.apache.flink.configuration.YamlParserUtils.FlinkConfigRepresenter.representEnum(java.lang.Object)
+  Target: org.snakeyaml.engine.v2.nodes.ScalarNode.<init>(org.snakeyaml.engine.v2.nodes.Tag, java.lang.String, org.snakeyaml.engine.v2.common.ScalarStyle)
+  Details: Covered on lines: [288] (method boundary: 288+)
+
+================================================================================
+NOT COVERED Call Sites
+================================================================================
+Count: 2
+
+1.
+  Caller: org.apache.flink.configuration.YamlParserUtils.FlinkConfigRepresenter.representMemorySize(java.lang.Object)
+  Target: org.snakeyaml.engine.v2.api.DumpSettings.getDefaultScalarStyle()
+  Details: Method representMemorySize has no covered lines (lines 283-287)
+
+2.
+  Caller: org.apache.flink.configuration.YamlParserUtils.FlinkConfigRepresenter.representMemorySize(java.lang.Object)
+  Target: org.snakeyaml.engine.v2.nodes.ScalarNode.<init>(org.snakeyaml.engine.v2.nodes.Tag, java.lang.String, org.snakeyaml.engine.v2.common.ScalarStyle)
+  Details: Method representMemorySize has no covered lines (lines 283-287)
+
+================================================================================
+SUMMARY
+================================================================================
+Total Potentially Unreachable: 6
+Actually Covered (False Positives): 4
+Not Covered : 2
+Errors: 0
