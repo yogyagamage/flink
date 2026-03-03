@@ -1,0 +1,2990 @@
+{
+  "version": "1.153.0",
+  "results": [
+    {
+      "check_id": "ssc-646edd60-542f-3518-0c76-38258974a8f4",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.assertj:assertj-core are vulnerable to Improper Restriction of XML External Entity Reference. An XXE vulnerability exists in AssertJ's XmlStringPrettyFormatter.toXmlDocument(String), which initializes DocumentBuilderFactory with default settings (DTD and external entities enabled). If untrusted XML is passed to isXmlEqualTo(CharSequence) or xmlPrettyFormat(String), an attacker can read local files, perform SSRF, or trigger DoS via entity expansion.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2026-24400",
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "ghsa": "GHSA-rqfh-9r24-8c9r",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2026-01-26T21:31:41Z",
+          "references": [
+            "https://github.com/advisories/GHSA-rqfh-9r24-8c9r",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-24400"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.assertj:assertj-core": "3.27.7"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2026-24400",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 275566,
+              "rv_id": 1267631,
+              "rule_id": "L1U2zkK",
+              "version_id": "LjTkK8e",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-646edd60-542f-3518-0c76-38258974a8f4",
+              "origin": "custom",
+              "rule_name": "ssc-646edd60-542f-3518-0c76-38258974a8f4"
+            },
+            "src": "new-rule"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-646edd60-542f-3518-0c76-38258974a8f4",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-646edd60-542f-3518-0c76-38258974a8f4",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "c834f40018e9f6bd8be676b0cfedb15ba87ec9bc4611369d92f4786c43c3fd0e3e391777bd0d250fd28110c92a89c7ad657387852c57d786468cda3d14fcc7ac_0",
+        "lines": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.assertj:assertj-core",
+              "semver_range": ">=1.4.0, <=3.27.6"
+            },
+            "found_dependency": {
+              "package": "org.assertj:assertj-core",
+              "version": "3.27.3",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "net.bytebuddy:byte-buddy",
+                  "version": "1.17.6"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.apache.logging.log4j:log4j-core are vulnerable to Improper Validation of Certificate with Host Mismatch.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-68161",
+          "cwe": [
+            "CWE-297: Improper Validation of Certificate with Host Mismatch"
+          ],
+          "ghsa": "GHSA-vc5p-v9hr-52mj",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "publish-date": "2025-12-18T21:31:44Z",
+          "references": [
+            "https://github.com/advisories/GHSA-vc5p-v9hr-52mj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-68161"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.logging.log4j:log4j-core": "2.25.3"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2025-68161",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authentication"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 272499,
+              "rv_id": 1259409,
+              "rule_id": "JDU369L",
+              "version_id": "QkTGrLJ",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+              "origin": "custom",
+              "rule_name": "ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6"
+            },
+            "src": "new-rule"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "3375880d491aff9913d2980a8f98aa9c53d89ba0942048593171d685032ae399424e7ffe2b5bc9ee67852cce05f27b3abf7832493a8b60242689a4e38638da44_0",
+        "lines": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.apache.logging.log4j:log4j-core",
+              "semver_range": ">=2.0-beta9, <2.25.3"
+            },
+            "found_dependency": {
+              "package": "org.apache.logging.log4j:log4j-core",
+              "version": "2.24.3",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/api/common/serialization/SerializerConfigImpl.java",
+      "start": {
+        "line": 366,
+        "col": 24,
+        "offset": 14801
+      },
+      "end": {
+        "line": 366,
+        "col": 68,
+        "offset": 14845
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 366,
+              "col": 38,
+              "offset": 14815
+            },
+            "end": {
+              "line": 366,
+              "col": 47,
+              "offset": 14824
+            },
+            "abstract_content": "className"
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "fab5457817f6c1a02b9cd67c4eeb87dd61c7d32621976b0afdb2877434d626f3f56156170ed07e264e7e92fc38f47f84bd669af8b2faf51b3b8f4bb44cc01574_0",
+        "lines": "            return (T) Class.forName(className, false, classLoader);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/api/java/typeutils/TypeExtractionUtils.java",
+      "start": {
+        "line": 134,
+        "col": 21,
+        "offset": 4904
+      },
+      "end": {
+        "line": 137,
+        "col": 76,
+        "offset": 5085
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 135,
+              "col": 29,
+              "offset": 4947
+            },
+            "end": {
+              "line": 135,
+              "col": 56,
+              "offset": 4974
+            },
+            "abstract_content": "className.replace('/''.')"
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "cb210efcc8684ff4130967542e7fd84dd9b35bd0842197c62ff1b404eee24576e6435c01df654d5f5d7701bc35537e13180b060730e807953312be7bc0103d74_0",
+        "lines": "                    Class.forName(\n                            className.replace('/', '.'),\n                            true,\n                            Thread.currentThread().getContextClassLoader());",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/api/java/typeutils/runtime/PojoSerializer.java",
+      "start": {
+        "line": 823,
+        "col": 28,
+        "offset": 31006
+      },
+      "end": {
+        "line": 823,
+        "col": 65,
+        "offset": 31043
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 823,
+              "col": 42,
+              "offset": 31020
+            },
+            "end": {
+              "line": 823,
+              "col": 54,
+              "offset": 31032
+            },
+            "abstract_content": "subclassName"
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "81a5b51aeaa2f20b64bbf0af983e12bd3514ea7b662391b2769e21ed23dc3707d6325f7d56cae37722eefedbef635ff3e25d5fd2ac5ff02d77bb246801104dc1_0",
+        "lines": "                subclass = Class.forName(subclassName, true, cl);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/api/java/typeutils/runtime/PojoSerializerSnapshotData.java",
+      "start": {
+        "line": 307,
+        "col": 24,
+        "offset": 14521
+      },
+      "end": {
+        "line": 307,
+        "col": 59,
+        "offset": 14556
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 307,
+              "col": 38,
+              "offset": 14535
+            },
+            "end": {
+              "line": 307,
+              "col": 47,
+              "offset": 14544
+            },
+            "abstract_content": "className"
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "f1fd974ba3384722bf103fd17fadc31575f322c61ba8df7528fc246751520c6cd5453a44705995048e0d7ada1dd84c30ad1789e9e6b148b85b91cc77c2e41915_0",
+        "lines": "                return Class.forName(className, false, cl);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializerSnapshotData.java",
+      "start": {
+        "line": 269,
+        "col": 35,
+        "offset": 11620
+      },
+      "end": {
+        "line": 269,
+        "col": 96,
+        "offset": 11681
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 269,
+              "col": 49,
+              "offset": 11634
+            },
+            "end": {
+              "line": 269,
+              "col": 68,
+              "offset": 11653
+            },
+            "abstract_content": "registeredClassname",
+            "propagated_value": {
+              "svalue_start": {
+                "line": 266,
+                "col": 42,
+                "offset": 11516
+              },
+              "svalue_end": {
+                "line": 266,
+                "col": 54,
+                "offset": 11528
+              },
+              "svalue_abstract_content": "in.readUTF()"
+            }
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "4c8c6e4baecbf186e7086e2811b8cce2e2f445f1ecdf20f36dccc974c7eb0bd80cb4dcf19e3a90f7121553ab57f602be20109bdb0f7a8f51f3222d21a65e59cc_0",
+        "lines": "                registeredClass = Class.forName(registeredClassname, true, userCodeClassLoader);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializerSnapshotData.java",
+      "start": {
+        "line": 317,
+        "col": 35,
+        "offset": 13689
+      },
+      "end": {
+        "line": 317,
+        "col": 96,
+        "offset": 13750
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 317,
+              "col": 49,
+              "offset": 13703
+            },
+            "end": {
+              "line": 317,
+              "col": 68,
+              "offset": 13722
+            },
+            "abstract_content": "serializerClassname",
+            "propagated_value": {
+              "svalue_start": {
+                "line": 314,
+                "col": 42,
+                "offset": 13588
+              },
+              "svalue_end": {
+                "line": 314,
+                "col": 54,
+                "offset": 13600
+              },
+              "svalue_abstract_content": "in.readUTF()"
+            }
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "3f39d96270ae208889983d7067fddb882a667d83160d725a7ad2037c7d86742d487a544bee1cb9cb2f310eb687b8dcd96fd748a2b1e53fa5610b7c8f50414ed3_0",
+        "lines": "                serializerClass = Class.forName(serializerClassname, true, userCodeClassLoader);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializerSnapshotData.java",
+      "start": {
+        "line": 374,
+        "col": 35,
+        "offset": 16490
+      },
+      "end": {
+        "line": 374,
+        "col": 79,
+        "offset": 16534
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 374,
+              "col": 49,
+              "offset": 16504
+            },
+            "end": {
+              "line": 374,
+              "col": 58,
+              "offset": 16513
+            },
+            "abstract_content": "className",
+            "propagated_value": {
+              "svalue_start": {
+                "line": 372,
+                "col": 32,
+                "offset": 16420
+              },
+              "svalue_end": {
+                "line": 372,
+                "col": 48,
+                "offset": 16436
+              },
+              "svalue_abstract_content": "stream.readUTF()"
+            }
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "fef9565f2ff58e081b1a77d8c6b3ddf6cb80d0f9ab86edb7e693e046324f485986ad0196d00057f11d55473202c156315711471d37e1867c041dad439d896c22_0",
+        "lines": "                return (Class<T>) Class.forName(className, false, classLoader);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.crypto.weak-random.weak-random",
+      "path": "src/main/java/org/apache/flink/core/fs/RefCountedTmpFileCreator.java",
+      "start": {
+        "line": 62,
+        "col": 39,
+        "offset": 2252
+      },
+      "end": {
+        "line": 62,
+        "col": 88,
+        "offset": 2301
+      },
+      "extra": {
+        "metavars": {
+          "$FUNC": {
+            "start": {
+              "line": 62,
+              "col": 52,
+              "offset": 2265
+            },
+            "end": {
+              "line": 62,
+              "col": 59,
+              "offset": 2272
+            },
+            "abstract_content": "nextInt"
+          }
+        },
+        "message": "Detected use of the functions `Math.random()` or `java.util.Random()`. These are both not cryptographically strong random number generators (RNGs). If you are using these RNGs to create passwords or secret tokens, use `java.security.SecureRandom` instead.",
+        "metadata": {
+          "functional-categories": [
+            "crypto::search::randomness::java.security"
+          ],
+          "owasp": [
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "cwe": [
+            "CWE-330: Use of Insufficiently Random Values"
+          ],
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A02_2021-Cryptographic_Failures"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.crypto.weak-random.weak-random",
+          "shortlink": "https://sg.run/NwBp",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 17327,
+              "rule_id": "lBUW5D",
+              "rule_name": "java.lang.security.audit.crypto.weak-random.weak-random",
+              "rv_id": 1263018,
+              "url": "https://semgrep.dev/playground/r/6xT29RK/java.lang.security.audit.crypto.weak-random.weak-random",
+              "version_id": "6xT29RK"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.crypto.weak-random.weak-random",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "7953fbb57604b8fd539a3ecf4768aff513e462396edee9597eb177ae9193311d39a477adec4bd695def60f65d0e5e944b585b6d03698f5daa58b659faf40a1b7_0",
+        "lines": "        this.next = new AtomicInteger(new Random().nextInt(this.tempDirectories.length));",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/core/memory/MemoryUtils.java",
+      "start": {
+        "line": 97,
+        "col": 20,
+        "offset": 4100
+      },
+      "end": {
+        "line": 97,
+        "col": 44,
+        "offset": 4124
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 97,
+              "col": 34,
+              "offset": 4114
+            },
+            "end": {
+              "line": 97,
+              "col": 43,
+              "offset": 4123
+            },
+            "abstract_content": "className"
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "7dd9c2a1ad5c256412fef208caba7de33461ced66d5f33db9471abdda29919d96845fc694b74c223d93b2d8b48d127fa35d7063f58f617103fa454a92f31a533_0",
+        "lines": "            return Class.forName(className);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/util/ClassLoaderUtil.java",
+      "start": {
+        "line": 145,
+        "col": 13,
+        "offset": 5563
+      },
+      "end": {
+        "line": 145,
+        "col": 48,
+        "offset": 5598
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 145,
+              "col": 27,
+              "offset": 5577
+            },
+            "end": {
+              "line": 145,
+              "col": 36,
+              "offset": 5586
+            },
+            "abstract_content": "className",
+            "propagated_value": {
+              "svalue_start": {
+                "line": 144,
+                "col": 32,
+                "offset": 5532
+              },
+              "svalue_end": {
+                "line": 144,
+                "col": 49,
+                "offset": 5549
+              },
+              "svalue_abstract_content": "cnfe.getMessage()"
+            }
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "a239ea1b45b001eb3ccbd0cbca57f28854c84a7008f2d7ec3f772106ec1c97d48a7bec676d25a0e29a5ae948f11b2871b7b04d9ef09ee6957134d2f9579d9599_0",
+        "lines": "            Class.forName(className, false, cl);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.command-injection-process-builder.command-injection-process-builder",
+      "path": "src/main/java/org/apache/flink/util/CompressionUtils.java",
+      "start": {
+        "line": 97,
+        "col": 27,
+        "offset": 4132
+      },
+      "end": {
+        "line": 97,
+        "col": 73,
+        "offset": 4178
+      },
+      "extra": {
+        "metavars": {
+          "$ARG": {
+            "start": {
+              "line": 97,
+              "col": 60,
+              "offset": 4165
+            },
+            "end": {
+              "line": 97,
+              "col": 72,
+              "offset": 4177
+            },
+            "abstract_content": "untarCommand"
+          }
+        },
+        "message": "A formatted or concatenated string was detected as input to a ProcessBuilder call. This is dangerous if a variable is controlled by user input and could result in a command injection. Ensure your variables are not controlled by users or sufficiently sanitized.",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Command Injection"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.command-injection-process-builder.command-injection-process-builder",
+          "shortlink": "https://sg.run/gJJe",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9941,
+              "rule_id": "4bUzzo",
+              "rule_name": "java.lang.security.audit.command-injection-process-builder.command-injection-process-builder",
+              "rv_id": 1262992,
+              "url": "https://semgrep.dev/playground/r/JdTzxnn/java.lang.security.audit.command-injection-process-builder.command-injection-process-builder",
+              "version_id": "JdTzxnn"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.command-injection-process-builder.command-injection-process-builder",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "ERROR",
+        "fingerprint": "216fc2ab7db49fd7170a2de70439319e26e4c29dd82c2dce8a4be3d68ee1e4e16ce479f57a970a28e7120b8aaa691d3e4cf93d7f24833af033efc78b91ded380_0",
+        "lines": "        Process process = new ProcessBuilder(\"bash\", \"-c\", untarCommand).start();",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace",
+      "path": "src/main/java/org/apache/flink/util/ExceptionUtils.java",
+      "start": {
+        "line": 73,
+        "col": 13,
+        "offset": 2608
+      },
+      "end": {
+        "line": 73,
+        "col": 35,
+        "offset": 2630
+      },
+      "extra": {
+        "metavars": {
+          "$UTIL": {
+            "start": {
+              "line": 73,
+              "col": 13,
+              "offset": 2608
+            },
+            "end": {
+              "line": 73,
+              "col": 14,
+              "offset": 2609
+            },
+            "abstract_content": "e"
+          }
+        },
+        "message": "Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "audit"
+          ],
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "functional-categories": [
+            "debug::search::active-debug-code::java.lang"
+          ],
+          "owasp": [
+            "A10:2004 - Insecure Configuration Management",
+            "A06:2017 - Security Misconfiguration",
+            "A05:2021 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/489.html",
+            "https://www.acunetix.com/vulnerabilities/web/stack-trace-disclosure-java/",
+            "https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/02-Testing_for_Stack_Traces",
+            "https://www.securecodewarrior.com/blog/coders-conquer-security-share-learn-series-information-exposure"
+          ],
+          "technology": [
+            "java"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Active Debug Code"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace",
+          "shortlink": "https://sg.run/4K8z",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 27144,
+              "rule_id": "v8U0rZ",
+              "rule_name": "java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace",
+              "rv_id": 1236400,
+              "url": "https://semgrep.dev/playground/r/zyTb9Oq/java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace",
+              "version_id": "zyTb9Oq"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "7664195735c3fa5310f111f683c00feb6ebe5aaff65c298fd554577ebfe53a284843e6fe1ad605e443a09da3f592eda303d718dc64800451af931f8288e3b4cc_0",
+        "lines": "            e.printStackTrace(wrt);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/util/InstantiationUtil.java",
+      "start": {
+        "line": 76,
+        "col": 28,
+        "offset": 2823
+      },
+      "end": {
+        "line": 76,
+        "col": 67,
+        "offset": 2862
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 76,
+              "col": 42,
+              "offset": 2837
+            },
+            "end": {
+              "line": 76,
+              "col": 46,
+              "offset": 2841
+            },
+            "abstract_content": "name",
+            "propagated_value": {
+              "svalue_start": {
+                "line": 74,
+                "col": 31,
+                "offset": 2758
+              },
+              "svalue_end": {
+                "line": 74,
+                "col": 45,
+                "offset": 2772
+              },
+              "svalue_abstract_content": "desc.getName()"
+            }
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "ed52edb49aba2529317465032bfd3d7d67fc8859137a45aab4fccb197dd75c64b87ba99bc7558a6b7f34fae178fa9413d0f05cbd43fceee34dc0a707416628da_0",
+        "lines": "                    return Class.forName(name, false, classLoader);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/util/InstantiationUtil.java",
+      "start": {
+        "line": 103,
+        "col": 35,
+        "offset": 3935
+      },
+      "end": {
+        "line": 103,
+        "col": 83,
+        "offset": 3983
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 103,
+              "col": 49,
+              "offset": 3949
+            },
+            "end": {
+              "line": 103,
+              "col": 62,
+              "offset": 3962
+            },
+            "abstract_content": "interfaces[i]"
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "0c868670aa786b56f8df1fd5f38e56ca7ab1265896b3025b4f1aefe29df55e335cd25b124997339595b99b9f4e76200f324e78548078bf203d0d3018225a954e_0",
+        "lines": "                    Class<?> cl = Class.forName(interfaces[i], false, classLoader);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/util/InstantiationUtil.java",
+      "start": {
+        "line": 253,
+        "col": 21,
+        "offset": 10457
+      },
+      "end": {
+        "line": 253,
+        "col": 65,
+        "offset": 10501
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 253,
+              "col": 35,
+              "offset": 10471
+            },
+            "end": {
+              "line": 253,
+              "col": 44,
+              "offset": 10480
+            },
+            "abstract_content": "className"
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "971e1a3e86d479b912380a37123bfd30779f16f1637093dd3a474514b7826f5bb7fa8c83b462c9f0ba860453c74cd3b960278e7320925902e7a5a958281771ae_0",
+        "lines": "            clazz = Class.forName(className, false, classLoader).asSubclass(targetType);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+      "path": "src/main/java/org/apache/flink/util/InstantiationUtil.java",
+      "start": {
+        "line": 659,
+        "col": 24,
+        "offset": 26696
+      },
+      "end": {
+        "line": 659,
+        "col": 59,
+        "offset": 26731
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 659,
+              "col": 38,
+              "offset": 26710
+            },
+            "end": {
+              "line": 659,
+              "col": 47,
+              "offset": 26719
+            },
+            "abstract_content": "className",
+            "propagated_value": {
+              "svalue_start": {
+                "line": 656,
+                "col": 34,
+                "offset": 26612
+              },
+              "svalue_end": {
+                "line": 656,
+                "col": 46,
+                "offset": 26624
+              },
+              "svalue_abstract_content": "in.readUTF()"
+            }
+          }
+        },
+        "message": "If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.",
+        "metadata": {
+          "cwe": [
+            "CWE-470: Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://owasp.org/www-community/vulnerabilities/Unsafe_use_of_Reflection",
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "shortlink": "https://sg.run/R8X8",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9993,
+              "rule_id": "DbUW1W",
+              "rule_name": "java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "rv_id": 1263047,
+              "url": "https://semgrep.dev/playground/r/44TEj5L/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+              "version_id": "44TEj5L"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.unsafe-reflection.unsafe-reflection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "971e1a3e86d479b912380a37123bfd30779f16f1637093dd3a474514b7826f5bb7fa8c83b462c9f0ba860453c74cd3b960278e7320925902e7a5a958281771ae_1",
+        "lines": "            rawClazz = Class.forName(className, false, cl);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.crypto.unencrypted-socket.unencrypted-socket",
+      "path": "src/main/java/org/apache/flink/util/NetUtils.java",
+      "start": {
+        "line": 192,
+        "col": 46,
+        "offset": 7790
+      },
+      "end": {
+        "line": 192,
+        "col": 65,
+        "offset": 7809
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Detected use of a Java socket that is not encrypted. As a result, the traffic could be read by an attacker intercepting the network traffic. Use an SSLSocket created by 'SSLSocketFactory' or 'SSLServerSocketFactory' instead.",
+        "metadata": {
+          "functional-categories": [
+            "net::search::crypto-config::java.net"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "source-rule-url": "https://find-sec-bugs.github.io/bugs.htm#UNENCRYPTED_SOCKET",
+          "asvs": {
+            "control_id": "6.2.5 Insecure Algorithm",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x14-V6-Cryptography.md#v62-algorithms",
+            "section": "V6 Stored Cryptography Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A02_2021-Cryptographic_Failures"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.crypto.unencrypted-socket.unencrypted-socket",
+          "shortlink": "https://sg.run/W8zA",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9197,
+              "rule_id": "BYUN3X",
+              "rule_name": "java.lang.security.audit.crypto.unencrypted-socket.unencrypted-socket",
+              "rv_id": 1263008,
+              "url": "https://semgrep.dev/playground/r/RGT0LEj/java.lang.security.audit.crypto.unencrypted-socket.unencrypted-socket",
+              "version_id": "RGT0LEj"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.crypto.unencrypted-socket.unencrypted-socket",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "f9638340584b0116b0807b999078c09eb0a93de07804cb187009062684dde0f882c6312787d7edd9579677ec30dbd70758699359cfbc61dc7e69a9f7511cc6ba_0",
+        "lines": "            try (ServerSocket serverSocket = new ServerSocket(0)) {",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.active-debug-code-getstacktrace.active-debug-code-getstacktrace",
+      "path": "src/main/java/org/apache/flink/util/Utils.java",
+      "start": {
+        "line": 62,
+        "col": 16,
+        "offset": 2245
+      },
+      "end": {
+        "line": 63,
+        "col": 93,
+        "offset": 2352
+      },
+      "extra": {
+        "metavars": {
+          "$EXCEPTION": {
+            "start": {
+              "line": 54,
+              "col": 42,
+              "offset": 2051
+            },
+            "end": {
+              "line": 54,
+              "col": 64,
+              "offset": 2073
+            },
+            "abstract_content": "Thread.currentThread()"
+          },
+          "$SYSTEM": {
+            "start": {
+              "line": 62,
+              "col": 16,
+              "offset": 2245
+            },
+            "end": {
+              "line": 62,
+              "col": 22,
+              "offset": 2251
+            },
+            "abstract_content": "String"
+          }
+        },
+        "message": "Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.",
+        "metadata": {
+          "likelihood": "MEDIUM",
+          "impact": "LOW",
+          "confidence": "MEDIUM",
+          "interfile": true,
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "functional-categories": [
+            "debug::search::active-debug-code::java.lang"
+          ],
+          "owasp": [
+            "A10:2004 - Insecure Configuration Management",
+            "A06:2017 - Security Misconfiguration",
+            "A05:2021 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/489.html",
+            "https://www.acunetix.com/vulnerabilities/web/stack-trace-disclosure-java/",
+            "https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/02-Testing_for_Stack_Traces",
+            "https://www.securecodewarrior.com/blog/coders-conquer-security-share-learn-series-information-exposure"
+          ],
+          "technology": [
+            "java"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Active Debug Code"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.active-debug-code-getstacktrace.active-debug-code-getstacktrace",
+          "shortlink": "https://sg.run/30Lp",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 27143,
+              "rule_id": "eqUyRW",
+              "rule_name": "java.lang.security.audit.active-debug-code-getstacktrace.active-debug-code-getstacktrace",
+              "rv_id": 1236399,
+              "url": "https://semgrep.dev/playground/r/o5TbP3Y/java.lang.security.audit.active-debug-code-getstacktrace.active-debug-code-getstacktrace",
+              "version_id": "o5TbP3Y"
+            },
+            "src": "new-rule"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.active-debug-code-getstacktrace.active-debug-code-getstacktrace",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "76301b18de0e11e5801a1f333960a514a3dcee46e88a192476de2553aa9721b246d2523b8d3be3cfd6572c0987afdcd79d75aa24f709fdcae4265fdb57b894c1_0",
+        "lines": "        return String.format(\n                \"%s(%s:%d)\", elem.getMethodName(), elem.getFileName(), elem.getLineNumber());",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "src/main/java/org/apache/flink/util/Utils.java",
+                "start": {
+                  "line": 54,
+                  "col": 42,
+                  "offset": 2051
+                },
+                "end": {
+                  "line": 54,
+                  "col": 80,
+                  "offset": 2089
+                }
+              },
+              "Thread.currentThread().getStackTrace()"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "src/main/java/org/apache/flink/util/Utils.java",
+                "start": {
+                  "line": 54,
+                  "col": 29,
+                  "offset": 2038
+                },
+                "end": {
+                  "line": 54,
+                  "col": 39,
+                  "offset": 2048
+                }
+              },
+              "content": "stackTrace"
+            },
+            {
+              "location": {
+                "path": "src/main/java/org/apache/flink/util/Utils.java",
+                "start": {
+                  "line": 60,
+                  "col": 27,
+                  "offset": 2203
+                },
+                "end": {
+                  "line": 60,
+                  "col": 31,
+                  "offset": 2207
+                }
+              },
+              "content": "elem"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "src/main/java/org/apache/flink/util/Utils.java",
+                "start": {
+                  "line": 62,
+                  "col": 16,
+                  "offset": 2245
+                },
+                "end": {
+                  "line": 63,
+                  "col": 93,
+                  "offset": 2352
+                }
+              },
+              "String.format(\n                \"%s(%s:%d)\", elem.getMethodName(), elem.getFileName(), elem.getLineNumber())"
+            ]
+          ]
+        },
+        "engine_kind": "PRO"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      "all_pipeline_logs/flink/flink.log",
+      "all_third_party_call_pairs_all_third_party_calls.json",
+      "archunit-violations/0c7796e9-15d6-4c0d-9fe3-3846e1b5347c",
+      "archunit-violations/b0ef1607-07ca-4378-b7d7-a2a15a8eaa9b",
+      "archunit-violations/stored.rules",
+      "coverage.json",
+      "coverage_check_results_all_tests.txt",
+      "coverage_check_results_existing_tests.txt",
+      "package-map.json",
+      "pom.xml",
+      "src/main/java/org/apache/flink/api/common/ApplicationID.java",
+      "src/main/java/org/apache/flink/api/common/ApplicationState.java",
+      "src/main/java/org/apache/flink/api/common/Archiveable.java",
+      "src/main/java/org/apache/flink/api/common/ArchivedExecutionConfig.java",
+      "src/main/java/org/apache/flink/api/common/BatchShuffleMode.java",
+      "src/main/java/org/apache/flink/api/common/ExecutionConfig.java",
+      "src/main/java/org/apache/flink/api/common/InvalidProgramException.java",
+      "src/main/java/org/apache/flink/api/common/JobExecutionResult.java",
+      "src/main/java/org/apache/flink/api/common/JobID.java",
+      "src/main/java/org/apache/flink/api/common/JobInfo.java",
+      "src/main/java/org/apache/flink/api/common/JobInfoImpl.java",
+      "src/main/java/org/apache/flink/api/common/JobStatus.java",
+      "src/main/java/org/apache/flink/api/common/JobSubmissionResult.java",
+      "src/main/java/org/apache/flink/api/common/NonSerializableUserCodeException.java",
+      "src/main/java/org/apache/flink/api/common/Plan.java",
+      "src/main/java/org/apache/flink/api/common/ProgramDescription.java",
+      "src/main/java/org/apache/flink/api/common/RestartStrategyDescriptionUtils.java",
+      "src/main/java/org/apache/flink/api/common/SerializableSerializer.java",
+      "src/main/java/org/apache/flink/api/common/SupportsConcurrentExecutionAttempts.java",
+      "src/main/java/org/apache/flink/api/common/TaskInfo.java",
+      "src/main/java/org/apache/flink/api/common/TaskInfoImpl.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/Accumulator.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/AccumulatorHelper.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/AverageAccumulator.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/DoubleCounter.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/DoubleMaximum.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/DoubleMinimum.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/Histogram.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/IntCounter.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/IntMaximum.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/IntMinimum.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/ListAccumulator.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/LongCounter.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/LongMaximum.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/LongMinimum.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/SerializedListAccumulator.java",
+      "src/main/java/org/apache/flink/api/common/accumulators/SimpleAccumulator.java",
+      "src/main/java/org/apache/flink/api/common/aggregators/Aggregator.java",
+      "src/main/java/org/apache/flink/api/common/aggregators/AggregatorRegistry.java",
+      "src/main/java/org/apache/flink/api/common/aggregators/AggregatorWithName.java",
+      "src/main/java/org/apache/flink/api/common/aggregators/ConvergenceCriterion.java",
+      "src/main/java/org/apache/flink/api/common/aggregators/DoubleSumAggregator.java",
+      "src/main/java/org/apache/flink/api/common/aggregators/DoubleZeroConvergence.java",
+      "src/main/java/org/apache/flink/api/common/aggregators/LongSumAggregator.java",
+      "src/main/java/org/apache/flink/api/common/aggregators/LongZeroConvergence.java",
+      "src/main/java/org/apache/flink/api/common/attribute/Attribute.java",
+      "src/main/java/org/apache/flink/api/common/cache/DistributedCache.java",
+      "src/main/java/org/apache/flink/api/common/distributions/CommonRangeBoundaries.java",
+      "src/main/java/org/apache/flink/api/common/distributions/DataDistribution.java",
+      "src/main/java/org/apache/flink/api/common/distributions/RangeBoundaries.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/AscendingTimestampsWatermarks.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/BoundedOutOfOrdernessWatermarks.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/CombinedWatermarkStatus.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/IndexedCombinedWatermarkStatus.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/IngestionTimeAssigner.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/NoWatermarksGenerator.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/RecordTimestampAssigner.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/SerializableTimestampAssigner.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/TimestampAssigner.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/TimestampAssignerSupplier.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/Watermark.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/WatermarkAlignmentParams.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/WatermarkGenerator.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/WatermarkGeneratorSupplier.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/WatermarkOutput.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/WatermarkOutputMultiplexer.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/WatermarkStrategy.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/WatermarkStrategyWithIdleness.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/WatermarkStrategyWithTimestampAssigner.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/WatermarksWithIdleness.java",
+      "src/main/java/org/apache/flink/api/common/eventtime/WatermarksWithWatermarkAlignment.java",
+      "src/main/java/org/apache/flink/api/common/externalresource/ExternalResourceDriver.java",
+      "src/main/java/org/apache/flink/api/common/externalresource/ExternalResourceDriverFactory.java",
+      "src/main/java/org/apache/flink/api/common/externalresource/ExternalResourceInfo.java",
+      "src/main/java/org/apache/flink/api/common/functions/AbstractRichFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/BroadcastVariableInitializer.java",
+      "src/main/java/org/apache/flink/api/common/functions/CoGroupFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/CombineFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/CrossFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/DefaultOpenContext.java",
+      "src/main/java/org/apache/flink/api/common/functions/FilterFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/FlatJoinFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/FlatMapFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/GroupCombineFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/GroupReduceFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/InvalidTypesException.java",
+      "src/main/java/org/apache/flink/api/common/functions/IterationRuntimeContext.java",
+      "src/main/java/org/apache/flink/api/common/functions/JoinFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/MapFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/MapPartitionFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/OpenContext.java",
+      "src/main/java/org/apache/flink/api/common/functions/Partitioner.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichAggregateFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichCoGroupFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichCrossFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichFilterFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichFlatJoinFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichFlatMapFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichGroupCombineFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichGroupReduceFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichJoinFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichMapFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichMapPartitionFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RichReduceFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/RuntimeContext.java",
+      "src/main/java/org/apache/flink/api/common/functions/SerializerFactory.java",
+      "src/main/java/org/apache/flink/api/common/functions/WithConfigurationOpenContext.java",
+      "src/main/java/org/apache/flink/api/common/functions/WrappingFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/util/AbstractRuntimeUDFContext.java",
+      "src/main/java/org/apache/flink/api/common/functions/util/CopyingIterator.java",
+      "src/main/java/org/apache/flink/api/common/functions/util/CopyingListCollector.java",
+      "src/main/java/org/apache/flink/api/common/functions/util/FunctionUtils.java",
+      "src/main/java/org/apache/flink/api/common/functions/util/ListCollector.java",
+      "src/main/java/org/apache/flink/api/common/functions/util/NoOpFunction.java",
+      "src/main/java/org/apache/flink/api/common/functions/util/PrintSinkOutputWriter.java",
+      "src/main/java/org/apache/flink/api/common/functions/util/RuntimeUDFContext.java",
+      "src/main/java/org/apache/flink/api/common/io/BinaryInputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/BinaryOutputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/BlockInfo.java",
+      "src/main/java/org/apache/flink/api/common/io/CheckpointableInputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/CleanupWhenUnsuccessful.java",
+      "src/main/java/org/apache/flink/api/common/io/DefaultInputSplitAssigner.java",
+      "src/main/java/org/apache/flink/api/common/io/DelimitedInputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/FileInputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/FileOutputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/FilePathFilter.java",
+      "src/main/java/org/apache/flink/api/common/io/FinalizeOnMaster.java",
+      "src/main/java/org/apache/flink/api/common/io/FirstAttemptInitializationContext.java",
+      "src/main/java/org/apache/flink/api/common/io/GenericCsvInputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/GenericInputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/GlobFilePathFilter.java",
+      "src/main/java/org/apache/flink/api/common/io/InitializeOnMaster.java",
+      "src/main/java/org/apache/flink/api/common/io/InputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/InputStreamFSInputWrapper.java",
+      "src/main/java/org/apache/flink/api/common/io/LocatableInputSplitAssigner.java",
+      "src/main/java/org/apache/flink/api/common/io/NonParallelInput.java",
+      "src/main/java/org/apache/flink/api/common/io/OutputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/OutputFormatBase.java",
+      "src/main/java/org/apache/flink/api/common/io/ParseException.java",
+      "src/main/java/org/apache/flink/api/common/io/ReplicatingInputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/ReplicatingInputSplitAssigner.java",
+      "src/main/java/org/apache/flink/api/common/io/RichInputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/RichOutputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/SerializedInputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/SerializedOutputFormat.java",
+      "src/main/java/org/apache/flink/api/common/io/SinkUtils.java",
+      "src/main/java/org/apache/flink/api/common/io/compression/Bzip2InputStreamFactory.java",
+      "src/main/java/org/apache/flink/api/common/io/compression/DeflateInflaterInputStreamFactory.java",
+      "src/main/java/org/apache/flink/api/common/io/compression/GzipInflaterInputStreamFactory.java",
+      "src/main/java/org/apache/flink/api/common/io/compression/InflaterInputStreamFactory.java",
+      "src/main/java/org/apache/flink/api/common/io/compression/XZInputStreamFactory.java",
+      "src/main/java/org/apache/flink/api/common/io/compression/ZStandardInputStreamFactory.java",
+      "src/main/java/org/apache/flink/api/common/io/ratelimiting/FlinkConnectorRateLimiter.java",
+      "src/main/java/org/apache/flink/api/common/io/ratelimiting/GuavaFlinkConnectorRateLimiter.java",
+      "src/main/java/org/apache/flink/api/common/io/statistics/BaseStatistics.java",
+      "src/main/java/org/apache/flink/api/common/operators/AbstractUdfOperator.java",
+      "src/main/java/org/apache/flink/api/common/operators/BinaryOperatorInformation.java",
+      "src/main/java/org/apache/flink/api/common/operators/CollectionExecutor.java",
+      "src/main/java/org/apache/flink/api/common/operators/CompilerHints.java",
+      "src/main/java/org/apache/flink/api/common/operators/DualInputOperator.java",
+      "src/main/java/org/apache/flink/api/common/operators/DualInputSemanticProperties.java",
+      "src/main/java/org/apache/flink/api/common/operators/GenericDataSinkBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/GenericDataSourceBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/IterationOperator.java",
+      "src/main/java/org/apache/flink/api/common/operators/Keys.java",
+      "src/main/java/org/apache/flink/api/common/operators/MailOptionsImpl.java",
+      "src/main/java/org/apache/flink/api/common/operators/MailboxExecutor.java",
+      "src/main/java/org/apache/flink/api/common/operators/Operator.java",
+      "src/main/java/org/apache/flink/api/common/operators/OperatorInformation.java",
+      "src/main/java/org/apache/flink/api/common/operators/Order.java",
+      "src/main/java/org/apache/flink/api/common/operators/Ordering.java",
+      "src/main/java/org/apache/flink/api/common/operators/ProcessingTimeService.java",
+      "src/main/java/org/apache/flink/api/common/operators/ResourceSpec.java",
+      "src/main/java/org/apache/flink/api/common/operators/SemanticProperties.java",
+      "src/main/java/org/apache/flink/api/common/operators/SingleInputOperator.java",
+      "src/main/java/org/apache/flink/api/common/operators/SingleInputSemanticProperties.java",
+      "src/main/java/org/apache/flink/api/common/operators/SlotSharingGroup.java",
+      "src/main/java/org/apache/flink/api/common/operators/UnaryOperatorInformation.java",
+      "src/main/java/org/apache/flink/api/common/operators/Union.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/BulkIterationBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/CoGroupOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/CoGroupRawOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/CrossOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/DeltaIterationBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/FilterOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/FlatMapOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/GroupCombineOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/GroupReduceOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/InnerJoinOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/JoinOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/MapOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/MapPartitionOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/OuterJoinOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/PartitionOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/ReduceOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/base/SortPartitionOperatorBase.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/FieldList.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/FieldSet.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/JoinHashMap.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/ListKeyGroupedIterator.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/OperatorValidationUtils.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/SlotSharingGroupUtils.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/TupleUnwrappingIterator.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/TypeComparable.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/UserCodeClassWrapper.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/UserCodeObjectWrapper.java",
+      "src/main/java/org/apache/flink/api/common/operators/util/UserCodeWrapper.java",
+      "src/main/java/org/apache/flink/api/common/resources/CPUResource.java",
+      "src/main/java/org/apache/flink/api/common/resources/ExternalResource.java",
+      "src/main/java/org/apache/flink/api/common/resources/Resource.java",
+      "src/main/java/org/apache/flink/api/common/serialization/AbstractDeserializationSchema.java",
+      "src/main/java/org/apache/flink/api/common/serialization/BulkWriter.java",
+      "src/main/java/org/apache/flink/api/common/serialization/ByteArraySchema.java",
+      "src/main/java/org/apache/flink/api/common/serialization/DeserializationSchema.java",
+      "src/main/java/org/apache/flink/api/common/serialization/Encoder.java",
+      "src/main/java/org/apache/flink/api/common/serialization/RowFieldExtractorSchema.java",
+      "src/main/java/org/apache/flink/api/common/serialization/RuntimeContextInitializationContextAdapters.java",
+      "src/main/java/org/apache/flink/api/common/serialization/SerializationSchema.java",
+      "src/main/java/org/apache/flink/api/common/serialization/SerializerConfig.java",
+      "src/main/java/org/apache/flink/api/common/serialization/SerializerConfigImpl.java",
+      "src/main/java/org/apache/flink/api/common/serialization/SimpleStringEncoder.java",
+      "src/main/java/org/apache/flink/api/common/serialization/SimpleStringSchema.java",
+      "src/main/java/org/apache/flink/api/common/serialization/TypeInformationSerializationSchema.java",
+      "src/main/java/org/apache/flink/api/common/state/AggregatingStateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/CheckpointListener.java",
+      "src/main/java/org/apache/flink/api/common/state/InternalCheckpointListener.java",
+      "src/main/java/org/apache/flink/api/common/state/KeyedStateStore.java",
+      "src/main/java/org/apache/flink/api/common/state/ListStateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/MapStateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/OperatorStateStore.java",
+      "src/main/java/org/apache/flink/api/common/state/ReducingStateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/StateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/StateTtlConfig.java",
+      "src/main/java/org/apache/flink/api/common/state/ValueStateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/v2/AggregatingStateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/v2/ListStateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/v2/MapStateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/v2/ReducingStateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/v2/StateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/state/v2/StateSerializerReference.java",
+      "src/main/java/org/apache/flink/api/common/state/v2/ValueStateDescriptor.java",
+      "src/main/java/org/apache/flink/api/common/time/Deadline.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/AtomicType.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/BasicArrayTypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/BasicTypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/FractionalTypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/IntegerTypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/LocalTimeTypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/NothingTypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/NumericTypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/PrimitiveArrayTypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/SqlTimeTypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/TypeHint.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/TypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/TypeInfoFactory.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/TypeInformation.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/Types.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/VariantTypeInfo.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/descriptor/BasicTypeDescriptorImpl.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/descriptor/ListTypeDescriptorImpl.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/descriptor/MapTypeDescriptorImpl.java",
+      "src/main/java/org/apache/flink/api/common/typeinfo/descriptor/ValueTypeDescriptorImpl.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/CompositeSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/CompositeType.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/CompositeTypeComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/CompositeTypeSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/CompositeTypeSerializerUtil.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/GenericPairComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/GenericTypeSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/LegacySerializerSnapshotTransformer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/NestedSerializersSnapshotDelegate.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/SameTypePairComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/SimpleTypeSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/SingleThreadAccessCheckingTypeSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/TypeComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/TypeComparatorFactory.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/TypePairComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/TypePairComparatorFactory.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/TypeSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/TypeSerializerFactory.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/TypeSerializerSchemaCompatibility.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/TypeSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/TypeSerializerSnapshotSerializationUtil.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/TypeSerializerUtils.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/UnloadableDummyTypeSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/BasicTypeComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/BigDecComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/BigDecSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/BigIntComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/BigIntSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/BooleanComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/BooleanSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/BooleanValueComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/BooleanValueSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/ByteComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/ByteSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/ByteValueComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/ByteValueSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/CharComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/CharSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/CharValueComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/CharValueSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/DateComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/DateSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/DoubleComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/DoubleSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/DoubleValueComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/DoubleValueSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/EnumComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/EnumSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/FloatComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/FloatSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/FloatValueComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/FloatValueSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/GenericArraySerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/GenericArraySerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/InstantComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/InstantSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/IntComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/IntSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/IntValueComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/IntValueSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/ListSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/ListSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/LocalDateComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/LocalDateSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/LocalDateTimeComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/LocalDateTimeSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/LocalTimeComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/LocalTimeSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/LongComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/LongSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/LongValueComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/LongValueSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/MapSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/MapSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/NormalizedKeyUtil.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/NullValueComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/NullValueSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/SetSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/SetSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/ShortComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/ShortSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/ShortValueComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/ShortValueSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/SqlDateSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/SqlTimeSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/SqlTimestampComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/SqlTimestampSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/StringComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/StringSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/StringValueComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/StringValueSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/TypeSerializerSingleton.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/VariantSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/VoidSerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/BooleanPrimitiveArrayComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/BooleanPrimitiveArraySerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/BytePrimitiveArrayComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/BytePrimitiveArraySerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/CharPrimitiveArrayComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/CharPrimitiveArraySerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/DoublePrimitiveArrayComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/DoublePrimitiveArraySerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/FloatPrimitiveArrayComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/FloatPrimitiveArraySerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/IntPrimitiveArrayComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/IntPrimitiveArraySerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/LongPrimitiveArrayComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/LongPrimitiveArraySerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/PrimitiveArrayComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/ShortPrimitiveArrayComparator.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/ShortPrimitiveArraySerializer.java",
+      "src/main/java/org/apache/flink/api/common/typeutils/base/array/StringArraySerializer.java",
+      "src/main/java/org/apache/flink/api/connector/dsv2/DataStreamV2SinkUtils.java",
+      "src/main/java/org/apache/flink/api/connector/dsv2/DataStreamV2SourceUtils.java",
+      "src/main/java/org/apache/flink/api/connector/dsv2/FromDataSource.java",
+      "src/main/java/org/apache/flink/api/connector/dsv2/WrappedSink.java",
+      "src/main/java/org/apache/flink/api/connector/dsv2/WrappedSource.java",
+      "src/main/java/org/apache/flink/api/connector/sink2/Committer.java",
+      "src/main/java/org/apache/flink/api/connector/sink2/CommitterInitContext.java",
+      "src/main/java/org/apache/flink/api/connector/sink2/CommittingSinkWriter.java",
+      "src/main/java/org/apache/flink/api/connector/sink2/InitContext.java",
+      "src/main/java/org/apache/flink/api/connector/sink2/Sink.java",
+      "src/main/java/org/apache/flink/api/connector/sink2/SinkWriter.java",
+      "src/main/java/org/apache/flink/api/connector/sink2/StatefulSinkWriter.java",
+      "src/main/java/org/apache/flink/api/connector/sink2/SupportsCommitter.java",
+      "src/main/java/org/apache/flink/api/connector/sink2/SupportsWriterState.java",
+      "src/main/java/org/apache/flink/api/connector/sink2/WriterInitContext.java",
+      "src/main/java/org/apache/flink/api/connector/source/Boundedness.java",
+      "src/main/java/org/apache/flink/api/connector/source/DynamicFilteringInfo.java",
+      "src/main/java/org/apache/flink/api/connector/source/DynamicParallelismInference.java",
+      "src/main/java/org/apache/flink/api/connector/source/ExternallyInducedSourceReader.java",
+      "src/main/java/org/apache/flink/api/connector/source/ReaderInfo.java",
+      "src/main/java/org/apache/flink/api/connector/source/ReaderOutput.java",
+      "src/main/java/org/apache/flink/api/connector/source/RichSourceReaderContext.java",
+      "src/main/java/org/apache/flink/api/connector/source/Source.java",
+      "src/main/java/org/apache/flink/api/connector/source/SourceEvent.java",
+      "src/main/java/org/apache/flink/api/connector/source/SourceOutput.java",
+      "src/main/java/org/apache/flink/api/connector/source/SourceReader.java",
+      "src/main/java/org/apache/flink/api/connector/source/SourceReaderContext.java",
+      "src/main/java/org/apache/flink/api/connector/source/SourceReaderFactory.java",
+      "src/main/java/org/apache/flink/api/connector/source/SourceSplit.java",
+      "src/main/java/org/apache/flink/api/connector/source/SplitEnumerator.java",
+      "src/main/java/org/apache/flink/api/connector/source/SplitEnumeratorContext.java",
+      "src/main/java/org/apache/flink/api/connector/source/SplitsAssignment.java",
+      "src/main/java/org/apache/flink/api/connector/source/SupportsBatchSnapshot.java",
+      "src/main/java/org/apache/flink/api/connector/source/SupportsHandleExecutionAttemptSourceEvent.java",
+      "src/main/java/org/apache/flink/api/connector/source/SupportsIntermediateNoMoreSplits.java",
+      "src/main/java/org/apache/flink/api/connector/source/SupportsSplitReassignmentOnRecovery.java",
+      "src/main/java/org/apache/flink/api/connector/source/lib/NumberSequenceSource.java",
+      "src/main/java/org/apache/flink/api/connector/source/lib/util/IteratorSourceEnumerator.java",
+      "src/main/java/org/apache/flink/api/connector/source/lib/util/IteratorSourceReader.java",
+      "src/main/java/org/apache/flink/api/connector/source/lib/util/IteratorSourceReaderBase.java",
+      "src/main/java/org/apache/flink/api/connector/source/lib/util/IteratorSourceSplit.java",
+      "src/main/java/org/apache/flink/api/connector/source/util/ratelimit/GatedRateLimiter.java",
+      "src/main/java/org/apache/flink/api/connector/source/util/ratelimit/GuavaRateLimiter.java",
+      "src/main/java/org/apache/flink/api/connector/source/util/ratelimit/NoOpRateLimiter.java",
+      "src/main/java/org/apache/flink/api/connector/source/util/ratelimit/RateLimitedSourceReader.java",
+      "src/main/java/org/apache/flink/api/connector/source/util/ratelimit/RateLimiter.java",
+      "src/main/java/org/apache/flink/api/connector/source/util/ratelimit/RateLimiterStrategy.java",
+      "src/main/java/org/apache/flink/api/dag/Pipeline.java",
+      "src/main/java/org/apache/flink/api/dag/Transformation.java",
+      "src/main/java/org/apache/flink/api/java/ClosureCleaner.java",
+      "src/main/java/org/apache/flink/api/java/functions/NullByteKeySelector.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/AvroUtils.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/EitherTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/EitherTypeInfoFactory.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/EnumTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/GenericTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/InputTypeConfigurable.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/ListTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/MapTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/MissingTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/MultisetTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/NullableListTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/NullableMapTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/NullableSetTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/ObjectArrayTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/PojoField.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/PojoTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/ResultTypeQueryable.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/RowTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/SetTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/TupleTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/TupleTypeInfoBase.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/TypeExtractionException.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/TypeExtractionUtils.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/TypeExtractor.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/ValueTypeInfo.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/CopyableValueComparator.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/CopyableValueSerializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/DataInputViewStream.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/DataOutputViewStream.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/EitherSerializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/FieldSerializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/GenericTypeComparator.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/JavaEitherSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/JavaRecordBuilderFactory.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/KryoRegistration.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/KryoUtils.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/MaskUtils.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/NoFetchingInput.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/NullAwareComparator.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/NullableSerializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/PojoComparator.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/PojoFieldUtils.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/PojoSerializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/PojoSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/PojoSerializerSnapshotData.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/RowComparator.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/RowSerializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/RuntimeComparatorFactory.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/RuntimePairComparatorFactory.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/RuntimeSerializerFactory.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/Tuple0Serializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/Tuple0SerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/TupleComparator.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/TupleComparatorBase.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/TupleSerializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/TupleSerializerBase.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/TupleSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/ValueComparator.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/ValueSerializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/ChillSerializerRegistrar.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/JavaSerializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializer.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializerDebugInitHelper.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializerSnapshot.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializerSnapshotData.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/MinlogForwarder.java",
+      "src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/Serializers.java",
+      "src/main/java/org/apache/flink/configuration/AlgorithmOptions.java",
+      "src/main/java/org/apache/flink/configuration/ApplicationOptionsInternal.java",
+      "src/main/java/org/apache/flink/configuration/BatchExecutionOptions.java",
+      "src/main/java/org/apache/flink/configuration/BlobServerOptions.java",
+      "src/main/java/org/apache/flink/configuration/CheckpointingOptions.java",
+      "src/main/java/org/apache/flink/configuration/CleanupOptions.java",
+      "src/main/java/org/apache/flink/configuration/ClusterOptions.java",
+      "src/main/java/org/apache/flink/configuration/ConfigConstants.java",
+      "src/main/java/org/apache/flink/configuration/ConfigOption.java",
+      "src/main/java/org/apache/flink/configuration/ConfigOptions.java",
+      "src/main/java/org/apache/flink/configuration/ConfigUtils.java",
+      "src/main/java/org/apache/flink/configuration/Configuration.java",
+      "src/main/java/org/apache/flink/configuration/ConfigurationFileMigrationUtils.java",
+      "src/main/java/org/apache/flink/configuration/ConfigurationUtils.java",
+      "src/main/java/org/apache/flink/configuration/CoreOptions.java",
+      "src/main/java/org/apache/flink/configuration/DelegatingConfiguration.java",
+      "src/main/java/org/apache/flink/configuration/DeploymentOptions.java",
+      "src/main/java/org/apache/flink/configuration/DeploymentOptionsInternal.java",
+      "src/main/java/org/apache/flink/configuration/DescribedEnum.java",
+      "src/main/java/org/apache/flink/configuration/EventOptions.java",
+      "src/main/java/org/apache/flink/configuration/ExecutionOptions.java",
+      "src/main/java/org/apache/flink/configuration/ExternalResourceOptions.java",
+      "src/main/java/org/apache/flink/configuration/ExternalizedCheckpointRetention.java",
+      "src/main/java/org/apache/flink/configuration/FallbackKey.java",
+      "src/main/java/org/apache/flink/configuration/GlobalConfiguration.java",
+      "src/main/java/org/apache/flink/configuration/HeartbeatManagerOptions.java",
+      "src/main/java/org/apache/flink/configuration/HighAvailabilityOptions.java",
+      "src/main/java/org/apache/flink/configuration/HistoryServerOptions.java",
+      "src/main/java/org/apache/flink/configuration/IllegalConfigurationException.java",
+      "src/main/java/org/apache/flink/configuration/JMXServerOptions.java",
+      "src/main/java/org/apache/flink/configuration/JobEventStoreOptions.java",
+      "src/main/java/org/apache/flink/configuration/JobManagerOptions.java",
+      "src/main/java/org/apache/flink/configuration/MetricOptions.java",
+      "src/main/java/org/apache/flink/configuration/NettyShuffleEnvironmentOptions.java",
+      "src/main/java/org/apache/flink/configuration/OptimizerOptions.java",
+      "src/main/java/org/apache/flink/configuration/PipelineOptions.java",
+      "src/main/java/org/apache/flink/configuration/PipelineOptionsInternal.java",
+      "src/main/java/org/apache/flink/configuration/QueryableStateOptions.java",
+      "src/main/java/org/apache/flink/configuration/ReadableConfig.java",
+      "src/main/java/org/apache/flink/configuration/ResourceManagerOptions.java",
+      "src/main/java/org/apache/flink/configuration/RestOptions.java",
+      "src/main/java/org/apache/flink/configuration/RestartStrategyOptions.java",
+      "src/main/java/org/apache/flink/configuration/RpcOptions.java",
+      "src/main/java/org/apache/flink/configuration/SchedulerExecutionMode.java",
+      "src/main/java/org/apache/flink/configuration/SecurityOptions.java",
+      "src/main/java/org/apache/flink/configuration/SinkOptions.java",
+      "src/main/java/org/apache/flink/configuration/SlowTaskDetectorOptions.java",
+      "src/main/java/org/apache/flink/configuration/StateBackendOptions.java",
+      "src/main/java/org/apache/flink/configuration/StateChangelogOptions.java",
+      "src/main/java/org/apache/flink/configuration/StateLatencyTrackOptions.java",
+      "src/main/java/org/apache/flink/configuration/StateRecoveryOptions.java",
+      "src/main/java/org/apache/flink/configuration/StateSizeTrackOptions.java",
+      "src/main/java/org/apache/flink/configuration/StructuredOptionsSplitter.java",
+      "src/main/java/org/apache/flink/configuration/TaskManagerOptions.java",
+      "src/main/java/org/apache/flink/configuration/TaskManagerOptionsInternal.java",
+      "src/main/java/org/apache/flink/configuration/TraceOptions.java",
+      "src/main/java/org/apache/flink/configuration/UnmodifiableConfiguration.java",
+      "src/main/java/org/apache/flink/configuration/WebOptions.java",
+      "src/main/java/org/apache/flink/configuration/WritableConfig.java",
+      "src/main/java/org/apache/flink/configuration/YamlParserUtils.java",
+      "src/main/java/org/apache/flink/configuration/description/BlockElement.java",
+      "src/main/java/org/apache/flink/configuration/description/Description.java",
+      "src/main/java/org/apache/flink/configuration/description/DescriptionElement.java",
+      "src/main/java/org/apache/flink/configuration/description/Formatter.java",
+      "src/main/java/org/apache/flink/configuration/description/HtmlFormatter.java",
+      "src/main/java/org/apache/flink/configuration/description/InlineElement.java",
+      "src/main/java/org/apache/flink/configuration/description/LineBreakElement.java",
+      "src/main/java/org/apache/flink/configuration/description/LinkElement.java",
+      "src/main/java/org/apache/flink/configuration/description/ListElement.java",
+      "src/main/java/org/apache/flink/configuration/description/TextElement.java",
+      "src/main/java/org/apache/flink/core/asyncprocessing/AsyncFuture.java",
+      "src/main/java/org/apache/flink/core/asyncprocessing/AsyncFutureImpl.java",
+      "src/main/java/org/apache/flink/core/asyncprocessing/CompletedAsyncFuture.java",
+      "src/main/java/org/apache/flink/core/asyncprocessing/InternalAsyncFuture.java",
+      "src/main/java/org/apache/flink/core/asyncprocessing/InternalAsyncFutureUtils.java",
+      "src/main/java/org/apache/flink/core/classloading/ComponentClassLoader.java",
+      "src/main/java/org/apache/flink/core/classloading/SubmoduleClassLoader.java",
+      "src/main/java/org/apache/flink/core/execution/CacheSupportedPipelineExecutor.java",
+      "src/main/java/org/apache/flink/core/execution/CheckpointType.java",
+      "src/main/java/org/apache/flink/core/execution/CheckpointingMode.java",
+      "src/main/java/org/apache/flink/core/execution/DefaultExecutorServiceLoader.java",
+      "src/main/java/org/apache/flink/core/execution/DefaultJobExecutionStatusEvent.java",
+      "src/main/java/org/apache/flink/core/execution/DetachedJobExecutionResult.java",
+      "src/main/java/org/apache/flink/core/execution/JobClient.java",
+      "src/main/java/org/apache/flink/core/execution/JobExecutionStatusEvent.java",
+      "src/main/java/org/apache/flink/core/execution/JobListener.java",
+      "src/main/java/org/apache/flink/core/execution/JobStatusChangedEvent.java",
+      "src/main/java/org/apache/flink/core/execution/JobStatusChangedListener.java",
+      "src/main/java/org/apache/flink/core/execution/JobStatusChangedListenerFactory.java",
+      "src/main/java/org/apache/flink/core/execution/JobStatusChangedListenerUtils.java",
+      "src/main/java/org/apache/flink/core/execution/JobStatusHook.java",
+      "src/main/java/org/apache/flink/core/execution/PipelineExecutor.java",
+      "src/main/java/org/apache/flink/core/execution/PipelineExecutorFactory.java",
+      "src/main/java/org/apache/flink/core/execution/PipelineExecutorServiceLoader.java",
+      "src/main/java/org/apache/flink/core/execution/RecoveryClaimMode.java",
+      "src/main/java/org/apache/flink/core/execution/SavepointFormatType.java",
+      "src/main/java/org/apache/flink/core/failure/FailureEnricher.java",
+      "src/main/java/org/apache/flink/core/failure/FailureEnricherFactory.java",
+      "src/main/java/org/apache/flink/core/fs/AutoCloseableRegistry.java",
+      "src/main/java/org/apache/flink/core/fs/BackPressuringExecutor.java",
+      "src/main/java/org/apache/flink/core/fs/BlockLocation.java",
+      "src/main/java/org/apache/flink/core/fs/ByteBufferReadable.java",
+      "src/main/java/org/apache/flink/core/fs/ByteBufferReadableClosingFSDataInputStream.java",
+      "src/main/java/org/apache/flink/core/fs/CloseableRegistry.java",
+      "src/main/java/org/apache/flink/core/fs/ClosingFSDataInputStream.java",
+      "src/main/java/org/apache/flink/core/fs/ClosingFSDataOutputStream.java",
+      "src/main/java/org/apache/flink/core/fs/CommitterFromPersistRecoverableFsDataOutputStream.java",
+      "src/main/java/org/apache/flink/core/fs/ConnectionLimitingFactory.java",
+      "src/main/java/org/apache/flink/core/fs/EntropyInjectingFileSystem.java",
+      "src/main/java/org/apache/flink/core/fs/EntropyInjector.java",
+      "src/main/java/org/apache/flink/core/fs/FSDataInputStream.java",
+      "src/main/java/org/apache/flink/core/fs/FSDataInputStreamWrapper.java",
+      "src/main/java/org/apache/flink/core/fs/FSDataOutputStream.java",
+      "src/main/java/org/apache/flink/core/fs/FSDataOutputStreamWrapper.java",
+      "src/main/java/org/apache/flink/core/fs/FileInputSplit.java",
+      "src/main/java/org/apache/flink/core/fs/FileStatus.java",
+      "src/main/java/org/apache/flink/core/fs/FileSystem.java",
+      "src/main/java/org/apache/flink/core/fs/FileSystemFactory.java",
+      "src/main/java/org/apache/flink/core/fs/FileSystemKind.java",
+      "src/main/java/org/apache/flink/core/fs/FileSystemSafetyNet.java",
+      "src/main/java/org/apache/flink/core/fs/ICloseableRegistry.java",
+      "src/main/java/org/apache/flink/core/fs/IFileSystem.java",
+      "src/main/java/org/apache/flink/core/fs/LimitedConnectionsFileSystem.java",
+      "src/main/java/org/apache/flink/core/fs/LocatedFileStatus.java",
+      "src/main/java/org/apache/flink/core/fs/OffsetAwareOutputStream.java",
+      "src/main/java/org/apache/flink/core/fs/OutputStreamAndPath.java",
+      "src/main/java/org/apache/flink/core/fs/Path.java",
+      "src/main/java/org/apache/flink/core/fs/PathsCopyingFileSystem.java",
+      "src/main/java/org/apache/flink/core/fs/PluginFileSystemFactory.java",
+      "src/main/java/org/apache/flink/core/fs/RecoverableFsDataOutputStream.java",
+      "src/main/java/org/apache/flink/core/fs/RecoverableWriter.java",
+      "src/main/java/org/apache/flink/core/fs/RefCountedBufferingFileStream.java",
+      "src/main/java/org/apache/flink/core/fs/RefCountedFSOutputStream.java",
+      "src/main/java/org/apache/flink/core/fs/RefCountedFile.java",
+      "src/main/java/org/apache/flink/core/fs/RefCountedFileWithStream.java",
+      "src/main/java/org/apache/flink/core/fs/RefCountedTmpFileCreator.java",
+      "src/main/java/org/apache/flink/core/fs/SafetyNetCloseableRegistry.java",
+      "src/main/java/org/apache/flink/core/fs/SafetyNetWrapperFileSystem.java",
+      "src/main/java/org/apache/flink/core/fs/UnsupportedFileSystemSchemeException.java",
+      "src/main/java/org/apache/flink/core/fs/UnsupportedSchemeFactory.java",
+      "src/main/java/org/apache/flink/core/fs/WrappingProxyCloseable.java",
+      "src/main/java/org/apache/flink/core/fs/local/LocalBlockLocation.java",
+      "src/main/java/org/apache/flink/core/fs/local/LocalDataInputStream.java",
+      "src/main/java/org/apache/flink/core/fs/local/LocalDataOutputStream.java",
+      "src/main/java/org/apache/flink/core/fs/local/LocalFileStatus.java",
+      "src/main/java/org/apache/flink/core/fs/local/LocalFileSystem.java",
+      "src/main/java/org/apache/flink/core/fs/local/LocalFileSystemFactory.java",
+      "src/main/java/org/apache/flink/core/fs/local/LocalRecoverable.java",
+      "src/main/java/org/apache/flink/core/fs/local/LocalRecoverableFsDataOutputStream.java",
+      "src/main/java/org/apache/flink/core/fs/local/LocalRecoverableSerializer.java",
+      "src/main/java/org/apache/flink/core/fs/local/LocalRecoverableWriter.java",
+      "src/main/java/org/apache/flink/core/io/GenericInputSplit.java",
+      "src/main/java/org/apache/flink/core/io/IOReadableWritable.java",
+      "src/main/java/org/apache/flink/core/io/InputSplit.java",
+      "src/main/java/org/apache/flink/core/io/InputSplitAssigner.java",
+      "src/main/java/org/apache/flink/core/io/InputSplitSource.java",
+      "src/main/java/org/apache/flink/core/io/InputStatus.java",
+      "src/main/java/org/apache/flink/core/io/LocatableInputSplit.java",
+      "src/main/java/org/apache/flink/core/io/PostVersionedIOReadableWritable.java",
+      "src/main/java/org/apache/flink/core/io/SimpleVersionedSerialization.java",
+      "src/main/java/org/apache/flink/core/io/SimpleVersionedSerializer.java",
+      "src/main/java/org/apache/flink/core/io/SimpleVersionedSerializerAdapter.java",
+      "src/main/java/org/apache/flink/core/io/SimpleVersionedSerializerTypeSerializerProxy.java",
+      "src/main/java/org/apache/flink/core/io/VersionMismatchException.java",
+      "src/main/java/org/apache/flink/core/io/Versioned.java",
+      "src/main/java/org/apache/flink/core/io/VersionedIOReadableWritable.java",
+      "src/main/java/org/apache/flink/core/memory/ByteArrayInputStreamWithPos.java",
+      "src/main/java/org/apache/flink/core/memory/ByteArrayOutputStreamWithPos.java",
+      "src/main/java/org/apache/flink/core/memory/DataInputDeserializer.java",
+      "src/main/java/org/apache/flink/core/memory/DataInputView.java",
+      "src/main/java/org/apache/flink/core/memory/DataInputViewStreamWrapper.java",
+      "src/main/java/org/apache/flink/core/memory/DataOutputSerializer.java",
+      "src/main/java/org/apache/flink/core/memory/DataOutputView.java",
+      "src/main/java/org/apache/flink/core/memory/DataOutputViewStreamWrapper.java",
+      "src/main/java/org/apache/flink/core/memory/ManagedMemoryUseCase.java",
+      "src/main/java/org/apache/flink/core/memory/MemorySegment.java",
+      "src/main/java/org/apache/flink/core/memory/MemorySegmentFactory.java",
+      "src/main/java/org/apache/flink/core/memory/MemorySegmentInputStreamWithPos.java",
+      "src/main/java/org/apache/flink/core/memory/MemorySegmentProvider.java",
+      "src/main/java/org/apache/flink/core/memory/MemorySegmentSource.java",
+      "src/main/java/org/apache/flink/core/memory/MemorySegmentWritable.java",
+      "src/main/java/org/apache/flink/core/memory/MemoryUtils.java",
+      "src/main/java/org/apache/flink/core/memory/SeekableDataInputView.java",
+      "src/main/java/org/apache/flink/core/memory/SeekableDataOutputView.java",
+      "src/main/java/org/apache/flink/core/plugin/DefaultPluginManager.java",
+      "src/main/java/org/apache/flink/core/plugin/DirectoryBasedPluginFinder.java",
+      "src/main/java/org/apache/flink/core/plugin/Plugin.java",
+      "src/main/java/org/apache/flink/core/plugin/PluginConfig.java",
+      "src/main/java/org/apache/flink/core/plugin/PluginDescriptor.java",
+      "src/main/java/org/apache/flink/core/plugin/PluginFinder.java",
+      "src/main/java/org/apache/flink/core/plugin/PluginLoader.java",
+      "src/main/java/org/apache/flink/core/plugin/PluginManager.java",
+      "src/main/java/org/apache/flink/core/plugin/PluginUtils.java",
+      "src/main/java/org/apache/flink/core/security/FlinkSecurityManager.java",
+      "src/main/java/org/apache/flink/core/security/UserSystemExitException.java",
+      "src/main/java/org/apache/flink/core/security/token/DelegationTokenProvider.java",
+      "src/main/java/org/apache/flink/core/security/token/DelegationTokenReceiver.java",
+      "src/main/java/org/apache/flink/core/state/InternalStateIterator.java",
+      "src/main/java/org/apache/flink/core/state/StateFutureUtils.java",
+      "src/main/java/org/apache/flink/management/jmx/JMXServer.java",
+      "src/main/java/org/apache/flink/management/jmx/JMXService.java",
+      "src/main/java/org/apache/flink/streaming/api/operators/OutputTypeConfigurable.java",
+      "src/main/java/org/apache/flink/types/BooleanValue.java",
+      "src/main/java/org/apache/flink/types/ByteValue.java",
+      "src/main/java/org/apache/flink/types/CharValue.java",
+      "src/main/java/org/apache/flink/types/CopyableValue.java",
+      "src/main/java/org/apache/flink/types/DeserializationException.java",
+      "src/main/java/org/apache/flink/types/DoubleValue.java",
+      "src/main/java/org/apache/flink/types/Either.java",
+      "src/main/java/org/apache/flink/types/FloatValue.java",
+      "src/main/java/org/apache/flink/types/IntValue.java",
+      "src/main/java/org/apache/flink/types/JavaToValueConverter.java",
+      "src/main/java/org/apache/flink/types/Key.java",
+      "src/main/java/org/apache/flink/types/KeyFieldOutOfBoundsException.java",
+      "src/main/java/org/apache/flink/types/ListValue.java",
+      "src/main/java/org/apache/flink/types/LongValue.java",
+      "src/main/java/org/apache/flink/types/MapValue.java",
+      "src/main/java/org/apache/flink/types/NormalizableKey.java",
+      "src/main/java/org/apache/flink/types/Nothing.java",
+      "src/main/java/org/apache/flink/types/NullKeyFieldException.java",
+      "src/main/java/org/apache/flink/types/NullValue.java",
+      "src/main/java/org/apache/flink/types/Record.java",
+      "src/main/java/org/apache/flink/types/ResettableValue.java",
+      "src/main/java/org/apache/flink/types/Row.java",
+      "src/main/java/org/apache/flink/types/RowKind.java",
+      "src/main/java/org/apache/flink/types/RowUtils.java",
+      "src/main/java/org/apache/flink/types/SerializableOptional.java",
+      "src/main/java/org/apache/flink/types/ShortValue.java",
+      "src/main/java/org/apache/flink/types/StringValue.java",
+      "src/main/java/org/apache/flink/types/Value.java",
+      "src/main/java/org/apache/flink/types/parser/BigDecParser.java",
+      "src/main/java/org/apache/flink/types/parser/BigIntParser.java",
+      "src/main/java/org/apache/flink/types/parser/BooleanParser.java",
+      "src/main/java/org/apache/flink/types/parser/BooleanValueParser.java",
+      "src/main/java/org/apache/flink/types/parser/ByteParser.java",
+      "src/main/java/org/apache/flink/types/parser/ByteValueParser.java",
+      "src/main/java/org/apache/flink/types/parser/DoubleParser.java",
+      "src/main/java/org/apache/flink/types/parser/DoubleValueParser.java",
+      "src/main/java/org/apache/flink/types/parser/FieldParser.java",
+      "src/main/java/org/apache/flink/types/parser/FloatParser.java",
+      "src/main/java/org/apache/flink/types/parser/FloatValueParser.java",
+      "src/main/java/org/apache/flink/types/parser/IntParser.java",
+      "src/main/java/org/apache/flink/types/parser/IntValueParser.java",
+      "src/main/java/org/apache/flink/types/parser/LongParser.java",
+      "src/main/java/org/apache/flink/types/parser/LongValueParser.java",
+      "src/main/java/org/apache/flink/types/parser/ShortParser.java",
+      "src/main/java/org/apache/flink/types/parser/ShortValueParser.java",
+      "src/main/java/org/apache/flink/types/parser/SqlDateParser.java",
+      "src/main/java/org/apache/flink/types/parser/SqlTimeParser.java",
+      "src/main/java/org/apache/flink/types/parser/SqlTimestampParser.java",
+      "src/main/java/org/apache/flink/types/parser/StringParser.java",
+      "src/main/java/org/apache/flink/types/parser/StringValueParser.java",
+      "src/main/java/org/apache/flink/types/variant/BinaryVariant.java",
+      "src/main/java/org/apache/flink/types/variant/BinaryVariantBuilder.java",
+      "src/main/java/org/apache/flink/types/variant/BinaryVariantInternalBuilder.java",
+      "src/main/java/org/apache/flink/types/variant/BinaryVariantUtil.java",
+      "src/main/java/org/apache/flink/types/variant/Variant.java",
+      "src/main/java/org/apache/flink/types/variant/VariantBuilder.java",
+      "src/main/java/org/apache/flink/types/variant/VariantTypeException.java",
+      "src/main/java/org/apache/flink/util/AbstractAutoCloseableRegistry.java",
+      "src/main/java/org/apache/flink/util/AbstractID.java",
+      "src/main/java/org/apache/flink/util/AbstractParameterTool.java",
+      "src/main/java/org/apache/flink/util/ArrayUtils.java",
+      "src/main/java/org/apache/flink/util/AutoCloseableAsync.java",
+      "src/main/java/org/apache/flink/util/ChildFirstClassLoader.java",
+      "src/main/java/org/apache/flink/util/ClassLoaderUtil.java",
+      "src/main/java/org/apache/flink/util/CloseShieldOutputStream.java",
+      "src/main/java/org/apache/flink/util/CloseableIterable.java",
+      "src/main/java/org/apache/flink/util/CloseableIterator.java",
+      "src/main/java/org/apache/flink/util/CollectionUtil.java",
+      "src/main/java/org/apache/flink/util/Collector.java",
+      "src/main/java/org/apache/flink/util/CompressedSerializedValue.java",
+      "src/main/java/org/apache/flink/util/CompressionUtils.java",
+      "src/main/java/org/apache/flink/util/ConfigurationException.java",
+      "src/main/java/org/apache/flink/util/Disposable.java",
+      "src/main/java/org/apache/flink/util/DynamicCodeLoadingException.java",
+      "src/main/java/org/apache/flink/util/ExceptionUtils.java",
+      "src/main/java/org/apache/flink/util/ExecutorUtils.java",
+      "src/main/java/org/apache/flink/util/FatalExitExceptionHandler.java",
+      "src/main/java/org/apache/flink/util/FileLock.java",
+      "src/main/java/org/apache/flink/util/FileUtils.java",
+      "src/main/java/org/apache/flink/util/FlinkException.java",
+      "src/main/java/org/apache/flink/util/FlinkExpectedException.java",
+      "src/main/java/org/apache/flink/util/FlinkRuntimeException.java",
+      "src/main/java/org/apache/flink/util/FlinkUserCodeClassLoader.java",
+      "src/main/java/org/apache/flink/util/FlinkUserCodeClassLoaders.java",
+      "src/main/java/org/apache/flink/util/IOUtils.java",
+      "src/main/java/org/apache/flink/util/InstantiationUtil.java",
+      "src/main/java/org/apache/flink/util/IterableIterator.java",
+      "src/main/java/org/apache/flink/util/IterableUtils.java",
+      "src/main/java/org/apache/flink/util/JarUtils.java",
+      "src/main/java/org/apache/flink/util/LambdaUtil.java",
+      "src/main/java/org/apache/flink/util/LinkedOptionalMap.java",
+      "src/main/java/org/apache/flink/util/LinkedOptionalMapSerializer.java",
+      "src/main/java/org/apache/flink/util/LongValueSequenceIterator.java",
+      "src/main/java/org/apache/flink/util/MathUtils.java",
+      "src/main/java/org/apache/flink/util/MdcAwareExecutor.java",
+      "src/main/java/org/apache/flink/util/MdcAwareExecutorService.java",
+      "src/main/java/org/apache/flink/util/MdcAwareScheduledExecutorService.java",
+      "src/main/java/org/apache/flink/util/MdcUtils.java",
+      "src/main/java/org/apache/flink/util/MultipleParameterTool.java",
+      "src/main/java/org/apache/flink/util/MutableObjectIterator.java",
+      "src/main/java/org/apache/flink/util/MutableURLClassLoader.java",
+      "src/main/java/org/apache/flink/util/NetUtils.java",
+      "src/main/java/org/apache/flink/util/NumberSequenceIterator.java",
+      "src/main/java/org/apache/flink/util/OperatingSystem.java",
+      "src/main/java/org/apache/flink/util/OptionalConsumer.java",
+      "src/main/java/org/apache/flink/util/OptionalFailure.java",
+      "src/main/java/org/apache/flink/util/OptionalUtils.java",
+      "src/main/java/org/apache/flink/util/OutputTag.java",
+      "src/main/java/org/apache/flink/util/ParameterTool.java",
+      "src/main/java/org/apache/flink/util/PortRange.java",
+      "src/main/java/org/apache/flink/util/Preconditions.java",
+      "src/main/java/org/apache/flink/util/ProcessorArchitecture.java",
+      "src/main/java/org/apache/flink/util/PropertiesUtil.java",
+      "src/main/java/org/apache/flink/util/RefCounted.java",
+      "src/main/java/org/apache/flink/util/Reference.java",
+      "src/main/java/org/apache/flink/util/ReflectionUtil.java",
+      "src/main/java/org/apache/flink/util/ResourceGuard.java",
+      "src/main/java/org/apache/flink/util/SerializableObject.java",
+      "src/main/java/org/apache/flink/util/SerializedThrowable.java",
+      "src/main/java/org/apache/flink/util/SerializedValue.java",
+      "src/main/java/org/apache/flink/util/ShutdownHookUtil.java",
+      "src/main/java/org/apache/flink/util/SimpleUserCodeClassLoader.java",
+      "src/main/java/org/apache/flink/util/SplittableIterator.java",
+      "src/main/java/org/apache/flink/util/StateMigrationException.java",
+      "src/main/java/org/apache/flink/util/StringBasedID.java",
+      "src/main/java/org/apache/flink/util/StringUtils.java",
+      "src/main/java/org/apache/flink/util/StringValueUtils.java",
+      "src/main/java/org/apache/flink/util/TaskManagerExceptionUtils.java",
+      "src/main/java/org/apache/flink/util/TemporaryClassLoaderContext.java",
+      "src/main/java/org/apache/flink/util/TernaryBoolean.java",
+      "src/main/java/org/apache/flink/util/ThrowableCatchingRunnable.java",
+      "src/main/java/org/apache/flink/util/TimeUtils.java",
+      "src/main/java/org/apache/flink/util/TraversableOnceException.java",
+      "src/main/java/org/apache/flink/util/UnionIterator.java",
+      "src/main/java/org/apache/flink/util/UserCodeClassLoader.java",
+      "src/main/java/org/apache/flink/util/Utils.java",
+      "src/main/java/org/apache/flink/util/Visitable.java",
+      "src/main/java/org/apache/flink/util/Visitor.java",
+      "src/main/java/org/apache/flink/util/WrappingProxy.java",
+      "src/main/java/org/apache/flink/util/WrappingProxyUtil.java",
+      "src/main/java/org/apache/flink/util/WrappingRuntimeException.java",
+      "src/main/java/org/apache/flink/util/XORShiftRandom.java",
+      "src/main/java/org/apache/flink/util/clock/Clock.java",
+      "src/main/java/org/apache/flink/util/clock/ManualClock.java",
+      "src/main/java/org/apache/flink/util/clock/RelativeClock.java",
+      "src/main/java/org/apache/flink/util/clock/SystemClock.java",
+      "src/main/java/org/apache/flink/util/concurrent/DirectExecutorService.java",
+      "src/main/java/org/apache/flink/util/concurrent/ExecutorThreadFactory.java",
+      "src/main/java/org/apache/flink/util/concurrent/Executors.java",
+      "src/main/java/org/apache/flink/util/concurrent/ExponentialBackoffRetryStrategy.java",
+      "src/main/java/org/apache/flink/util/concurrent/FixedRetryStrategy.java",
+      "src/main/java/org/apache/flink/util/concurrent/FutureConsumerWithException.java",
+      "src/main/java/org/apache/flink/util/concurrent/FutureUtils.java",
+      "src/main/java/org/apache/flink/util/concurrent/IgnoreShutdownRejectedExecutionHandler.java",
+      "src/main/java/org/apache/flink/util/concurrent/IncrementalDelayRetryStrategy.java",
+      "src/main/java/org/apache/flink/util/concurrent/NeverCompleteFuture.java",
+      "src/main/java/org/apache/flink/util/concurrent/RetryStrategy.java",
+      "src/main/java/org/apache/flink/util/concurrent/ScheduledExecutor.java",
+      "src/main/java/org/apache/flink/util/concurrent/ScheduledExecutorServiceAdapter.java",
+      "src/main/java/org/apache/flink/util/concurrent/SeparateThreadExecutor.java",
+      "src/main/java/org/apache/flink/util/concurrent/ThreadUtils.java",
+      "src/main/java/org/apache/flink/util/function/FunctionUtils.java",
+      "src/main/java/org/apache/flink/util/function/FutureTaskWithException.java",
+      "src/main/java/org/apache/flink/util/jackson/JacksonMapperFactory.java",
+      "third_party_apis_skipped_paths.json"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 8.191900014877319,
+    "profiling_times": {
+      "config_time": 22.201023817062378,
+      "core_time": 52.4674928188324,
+      "ignores_time": 0.13966679573059082,
+      "total_time": 74.83064317703247
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at src/main/java/org/apache/flink/util/CompressionUtils.java:179:23 [rules: 6, first: java.spring.security.injection.tainted-system-command.tainted-system-command]",
+        "location": {
+          "path": "src/main/java/org/apache/flink/util/CompressionUtils.java",
+          "start": {
+            "line": 179,
+            "col": 24,
+            "offset": 7380
+          },
+          "end": {
+            "line": 179,
+            "col": 53,
+            "offset": 7409
+          }
+        }
+      }
+    ],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.0,
+      "rules_selected_ratio": 0.0,
+      "rules_matched_ratio": 0.0
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 10828943488
+  },
+  "engine_requested": "PRO",
+  "interfile_languages_used": [],
+  "skipped_rules": [],
+  "subprojects": [
+    {
+      "dependency_sources": [
+        "pom.xml"
+      ],
+      "resolved": true,
+      "resolved_stats": {
+        "resolution_method": "DynamicResolution",
+        "dependency_count": 63,
+        "ecosystem": "maven"
+      }
+    }
+  ],
+  "profiling_results": []
+}
