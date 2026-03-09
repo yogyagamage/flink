@@ -1,0 +1,207 @@
+{
+  "callPairs" : [ {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenDeserializeFactory.getPbCodegenDes(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.formats.protobuf.PbFormatContext)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getMessageType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenMapDeserializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getMessageType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenMapDeserializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenRowDeserializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenRowDeserializer.pbGetMessageElementCode(java.lang.String, java.lang.String, com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.isMapField()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.<clinit>()",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.<clinit>()",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.ProtoToRowConverter.<init>(org.apache.flink.table.types.logical.RowType, org.apache.flink.formats.protobuf.PbFormatConfig)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.getFile()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.deserialize.ProtoToRowConverter.<init>(org.apache.flink.table.types.logical.RowType, org.apache.flink.formats.protobuf.PbFormatConfig)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FileDescriptor.getSyntax()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.serialize.PbCodegenMapSerializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getMessageType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.serialize.PbCodegenMapSerializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.serialize.PbCodegenRowSerializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.isMapField()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.serialize.PbCodegenRowSerializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.serialize.PbCodegenSerializeFactory.getPbCodegenSer(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.formats.protobuf.PbFormatContext)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getMessageType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.serialize.PbCodegenSimpleSerializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getEnumType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.serialize.PbCodegenSimpleSerializer.codegen(java.lang.String, java.lang.String, int)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.serialize.RowToProtoConverter.convertRowToProtoBinary(org.apache.flink.table.data.RowData)",
+    "thirdPartyMethod" : "com.google.protobuf.AbstractMessage.toByteArray()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.isMapField()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getEnumType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getMessageType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getEnumType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getMessageType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getFullJavaName(com.google.protobuf.Descriptors.Descriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.getFile()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getFullJavaName(com.google.protobuf.Descriptors.Descriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.getContainingType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getFullJavaName(com.google.protobuf.Descriptors.Descriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getFullJavaName(com.google.protobuf.Descriptors.EnumDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.EnumDescriptor.getFile()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getFullJavaName(com.google.protobuf.Descriptors.EnumDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.EnumDescriptor.getContainingType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getFullJavaName(com.google.protobuf.Descriptors.EnumDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.EnumDescriptor.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterClassName(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FileDescriptor.getMessageTypes()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterClassName(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FileDescriptor.getOptions()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterClassName(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.DescriptorProtos.FileOptions.hasJavaOuterClassname()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterClassName(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FileDescriptor.getEnumTypes()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterClassName(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.DescriptorProtos.FileOptions.getJavaOuterClassname()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterClassName(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FileDescriptor.getServices()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterClassName(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FileDescriptor.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterProtoPrefix(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.DescriptorProtos.FileOptions.hasJavaPackage()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterProtoPrefix(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FileDescriptor.getOptions()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterProtoPrefix(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.DescriptorProtos.FileOptions.getJavaMultipleFiles()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterProtoPrefix(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FileDescriptor.getPackage()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getOuterProtoPrefix(com.google.protobuf.Descriptors.FileDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.DescriptorProtos.FileOptions.getJavaPackage()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)",
+    "thirdPartyMethod" : "com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.lambda.getOuterClassName(java.lang.String, com.google.protobuf.Descriptors.Descriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.lambda.getOuterClassName(java.lang.String, com.google.protobuf.Descriptors.EnumDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.EnumDescriptor.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.lambda.getOuterClassName(java.lang.String, com.google.protobuf.Descriptors.ServiceDescriptor)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.ServiceDescriptor.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbSchemaValidationUtils.lambda.validateTypeMatch(com.google.protobuf.Descriptors.Descriptor, org.apache.flink.table.types.logical.RowType.RowField)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbSchemaValidationUtils.validateSimpleType(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.table.types.logical.LogicalTypeRoot)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbSchemaValidationUtils.validateTypeMatch(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbSchemaValidationUtils.validateTypeMatch(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbSchemaValidationUtils.validateTypeMatch(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.isMapField()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbSchemaValidationUtils.validateTypeMatch(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.isRepeated()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbSchemaValidationUtils.validateTypeMatch(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getMessageType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.isMapField()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.isRepeated()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getMessageType()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.equals(java.lang.Object)"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)",
+    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.getFields()"
+  } ]
+}
