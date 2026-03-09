@@ -308,7 +308,7 @@ public class OrcColumnarRowSplitReaderTest {
         int cnt = 0;
         Map<String, Object> partSpec = new HashMap<>();
         partSpec.put("f5", true);
-        partSpec.put("f6", new Date(562423));
+        partSpec.put("f6", Date.valueOf("1970-01-07"));
         partSpec.put("f7", LocalDateTime.of(1999, 1, 1, 1, 1));
         partSpec.put("f8", 6.6);
         partSpec.put("f9", null);
@@ -362,7 +362,7 @@ public class OrcColumnarRowSplitReaderTest {
                 }
                 assertThat(row.getBoolean(5)).isTrue();
                 assertThat(toSQLDate(row.getInt(6)).toString())
-                        .isEqualTo(new Date(562423).toString());
+                        .isEqualTo(Date.valueOf("1970-01-07").toString());
 
                 assertThat(row.getTimestamp(7, 9).toLocalDateTime())
                         .isEqualTo(LocalDateTime.of(1999, 1, 1, 1, 1));

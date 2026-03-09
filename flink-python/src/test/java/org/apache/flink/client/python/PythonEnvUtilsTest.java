@@ -136,9 +136,25 @@ class PythonEnvUtilsTest {
 
     @Test
     void testStartPythonProcess() {
+        // Check if python is available on the system
+        String availablePythonExec = null;
+        for (String pythonCmd : Arrays.asList("python", "python3")) {
+            try {
+                Process process = new ProcessBuilder(pythonCmd, "--version").start();
+                int exitCode = process.waitFor();
+                if (exitCode == 0) {
+                    availablePythonExec = pythonCmd;
+                    break;
+                }
+            } catch (IOException | InterruptedException e) {
+                // Python not available with this command
+            }
+        }
+
         PythonEnvUtils.PythonEnvironment pythonEnv = new PythonEnvUtils.PythonEnvironment();
         pythonEnv.tempDirectory = tmpDirPath;
         pythonEnv.pythonPath = tmpDirPath;
+        pythonEnv.pythonExec = availablePythonExec;
         List<String> commands = new ArrayList<>();
         String pyPath = String.join(File.separator, tmpDirPath, "verifier.py");
         try {
@@ -146,7 +162,7 @@ class PythonEnvUtilsTest {
             pyFile.createNewFile();
             pyFile.setExecutable(true);
             String pyProgram =
-                    "#!/usr/bin/python\n"
+                    "#!/usr/bin/env python\n"
                             + "# -*- coding: UTF-8 -*-\n"
                             + "import os\n"
                             + "import sys\n"

@@ -1466,6 +1466,26 @@ under the License.
 			not the specific poms. Not having this here was the cause for FLINK-7702.
 			-->
 			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.14</version>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<version>3.0.1</version>
@@ -1750,7 +1770,7 @@ under the License.
 						<junit.jupiter.execution.parallel.config.strategy>dynamic</junit.jupiter.execution.parallel.config.strategy>
 					</systemPropertyVariables>
 					<!-- This is picked up by IntelliJ -->
-					<argLine>${flink.surefire.baseArgLine}</argLine>
+					<argLine>@{argLine} ${flink.surefire.baseArgLine}</argLine>
 				</configuration>
 				<executions>
 					<!--execute all the unit tests-->
@@ -1765,7 +1785,7 @@ under the License.
 								<include>${test.unit.pattern}</include>
 							</includes>
 							<forkCount>${flink.forkCountUnitTest}</forkCount>
-							<argLine>${flink.surefire.baseArgLine} -Xmx${flink.XmxUnitTest}</argLine>
+							<argLine>@{argLine} ${flink.surefire.baseArgLine} -Xmx${flink.XmxUnitTest}</argLine>
 						</configuration>
 					</execution>
 					<!--execute all the integration tests-->
@@ -1786,7 +1806,7 @@ under the License.
 								<exclude>**/*$*</exclude>
 							</excludes>
 							<forkCount>${flink.forkCountITCase}</forkCount>
-							<argLine>${flink.surefire.baseArgLine} -Xmx${flink.XmxITCase}</argLine>
+							<argLine>@{argLine} ${flink.surefire.baseArgLine} -Xmx${flink.XmxITCase}</argLine>
 							<reuseForks>false</reuseForks>
 						</configuration>
 					</execution>
@@ -1819,7 +1839,7 @@ under the License.
 						<configuration>
 							<rules>
 								<requireMavenVersion>
-									<version>[3.8.6]</version>
+									<version>[3.8.6, 3.9.12]</version>
 								</requireMavenVersion>
 								<requireJavaVersion>
 									<version>${target.java.version}</version>
