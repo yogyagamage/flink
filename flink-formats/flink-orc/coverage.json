@@ -1,0 +1,805 @@
+[ {
+  "caller" : "org.apache.flink.orc.vector.RowDataVectorizer.setColumn(int, org.apache.hadoop.hive.ql.exec.vector.MapColumnVector, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.table.data.RowData, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.ColumnVector.ensureSize(int, boolean)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.And.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.startAnd()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.And.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.end()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeStripeFooter(org.apache.orc.OrcProto$StripeFooter, long, long, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.StripeInformation.Builder.setOffset(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeStripeFooter(org.apache.orc.OrcProto$StripeFooter, long, long, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.StripeInformation.Builder.setFooterLength(long)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV230.createRecordReader(org.apache.orc.Reader, org.apache.orc.Reader$Options)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.Reader.rows(org.apache.orc.Reader$Options)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriterFactory.create(org.apache.flink.core.fs.FSDataOutputStream)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.physicalWriter(org.apache.orc.PhysicalWriter)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriterFactory.create(org.apache.flink.core.fs.FSDataOutputStream)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.fs.Path.<init>(java.lang.String)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriterFactory.create(org.apache.flink.core.fs.FSDataOutputStream)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.impl.WriterImpl.<init>(org.apache.hadoop.fs.FileSystem, org.apache.hadoop.fs.Path, org.apache.orc.OrcFile$WriterOptions)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.computeProjectionMask(org.apache.orc.TypeDescription, int[])",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.getMaximumId()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.computeProjectionMask(org.apache.orc.TypeDescription, int[])",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.getChildren()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.computeProjectionMask(org.apache.orc.TypeDescription, int[])",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.getId()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.getFileBytes(int)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.StreamName.getColumn()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.getFileBytes(int)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.StreamName.getArea()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriterFactory.<init>(org.apache.flink.orc.vector.Vectorizer, java.util.Properties, org.apache.hadoop.conf.Configuration)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.iterator()"
+}, {
+  "caller" : "org.apache.flink.orc.vector.RowDataVectorizer.setColumn(int, org.apache.hadoop.hive.ql.exec.vector.ColumnVector, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.table.data.RowData, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.BytesColumnVector.setVal(int, byte[], int, int)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.RowDataVectorizer.setColumn(int, org.apache.hadoop.hive.ql.exec.vector.ColumnVector, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.table.data.RowData, int)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.common.type.HiveDecimal.create(java.math.BigDecimal)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.RowDataVectorizer.setColumn(int, org.apache.hadoop.hive.ql.exec.vector.ColumnVector, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.table.data.RowData, int)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.DecimalColumnVector.set(int, org.apache.hadoop.hive.common.type.HiveDecimal)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.RowDataVectorizer.setColumn(int, org.apache.hadoop.hive.ql.exec.vector.ColumnVector, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.table.data.RowData, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.TimestampColumnVector.set(int, java.sql.Timestamp)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV210.nextBatch(org.apache.orc.RecordReader, org.apache.hadoop.hive.ql.exec.vector.VectorizedRowBatch)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.RecordReader.nextBatch(org.apache.hadoop.hive.ql.exec.vector.VectorizedRowBatch)"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.getTableStatistics(java.util.List, org.apache.flink.table.types.DataType, org.apache.hadoop.conf.Configuration, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.getId()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriter.finish()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Writer.close()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.Stream.newBuilder()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.StreamName.getColumn()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.Stream.Builder.setColumn(int)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.StreamName.getKind()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.Stream.Builder.setKind(org.apache.orc.OrcProto$Stream$Kind)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.Stream.Builder.setLength(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.StripeFooter.Builder.addStreams(org.apache.orc.OrcProto$Stream$Builder)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.StreamName.getArea()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.StripeInformation.Builder.setIndexLength(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.StripeInformation.Builder.setDataLength(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.StripeFooter.Builder.build()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.finalizeStripe(org.apache.orc.OrcProto$StripeFooter$Builder, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.StripeFooter.getSerializedSize()"
+}, {
+  "caller" : "org.apache.flink.orc.vector.RowDataVectorizer.setColumn(int, org.apache.hadoop.hive.ql.exec.vector.ListColumnVector, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.table.data.RowData, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.ColumnVector.ensureSize(int, boolean)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.isEnforceBufferSize()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.getBufferSize()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.getStripeSize()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.getSchema()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.getMaximumId()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.WriterImpl.getEstimatedBufferSize(long, int, int)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.getBlockSize()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.getPaddingTolerance()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.getCompress()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.impl.OrcCodecPool.getCodec(org.apache.orc.CompressionKind)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.impl.OutStream.<init>(java.lang.String, int, org.apache.orc.CompressionCodec, org.apache.orc.PhysicalWriter$OutputReceiver)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.getHadoopShims()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.getBlockPadding()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : false,
+  "thirdPartyMethod" : "com.google.protobuf.CodedOutputStream.newInstance(java.io.OutputStream)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile$WriterOptions)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.getWriteVariableLengthBlocks()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.ThreadLocalClassLoaderConfiguration.<init>(org.apache.hadoop.conf.Configuration)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.<init>(org.apache.hadoop.conf.Configuration)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.LessThanEquals.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.lessThanEquals(java.lang.String, org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf$Type, java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeFileMetadata(org.apache.orc.OrcProto$Metadata$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.Metadata.Builder.build()"
+}, {
+  "caller" : "org.apache.flink.orc.AbstractOrcFileInputFormat.OrcVectorizedReader.seek(org.apache.flink.connector.file.src.util.CheckpointedPosition)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.RecordReader.seekToRow(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriter.addElement(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.VectorizedRowBatch.getMaxSize()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriter.addElement(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.Writer.addRowBatch(org.apache.hadoop.hive.ql.exec.vector.VectorizedRowBatch)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriter.addElement(java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.VectorizedRowBatch.reset()"
+}, {
+  "caller" : "org.apache.flink.orc.vector.AbstractOrcColumnVector.createDoubleVector(int, java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.DoubleColumnVector.<init>(int)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.AbstractOrcColumnVector.createDoubleVector(int, java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.DoubleColumnVector.fill(double)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.getOffsetAndLengthForSplit(long, long, java.util.List)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.StripeInformation.getOffset()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.getOffsetAndLengthForSplit(long, long, java.util.List)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.StripeInformation.getLength()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV230.createReader(org.apache.hadoop.fs.Path, org.apache.hadoop.conf.Configuration)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.readerOptions(org.apache.hadoop.conf.Configuration)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV230.createReader(org.apache.hadoop.fs.Path, org.apache.hadoop.conf.Configuration)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.createReader(org.apache.hadoop.fs.Path, org.apache.orc.OrcFile$ReaderOptions)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.NullSafeEquals.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.nullSafeEquals(java.lang.String, org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf$Type, java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createBatchWrapper(org.apache.orc.TypeDescription, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createRowBatch(int)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.OrcDecimalColumnVector.getDecimal(int, int, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.serde2.io.HiveDecimalWritable.getHiveDecimal()"
+}, {
+  "caller" : "org.apache.flink.orc.vector.OrcDecimalColumnVector.getDecimal(int, int, int)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.common.type.HiveDecimal.bigDecimalValue()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.Equals.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.equals(java.lang.String, org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf$Type, java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.close()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.impl.OrcCodecPool.returnCodec(org.apache.orc.CompressionKind, org.apache.orc.CompressionCodec)"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.updateStatistics(org.apache.orc.ColumnStatistics, java.lang.String, java.util.Map)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.ColumnStatisticsImpl.merge(org.apache.orc.impl.ColumnStatisticsImpl)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriterFactory.<init>(org.apache.flink.orc.vector.Vectorizer)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.<init>()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.<clinit>()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf.Type.values()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.<clinit>()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf.Type.ordinal()"
+}, {
+  "caller" : "org.apache.flink.orc.vector.AbstractOrcColumnVector.createDecimalVector(int, int, int, java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.DecimalColumnVector.<init>(int, int, int)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.AbstractOrcColumnVector.createDecimalVector(int, int, int, java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.common.type.HiveDecimal.create(java.math.BigDecimal)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.AbstractOrcColumnVector.createDecimalVector(int, int, int, java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.DecimalColumnVector.set(int, org.apache.hadoop.hive.common.type.HiveDecimal)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeBloomFilter(org.apache.orc.impl.StreamName, org.apache.orc.OrcProto$BloomFilterIndex$Builder, org.apache.orc.CompressionCodec)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.impl.OutStream.<init>(java.lang.String, int, org.apache.orc.CompressionCodec, org.apache.orc.PhysicalWriter$OutputReceiver)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeBloomFilter(org.apache.orc.impl.StreamName, org.apache.orc.OrcProto$BloomFilterIndex$Builder, org.apache.orc.CompressionCodec)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.BloomFilterIndex.Builder.build()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeBloomFilter(org.apache.orc.impl.StreamName, org.apache.orc.OrcProto$BloomFilterIndex$Builder, org.apache.orc.CompressionCodec)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.BloomFilterIndex.writeTo(java.io.OutputStream)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.IsNull.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.isNull(java.lang.String, org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf$Type)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.Or.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.startOr()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReader.seekToRow(long)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.RecordReader.seekToRow(long)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.Vectorizer.<init>(java.lang.String)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.fromString(java.lang.String)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFileFormatFactory.createRuntimeEncoder(org.apache.flink.table.connector.sink.DynamicTableSink$Context, org.apache.flink.table.types.DataType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.toString()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFileFormatFactory.createRuntimeEncoder(org.apache.flink.table.connector.sink.DynamicTableSink$Context, org.apache.flink.table.types.DataType)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.<init>()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.fs.Path.<init>(java.net.URI)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Reader.getStripes()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.Reader.Options.<init>()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.Reader.Options.schema(org.apache.orc.TypeDescription)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Reader.Options.range(long, long)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgumentFactory.newBuilder()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.startAnd()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.end()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.build()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.Reader.Options.searchArgument(org.apache.hadoop.hive.ql.io.sarg.SearchArgument, java.lang.String[])"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Reader.Options.include(boolean[])"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.hadoop.conf.Configuration, org.apache.orc.TypeDescription, int[], java.util.List, org.apache.flink.core.fs.Path, long, long)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.getId()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeFileFooter(org.apache.orc.OrcProto$Footer)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.Footer.writeTo(com.google.protobuf.CodedOutputStream)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeFileFooter(org.apache.orc.OrcProto$Footer)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.google.protobuf.CodedOutputStream.flush()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeFileFooter(org.apache.orc.OrcProto$Footer)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.OutStream.flush()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeIndex(org.apache.orc.impl.StreamName, org.apache.orc.OrcProto$RowIndex$Builder, org.apache.orc.CompressionCodec)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.OutStream.<init>(java.lang.String, int, org.apache.orc.CompressionCodec, org.apache.orc.PhysicalWriter$OutputReceiver)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeIndex(org.apache.orc.impl.StreamName, org.apache.orc.OrcProto$RowIndex$Builder, org.apache.orc.CompressionCodec)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.RowIndex.Builder.build()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeIndex(org.apache.orc.impl.StreamName, org.apache.orc.OrcProto$RowIndex$Builder, org.apache.orc.CompressionCodec)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.RowIndex.writeTo(java.io.OutputStream)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createReader(org.apache.hadoop.fs.Path, org.apache.hadoop.conf.Configuration)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.reflect.MethodUtils.invokeStaticMethod(java.lang.Class, java.lang.String, java.lang.Object[])"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createReader(org.apache.hadoop.fs.Path, org.apache.hadoop.conf.Configuration)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.reflect.ConstructorUtils.invokeConstructor(java.lang.Class, java.lang.Object[])"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFileFormatFactory.getOrcConfiguration(org.apache.flink.configuration.ReadableConfig)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.<init>()"
+}, {
+  "caller" : "org.apache.flink.orc.AbstractOrcFileInputFormat.OrcVectorizedReader.close()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.RecordReader.close()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV230.readOrcConf(org.apache.orc.Reader$Options, org.apache.hadoop.conf.Configuration)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcConf.getBoolean(org.apache.hadoop.conf.Configuration)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV230.readOrcConf(org.apache.orc.Reader$Options, org.apache.hadoop.conf.Configuration)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Reader.Options.tolerateMissingSchema(boolean)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.padStripe(long)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.impl.HadoopShims.endVariableLengthBlock(java.io.OutputStream)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.toOrcObject(org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf$Type, java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf.Type.ordinal()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.Not.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.startNot()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeMetadata(org.apache.orc.OrcProto$Metadata)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.Metadata.writeTo(com.google.protobuf.CodedOutputStream)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeMetadata(org.apache.orc.OrcProto$Metadata)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.google.protobuf.CodedOutputStream.flush()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeMetadata(org.apache.orc.OrcProto$Metadata)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.OutStream.flush()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createString()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createBinary()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createStruct()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.addField(java.lang.String, org.apache.orc.TypeDescription)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createMap(org.apache.orc.TypeDescription, org.apache.orc.TypeDescription)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createList(org.apache.orc.TypeDescription)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createTimestamp()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createDate()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createDouble()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createFloat()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createLong()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createInt()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createShort()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createByte()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createDecimal()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.withScale(int)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.withPrecision(int)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createBoolean()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createChar()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.withMaxLength(int)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReaderUtil.logicalTypeToOrcType(org.apache.flink.table.types.logical.LogicalType)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createVarchar()"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.createRecordReader(org.apache.orc.Reader, org.apache.orc.Reader$Options)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.commons.lang3.reflect.MethodUtils.invokeExactMethod(java.lang.Object, java.lang.String, java.lang.Object[])"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriterFactory.getWriterOptions()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.set(java.lang.String, java.lang.String)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriterFactory.getWriterOptions()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.writerOptions(java.util.Properties, org.apache.hadoop.conf.Configuration)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriterFactory.getWriterOptions()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.WriterOptions.setSchema(org.apache.orc.TypeDescription)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.appendRawStripe(java.nio.ByteBuffer, org.apache.orc.OrcProto$StripeInformation$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.StripeInformation.Builder.setOffset(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriter.<init>(org.apache.flink.orc.vector.Vectorizer, org.apache.orc.Writer)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.createRowBatch()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriter.flush()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Writer.addRowBatch(org.apache.hadoop.hive.ql.exec.vector.VectorizedRowBatch)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.OrcBulkWriter.flush()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.VectorizedRowBatch.reset()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeFileFooter(org.apache.orc.OrcProto$Footer$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.Footer.Builder.setContentLength(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeFileFooter(org.apache.orc.OrcProto$Footer$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.Footer.Builder.setHeaderLength(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeFileFooter(org.apache.orc.OrcProto$Footer$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.Footer.Builder.build()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writePostScript(org.apache.orc.OrcProto$PostScript$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.PostScript.Builder.setFooterLength(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writePostScript(org.apache.orc.OrcProto$PostScript$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.PostScript.Builder.setMetadataLength(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writePostScript(org.apache.orc.OrcProto$PostScript$Builder)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.PostScript.Builder.build()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writePostScript(org.apache.orc.OrcProto$PostScript$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.PostScript.writeTo(java.io.OutputStream)"
+}, {
+  "caller" : "org.apache.flink.orc.AbstractOrcFileInputFormat.OrcVectorizedReader.readBatch()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.RecordReader.getRowNumber()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcSplitReader.close()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.RecordReader.close()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.Between.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.between(java.lang.String, org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf$Type, java.lang.Object, java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.In.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.in(java.lang.String, org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf$Type, java.lang.Object[])"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.ColumnPredicate.castLiteral(java.io.Serializable)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf.Type.ordinal()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.ColumnPredicate.castLiteral(java.io.Serializable)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.common.type.HiveDecimal.create(java.math.BigDecimal)"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.ColumnPredicate.castLiteral(java.io.Serializable)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.serde2.io.HiveDecimalWritable.<init>(org.apache.hadoop.hive.common.type.HiveDecimal)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.OrcTimestampColumnVector.createFromConstant(int, java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.TimestampColumnVector.<init>(int)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.OrcTimestampColumnVector.createFromConstant(int, java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.TimestampColumnVector.fill(java.sql.Timestamp)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.readOrcConf(org.apache.orc.Reader$Options, org.apache.hadoop.conf.Configuration)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcConf.getBoolean(org.apache.hadoop.conf.Configuration)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.readOrcConf(org.apache.orc.Reader$Options, org.apache.hadoop.conf.Configuration)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Reader.Options.useZeroCopy(boolean)"
+}, {
+  "caller" : "org.apache.flink.orc.shim.OrcShimV200.readOrcConf(org.apache.orc.Reader$Options, org.apache.hadoop.conf.Configuration)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Reader.Options.skipCorruptRecords(boolean)"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.ColumnStatistics.hasNull()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.ColumnStatistics.getNumberOfValues()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.IntegerColumnStatistics.getMaximum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.IntegerColumnStatistics.getMinimum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.DoubleColumnStatistics.getMaximum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.DoubleColumnStatistics.getMinimum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.StringColumnStatistics.getMaximum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.StringColumnStatistics.getMinimum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.DateColumnStatistics.getMaximum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.DateColumnStatistics.getMinimum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TimestampColumnStatistics.getMaximum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TimestampColumnStatistics.getMinimum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.DecimalColumnStatistics.getMaximum()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.common.type.HiveDecimal.bigDecimalValue()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.convertToColumnStats(long, org.apache.flink.table.types.logical.LogicalType, org.apache.orc.ColumnStatistics)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.DecimalColumnStatistics.getMinimum()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeStripeFooter(org.apache.orc.OrcProto$StripeFooter)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcProto.StripeFooter.writeTo(com.google.protobuf.CodedOutputStream)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeStripeFooter(org.apache.orc.OrcProto$StripeFooter)",
+  "covered" : true,
+  "thirdPartyMethod" : "com.google.protobuf.CodedOutputStream.flush()"
+}, {
+  "caller" : "org.apache.flink.orc.writer.PhysicalWriterImpl.writeStripeFooter(org.apache.orc.OrcProto$StripeFooter)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.impl.OutStream.flush()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.OrcFileRowCountCalculator.call()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.fs.Path.<init>(java.net.URI)"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.OrcFileRowCountCalculator.call()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.readerOptions(org.apache.hadoop.conf.Configuration)"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.OrcFileRowCountCalculator.call()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcConf.getLong(org.apache.hadoop.conf.Configuration)"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.OrcFileRowCountCalculator.call()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.ReaderOptions.maxLength(long)"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.OrcFileRowCountCalculator.call()",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.OrcFile.createReader(org.apache.hadoop.fs.Path, org.apache.orc.OrcFile$ReaderOptions)"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.OrcFileRowCountCalculator.call()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Reader.getStatistics()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.OrcFileRowCountCalculator.call()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Reader.getSchema()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.OrcFileRowCountCalculator.call()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.getFieldNames()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.OrcFileRowCountCalculator.call()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.TypeDescription.getChildren()"
+}, {
+  "caller" : "org.apache.flink.orc.util.OrcFormatStatisticsReportUtil.OrcFileRowCountCalculator.call()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.orc.Reader.getNumberOfRows()"
+}, {
+  "caller" : "org.apache.flink.orc.OrcFilters.LessThan.add(org.apache.hadoop.hive.ql.io.sarg.SearchArgument$Builder)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.io.sarg.SearchArgument.Builder.lessThan(java.lang.String, org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf$Type, java.lang.Object)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.AbstractOrcColumnVector.createLongVector(int, java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.LongColumnVector.<init>(int)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.AbstractOrcColumnVector.createLongVector(int, java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.LongColumnVector.fill(long)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.AbstractOrcColumnVector.createBytesVector(int, java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.BytesColumnVector.<init>(int)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.AbstractOrcColumnVector.createBytesVector(int, java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.BytesColumnVector.initBuffer(int)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.AbstractOrcColumnVector.createBytesVector(int, java.lang.Object)",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.BytesColumnVector.fill(byte[])"
+}, {
+  "caller" : "org.apache.flink.orc.vector.OrcLegacyTimestampColumnVector.createFromConstant(int, java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.LongColumnVector.<init>(int)"
+}, {
+  "caller" : "org.apache.flink.orc.vector.OrcLegacyTimestampColumnVector.createFromConstant(int, java.lang.Object)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.hadoop.hive.ql.exec.vector.LongColumnVector.fill(long)"
+}, {
+  "caller" : "org.apache.flink.orc.writer.ThreadLocalClassLoaderConfiguration.<init>()",
+  "covered" : true,
+  "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.<init>()"
+}, {
+  "caller" : "org.apache.flink.orc.vector.Vectorizer.addUserMetadata(java.lang.String, java.nio.ByteBuffer)",
+  "covered" : false,
+  "thirdPartyMethod" : "org.apache.orc.Writer.addUserMetadata(java.lang.String, java.nio.ByteBuffer)"
+} ]

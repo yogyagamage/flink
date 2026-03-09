@@ -1,0 +1,17 @@
+{
+  "skippedPaths" : [ {
+    "entryPoint" : "org.apache.flink.orc.OrcFileFormatFactory.createRuntimeEncoder(org.apache.flink.table.connector.sink.DynamicTableSink.Context, org.apache.flink.table.types.DataType)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.<init>()",
+    "directCaller" : "org.apache.flink.orc.OrcFileFormatFactory.createRuntimeEncoder(org.apache.flink.table.connector.sink.DynamicTableSink.Context, org.apache.flink.table.types.DataType)",
+    "path" : [ "org.apache.flink.orc.OrcFileFormatFactory.createRuntimeEncoder(org.apache.flink.table.connector.sink.DynamicTableSink.Context, org.apache.flink.table.types.DataType)", "org.apache.hadoop.conf.Configuration.<init>()" ],
+    "methodSources" : [ null ],
+    "constructors" : [ "OrcFileFormatFactory() {\n}", "public OrcBulkDecodingFormat(ReadableConfig formatOptions) {\n    this.formatOptions = formatOptions;\n}" ],
+    "fieldDeclarations" : [ "public static final String IDENTIFIER = \"orc\";" ],
+    "setters" : [ ],
+    "imports" : [ "org.apache.flink.configuration.ReadableConfig", "org.apache.flink.orc.OrcFileFormatFactory.OrcBulkDecodingFormat" ],
+    "testTemplate" : "package org.apache.flink.orc;\n\npublic class 1createRuntimeEncoder_ConfigurationmethodFikaTest {\n\n    @Test\n    public void testCreateRuntimeEncoder() {\n    }\n}",
+    "conditionCount" : 999,
+    "callCount" : 1,
+    "covered" : false
+  } ]
+}
