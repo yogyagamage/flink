@@ -1,0 +1,59 @@
+{
+  "skippedPaths" : [ {
+    "entryPoint" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.close()",
+    "thirdPartyMethod" : "org.apache.hadoop.io.compress.CompressionInputStream.close()",
+    "directCaller" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.close()",
+    "path" : [ "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.close()", "org.apache.hadoop.io.compress.CompressionInputStream.close()" ],
+    "methodSources" : [ null ],
+    "constructors" : [ ],
+    "fieldDeclarations" : [ ],
+    "setters" : [ ],
+    "imports" : [ ],
+    "testTemplate" : "package org.apache.flink.shaded.io.airlift.compress.hadoop;\n\npublic class CompressionInputStreamAdapterclose_CompressionInputStreamcloseFikaTest {\n\n    @Test\n    public void testClose() {\n    }\n}",
+    "conditionCount" : 0,
+    "callCount" : 1,
+    "covered" : false
+  }, {
+    "entryPoint" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionOutputStreamAdapter.close()",
+    "thirdPartyMethod" : "org.apache.hadoop.io.compress.CompressionOutputStream.close()",
+    "directCaller" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionOutputStreamAdapter.close()",
+    "path" : [ "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionOutputStreamAdapter.close()", "org.apache.hadoop.io.compress.CompressionOutputStream.close()" ],
+    "methodSources" : [ null ],
+    "constructors" : [ ],
+    "fieldDeclarations" : [ ],
+    "setters" : [ ],
+    "imports" : [ ],
+    "testTemplate" : "package org.apache.flink.shaded.io.airlift.compress.hadoop;\n\npublic class CompressionOutputStreamAdapterclose_CompressionOutputStreamcloseFikaTest {\n\n    @Test\n    public void testClose() {\n    }\n}",
+    "conditionCount" : 0,
+    "callCount" : 1,
+    "covered" : false
+  }, {
+    "entryPoint" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.<init>(org.apache.flink.shaded.io.airlift.compress.hadoop.HadoopInputStream, org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.PositionSupplier)",
+    "thirdPartyMethod" : "org.apache.hadoop.io.compress.CompressionInputStream.<init>(java.io.InputStream)",
+    "directCaller" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.<init>(org.apache.flink.shaded.io.airlift.compress.hadoop.HadoopInputStream, org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.PositionSupplier)",
+    "path" : [ "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.<init>(org.apache.flink.shaded.io.airlift.compress.hadoop.HadoopInputStream, org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.PositionSupplier)", "org.apache.hadoop.io.compress.CompressionInputStream.<init>(java.io.InputStream)" ],
+    "methodSources" : [ null ],
+    "constructors" : [ ],
+    "fieldDeclarations" : [ ],
+    "setters" : [ ],
+    "imports" : [ ],
+    "testTemplate" : "package org.apache.flink.shaded.io.airlift.compress.hadoop;\n\npublic class CompressionInputStreamAdaptermethod_CompressionInputStreammethodFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
+    "conditionCount" : 0,
+    "callCount" : 1,
+    "covered" : false
+  }, {
+    "entryPoint" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionOutputStreamAdapter.<init>(org.apache.flink.shaded.io.airlift.compress.hadoop.HadoopOutputStream)",
+    "thirdPartyMethod" : "org.apache.hadoop.io.compress.CompressionOutputStream.<init>(java.io.OutputStream)",
+    "directCaller" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionOutputStreamAdapter.<init>(org.apache.flink.shaded.io.airlift.compress.hadoop.HadoopOutputStream)",
+    "path" : [ "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionOutputStreamAdapter.<init>(org.apache.flink.shaded.io.airlift.compress.hadoop.HadoopOutputStream)", "org.apache.hadoop.io.compress.CompressionOutputStream.<init>(java.io.OutputStream)" ],
+    "methodSources" : [ null ],
+    "constructors" : [ ],
+    "fieldDeclarations" : [ ],
+    "setters" : [ ],
+    "imports" : [ ],
+    "testTemplate" : "package org.apache.flink.shaded.io.airlift.compress.hadoop;\n\npublic class CompressionOutputStreamAdaptermethod_CompressionOutputStreammethodFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
+    "conditionCount" : 0,
+    "callCount" : 1,
+    "covered" : false
+  } ]
+}

@@ -1,0 +1,627 @@
+{
+  "callPairs" : [ {
+    "caller" : "org.apache.flink.runtime.checkpoint.PrioritizedOperatorSubtaskState.Builder.resolvePrioritizedAlternatives(org.apache.flink.runtime.checkpoint.StateObjectCollection, java.util.List, java.util.function.BiFunction)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.BooleanUtils.isTrue(java.lang.Boolean)"
+  }, {
+    "caller" : "org.apache.flink.runtime.checkpoint.StateObjectCollection.equals(java.lang.Object)",
+    "thirdPartyMethod" : "org.apache.commons.collections.CollectionUtils.isEqualCollection(java.util.Collection, java.util.Collection)"
+  }, {
+    "caller" : "org.apache.flink.runtime.clusterframework.BootstrapTools.lambda.getDynamicPropertiesAsString(org.apache.flink.configuration.Configuration, org.apache.flink.configuration.Configuration, java.lang.String)",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.getOpt()"
+  }, {
+    "caller" : "org.apache.flink.runtime.clusterframework.BootstrapTools.lambda.getDynamicPropertiesAsString(org.apache.flink.configuration.Configuration, org.apache.flink.configuration.Configuration, java.lang.String)",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.getValueSeparator()"
+  }, {
+    "caller" : "org.apache.flink.runtime.clusterframework.BootstrapTools.newDynamicPropertiesOption()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.<init>(java.lang.String, boolean, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.clusterframework.BootstrapTools.parseDynamicProperties(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getOptionValues(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getArgs()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getOptionValue(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getOptionProperties(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.getOpt()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ClusterConfigurationParserFactory.options()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Options.addOption(org.apache.commons.cli.Option)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ClusterConfigurationParserFactory.options()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Options.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.DynamicParametersConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getOptionProperties(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.DynamicParametersConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.getOpt()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.DynamicParametersConfigurationParserFactory.options()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Options.addOption(org.apache.commons.cli.Option)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.DynamicParametersConfigurationParserFactory.options()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Options.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.EntrypointClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getArgs()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.EntrypointClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getOptionValue(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.EntrypointClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getOptionProperties(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.EntrypointClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.getOpt()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.EntrypointClusterConfigurationParserFactory.getOptions()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Options.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.EntrypointClusterConfigurationParserFactory.getOptions()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Options.addOption(org.apache.commons.cli.Option)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ModifiableClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.getOpt()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ModifiableClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getOptionValues(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ModifiableClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getOptionProperties(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ModifiableClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.hasOption(org.apache.commons.cli.Option)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ModifiableClusterConfigurationParserFactory.createResult(org.apache.commons.cli.CommandLine)",
+    "thirdPartyMethod" : "org.apache.commons.cli.CommandLine.getOptionValue(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ModifiableClusterConfigurationParserFactory.options()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Options.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.ModifiableClusterConfigurationParserFactory.options()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Options.addOption(org.apache.commons.cli.Option)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.hasArg(boolean)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.builder(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.numberOfArgs(int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.desc(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.valueSeparator(char)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.argName(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.required(boolean)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.build()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.longOpt(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineParser.parse(java.lang.String[])",
+    "thirdPartyMethod" : "org.apache.commons.cli.DefaultParser.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineParser.parse(java.lang.String[])",
+    "thirdPartyMethod" : "org.apache.commons.cli.DefaultParser.parse(org.apache.commons.cli.Options, java.lang.String[], boolean)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineParser.printHelp(java.lang.String)",
+    "thirdPartyMethod" : "org.apache.commons.cli.HelpFormatter.printHelp(java.lang.String, org.apache.commons.cli.Options, boolean)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineParser.printHelp(java.lang.String)",
+    "thirdPartyMethod" : "org.apache.commons.cli.HelpFormatter.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineParser.printHelp(java.lang.String)",
+    "thirdPartyMethod" : "org.apache.commons.cli.HelpFormatter.setWidth(int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.CommandLineParser.printHelp(java.lang.String)",
+    "thirdPartyMethod" : "org.apache.commons.cli.HelpFormatter.setLeftPadding(int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.ConfigurationCommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.desc(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.ConfigurationCommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.longOpt(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.ConfigurationCommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.valueSeparator(char)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.ConfigurationCommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.argName(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.ConfigurationCommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.build()"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.ConfigurationCommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.builder(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.ConfigurationCommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.hasArg(boolean)"
+  }, {
+    "caller" : "org.apache.flink.runtime.entrypoint.parser.ConfigurationCommandLineOptions.<clinit>()",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.Builder.numberOfArgs(int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.hadoop.HadoopUserUtils.getIssueDate(java.time.Clock, java.lang.String, org.apache.hadoop.security.token.delegation.AbstractDelegationTokenIdentifier)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.delegation.AbstractDelegationTokenIdentifier.getIssueDate()"
+  }, {
+    "caller" : "org.apache.flink.runtime.hadoop.HadoopUserUtils.hasUserKerberosAuthMethod(org.apache.hadoop.security.UserGroupInformation)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.isSecurityEnabled()"
+  }, {
+    "caller" : "org.apache.flink.runtime.hadoop.HadoopUserUtils.hasUserKerberosAuthMethod(org.apache.hadoop.security.UserGroupInformation)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getAuthenticationMethod()"
+  }, {
+    "caller" : "org.apache.flink.runtime.hadoop.HadoopUserUtils.isProxyUser(org.apache.hadoop.security.UserGroupInformation)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getAuthenticationMethod()"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.compression.Lz4BlockCompressor.<init>()",
+    "thirdPartyMethod" : "net.jpountz.lz4.LZ4Factory.fastCompressor()"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.compression.Lz4BlockCompressor.<init>()",
+    "thirdPartyMethod" : "net.jpountz.lz4.LZ4Factory.fastestInstance()"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.compression.Lz4BlockCompressor.compress(byte[], int, int, byte[], int)",
+    "thirdPartyMethod" : "net.jpountz.lz4.LZ4Compressor.compress(byte[], int, int, byte[], int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.compression.Lz4BlockCompressor.compress(java.nio.ByteBuffer, int, int, java.nio.ByteBuffer, int)",
+    "thirdPartyMethod" : "net.jpountz.lz4.LZ4Compressor.maxCompressedLength(int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.compression.Lz4BlockCompressor.compress(java.nio.ByteBuffer, int, int, java.nio.ByteBuffer, int)",
+    "thirdPartyMethod" : "net.jpountz.lz4.LZ4Compressor.compress(java.nio.ByteBuffer, int, int, java.nio.ByteBuffer, int, int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.compression.Lz4BlockCompressor.getMaxCompressedSize(int)",
+    "thirdPartyMethod" : "net.jpountz.lz4.LZ4Compressor.maxCompressedLength(int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.compression.Lz4BlockDecompressor.<init>()",
+    "thirdPartyMethod" : "net.jpountz.lz4.LZ4Factory.fastDecompressor()"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.compression.Lz4BlockDecompressor.<init>()",
+    "thirdPartyMethod" : "net.jpountz.lz4.LZ4Factory.fastestInstance()"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.compression.Lz4BlockDecompressor.decompress(byte[], int, int, byte[], int)",
+    "thirdPartyMethod" : "net.jpountz.lz4.LZ4FastDecompressor.decompress(byte[], int, byte[], int, int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.compression.Lz4BlockDecompressor.decompress(java.nio.ByteBuffer, int, int, java.nio.ByteBuffer, int)",
+    "thirdPartyMethod" : "net.jpountz.lz4.LZ4FastDecompressor.decompress(java.nio.ByteBuffer, int, java.nio.ByteBuffer, int, int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.network.api.serialization.SpanningWrapper.createSpillingChannel()",
+    "thirdPartyMethod" : "org.apache.commons.lang3.ArrayUtils.remove(java.lang.Object[], int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.network.partition.ResultPartitionFactory.lambda.createBufferPoolFactory(int, boolean, int, org.apache.flink.runtime.io.network.partition.ResultPartitionType)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.getRight()"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.network.partition.ResultPartitionFactory.lambda.createBufferPoolFactory(int, boolean, int, org.apache.flink.runtime.io.network.partition.ResultPartitionType)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.getLeft()"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.network.partition.consumer.SingleInputGateFactory.createBufferPoolFactory(org.apache.flink.runtime.io.network.buffer.BufferPoolFactory, int, int)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.of(java.lang.Object, java.lang.Object)"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.network.partition.consumer.SingleInputGateFactory.lambda.createBufferPoolFactory(org.apache.flink.runtime.io.network.buffer.BufferPoolFactory, org.apache.commons.lang3.tuple.Pair)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.getLeft()"
+  }, {
+    "caller" : "org.apache.flink.runtime.io.network.partition.consumer.SingleInputGateFactory.lambda.createBufferPoolFactory(org.apache.flink.runtime.io.network.buffer.BufferPoolFactory, org.apache.commons.lang3.tuple.Pair)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.getRight()"
+  }, {
+    "caller" : "org.apache.flink.runtime.jobgraph.InputOutputFormatContainer.getUniqueInputFormat()",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.ImmutablePair.<init>(java.lang.Object, java.lang.Object)"
+  }, {
+    "caller" : "org.apache.flink.runtime.jobgraph.InputOutputFormatContainer.getUniqueOutputFormat()",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.ImmutablePair.<init>(java.lang.Object, java.lang.Object)"
+  }, {
+    "caller" : "org.apache.flink.runtime.jobgraph.jsonplan.JsonPlanGenerator.generatePlan(org.apache.flink.api.common.JobID, java.lang.String, org.apache.flink.runtime.jobgraph.JobType, java.lang.Iterable, org.apache.flink.runtime.scheduler.adaptive.allocator.VertexParallelism)",
+    "thirdPartyMethod" : "org.apache.commons.text.StringEscapeUtils.escapeHtml4(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.jobmaster.event.ExecutionVertexResetEvent.toString()",
+    "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.join(java.lang.Iterable, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.DescriptiveStatisticsHistogramStatistics.CommonMetricsSnapshot.evaluate(double[], int, int)",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.moment.StandardDeviation.getResult()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.DescriptiveStatisticsHistogramStatistics.CommonMetricsSnapshot.evaluate(double[], int, int)",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.moment.StandardDeviation.<init>(org.apache.commons.math3.stat.descriptive.moment.SecondMoment)"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.DescriptiveStatisticsHistogramStatistics.CommonMetricsSnapshot.getPercentile(double)",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.rank.Percentile.evaluate(double)"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.DescriptiveStatisticsHistogramStatistics.CommonMetricsSnapshot.getValues()",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.rank.Percentile.getData()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.DescriptiveStatisticsHistogramStatistics.CommonMetricsSnapshot.maybeInitPercentile()",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.rank.Percentile.setData(double[])"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.DescriptiveStatisticsHistogramStatistics.CommonMetricsSnapshot.maybeInitPercentile()",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.rank.Percentile.withNaNStrategy(org.apache.commons.math3.stat.ranking.NaNStrategy)"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.DescriptiveStatisticsHistogramStatistics.CommonMetricsSnapshot.maybeInitPercentile()",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.rank.Percentile.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.DescriptiveStatisticsHistogramStatistics.SimpleStats.<init>()",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.moment.SecondMoment.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.DescriptiveStatisticsHistogramStatistics.SimpleStats.copy()",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.moment.SecondMoment.copy(org.apache.commons.math3.stat.descriptive.moment.SecondMoment, org.apache.commons.math3.stat.descriptive.moment.SecondMoment)"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.DescriptiveStatisticsHistogramStatistics.SimpleStats.increment(double)",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.moment.SecondMoment.increment(double)"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.groups.FrontMetricGroup.getAllVariables()",
+    "thirdPartyMethod" : "org.apache.commons.collections.map.CompositeMap.<init>(java.util.Map, java.util.Map)"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.<init>(java.time.Duration)",
+    "thirdPartyMethod" : "oshi.hardware.CentralProcessor.getLogicalProcessorCount()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.<init>(java.time.Duration)",
+    "thirdPartyMethod" : "oshi.hardware.NetworkIF.getName()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.<init>(java.time.Duration)",
+    "thirdPartyMethod" : "oshi.SystemInfo.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.<init>(java.time.Duration)",
+    "thirdPartyMethod" : "oshi.SystemInfo.getHardware()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.<init>(java.time.Duration)",
+    "thirdPartyMethod" : "oshi.hardware.HardwareAbstractionLayer.getProcessor()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.<init>(java.time.Duration)",
+    "thirdPartyMethod" : "oshi.hardware.HardwareAbstractionLayer.getNetworkIFs()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.calculateCPUUsage(oshi.hardware.CentralProcessor)",
+    "thirdPartyMethod" : "oshi.hardware.CentralProcessor.getSystemLoadAverage(int)"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.calculateCPUUsage(oshi.hardware.CentralProcessor)",
+    "thirdPartyMethod" : "oshi.hardware.CentralProcessor.TickType.getIndex()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.calculateNetworkUsage(java.util.List)",
+    "thirdPartyMethod" : "oshi.hardware.NetworkIF.getBytesSent()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.calculateNetworkUsage(java.util.List)",
+    "thirdPartyMethod" : "oshi.hardware.NetworkIF.getBytesRecv()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.calculateNetworkUsage(java.util.List)",
+    "thirdPartyMethod" : "oshi.hardware.NetworkIF.updateAttributes()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.getProcessorCpuLoadTicksDiff(oshi.hardware.CentralProcessor)",
+    "thirdPartyMethod" : "oshi.hardware.CentralProcessor.getProcessorCpuLoadTicks()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.getProcessorCpuLoadTicksDiff(oshi.hardware.CentralProcessor)",
+    "thirdPartyMethod" : "oshi.hardware.CentralProcessor.getProcessorCpuLoadBetweenTicks(long[][])"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.getSystemCpuLoadTicksDiff(oshi.hardware.CentralProcessor)",
+    "thirdPartyMethod" : "oshi.hardware.CentralProcessor.getSystemCpuLoadTicks()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.run()",
+    "thirdPartyMethod" : "oshi.hardware.HardwareAbstractionLayer.getNetworkIFs()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesCounter.run()",
+    "thirdPartyMethod" : "oshi.hardware.HardwareAbstractionLayer.getProcessor()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesMetricsInitializer.instantiateSwapMetrics(org.apache.flink.metrics.MetricGroup, oshi.hardware.GlobalMemory)",
+    "thirdPartyMethod" : "oshi.hardware.GlobalMemory.getVirtualMemory()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesMetricsInitializer.instantiateSystemMetrics(org.apache.flink.metrics.MetricGroup, java.time.Duration)",
+    "thirdPartyMethod" : "oshi.hardware.HardwareAbstractionLayer.getMemory()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesMetricsInitializer.instantiateSystemMetrics(org.apache.flink.metrics.MetricGroup, java.time.Duration)",
+    "thirdPartyMethod" : "oshi.SystemInfo.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.metrics.util.SystemResourcesMetricsInitializer.instantiateSystemMetrics(org.apache.flink.metrics.MetricGroup, java.time.Duration)",
+    "thirdPartyMethod" : "oshi.SystemInfo.getHardware()"
+  }, {
+    "caller" : "org.apache.flink.runtime.operators.DataSinkTask.initOutputFormat()",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.getValue()"
+  }, {
+    "caller" : "org.apache.flink.runtime.operators.DataSinkTask.initOutputFormat()",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.getKey()"
+  }, {
+    "caller" : "org.apache.flink.runtime.operators.DataSourceTask.initInputFormat()",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.getValue()"
+  }, {
+    "caller" : "org.apache.flink.runtime.operators.DataSourceTask.initInputFormat()",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.getKey()"
+  }, {
+    "caller" : "org.apache.flink.runtime.rest.messages.AggregatedTaskDetailsInfo.MetricsStatistics.getPercentile(int)",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.rank.Percentile.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.rest.messages.AggregatedTaskDetailsInfo.MetricsStatistics.getPercentile(int)",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.rank.Percentile.evaluate(double)"
+  }, {
+    "caller" : "org.apache.flink.runtime.rest.messages.AggregatedTaskDetailsInfo.MetricsStatistics.getPercentile(int)",
+    "thirdPartyMethod" : "org.apache.commons.math3.stat.descriptive.rank.Percentile.setData(double[])"
+  }, {
+    "caller" : "org.apache.flink.runtime.scheduler.stopwithsavepoint.StopWithSavepointTerminationHandlerImpl.terminateExceptionallyWithGlobalFailover(java.lang.Iterable, java.lang.String)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.join(java.lang.Iterable, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.SecurityConfiguration.validate()",
+    "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.isBlank(java.lang.CharSequence)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.contexts.HadoopSecurityContext.runSecured(java.util.concurrent.Callable)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.doAs(java.security.PrivilegedExceptionAction)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.contexts.HadoopSecurityContextFactory.createContext(org.apache.flink.runtime.security.SecurityConfiguration)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getLoginUser()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.modules.HadoopModule.install()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getLoginUser()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.modules.HadoopModule.install()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.setConfiguration(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.modules.HadoopModule.install()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.hasKerberosCredentials()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.modules.HadoopModule.install()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.readTokenStorageFile(java.io.File, org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.modules.HadoopModule.install()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.isFromKeytab()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.modules.HadoopModule.install()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.addCredentials(org.apache.hadoop.security.Credentials)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.modules.HadoopModule.lambda.startTGTRenewal(org.apache.hadoop.security.UserGroupInformation)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.checkTGTAndReloginFromKeytab()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HBaseDelegationTokenProvider.delegationTokensRequired()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getCurrentUser()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HBaseDelegationTokenProvider.delegationTokensRequired()",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.get(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HBaseDelegationTokenProvider.lambda.obtainDelegationTokens()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HBaseDelegationTokenProvider.lambda.obtainDelegationTokens()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.addToken(org.apache.hadoop.io.Text, org.apache.hadoop.security.token.Token)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HBaseDelegationTokenProvider.lambda.obtainDelegationTokens()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.Token.getService()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HBaseDelegationTokenProvider.obtainDelegationTokens()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.doAs(java.security.PrivilegedExceptionAction)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenConverter.deserialize(byte[])",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenConverter.deserialize(byte[])",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.readTokenStorageStream(java.io.DataInputStream)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenConverter.serialize(org.apache.hadoop.security.Credentials)",
+    "thirdPartyMethod" : "org.apache.hadoop.io.DataOutputBuffer.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenConverter.serialize(org.apache.hadoop.security.Credentials)",
+    "thirdPartyMethod" : "org.apache.hadoop.io.DataOutputBuffer.close()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenConverter.serialize(org.apache.hadoop.security.Credentials)",
+    "thirdPartyMethod" : "org.apache.hadoop.io.DataOutputBuffer.getData()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenConverter.serialize(org.apache.hadoop.security.Credentials)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.writeTokenStorageToStream(java.io.DataOutputStream)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenReceiver.dumpAllTokens(org.apache.hadoop.security.Credentials)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.getAllTokens()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenReceiver.lambda.dumpAllTokens(org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.Token.getIdentifier()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenReceiver.lambda.dumpAllTokens(org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.Token.getService()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenReceiver.onNewTokensObtained(byte[])",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.addCredentials(org.apache.hadoop.security.Credentials)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopDelegationTokenReceiver.onNewTokensObtained(byte[])",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getCurrentUser()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.delegationTokensRequired()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getCurrentUser()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.getFileSystemsToAccess()",
+    "thirdPartyMethod" : "org.apache.hadoop.fs.Path.<init>(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.getFileSystemsToAccess()",
+    "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.isBlank(java.lang.CharSequence)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.getFileSystemsToAccess()",
+    "thirdPartyMethod" : "org.apache.hadoop.fs.Path.getFileSystem(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.getFileSystemsToAccess()",
+    "thirdPartyMethod" : "org.apache.hadoop.fs.FileSystem.get(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.getTokenRenewalDate(java.time.Clock, org.apache.hadoop.security.Credentials, long)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.getAllTokens()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.getTokenRenewalInterval(java.time.Clock, java.util.Set)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getCurrentUser()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.getTokenRenewalInterval(java.time.Clock, java.util.Set)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getUserName()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.getTokenRenewalInterval(java.time.Clock, java.util.Set)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.getTokenRenewalInterval(java.time.Clock, java.util.Set)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.getAllTokens()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.getFileSystemsToAccess(java.util.Set, org.apache.hadoop.fs.Path)",
+    "thirdPartyMethod" : "org.apache.hadoop.fs.Path.getFileSystem(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.getTokenRenewalDate(java.time.Clock, long, org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.io.Text.toString()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.getTokenRenewalDate(java.time.Clock, long, org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.Token.getKind()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.getTokenRenewalDate(java.time.Clock, long, org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.Token.decodeIdentifier()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.getTokenRenewalDate(org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.Token.decodeIdentifier()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.getTokenRenewalInterval(java.time.Clock, org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.io.Text.toString()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.getTokenRenewalInterval(java.time.Clock, org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.Token.decodeIdentifier()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.getTokenRenewalInterval(java.time.Clock, org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.Token.renew(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.getTokenRenewalInterval(java.time.Clock, org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.Token.getKind()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.getTokenRenewalInterval(org.apache.hadoop.security.token.Token)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.token.Token.decodeIdentifier()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.obtainDelegationTokens()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.Credentials.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.lambda.obtainDelegationTokens(java.lang.String, org.apache.hadoop.security.Credentials, org.apache.hadoop.fs.FileSystem)",
+    "thirdPartyMethod" : "org.apache.hadoop.fs.FileSystem.addDelegationTokens(java.lang.String, org.apache.hadoop.security.Credentials)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.HadoopFSDelegationTokenProvider.obtainDelegationTokens()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.doAs(java.security.PrivilegedExceptionAction)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.KerberosLoginProvider.doLogin(boolean)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getCurrentUser()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.KerberosLoginProvider.doLogin(boolean)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.loginUserFromKeytab(java.lang.String, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.KerberosLoginProvider.doLogin(boolean)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(javax.security.auth.Subject)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.KerberosLoginProvider.doLoginAndReturnUGI()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.loginUserFromKeytabAndReturnUGI(java.lang.String, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.KerberosLoginProvider.doLoginAndReturnUGI()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getUGIFromTicketCache(java.lang.String, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.KerberosLoginProvider.doLoginAndReturnUGI()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getCurrentUser()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.KerberosLoginProvider.doLoginAndReturnUGI()",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getUserName()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.KerberosLoginProvider.isLoginPossible(boolean)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.hasKerberosCredentials()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.KerberosLoginProvider.isLoginPossible(boolean)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.isSecurityEnabled()"
+  }, {
+    "caller" : "org.apache.flink.runtime.security.token.hadoop.KerberosLoginProvider.isLoginPossible(boolean)",
+    "thirdPartyMethod" : "org.apache.hadoop.security.UserGroupInformation.getCurrentUser()"
+  }, {
+    "caller" : "org.apache.flink.runtime.shuffle.NettyShuffleUtils.getMinMaxFloatingBuffersPerInputGate(int)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.of(java.lang.Object, java.lang.Object)"
+  }, {
+    "caller" : "org.apache.flink.runtime.shuffle.NettyShuffleUtils.getMinMaxNetworkBuffersPerResultPartition(int, int, int, int, int, boolean, int, org.apache.flink.runtime.io.network.partition.ResultPartitionType)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.of(java.lang.Object, java.lang.Object)"
+  }, {
+    "caller" : "org.apache.flink.runtime.shuffle.NettyShuffleUtils.getNumBuffersToAnnounceForResultPartition(org.apache.flink.runtime.io.network.partition.ResultPartitionType, int, int, int, int, int)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.getRight()"
+  }, {
+    "caller" : "org.apache.flink.runtime.shuffle.NettyShuffleUtils.getNumBuffersToAnnounceForResultPartition(org.apache.flink.runtime.io.network.partition.ResultPartitionType, int, int, int, int, int)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.tuple.Pair.getLeft()"
+  }, {
+    "caller" : "org.apache.flink.runtime.state.DefaultOperatorStateBackend.dispose()",
+    "thirdPartyMethod" : "org.apache.commons.io.IOUtils.closeQuietly(java.io.Closeable)"
+  }, {
+    "caller" : "org.apache.flink.runtime.state.OperatorStateRestoreOperation.restore()",
+    "thirdPartyMethod" : "org.apache.commons.io.IOUtils.closeQuietly(java.io.InputStream)"
+  }, {
+    "caller" : "org.apache.flink.runtime.state.SnappyStreamCompressionDecorator.decorateWithCompression(org.apache.flink.runtime.util.NonClosingInputStreamDecorator)",
+    "thirdPartyMethod" : "org.xerial.snappy.SnappyFramedInputStream.<init>(java.io.InputStream, boolean)"
+  }, {
+    "caller" : "org.apache.flink.runtime.state.SnappyStreamCompressionDecorator.decorateWithCompression(org.apache.flink.runtime.util.NonClosingOutputStreamDecorator)",
+    "thirdPartyMethod" : "org.xerial.snappy.SnappyFramedOutputStream.<init>(java.io.OutputStream, int, double)"
+  }, {
+    "caller" : "org.apache.flink.runtime.state.heap.HeapRestoreOperation.restore()",
+    "thirdPartyMethod" : "org.apache.commons.io.IOUtils.closeQuietly(java.io.InputStream)"
+  }, {
+    "caller" : "org.apache.flink.runtime.taskexecutor.SystemOutRedirectionUtils.ignoreSystemOutAndError()",
+    "thirdPartyMethod" : "org.apache.commons.io.output.NullPrintStream.<init>()"
+  }, {
+    "caller" : "org.apache.flink.runtime.util.ZooKeeperUtils.getZooKeeperEnsemble(org.apache.flink.configuration.Configuration)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.isBlank(java.lang.CharSequence)"
+  }, {
+    "caller" : "org.apache.flink.runtime.util.ZooKeeperUtils.startCuratorFramework(org.apache.flink.configuration.Configuration, org.apache.flink.runtime.rpc.FatalErrorHandler)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.isBlank(java.lang.CharSequence)"
+  }, {
+    "caller" : "org.apache.flink.runtime.util.bash.FlinkConfigLoader.filterCmdArgs(java.lang.String[], org.apache.commons.cli.Options)",
+    "thirdPartyMethod" : "org.apache.commons.cli.Options.getOption(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.util.bash.FlinkConfigLoader.filterCmdArgs(java.lang.String[], org.apache.commons.cli.Options)",
+    "thirdPartyMethod" : "org.apache.commons.cli.Option.hasArg()"
+  }, {
+    "caller" : "org.apache.flink.runtime.util.bash.FlinkConfigLoader.filterCmdArgs(java.lang.String[], org.apache.commons.cli.Options)",
+    "thirdPartyMethod" : "org.apache.commons.cli.Options.hasOption(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.util.profiler.ProfilingService.requestProfiling(java.lang.String, long, org.apache.flink.runtime.rest.messages.ProfilingInfo.ProfilingMode)",
+    "thirdPartyMethod" : "one.profiler.AsyncProfiler.execute(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.util.profiler.ProfilingService.requestProfiling(java.lang.String, long, org.apache.flink.runtime.rest.messages.ProfilingInfo.ProfilingMode)",
+    "thirdPartyMethod" : "one.profiler.AsyncProfiler.getInstance()"
+  }, {
+    "caller" : "org.apache.flink.runtime.util.profiler.ProfilingService.stopProfiling(java.lang.String)",
+    "thirdPartyMethod" : "one.profiler.AsyncProfiler.execute(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.runtime.util.profiler.ProfilingService.stopProfiling(java.lang.String)",
+    "thirdPartyMethod" : "one.profiler.AsyncProfiler.getInstance()"
+  }, {
+    "caller" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.<init>(org.apache.flink.shaded.io.airlift.compress.hadoop.HadoopInputStream, org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.PositionSupplier)",
+    "thirdPartyMethod" : "org.apache.hadoop.io.compress.CompressionInputStream.<init>(java.io.InputStream)"
+  }, {
+    "caller" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionInputStreamAdapter.close()",
+    "thirdPartyMethod" : "org.apache.hadoop.io.compress.CompressionInputStream.close()"
+  }, {
+    "caller" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionOutputStreamAdapter.<init>(org.apache.flink.shaded.io.airlift.compress.hadoop.HadoopOutputStream)",
+    "thirdPartyMethod" : "org.apache.hadoop.io.compress.CompressionOutputStream.<init>(java.io.OutputStream)"
+  }, {
+    "caller" : "org.apache.flink.shaded.io.airlift.compress.hadoop.CompressionOutputStreamAdapter.close()",
+    "thirdPartyMethod" : "org.apache.hadoop.io.compress.CompressionOutputStream.close()"
+  }, {
+    "caller" : "org.apache.flink.shaded.io.airlift.compress.lz4.Lz4Codec.lambda.getBufferSize(org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.getInt(java.lang.String, int)"
+  }, {
+    "caller" : "org.apache.flink.shaded.io.airlift.compress.lzo.LzoCodec.lambda.getBufferSize(org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.getInt(java.lang.String, int)"
+  }, {
+    "caller" : "org.apache.flink.shaded.io.airlift.compress.snappy.SnappyCodec.lambda.getBufferSize(org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.getInt(java.lang.String, int)"
+  }, {
+    "caller" : "org.apache.flink.streaming.api.datastream.KeyedStream.validateKeyType(org.apache.flink.api.common.typeinfo.TypeInformation)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.join(java.lang.Iterable, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.streaming.api.graph.StreamingJobGraphGenerator.createChainedName(java.lang.Integer, java.util.List, java.util.Optional, java.util.Map, org.apache.flink.streaming.api.graph.util.JobVertexBuildContext)",
+    "thirdPartyMethod" : "org.apache.commons.lang3.StringUtils.join(java.lang.Iterable, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.streaming.api.operators.StreamTaskStateInitializerImpl.AbstractStateStreamIterator.closeCurrentStream()",
+    "thirdPartyMethod" : "org.apache.commons.io.IOUtils.closeQuietly(java.io.InputStream)"
+  }, {
+    "caller" : "org.apache.flink.streaming.api.operators.StreamTaskStateInitializerImpl.OperatorStateStreamIterator.hasNext()",
+    "thirdPartyMethod" : "org.apache.commons.io.IOUtils.closeQuietly(java.io.InputStream)"
+  }, {
+    "caller" : "org.apache.flink.streaming.api.operators.StreamTaskStateInitializerImpl.keyedStatedBackend(org.apache.flink.api.common.typeutils.TypeSerializer, java.lang.String, org.apache.flink.runtime.checkpoint.PrioritizedOperatorSubtaskState, org.apache.flink.core.fs.CloseableRegistry, org.apache.flink.metrics.MetricGroup, double, org.apache.flink.runtime.state.StateObject.StateObjectSizeStatsCollector, org.apache.flink.streaming.api.operators.StreamTaskStateInitializerImpl.KeyedStateBackendCreator)",
+    "thirdPartyMethod" : "org.apache.commons.io.IOUtils.closeQuietly(java.io.Closeable)"
+  }, {
+    "caller" : "org.apache.flink.streaming.api.operators.StreamTaskStateInitializerImpl.operatorStateBackend(java.lang.String, org.apache.flink.runtime.checkpoint.PrioritizedOperatorSubtaskState, org.apache.flink.core.fs.CloseableRegistry, org.apache.flink.runtime.state.StateObject.StateObjectSizeStatsCollector)",
+    "thirdPartyMethod" : "org.apache.commons.io.IOUtils.closeQuietly(java.io.Closeable)"
+  }, {
+    "caller" : "org.apache.flink.streaming.api.operators.StreamTaskStateInitializerImpl.streamOperatorStateContext(org.apache.flink.runtime.jobgraph.OperatorID, java.lang.String, org.apache.flink.streaming.runtime.tasks.ProcessingTimeService, org.apache.flink.streaming.api.operators.KeyContext, org.apache.flink.api.common.typeutils.TypeSerializer, org.apache.flink.core.fs.CloseableRegistry, org.apache.flink.metrics.MetricGroup, double, boolean, boolean)",
+    "thirdPartyMethod" : "org.apache.commons.io.IOUtils.closeQuietly(java.io.Closeable)"
+  } ]
+}
