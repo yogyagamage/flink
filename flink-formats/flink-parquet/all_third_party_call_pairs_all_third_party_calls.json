@@ -1,0 +1,1266 @@
+{
+  "callPairs" : [ {
+    "caller" : "org.apache.flink.formats.parquet.ParquetBulkWriter.addElement(java.lang.Object)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetWriter.write(java.lang.Object)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetBulkWriter.finish()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetWriter.close()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetFileFormatFactory.getParquetConfiguration(org.apache.flink.configuration.ReadableConfig)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.<init>()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetFileFormatFactory.lambda.getParquetConfiguration(org.apache.hadoop.conf.Configuration, java.lang.Object, java.lang.Object)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.set(java.lang.String, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetInputFile.FSDataInputStreamAdapter.<init>(org.apache.flink.core.fs.FSDataInputStream)",
+    "thirdPartyMethod" : "org.apache.parquet.io.DelegatingSeekableInputStream.<init>(java.io.InputStream)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.ParquetReader.close()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.close()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.ParquetReader.readNextRowGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.readNextRowGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.ParquetReader.readNextRowGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.PageReadStore.getRowCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.ParquetReader.readNextRowGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getFields()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.ParquetReader.readNextRowGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getColumns()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.ParquetReader.seek(long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.BlockMetaData.getRowCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.ParquetReader.seek(long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.getRowGroups()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.ParquetReader.seek(long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.skipNextRowGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.checkSchema(org.apache.parquet.schema.MessageType, org.apache.parquet.schema.MessageType)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.equals(java.lang.Object)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.checkSchema(org.apache.parquet.schema.MessageType, org.apache.parquet.schema.MessageType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getPaths()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.checkSchema(org.apache.parquet.schema.MessageType, org.apache.parquet.schema.MessageType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getColumns()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.checkSchema(org.apache.parquet.schema.MessageType, org.apache.parquet.schema.MessageType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getColumnDescription(java.lang.String[])"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.checkSchema(org.apache.parquet.schema.MessageType, org.apache.parquet.schema.MessageType)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getMaxDefinitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.checkSchema(org.apache.parquet.schema.MessageType, org.apache.parquet.schema.MessageType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.containsPath(java.lang.String[])"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.checkSchema(org.apache.parquet.schema.MessageType, org.apache.parquet.schema.MessageType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getFieldCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.clipParquetSchema(org.apache.parquet.schema.GroupType, java.util.Collection, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.buildMessage()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.clipParquetSchema(org.apache.parquet.schema.GroupType, java.util.Collection, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getType(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.clipParquetSchema(org.apache.parquet.schema.GroupType, java.util.Collection, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.GroupBuilder.named(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.clipParquetSchema(org.apache.parquet.schema.GroupType, java.util.Collection, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getFields()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.clipParquetSchema(org.apache.parquet.schema.GroupType, java.util.Collection, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.clipParquetSchema(org.apache.parquet.schema.GroupType, java.util.Collection, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.containsField(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.clipParquetSchema(org.apache.parquet.schema.GroupType, java.util.Collection, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.MessageTypeBuilder.addFields(org.apache.parquet.schema.Type[])"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.FileMetaData.getSchema()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.ParquetMetadata.getFileMetaData()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.ParquetReadOptions.builder()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.setRequestedSchema(org.apache.parquet.schema.MessageType)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.ParquetReadOptions.Builder.build()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIOFactory.<init>()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.getFooter()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.ParquetReadOptions.Builder.withRecordFilter(org.apache.parquet.filter2.compat.FilterCompat.Filter)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.getRecordCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIOFactory.getColumnIO(org.apache.parquet.schema.MessageType)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetInputFormat.getFilter(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.ParquetReadOptions.Builder.withRange(long, long)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.connector.file.src.FileSourceSplit)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.open(org.apache.parquet.io.InputFile, org.apache.parquet.ParquetReadOptions)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createWritableVectors(org.apache.parquet.schema.MessageType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getFields()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.ParquetVectorizedInputFormat.createWritableVectors(org.apache.parquet.schema.MessageType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getColumns()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.PositionOutputStreamAdapter.<init>(org.apache.flink.core.fs.FSDataOutputStream)",
+    "thirdPartyMethod" : "org.apache.parquet.io.PositionOutputStream.<init>()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetReaders.get()",
+    "thirdPartyMethod" : "org.apache.avro.generic.GenericData.get()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetReaders.lambda.forReflectRecordb0a87cf()",
+    "thirdPartyMethod" : "org.apache.avro.reflect.ReflectData.get()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetReaders.lambda.forSpecificRecordf5d272c()",
+    "thirdPartyMethod" : "org.apache.avro.specific.SpecificData.get()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.AvroParquetRecordReader.close()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetReader.close()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.AvroParquetRecordReader.read()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetReader.read()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.avro.AvroParquetReader.Builder.withConf(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.avro.AvroParquetReader.builder(org.apache.parquet.io.InputFile)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetReader.Builder.build()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.avro.AvroParquetReader.Builder.withDataModel(org.apache.avro.generic.GenericData)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.createAvroParquetWriter(java.lang.String, org.apache.avro.generic.GenericData, org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.avro.AvroParquetWriter.builder(org.apache.parquet.io.OutputFile)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.createAvroParquetWriter(java.lang.String, org.apache.avro.generic.GenericData, org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.avro.Schema.Parser.<init>()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.createAvroParquetWriter(java.lang.String, org.apache.avro.generic.GenericData, org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.avro.AvroParquetWriter.Builder.build()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.createAvroParquetWriter(java.lang.String, org.apache.avro.generic.GenericData, org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.avro.AvroParquetWriter.Builder.withDataModel(org.apache.avro.generic.GenericData)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.createAvroParquetWriter(java.lang.String, org.apache.avro.generic.GenericData, org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.avro.AvroParquetWriter.Builder.withSchema(org.apache.avro.Schema)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.createAvroParquetWriter(java.lang.String, org.apache.avro.generic.GenericData, org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.avro.Schema.Parser.parse(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.avro.generic.GenericData.get()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.forGenericRecord(org.apache.avro.Schema)",
+    "thirdPartyMethod" : "org.apache.avro.Schema.toString()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.forReflectRecord(java.lang.Class)",
+    "thirdPartyMethod" : "org.apache.avro.reflect.ReflectData.getSchema(java.lang.reflect.Type)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.forReflectRecord(java.lang.Class)",
+    "thirdPartyMethod" : "org.apache.avro.Schema.toString()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.forReflectRecord(java.lang.Class)",
+    "thirdPartyMethod" : "org.apache.avro.reflect.ReflectData.get()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.forSpecificRecord(java.lang.Class)",
+    "thirdPartyMethod" : "org.apache.avro.specific.SpecificData.getSchema(java.lang.reflect.Type)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.forSpecificRecord(java.lang.Class)",
+    "thirdPartyMethod" : "org.apache.avro.specific.SpecificData.get()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.forSpecificRecord(java.lang.Class)",
+    "thirdPartyMethod" : "org.apache.avro.Schema.toString()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.lambda.forReflectRecordc375096(java.lang.String, org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.avro.reflect.ReflectData.get()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.avro.AvroParquetWriters.lambda.forSpecificRecordb3(java.lang.String, org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.avro.specific.SpecificData.get()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.protobuf.ParquetProtoWriters.ParquetProtoWriterBuilder.<init>(org.apache.parquet.io.OutputFile, java.lang.Class)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetWriter.Builder.<init>(org.apache.parquet.io.OutputFile)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.protobuf.ParquetProtoWriters.ParquetProtoWriterBuilder.getWriteSupport(org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.proto.ProtoWriteSupport.<init>(java.lang.Class)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.<init>(org.apache.parquet.io.OutputFile, org.apache.flink.table.types.logical.RowType, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetWriter.Builder.<init>(org.apache.parquet.io.OutputFile)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.FlinkParquetBuilder.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetOutputFormat.getBlockSize(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.FlinkParquetBuilder.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.CompressionCodecName.name()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.FlinkParquetBuilder.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetOutputFormat.getValidation(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.FlinkParquetBuilder.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetOutputFormat.getDictionaryPageSize(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.FlinkParquetBuilder.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.getInt(java.lang.String, int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.FlinkParquetBuilder.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetOutputFormat.getEnableDictionary(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.FlinkParquetBuilder.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.get(java.lang.String, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.FlinkParquetBuilder.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetOutputFormat.getWriterVersion(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.FlinkParquetBuilder.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.CompressionCodecName.fromConf(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.FlinkParquetBuilder.createWriter(org.apache.parquet.io.OutputFile)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetOutputFormat.getPageSize(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.ParquetWriteSupport.<init>(org.apache.flink.formats.parquet.row.ParquetRowDataBuilder, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.api.WriteSupport.<init>()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataBuilder.ParquetWriteSupport.init(org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.api.WriteSupport.WriteContext.<init>(org.apache.parquet.schema.MessageType, java.util.Map)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<clinit>()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<clinit>()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit.values()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<init>(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType, boolean, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.get(java.lang.String, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<init>(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType, boolean, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.getBoolean(java.lang.String, boolean)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<init>(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType, boolean, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit.valueOf(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ArrayWriter.<init>(org.apache.flink.formats.parquet.row.ParquetRowDataWriter, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.GroupType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ArrayWriter.<init>(org.apache.flink.formats.parquet.row.ParquetRowDataWriter, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.GroupType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getType(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ArrayWriter.<init>(org.apache.flink.formats.parquet.row.ParquetRowDataWriter, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.GroupType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ArrayWriter.<init>(org.apache.flink.formats.parquet.row.ParquetRowDataWriter, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.GroupType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.asGroupType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ArrayWriter.writeArrayData(org.apache.flink.table.data.ArrayData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.endField(java.lang.String, int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ArrayWriter.writeArrayData(org.apache.flink.table.data.ArrayData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.endGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ArrayWriter.writeArrayData(org.apache.flink.table.data.ArrayData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.startGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ArrayWriter.writeArrayData(org.apache.flink.table.data.ArrayData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.startField(java.lang.String, int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.BinaryWriter.writeBinary(byte[])",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addBinary(org.apache.parquet.io.api.Binary)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.BinaryWriter.writeBinary(byte[])",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.fromReusedByteArray(byte[])"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.BooleanWriter.writeBoolean(boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addBoolean(boolean)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ByteWriter.writeByte(byte)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addInteger(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.DoubleWriter.writeDouble(double)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addDouble(double)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.FloatWriter.writeFloat(float)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addFloat(float)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.IntWriter.writeInt(int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addInteger(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.LongWriter.writeLong(long)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addLong(long)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.MapWriter.<init>(org.apache.flink.formats.parquet.row.ParquetRowDataWriter, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.GroupType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.asGroupType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.MapWriter.<init>(org.apache.flink.formats.parquet.row.ParquetRowDataWriter, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.GroupType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.MapWriter.<init>(org.apache.flink.formats.parquet.row.ParquetRowDataWriter, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.GroupType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getType(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.MapWriter.<init>(org.apache.flink.formats.parquet.row.ParquetRowDataWriter, org.apache.flink.table.types.logical.LogicalType, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.GroupType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.MapWriter.writeMapData(org.apache.flink.table.data.MapData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.startField(java.lang.String, int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.MapWriter.writeMapData(org.apache.flink.table.data.MapData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.startGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.MapWriter.writeMapData(org.apache.flink.table.data.MapData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.endGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.MapWriter.writeMapData(org.apache.flink.table.data.MapData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.endField(java.lang.String, int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.RowWriter.<init>(org.apache.flink.formats.parquet.row.ParquetRowDataWriter, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getType(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.RowWriter.write(org.apache.flink.table.data.ArrayData, int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.endGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.RowWriter.write(org.apache.flink.table.data.ArrayData, int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.startGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.RowWriter.write(org.apache.flink.table.data.RowData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.endField(java.lang.String, int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.RowWriter.write(org.apache.flink.table.data.RowData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.startField(java.lang.String, int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.RowWriter.write(org.apache.flink.table.data.RowData, int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.startGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.RowWriter.write(org.apache.flink.table.data.RowData, int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.endGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ShortWriter.writeShort(short)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addInteger(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.StringWriter.writeString(org.apache.flink.table.data.StringData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.fromReusedByteArray(byte[])"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.StringWriter.writeString(org.apache.flink.table.data.StringData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addBinary(org.apache.parquet.io.api.Binary)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.convertInt64ToLong(long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.createWriter(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.isPrimitive()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.createWriter(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.asGroupType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.createWriter(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.getLogicalTypeAnnotation()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.timestampToInt96(org.apache.flink.table.data.TimestampData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.fromConstantByteBuffer(java.nio.ByteBuffer)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.write(org.apache.flink.table.data.RowData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.endMessage()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.write(org.apache.flink.table.data.RowData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.startMessage()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.writeTimestamp(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.data.TimestampData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addLong(long)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.writeTimestamp(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.data.TimestampData)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addBinary(org.apache.parquet.io.api.Binary)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriterLongUnscaledBytesWriter.addRecord(long)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addBinary(org.apache.parquet.io.api.Binary)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriterLongUnscaledBytesWriter.addRecord(long)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.fromReusedByteArray(byte[], int, int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriterUnscaledBytesWriter.addRecord(byte[])",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.fromReusedByteArray(byte[], int, int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.row.ParquetRowDataWriterUnscaledBytesWriter.addRecord(byte[])",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.RecordConsumer.addBinary(org.apache.parquet.io.api.Binary)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.ParquetFileRowCountCalculator.call()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.readFooter(org.apache.hadoop.conf.Configuration, org.apache.hadoop.fs.Path)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.ParquetFileRowCountCalculator.call()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.ParquetMetadata.getBlocks()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.ParquetFileRowCountCalculator.call()",
+    "thirdPartyMethod" : "org.apache.hadoop.fs.Path.<init>(java.net.URI)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.ParquetFileRowCountCalculator.call()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.asGroupType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.ParquetFileRowCountCalculator.call()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getFields()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.ParquetFileRowCountCalculator.call()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.FileMetaData.getSchema()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.ParquetFileRowCountCalculator.call()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.ParquetMetadata.getFileMetaData()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.binaryToDecimal(org.apache.parquet.io.api.Binary, int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.getBytesUnsafe()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.binaryToTimestamp(org.apache.parquet.io.api.Binary, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.length()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.binaryToTimestamp(org.apache.parquet.io.api.Binary, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.toByteBuffer()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.Statistics.getNumNulls()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.DoubleStatistics.getMin()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.BinaryStatistics.genericGetMin()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.LongStatistics.getMax()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.toStringUsingUTF8()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.BinaryStatistics.genericGetMax()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.LongStatistics.getMin()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.FloatStatistics.getMin()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.IntStatistics.getMax()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.FloatStatistics.getMax()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.IntStatistics.getMin()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.convertToColumnStats(org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.column.statistics.Statistics, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.DoubleStatistics.getMax()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.getTableStatistics(java.util.List, org.apache.flink.table.types.DataType, org.apache.hadoop.conf.Configuration, boolean, int)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.ColumnChunkMetaData.getStatistics()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.getTableStatistics(java.util.List, org.apache.flink.table.types.DataType, org.apache.hadoop.conf.Configuration, boolean, int)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.BlockMetaData.getRowCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.getTableStatistics(java.util.List, org.apache.flink.table.types.DataType, org.apache.hadoop.conf.Configuration, boolean, int)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.BlockMetaData.getColumns()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetFormatStatisticsReportUtil.updateStatistics(org.apache.parquet.column.statistics.Statistics, java.lang.String, java.util.Map)",
+    "thirdPartyMethod" : "org.apache.parquet.column.statistics.Statistics.mergeStatistics(org.apache.parquet.column.statistics.Statistics)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetMessageType(java.lang.String, org.apache.flink.table.types.logical.RowType, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.<init>(java.lang.String, org.apache.parquet.schema.Type[])"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.ConversionPatterns.listOfElements(org.apache.parquet.schema.Type.Repetition, java.lang.String, org.apache.parquet.schema.Type)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.PrimitiveBuilder.scale(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.PrimitiveBuilder.precision(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.ConversionPatterns.mapType(org.apache.parquet.schema.Type.Repetition, java.lang.String, java.lang.String, org.apache.parquet.schema.Type, org.apache.parquet.schema.Type)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.timestampType(boolean, org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit.valueOf(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.PrimitiveBuilder.as(org.apache.parquet.schema.OriginalType)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.getBoolean(java.lang.String, boolean)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.PrimitiveBuilder.as(org.apache.parquet.schema.LogicalTypeAnnotation)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.PrimitiveBuilder.named(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.primitive(org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName, org.apache.parquet.schema.Type.Repetition)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.get(java.lang.String, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.PrimitiveBuilder.length(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter.convertToParquetType(java.lang.String, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type.Repetition, org.apache.hadoop.conf.Configuration)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.<init>(org.apache.parquet.schema.Type.Repetition, java.lang.String, java.util.List)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.SerializableConfiguration.readObject(java.io.ObjectInputStream)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.readFields(java.io.DataInput)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.SerializableConfiguration.readObject(java.io.ObjectInputStream)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.<init>(boolean)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.utils.SerializableConfiguration.writeObject(java.io.ObjectOutputStream)",
+    "thirdPartyMethod" : "org.apache.hadoop.conf.Configuration.write(java.io.DataOutput)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.format.converter.ParquetMetadataConverter.range(long, long)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.FileMetaData.getSchema()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.BlockMetaData.getRowCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.ParquetMetadata.getFileMetaData()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.readFooter(org.apache.hadoop.conf.Configuration, org.apache.hadoop.fs.Path, org.apache.parquet.format.converter.ParquetMetadataConverter.MetadataFilter)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.ParquetMetadata.getBlocks()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getColumns()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIOFactory.<init>()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.filter2.compat.RowGroupFilter.filterRowGroups(org.apache.parquet.filter2.compat.FilterCompat.Filter, java.util.List, org.apache.parquet.schema.MessageType)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetInputFormat.getFilter(org.apache.hadoop.conf.Configuration)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.<init>(org.apache.hadoop.conf.Configuration, org.apache.parquet.hadoop.metadata.FileMetaData, org.apache.hadoop.fs.Path, java.util.List, java.util.List)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.<init>(boolean, boolean, org.apache.hadoop.conf.Configuration, org.apache.flink.table.types.logical.LogicalType[], java.lang.String[], org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.ColumnBatchGenerator, int, org.apache.hadoop.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIOFactory.getColumnIO(org.apache.parquet.schema.MessageType)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.checkSchema()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getColumns()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.checkSchema()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getPaths()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.checkSchema()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getFieldCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.checkSchema()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getColumnDescription(java.lang.String[])"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.checkSchema()",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getMaxDefinitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.checkSchema()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.containsPath(java.lang.String[])"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.checkSchema()",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.equals(java.lang.Object)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.clipParquetSchema(org.apache.parquet.schema.GroupType, java.lang.String[], boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.buildMessage()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.clipParquetSchema(org.apache.parquet.schema.GroupType, java.lang.String[], boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.MessageTypeBuilder.addFields(org.apache.parquet.schema.Type[])"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.clipParquetSchema(org.apache.parquet.schema.GroupType, java.lang.String[], boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getFieldIndex(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.clipParquetSchema(org.apache.parquet.schema.GroupType, java.lang.String[], boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.clipParquetSchema(org.apache.parquet.schema.GroupType, java.lang.String[], boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getFields()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.clipParquetSchema(org.apache.parquet.schema.GroupType, java.lang.String[], boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getType(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.clipParquetSchema(org.apache.parquet.schema.GroupType, java.lang.String[], boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Types.GroupBuilder.named(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.close()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.close()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.createWritableVectors()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getColumns()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.createWritableVectors()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getFields()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.readNextRowGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.readNextRowGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.readNextRowGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getColumns()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.readNextRowGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.MessageType.getFields()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.readNextRowGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.PageReadStore.getRowCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.seekToRow(long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.skipNextRowGroup()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.seekToRow(long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.ParquetFileReader.getRowGroups()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetColumnarRowSplitReader.seekToRow(long)",
+    "thirdPartyMethod" : "org.apache.parquet.hadoop.metadata.BlockMetaData.getRowCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetDictionary.decodeToBinary(int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.getBytesUnsafe()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetDictionary.decodeToBinary(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToBinary(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetDictionary.decodeToDouble(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToDouble(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetDictionary.decodeToFloat(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToFloat(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetDictionary.decodeToInt(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToInt(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetDictionary.decodeToLong(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToLong(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetDictionary.decodeToTimestamp(int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.TimestampLogicalTypeAnnotation.getUnit()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetDictionary.decodeToTimestamp(int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getLogicalTypeAnnotation()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetDictionary.decodeToTimestamp(int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getPrimitiveTypeName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetDictionary.decodeToTimestamp(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.<clinit>()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.<clinit>()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName.values()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.constructField(org.apache.flink.table.types.logical.RowType.RowField, org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIO.getRepetitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.constructField(org.apache.flink.table.types.logical.RowType.RowField, org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.PrimitiveColumnIO.getId()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.constructField(org.apache.flink.table.types.logical.RowType.RowField, org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIO.getDefinitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.constructField(org.apache.flink.table.types.logical.RowType.RowField, org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getChild(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.constructField(org.apache.flink.table.types.logical.RowType.RowField, org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.getRepetition()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.constructField(org.apache.flink.table.types.logical.RowType.RowField, org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.constructField(org.apache.flink.table.types.logical.RowType.RowField, org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIO.getType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.constructField(org.apache.flink.table.types.logical.RowType.RowField, org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIO.getParent()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.constructField(org.apache.flink.table.types.logical.RowType.RowField, org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.PrimitiveColumnIO.getColumnDescriptor()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.constructField(org.apache.flink.table.types.logical.RowType.RowField, org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getRepetitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createColumnReader(boolean, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, org.apache.parquet.column.page.PageReadStore, org.apache.flink.formats.parquet.vector.type.ParquetField, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createColumnReader(boolean, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, org.apache.parquet.column.page.PageReadStore, org.apache.flink.formats.parquet.vector.type.ParquetField, int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createColumnReader(boolean, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, org.apache.parquet.column.page.PageReadStore, org.apache.flink.formats.parquet.vector.type.ParquetField, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getPrimitiveTypeName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createColumnReader(boolean, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, org.apache.parquet.column.page.PageReadStore, org.apache.flink.formats.parquet.vector.type.ParquetField, int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.PageReadStore.getPageReader(org.apache.parquet.column.ColumnDescriptor)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createWritableColumnVector(int, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getLogicalTypeAnnotation()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createWritableColumnVector(int, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.asGroupType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createWritableColumnVector(int, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.listType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createWritableColumnVector(int, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.mapType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createWritableColumnVector(int, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.getLogicalTypeAnnotation()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createWritableColumnVector(int, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.ListLogicalTypeAnnotation.equals(java.lang.Object)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createWritableColumnVector(int, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.GroupType.getType(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createWritableColumnVector(int, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getOriginalType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createWritableColumnVector(int, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getPrimitiveTypeName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.createWritableColumnVector(int, org.apache.flink.table.types.logical.LogicalType, org.apache.parquet.schema.Type, java.util.List, int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.genPartColumnarRowReader(boolean, boolean, org.apache.hadoop.conf.Configuration, java.lang.String[], org.apache.flink.table.types.DataType[], java.util.Map, int[], int, org.apache.flink.core.fs.Path, long, long)",
+    "thirdPartyMethod" : "org.apache.hadoop.fs.Path.<init>(java.net.URI)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getAllColumnDescriptorByType(int, org.apache.parquet.schema.Type, java.util.List)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getAllColumnDescriptorByType(int, org.apache.parquet.schema.Type, java.util.List)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPath()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getAllColumnDescriptorByType(int, org.apache.parquet.schema.Type, java.util.List)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.InvalidSchemaException.<init>(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getArrayElementColumn(org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIO.getType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getArrayElementColumn(org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIO.getParent()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getArrayElementColumn(org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIO.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getArrayElementColumn(org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getChild(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getArrayElementColumn(org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getArrayElementColumn(org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getChildrenCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getArrayElementColumn(org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.getLogicalTypeAnnotation()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getArrayElementColumn(org.apache.parquet.io.ColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.isRepetition(org.apache.parquet.schema.Type.Repetition)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getMapKeyValueColumn(org.apache.parquet.io.GroupColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getChildrenCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.getMapKeyValueColumn(org.apache.parquet.io.GroupColumnIO)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getChild(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.lookupColumnByName(org.apache.parquet.io.GroupColumnIO, java.lang.String)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ColumnIO.getName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.lookupColumnByName(org.apache.parquet.io.GroupColumnIO, java.lang.String)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getChild(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.lookupColumnByName(org.apache.parquet.io.GroupColumnIO, java.lang.String)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getChild(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.ParquetSplitReaderUtil.lookupColumnByName(org.apache.parquet.io.GroupColumnIO, java.lang.String)",
+    "thirdPartyMethod" : "org.apache.parquet.io.GroupColumnIO.getChildrenCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.<init>(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getMaxDefinitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.<init>(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DictionaryPage.getEncoding()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.<init>(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.PageReader.getTotalValueCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.<init>(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Encoding.initDictionary(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.DictionaryPage)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.<init>(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.PageReader.readDictionaryPage()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.checkTypeName(org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getPrimitiveTypeName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.checkTypeName(org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.prepareNewPage(org.apache.parquet.column.Encoding, org.apache.parquet.bytes.ByteBufferInputStream)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.position()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.prepareNewPage(org.apache.parquet.column.Encoding, org.apache.parquet.bytes.ByteBufferInputStream)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.available()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.prepareNewPage(org.apache.parquet.column.Encoding, org.apache.parquet.bytes.ByteBufferInputStream)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Encoding.usesDictionary()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.prepareNewPage(org.apache.parquet.column.Encoding, org.apache.parquet.bytes.ByteBufferInputStream)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.remainingStream()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readDataBuffer(int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ParquetDecodingException.<init>(java.lang.String, java.lang.Throwable)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readDataBuffer(int)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.slice(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesUtils.getWidthFromMaxInt(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getMaxDefinitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Encoding.getValuesReader(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.ValuesType)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesInput.toInputStream()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV1.getRlEncoding()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.initFromPage(int, org.apache.parquet.bytes.ByteBufferInputStream)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV1.getBytes()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV1.getValueEncoding()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV1.getValueCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV1.getDlEncoding()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesUtils.getWidthFromMaxInt(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getMaxDefinitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV2.getDefinitionLevels()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesInput.toInputStream()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV2.getData()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV2.getValueCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV2.getDataEncoding()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.AbstractColumnReader.readToVector(int, org.apache.flink.table.data.columnar.vector.writable.WritableColumnVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.PageReader.readPage()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.BooleanColumnReader.readBoolean()",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.read()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.BooleanColumnReader.readBoolean()",
+    "thirdPartyMethod" : "org.apache.parquet.io.ParquetDecodingException.<init>(java.lang.String, java.lang.Throwable)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ByteColumnReader.readBatchFromDictionaryIds(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableByteVector, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToInt(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.BytesColumnReader.readBatchFromDictionaryIds(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableBytesVector, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.getBytesUnsafe()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.BytesColumnReader.readBatchFromDictionaryIds(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableBytesVector, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToBinary(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.DoubleColumnReader.readBatchFromDictionaryIds(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableDoubleVector, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToDouble(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.FixedLenBytesColumnReader.heapBinaryToLong(org.apache.parquet.io.api.Binary)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.toByteBuffer()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.FixedLenBytesColumnReader.readBatch(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableColumnVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.FixedLenBytesColumnReader.readBatch(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableColumnVector)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.getBytes()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.FixedLenBytesColumnReader.readBatch(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableColumnVector)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getTypeLength()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.FixedLenBytesColumnReader.readBatchFromDictionaryIds(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableColumnVector, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.getBytesUnsafe()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.FixedLenBytesColumnReader.readBatchFromDictionaryIds(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableColumnVector, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToBinary(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.FixedLenBytesColumnReader.readDataBinary(int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.fromConstantByteArray(byte[])"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.FixedLenBytesColumnReader.readDataBinary(int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.fromConstantByteArray(byte[], int, int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.FloatColumnReader.readBatchFromDictionaryIds(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableFloatVector, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToFloat(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.IntColumnReader.readBatchFromDictionaryIds(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToInt(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.LongColumnReader.readBatchFromDictionaryIds(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableLongVector, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToLong(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedColumnReader.readPrimitive(org.apache.flink.formats.parquet.vector.type.ParquetPrimitiveField, int, org.apache.flink.table.data.columnar.vector.ColumnVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedColumnReader.readPrimitive(org.apache.flink.formats.parquet.vector.type.ParquetPrimitiveField, int, org.apache.flink.table.data.columnar.vector.ColumnVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.PageReadStore.getPageReader(org.apache.parquet.column.ColumnDescriptor)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.<clinit>()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.<clinit>()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName.values()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.<init>(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader, boolean, org.apache.parquet.schema.Type, org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Encoding.initDictionary(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.DictionaryPage)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.<init>(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader, boolean, org.apache.parquet.schema.Type, org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.PageReader.readDictionaryPage()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.<init>(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader, boolean, org.apache.parquet.schema.Type, org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getMaxDefinitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.<init>(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader, boolean, org.apache.parquet.schema.Type, org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.asPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.<init>(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader, boolean, org.apache.parquet.schema.Type, org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DictionaryPage.getEncoding()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.RLEIntIterator.nextInt()",
+    "thirdPartyMethod" : "org.apache.parquet.io.ParquetDecodingException.<init>(java.lang.Throwable)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.RLEIntIterator.nextInt()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.rle.RunLengthBitPackingHybridDecoder.readInt()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.ValuesReaderIntIterator.nextInt()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readInteger()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.dictionaryDecodeValue(org.apache.flink.table.types.logical.LogicalType, java.lang.Integer)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getPrimitiveTypeName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.dictionaryDecodeValue(org.apache.flink.table.types.logical.LogicalType, java.lang.Integer)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.dictionaryDecodeValue(org.apache.flink.table.types.logical.LogicalType, java.lang.Integer)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.fillColumnVector(int, java.util.List)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.fillColumnVector(int, java.util.List)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.fillColumnVector(int, java.util.List)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getPrimitiveTypeName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.initDataReader(org.apache.parquet.column.Encoding, org.apache.parquet.bytes.ByteBufferInputStream, int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Encoding.getValuesReader(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.ValuesType)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.initDataReader(org.apache.parquet.column.Encoding, org.apache.parquet.bytes.ByteBufferInputStream, int)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.Type.asPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.initDataReader(org.apache.parquet.column.Encoding, org.apache.parquet.bytes.ByteBufferInputStream, int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Encoding.getDictionaryBasedValuesReader(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.ValuesType, org.apache.parquet.column.Dictionary)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.initDataReader(org.apache.parquet.column.Encoding, org.apache.parquet.bytes.ByteBufferInputStream, int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Encoding.usesDictionary()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.newRLEIterator(int, org.apache.parquet.bytes.BytesInput)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesInput.toByteArray()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.newRLEIterator(int, org.apache.parquet.bytes.BytesInput)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesUtils.getWidthFromMaxInt(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.newRLEIterator(int, org.apache.parquet.bytes.BytesInput)",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.rle.RunLengthBitPackingHybridDecoder.<init>(int, java.io.InputStream)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.newRLEIterator(int, org.apache.parquet.bytes.BytesInput)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ParquetDecodingException.<init>(java.lang.String, java.lang.Throwable)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPage()",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPage.accept(org.apache.parquet.column.page.DataPage.Visitor)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPage()",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.PageReader.readPage()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Encoding.getValuesReader(org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.ValuesType)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesInput.size()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesInput.toInputStream()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV1.getValueEncoding()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ParquetDecodingException.<init>(java.lang.String, java.lang.Throwable)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV1.getValueCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV1.getDlEncoding()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.position()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV1.getRlEncoding()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.initFromPage(int, org.apache.parquet.bytes.ByteBufferInputStream)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV1(org.apache.parquet.column.page.DataPageV1)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV1.getBytes()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getMaxDefinitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV2.getDefinitionLevels()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesInput.size()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesInput.toInputStream()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV2.getRepetitionLevels()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getMaxRepetitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.io.ParquetDecodingException.<init>(java.lang.String, java.lang.Throwable)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV2.getValueCount()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV2.getDataEncoding()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPageV2(org.apache.parquet.column.page.DataPageV2)",
+    "thirdPartyMethod" : "org.apache.parquet.column.page.DataPageV2.getData()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPrimitiveTypedRow(org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getPrimitiveTypeName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPrimitiveTypedRow(org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.NestedPrimitiveColumnReader.readPrimitiveTypedRow(org.apache.flink.table.types.logical.LogicalType)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.initFromPage(int, org.apache.parquet.bytes.ByteBufferInputStream)",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.initFromPage(int, org.apache.parquet.bytes.ByteBufferInputStream)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readBoolean()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readBoolean()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readBoolean(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToBoolean(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readBytes()",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.getBytesUnsafe()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readBytes()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readBytes()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readBytes(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToBinary(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readBytes(int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.getBytesUnsafe()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readDouble()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readDouble()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readDouble(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToDouble(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readFloat()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readFloat()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readFloat(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToFloat(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readInteger()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readInteger()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readInteger(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToInt(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readLong()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readLong()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readLong(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToLong(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readSmallInt()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readInteger()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readSmallInt(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToInt(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readTinyInt()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readInteger()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readTinyInt(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToInt(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.readValueDictionaryId()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readValueDictionaryId()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.DefaultParquetDataColumnReader.skip()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.skip()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.TypesFromInt96PageReader.convert(org.apache.parquet.io.api.Binary)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.toByteBuffer()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.TypesFromInt96PageReader.readTimestamp()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.ValuesReader.readBytes()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.TypesFromInt96PageReader.readTimestamp(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToBinary(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ParquetDataColumnReaderFactory.getDataColumnReaderByTypeHelper(boolean, org.apache.parquet.schema.PrimitiveType, org.apache.parquet.column.Dictionary, org.apache.parquet.column.values.ValuesReader, boolean)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getPrimitiveTypeName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.initFromStream(int, org.apache.parquet.bytes.ByteBufferInputStream)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.available()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.initFromStream(int, org.apache.parquet.bytes.ByteBufferInputStream)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.sliceStream(long)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.initFromStream(int, org.apache.parquet.bytes.ByteBufferInputStream)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.read()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.initWidthAndPacker(int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.bitpacking.Packer.newBytePacker(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.initWidthAndPacker(int)",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.BytesUtils.paddedByteCountFromBits(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.readIntLittleEndian()",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.read()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.readIntLittleEndianPaddedOnBitWidth()",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.read()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.readNextGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.bitpacking.BytePacker.unpack8Values(java.nio.ByteBuffer, int, int[], int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.readNextGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.io.ParquetDecodingException.<init>(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.readNextGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.column.values.bitpacking.BytePacker.unpack8Values(byte[], int, int[], int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.readNextGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.slice(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.readNextGroup()",
+    "thirdPartyMethod" : "org.apache.parquet.io.ParquetDecodingException.<init>(java.lang.String, java.lang.Throwable)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.RunLengthDecoder.readUnsignedVarInt()",
+    "thirdPartyMethod" : "org.apache.parquet.bytes.ByteBufferInputStream.read()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.ShortColumnReader.readBatchFromDictionaryIds(int, int, org.apache.flink.table.data.columnar.vector.writable.WritableShortVector, org.apache.flink.table.data.columnar.vector.writable.WritableIntVector)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToInt(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.<clinit>()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit.values()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.<clinit>()",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.<init>(boolean, org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.TimestampLogicalTypeAnnotation.getUnit()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.<init>(boolean, org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getLogicalTypeAnnotation()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.<init>(boolean, org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.PrimitiveType.getPrimitiveTypeName()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.<init>(boolean, org.apache.parquet.column.ColumnDescriptor, org.apache.parquet.column.page.PageReader)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getPrimitiveType()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.decodeInt64ToTimestamp(boolean, org.apache.parquet.column.Dictionary, int, org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToLong(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.decodeInt96ToTimestamp(boolean, org.apache.parquet.column.Dictionary, int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.Dictionary.decodeToBinary(int)"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.decodeInt96ToTimestamp(boolean, org.apache.parquet.column.Dictionary, int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.toByteBuffer()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.decodeInt96ToTimestamp(boolean, org.apache.parquet.column.Dictionary, int)",
+    "thirdPartyMethod" : "org.apache.parquet.io.api.Binary.length()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader.int64ToTimestamp(boolean, long, org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit)",
+    "thirdPartyMethod" : "org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit.ordinal()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.type.ParquetPrimitiveField.<init>(org.apache.flink.table.types.logical.LogicalType, boolean, org.apache.parquet.column.ColumnDescriptor, int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getMaxDefinitionLevel()"
+  }, {
+    "caller" : "org.apache.flink.formats.parquet.vector.type.ParquetPrimitiveField.<init>(org.apache.flink.table.types.logical.LogicalType, boolean, org.apache.parquet.column.ColumnDescriptor, int)",
+    "thirdPartyMethod" : "org.apache.parquet.column.ColumnDescriptor.getMaxRepetitionLevel()"
+  } ]
+}
