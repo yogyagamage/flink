@@ -1,0 +1,87 @@
+{
+  "callPairs" : [ {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.<clinit>()",
+    "thirdPartyMethod" : "okhttp3.MediaType.parse(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.<init>(java.lang.String, java.lang.String, int, org.apache.flink.metrics.datadog.DataCenter, boolean)",
+    "thirdPartyMethod" : "okhttp3.OkHttpClient.Builder.readTimeout(long, java.util.concurrent.TimeUnit)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.<init>(java.lang.String, java.lang.String, int, org.apache.flink.metrics.datadog.DataCenter, boolean)",
+    "thirdPartyMethod" : "okhttp3.OkHttpClient.Builder.writeTimeout(long, java.util.concurrent.TimeUnit)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.<init>(java.lang.String, java.lang.String, int, org.apache.flink.metrics.datadog.DataCenter, boolean)",
+    "thirdPartyMethod" : "okhttp3.OkHttpClient.Builder.build()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.<init>(java.lang.String, java.lang.String, int, org.apache.flink.metrics.datadog.DataCenter, boolean)",
+    "thirdPartyMethod" : "okhttp3.OkHttpClient.Builder.proxy(java.net.Proxy)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.<init>(java.lang.String, java.lang.String, int, org.apache.flink.metrics.datadog.DataCenter, boolean)",
+    "thirdPartyMethod" : "okhttp3.OkHttpClient.Builder.connectTimeout(long, java.util.concurrent.TimeUnit)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.<init>(java.lang.String, java.lang.String, int, org.apache.flink.metrics.datadog.DataCenter, boolean)",
+    "thirdPartyMethod" : "okhttp3.OkHttpClient.Builder.<init>()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.EmptyCallback.onResponse(okhttp3.Call, okhttp3.Response)",
+    "thirdPartyMethod" : "okhttp3.Response.isSuccessful()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.EmptyCallback.onResponse(okhttp3.Call, okhttp3.Response)",
+    "thirdPartyMethod" : "okhttp3.Response.close()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.close()",
+    "thirdPartyMethod" : "okhttp3.OkHttpClient.dispatcher()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.close()",
+    "thirdPartyMethod" : "okhttp3.Dispatcher.executorService()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.close()",
+    "thirdPartyMethod" : "okhttp3.ConnectionPool.evictAll()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.close()",
+    "thirdPartyMethod" : "okhttp3.OkHttpClient.connectionPool()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.send(org.apache.flink.metrics.datadog.DSeries)",
+    "thirdPartyMethod" : "okhttp3.Request.Builder.post(okhttp3.RequestBody)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.send(org.apache.flink.metrics.datadog.DSeries)",
+    "thirdPartyMethod" : "okhttp3.RequestBody.create(okhttp3.MediaType, java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.send(org.apache.flink.metrics.datadog.DSeries)",
+    "thirdPartyMethod" : "okhttp3.Request.Builder.build()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.send(org.apache.flink.metrics.datadog.DSeries)",
+    "thirdPartyMethod" : "okhttp3.OkHttpClient.newCall(okhttp3.Request)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.send(org.apache.flink.metrics.datadog.DSeries)",
+    "thirdPartyMethod" : "okhttp3.Request.Builder.url(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.send(org.apache.flink.metrics.datadog.DSeries)",
+    "thirdPartyMethod" : "okhttp3.Request.Builder.<init>()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.send(org.apache.flink.metrics.datadog.DSeries)",
+    "thirdPartyMethod" : "okhttp3.Call.enqueue(okhttp3.Callback)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+    "thirdPartyMethod" : "okhttp3.OkHttpClient.newCall(okhttp3.Request)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+    "thirdPartyMethod" : "okhttp3.Request.Builder.url(java.lang.String)"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+    "thirdPartyMethod" : "okhttp3.Request.Builder.<init>()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+    "thirdPartyMethod" : "okhttp3.Call.execute()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+    "thirdPartyMethod" : "okhttp3.Response.close()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+    "thirdPartyMethod" : "okhttp3.Response.isSuccessful()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+    "thirdPartyMethod" : "okhttp3.Request.Builder.build()"
+  }, {
+    "caller" : "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+    "thirdPartyMethod" : "okhttp3.Request.Builder.get()"
+  } ]
+}

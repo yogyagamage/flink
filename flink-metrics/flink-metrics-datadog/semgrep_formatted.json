@@ -1,0 +1,625 @@
+{
+  "version": "1.153.0",
+  "results": [
+    {
+      "check_id": "ssc-646edd60-542f-3518-0c76-38258974a8f4",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.assertj:assertj-core are vulnerable to Improper Restriction of XML External Entity Reference. An XXE vulnerability exists in AssertJ's XmlStringPrettyFormatter.toXmlDocument(String), which initializes DocumentBuilderFactory with default settings (DTD and external entities enabled). If untrusted XML is passed to isXmlEqualTo(CharSequence) or xmlPrettyFormat(String), an attacker can read local files, perform SSRF, or trigger DoS via entity expansion.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2026-24400",
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "ghsa": "GHSA-rqfh-9r24-8c9r",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2026-01-26T21:31:41Z",
+          "references": [
+            "https://github.com/advisories/GHSA-rqfh-9r24-8c9r",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-24400"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.assertj:assertj-core": "3.27.7"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2026-24400",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 275566,
+              "rv_id": 1267631,
+              "rule_id": "L1U2zkK",
+              "version_id": "LjTkK8e",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-646edd60-542f-3518-0c76-38258974a8f4",
+              "origin": "custom",
+              "rule_name": "ssc-646edd60-542f-3518-0c76-38258974a8f4"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-646edd60-542f-3518-0c76-38258974a8f4",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-646edd60-542f-3518-0c76-38258974a8f4",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "c834f40018e9f6bd8be676b0cfedb15ba87ec9bc4611369d92f4786c43c3fd0e3e391777bd0d250fd28110c92a89c7ad657387852c57d786468cda3d14fcc7ac_0",
+        "lines": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.assertj:assertj-core",
+              "semver_range": ">=1.4.0, <=3.27.6"
+            },
+            "found_dependency": {
+              "package": "org.assertj:assertj-core",
+              "version": "3.23.1",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "net.bytebuddy:byte-buddy",
+                  "version": "1.15.11"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.apache.logging.log4j:log4j-core are vulnerable to Improper Validation of Certificate with Host Mismatch.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-68161",
+          "cwe": [
+            "CWE-297: Improper Validation of Certificate with Host Mismatch"
+          ],
+          "ghsa": "GHSA-vc5p-v9hr-52mj",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "publish-date": "2025-12-18T21:31:44Z",
+          "references": [
+            "https://github.com/advisories/GHSA-vc5p-v9hr-52mj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-68161"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.logging.log4j:log4j-core": "2.25.3"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2025-68161",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authentication"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 272499,
+              "rv_id": 1259409,
+              "rule_id": "JDU369L",
+              "version_id": "QkTGrLJ",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+              "origin": "custom",
+              "rule_name": "ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "3375880d491aff9913d2980a8f98aa9c53d89ba0942048593171d685032ae399424e7ffe2b5bc9ee67852cce05f27b3abf7832493a8b60242689a4e38638da44_0",
+        "lines": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.apache.logging.log4j:log4j-core",
+              "semver_range": ">=2.0-beta9, <2.25.3"
+            },
+            "found_dependency": {
+              "package": "org.apache.logging.log4j:log4j-core",
+              "version": "2.24.1",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-206094af7a08001622e3adcd24423cbb12e2bcce",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of commons-lang:commons-lang and org.apache.commons:commons-lang3 are vulnerable to Uncontrolled Recursion.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-48924",
+          "cwe": [
+            "CWE-674: Uncontrolled Recursion"
+          ],
+          "ghsa": "GHSA-j288-q9x7-2f5v",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-07-11T15:31:37Z",
+          "references": [
+            "https://github.com/advisories/GHSA-j288-q9x7-2f5v",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-48924"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.commons:commons-lang3": "3.18.0"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2025-48924",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 204913,
+              "rv_id": 1128895,
+              "rule_id": "QrU8AO6",
+              "version_id": "X0T2L8R",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-206094af7a08001622e3adcd24423cbb12e2bcce",
+              "origin": "custom",
+              "rule_name": "ssc-parity-206094af7a08001622e3adcd24423cbb12e2bcce"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-206094af7a08001622e3adcd24423cbb12e2bcce",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-206094af7a08001622e3adcd24423cbb12e2bcce",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "2beadaa9bb15eba7a5d5fb3ca4bbaa729c6b75ea31483a7ecc556441cd1bee0f9e1a23229b83223673e637ac15718dfe442da52d5d1c2fa1b892668341b7cb1a_0",
+        "lines": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.apache.commons:commons-lang3",
+              "semver_range": ">=3.0, <3.18.0"
+            },
+            "found_dependency": {
+              "package": "org.apache.commons:commons-lang3",
+              "version": "3.12.0",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-7f0b48272bda7936c6c69e7c617953c9577d910f",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of com.squareup.okio:okio and com.squareup.okio:okio-jvm are vulnerable to Incorrect Conversion between Numeric Types / Signed to Unsigned Conversion Error.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2023-3635",
+          "cwe": [
+            "CWE-195: Signed to Unsigned Conversion Error",
+            "CWE-681: Incorrect Conversion between Numeric Types"
+          ],
+          "ghsa": "GHSA-w33c-445m-f8w7",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-07-12T21:30:50Z",
+          "references": [
+            "https://github.com/advisories/GHSA-w33c-445m-f8w7",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-3635"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.squareup.okio:okio": "3.4.0"
+            },
+            {
+              "com.squareup.okio:okio": "1.17.6"
+            },
+            {
+              "com.squareup.okio:okio-jvm": "3.4.0"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2023-3635",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 110104,
+              "rv_id": 971600,
+              "rule_id": "6JUvJYR",
+              "version_id": "LjTX93g",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-7f0b48272bda7936c6c69e7c617953c9577d910f",
+              "origin": "custom",
+              "rule_name": "ssc-parity-7f0b48272bda7936c6c69e7c617953c9577d910f"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-7f0b48272bda7936c6c69e7c617953c9577d910f",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-7f0b48272bda7936c6c69e7c617953c9577d910f",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "5106d26b58d639671a8dddcb73571eb8e0a1fbabe08339bb80ba31534b759fdbd0505d7f6449082a424681acf9a53f5ecb1ef7b9bff35e9b17b0299b64e57a82_0",
+        "lines": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.squareup.okio:okio",
+              "semver_range": "<1.17.6"
+            },
+            "found_dependency": {
+              "package": "com.squareup.okio:okio",
+              "version": "1.17.2",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-555dbcd5-ba86-abbc-b86f-4b6dcce40a34",
+      "path": "src/main/java/org/apache/flink/metrics/datadog/DatadogHttpClient.java",
+      "start": {
+        "line": 101,
+        "col": 34,
+        "offset": 3627
+      },
+      "end": {
+        "line": 101,
+        "col": 61,
+        "offset": 3654
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of com.squareup.okhttp3:okhttp are vulnerable to Improper Certificate Validation. Improper hostname verification in OkHttp's OkHostnameVerifier.verifyHostName can allow an attacker to present a certificate for the wrong domain, bypassing TLS checks and causing OkHttp to accept a malicious cert for an unintended host. This can lead to remote information disclosure without any user interaction.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2021-0341",
+          "cwe": [
+            "CWE-295: Improper Certificate Validation"
+          ],
+          "ghsa": "GHSA-3cqm-mf7h-prrj",
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "publish-date": "2022-05-24T17:41:45Z",
+          "references": [
+            "https://github.com/advisories/GHSA-3cqm-mf7h-prrj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-0341"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.squareup.okhttp3:okhttp": "4.9.2"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2021-0341",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authentication"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "custom",
+              "r_id": 221438,
+              "rule_id": "5rUk27W",
+              "rule_name": "ssc-555dbcd5-ba86-abbc-b86f-4b6dcce40a34",
+              "rv_id": 1238105,
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-555dbcd5-ba86-abbc-b86f-4b6dcce40a34",
+              "version_id": "RGT0Nd4"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-555dbcd5-ba86-abbc-b86f-4b6dcce40a34",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-555dbcd5-ba86-abbc-b86f-4b6dcce40a34",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "3f78e6b09ff2c882efe4c59b056a7fdcff7cd59d81a9cc073318509522e5a941c9a4cf3642b273431b9ac82dee7f8f0f3b4bba0686b665fff8494cab672dab56_0",
+        "lines": "        try (Response response = client.newCall(r).execute()) {",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.squareup.okhttp3:okhttp",
+              "semver_range": "<4.9.2"
+            },
+            "found_dependency": {
+              "package": "com.squareup.okhttp3:okhttp",
+              "version": "3.14.9",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "com.squareup.okio:okio",
+                  "version": "1.17.2"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": true
+        },
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      "pom.xml",
+      "src/main/java/org/apache/flink/metrics/datadog/Clock.java",
+      "src/main/java/org/apache/flink/metrics/datadog/DCounter.java",
+      "src/main/java/org/apache/flink/metrics/datadog/DGauge.java",
+      "src/main/java/org/apache/flink/metrics/datadog/DHistogram.java",
+      "src/main/java/org/apache/flink/metrics/datadog/DMeter.java",
+      "src/main/java/org/apache/flink/metrics/datadog/DMetric.java",
+      "src/main/java/org/apache/flink/metrics/datadog/DSeries.java",
+      "src/main/java/org/apache/flink/metrics/datadog/DataCenter.java",
+      "src/main/java/org/apache/flink/metrics/datadog/DatadogHttpClient.java",
+      "src/main/java/org/apache/flink/metrics/datadog/DatadogHttpReporter.java",
+      "src/main/java/org/apache/flink/metrics/datadog/DatadogHttpReporterFactory.java",
+      "src/main/java/org/apache/flink/metrics/datadog/MetricMetaData.java",
+      "src/main/java/org/apache/flink/metrics/datadog/MetricType.java",
+      "src/main/java/org/apache/flink/metrics/datadog/StaticDMetric.java",
+      "src/main/resources/META-INF/NOTICE",
+      "src/main/resources/META-INF/services/org.apache.flink.metrics.reporter.MetricReporterFactory"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 17.03259515762329,
+    "profiling_times": {
+      "config_time": 40.35077714920044,
+      "core_time": 34.796631813049316,
+      "ignores_time": 0.1628119945526123,
+      "total_time": 75.3400251865387
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.0,
+      "rules_selected_ratio": 0.0,
+      "rules_matched_ratio": 0.0
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 12032191168
+  },
+  "engine_requested": "PRO",
+  "interfile_languages_used": [],
+  "skipped_rules": [],
+  "subprojects": [
+    {
+      "dependency_sources": [
+        "pom.xml"
+      ],
+      "resolved": true,
+      "resolved_stats": {
+        "resolution_method": "DynamicResolution",
+        "dependency_count": 43,
+        "ecosystem": "maven"
+      }
+    }
+  ],
+  "profiling_results": []
+}
