@@ -1,0 +1,165 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-e4da4afa-8485-402d-ab9f-846fe407d3c1",
+      "title": "Out-of-bounds Read in at.yawk.lz4:lz4-java",
+      "description": "Affected versions of at.yawk.lz4:lz4-java, net.jpountz.lz4:lz4, org.lz4:lz4-java, and org.lz4:lz4-pure-java are vulnerable to Out-of-bounds Read. A vulnerability in LZ4 Java's decompression logic allows untrusted compressed input to trigger out-of-bounds memory operations, leading to JVM crashes (denial of service) or disclosure of adjacent memory.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2025-12183"
+        ],
+        "cweIds": [
+          "CWE-125: Out-of-bounds Read"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-vqf4-7m7x-wgfc",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-12183"
+        ]
+      },
+      "announcedAt": "2025-11-28T18:30:23Z",
+      "ruleText": {
+        "id": "ssc-e4da4afa-8485-402d-ab9f-846fe407d3c1",
+        "message": "Affected versions of at.yawk.lz4:lz4-java, net.jpountz.lz4:lz4, org.lz4:lz4-java, and org.lz4:lz4-pure-java are vulnerable to Out-of-bounds Read. A vulnerability in LZ4 Java's decompression logic allows untrusted compressed input to trigger out-of-bounds memory operations, leading to JVM crashes (denial of service) or disclosure of adjacent memory.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2025-12183",
+          "cwe": [
+            "CWE-125: Out-of-bounds Read"
+          ],
+          "ghsa": "GHSA-vqf4-7m7x-wgfc",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-11-28T18:30:23Z",
+          "references": [
+            "https://github.com/advisories/GHSA-vqf4-7m7x-wgfc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-12183"
+          ],
+          "sca-fix-versions": [
+            {
+              "at.yawk.lz4:lz4-java": "1.8.1"
+            },
+            {
+              "org.lz4:lz4-java": "1.8.1"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2025-12183",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 270085,
+              "rv_id": 1229440,
+              "rule_id": "qNU1XrB",
+              "version_id": "bZT56b3",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-e4da4afa-8485-402d-ab9f-846fe407d3c1",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "at.yawk.lz4:lz4-java",
+              "version": "<1.8.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "net.jpountz.lz4:lz4",
+              "version": "<=1.3.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.lz4:lz4-java",
+              "version": "<1.8.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.lz4:lz4-pure-java",
+              "version": "<=1.8.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "mode": "taint",
+        "pattern-sources": [
+          {
+            "label": "INSTANCE",
+            "patterns": [
+              {
+                "pattern": "net.jpountz.lz4.LZ4Factory.nativeInstance(...)"
+              }
+            ]
+          },
+          {
+            "label": "FD",
+            "patterns": [
+              {
+                "pattern": "$VAR.fastDecompressor(...)"
+              }
+            ]
+          }
+        ],
+        "pattern-sinks": [
+          {
+            "label": "DECOMPRESS",
+            "patterns": [
+              {
+                "pattern": "$VAR.decompress(...)"
+              }
+            ],
+            "requires": "INSTANCE and FD"
+          }
+        ],
+        "pattern-sanitizers": [
+          {
+            "pattern": "$VAR.safeDecompressor(...)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "at.yawk.lz4:lz4-java",
+          "versionSpecifier": "<1.8.1"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "at.yawk.lz4:lz4-java",
+          "versionSpecifier": "1.8.1"
+        },
+        {
+          "name": "org.lz4:lz4-java",
+          "versionSpecifier": "1.8.1"
+        }
+      ],
+      "cve": "CVE-2025-12183",
+      "ghsa": "GHSA-vqf4-7m7x-wgfc",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

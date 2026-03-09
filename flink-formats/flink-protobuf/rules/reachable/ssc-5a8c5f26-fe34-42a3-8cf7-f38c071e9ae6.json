@@ -1,0 +1,255 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-5a8c5f26-fe34-42a3-8cf7-f38c071e9ae6",
+      "title": "Improper Input Validation in com.google.protobuf:protobuf-java",
+      "description": "Affected versions of com.google.protobuf:protobuf-java, com.google.protobuf:protobuf-javalite, com.google.protobuf:protobuf-kotlin, and com.google.protobuf:protobuf-kotlin-lite are vulnerable to Improper Input Validation / Out-of-bounds Write / Uncontrolled Resource Consumption. When parsing unknown fields in the Protobuf Java Lite and Full library, a maliciously crafted message can cause a StackOverflow error and lead to a program crash.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2024-7254"
+        ],
+        "cweIds": [
+          "CWE-20: Improper Input Validation",
+          "CWE-400: Uncontrolled Resource Consumption",
+          "CWE-787: Out-of-bounds Write"
+        ],
+        "owaspIds": [
+          "A03:2021 - Injection",
+          "A05:2025 - Injection",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-735f-pc8j-v9w8",
+          "https://nvd.nist.gov/vuln/detail/CVE-2024-7254"
+        ]
+      },
+      "announcedAt": "2024-09-19T16:06:03Z",
+      "ruleText": {
+        "id": "ssc-5a8c5f26-fe34-42a3-8cf7-f38c071e9ae6",
+        "message": "Affected versions of com.google.protobuf:protobuf-java, com.google.protobuf:protobuf-javalite, com.google.protobuf:protobuf-kotlin, and com.google.protobuf:protobuf-kotlin-lite are vulnerable to Improper Input Validation / Out-of-bounds Write / Uncontrolled Resource Consumption. When parsing unknown fields in the Protobuf Java Lite and Full library, a maliciously crafted message can cause a StackOverflow error and lead to a program crash.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2024-7254",
+          "cwe": [
+            "CWE-20: Improper Input Validation",
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-735f-pc8j-v9w8",
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2024-09-19T16:06:03Z",
+          "references": [
+            "https://github.com/advisories/GHSA-735f-pc8j-v9w8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-7254"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.google.protobuf:protobuf-java": "4.28.2"
+            },
+            {
+              "com.google.protobuf:protobuf-java": "4.27.5"
+            },
+            {
+              "com.google.protobuf:protobuf-java": "3.25.5"
+            },
+            {
+              "com.google.protobuf:protobuf-javalite": "4.28.2"
+            },
+            {
+              "com.google.protobuf:protobuf-javalite": "4.27.5"
+            },
+            {
+              "com.google.protobuf:protobuf-javalite": "3.25.5"
+            },
+            {
+              "com.google.protobuf:protobuf-kotlin": "4.28.2"
+            },
+            {
+              "com.google.protobuf:protobuf-kotlin": "4.27.5"
+            },
+            {
+              "com.google.protobuf:protobuf-kotlin": "3.25.5"
+            },
+            {
+              "com.google.protobuf:protobuf-kotlin-lite": "4.28.2"
+            },
+            {
+              "com.google.protobuf:protobuf-kotlin-lite": "4.27.5"
+            },
+            {
+              "com.google.protobuf:protobuf-kotlin-lite": "3.25.5"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2024-7254",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Improper Validation",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 144868,
+              "rv_id": 1239086,
+              "rule_id": "ZqUQ0Ay",
+              "version_id": "X0TzeQO",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-5a8c5f26-fe34-42a3-8cf7-f38c071e9ae6",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-java",
+              "version": "<3.25.5"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-java",
+              "version": ">=4.0.0-RC1, <4.27.5"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-java",
+              "version": ">=4.28.0-RC1, <4.28.2"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-javalite",
+              "version": "<3.25.5"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-javalite",
+              "version": ">=4.0.0-RC1, <4.27.5"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-javalite",
+              "version": ">=4.28.0-RC1, <4.28.2"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-kotlin",
+              "version": "<3.25.5"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-kotlin",
+              "version": ">=4.0.0-RC1, <4.27.5"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-kotlin",
+              "version": ">=4.28.0-RC1, <4.28.2"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-kotlin-lite",
+              "version": "<3.25.5"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-kotlin-lite",
+              "version": ">=4.0.0-RC1, <4.27.5"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-kotlin-lite",
+              "version": ">=4.28.0-RC1, <4.28.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern": "import com.google.protobuf"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "com.google.protobuf:protobuf-java",
+          "versionSpecifier": "<3.25.5"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.google.protobuf:protobuf-java",
+          "versionSpecifier": "4.28.2"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-java",
+          "versionSpecifier": "4.27.5"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-java",
+          "versionSpecifier": "3.25.5"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-javalite",
+          "versionSpecifier": "4.28.2"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-javalite",
+          "versionSpecifier": "4.27.5"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-javalite",
+          "versionSpecifier": "3.25.5"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-kotlin",
+          "versionSpecifier": "4.28.2"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-kotlin",
+          "versionSpecifier": "4.27.5"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-kotlin",
+          "versionSpecifier": "3.25.5"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-kotlin-lite",
+          "versionSpecifier": "4.28.2"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-kotlin-lite",
+          "versionSpecifier": "4.27.5"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-kotlin-lite",
+          "versionSpecifier": "3.25.5"
+        }
+      ],
+      "cve": "CVE-2024-7254",
+      "ghsa": "GHSA-735f-pc8j-v9w8",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

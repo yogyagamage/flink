@@ -1,0 +1,126 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-b0088901-cfba-b249-029b-fa8a57296582",
+      "title": "Uncontrolled Resource Consumption in io.netty:netty",
+      "description": "Affected versions of io.netty:netty, io.netty:netty-codec, and org.jboss.netty:netty are vulnerable to Uncontrolled Resource Consumption. A lack of input size restrictions in Netty's SnappyFrameDecoder allows an attacker to send maliciously crafted or oversized compressed frames (including large skippable chunks) that decompress or buffer to unbounded sizes, resulting in excessive memory allocations and a denial-of-service.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2021-37137"
+        ],
+        "cweIds": [
+          "CWE-400: Uncontrolled Resource Consumption"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-9vjp-v76f-g363",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-37137"
+        ]
+      },
+      "announcedAt": "2021-09-09T17:11:31Z",
+      "ruleText": {
+        "id": "ssc-b0088901-cfba-b249-029b-fa8a57296582",
+        "message": "Affected versions of io.netty:netty, io.netty:netty-codec, and org.jboss.netty:netty are vulnerable to Uncontrolled Resource Consumption. A lack of input size restrictions in Netty's SnappyFrameDecoder allows an attacker to send maliciously crafted or oversized compressed frames (including large skippable chunks) that decompress or buffer to unbounded sizes, resulting in excessive memory allocations and a denial-of-service.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2021-37137",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption"
+          ],
+          "ghsa": "GHSA-9vjp-v76f-g363",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2021-09-09T17:11:31Z",
+          "references": [
+            "https://github.com/advisories/GHSA-9vjp-v76f-g363",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-37137"
+          ],
+          "sca-fix-versions": [
+            {
+              "io.netty:netty-codec": "4.1.68.Final"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2021-37137",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 238980,
+              "rv_id": 1197477,
+              "rule_id": "6JUZXzR",
+              "version_id": "9lT4e8q",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-b0088901-cfba-b249-029b-fa8a57296582",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "io.netty:netty",
+              "version": "<4.0.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "io.netty:netty-codec",
+              "version": ">=4.0.0, <4.1.68.Final"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.jboss.netty:netty",
+              "version": "<4.0.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "new io.netty.handler.codec.compression.SnappyFrameDecoder()"
+          },
+          {
+            "pattern": "io.netty.handler.codec.compression.SnappyFrameDecoder()"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "io.netty:netty",
+          "versionSpecifier": "<4.0.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "io.netty:netty-codec",
+          "versionSpecifier": "4.1.68.Final"
+        }
+      ],
+      "cve": "CVE-2021-37137",
+      "ghsa": "GHSA-9vjp-v76f-g363",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

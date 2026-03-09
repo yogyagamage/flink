@@ -1,0 +1,122 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-f9cf1069fe44f61296f2fab03f51e1675cbd40fa",
+      "title": "Stack-based Buffer Overflow in com.fasterxml.woodstox:woodstox-core",
+      "description": "Affected versions of com.fasterxml.woodstox:woodstox-core are vulnerable to Out-of-bounds Write / Stack-based Buffer Overflow.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2022-40152"
+        ],
+        "cweIds": [
+          "CWE-121: Stack-based Buffer Overflow",
+          "CWE-787: Out-of-bounds Write"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-3f7h-mf4q-vrm4",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-40152"
+        ]
+      },
+      "announcedAt": "2022-09-17T00:00:41Z",
+      "ruleText": {
+        "id": "ssc-parity-f9cf1069fe44f61296f2fab03f51e1675cbd40fa",
+        "message": "Affected versions of com.fasterxml.woodstox:woodstox-core are vulnerable to Out-of-bounds Write / Stack-based Buffer Overflow.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2022-40152",
+          "cwe": [
+            "CWE-121: Stack-based Buffer Overflow",
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-3f7h-mf4q-vrm4",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-09-17T00:00:41Z",
+          "references": [
+            "https://github.com/advisories/GHSA-3f7h-mf4q-vrm4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-40152"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.woodstox:woodstox-core": "6.4.0"
+            },
+            {
+              "com.fasterxml.woodstox:woodstox-core": "5.4.0"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2022-40152",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 107411,
+              "rv_id": 1037645,
+              "rule_id": "ReUDAB3",
+              "version_id": "xyTZxB5",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-f9cf1069fe44f61296f2fab03f51e1675cbd40fa",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.woodstox:woodstox-core",
+              "version": "<5.4.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.woodstox:woodstox-core",
+              "version": ">=6.0.0, <6.4.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "com.fasterxml.woodstox:woodstox-core",
+          "versionSpecifier": "<5.4.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.fasterxml.woodstox:woodstox-core",
+          "versionSpecifier": "6.4.0"
+        },
+        {
+          "name": "com.fasterxml.woodstox:woodstox-core",
+          "versionSpecifier": "5.4.0"
+        }
+      ],
+      "cve": "CVE-2022-40152",
+      "ghsa": "GHSA-3f7h-mf4q-vrm4",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

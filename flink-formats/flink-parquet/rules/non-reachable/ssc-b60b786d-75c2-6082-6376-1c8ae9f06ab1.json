@@ -1,0 +1,374 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-b60b786d-75c2-6082-6376-1c8ae9f06ab1",
+      "title": "Allocation of Resources Without Limits or Throttling in com.fasterxml.jackson.core:jackson-core",
+      "description": "Affected versions of com.fasterxml.jackson.core:jackson-core and tools.jackson.core:jackson-core are vulnerable to Allocation of Resources Without Limits or Throttling. Jackson Core's non-blocking (async) JSON parser bypasses `StreamReadConstraints.maxNumberLength`, allowing an attacker to submit JSON containing extremely long numeric literals that the async parser will accept and buffer without length validation. This can trigger excessive memory allocation in the parser's `TextBuffer` and potentially severe CPU exhaustion during numeric coercion (e.g., `BigInteger`/`BigDecimal` parsing), resulting in a Denial of Service in applications using the async parser APIs (such as reactive/WebFlux pipelines).",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cweIds": [
+          "CWE-770: Allocation of Resources Without Limits or Throttling"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-72hv-8253-57qq"
+        ],
+        "cveIds": []
+      },
+      "announcedAt": "2026-02-28T02:01:05Z",
+      "ruleText": {
+        "id": "ssc-b60b786d-75c2-6082-6376-1c8ae9f06ab1",
+        "message": "Affected versions of com.fasterxml.jackson.core:jackson-core and tools.jackson.core:jackson-core are vulnerable to Allocation of Resources Without Limits or Throttling. Jackson Core's non-blocking (async) JSON parser bypasses `StreamReadConstraints.maxNumberLength`, allowing an attacker to submit JSON containing extremely long numeric literals that the async parser will accept and buffer without length validation. This can trigger excessive memory allocation in the parser's `TextBuffer` and potentially severe CPU exhaustion during numeric coercion (e.g., `BigInteger`/`BigDecimal` parsing), resulting in a Denial of Service in applications using the async parser APIs (such as reactive/WebFlux pipelines).",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "",
+          "cwe": [
+            "CWE-770: Allocation of Resources Without Limits or Throttling"
+          ],
+          "ghsa": "GHSA-72hv-8253-57qq",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2026-02-28T02:01:05Z",
+          "references": [
+            "https://github.com/advisories/GHSA-72hv-8253-57qq"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-core": "3.1.0"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-core": "2.21.1"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-core": "2.18.6"
+            },
+            {
+              "tools.jackson.core:jackson-core": "3.1.0"
+            },
+            {
+              "tools.jackson.core:jackson-core": "2.21.1"
+            },
+            {
+              "tools.jackson.core:jackson-core": "2.18.6"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "GHSA-72hv-8253-57qq",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 281345,
+              "rv_id": 1280624,
+              "rule_id": "zdUADbW",
+              "version_id": "5PTqdBO",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-b60b786d-75c2-6082-6376-1c8ae9f06ab1",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-core",
+              "version": ">=2.0.0, <=2.18.5"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-core",
+              "version": ">=2.19.0, <2.21.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-core",
+              "version": ">=3.0.0, <3.1.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "tools.jackson.core:jackson-core",
+              "version": ">=2.0.0, <=2.18.5"
+            },
+            {
+              "namespace": "maven",
+              "package": "tools.jackson.core:jackson-core",
+              "version": ">=2.19.0, <2.21.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "tools.jackson.core:jackson-core",
+              "version": ">=3.0.0, <3.1.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "patterns": [
+              {
+                "pattern-either": [
+                  {
+                    "pattern": "new com.fasterxml.jackson.core.json.async.$CLASS(...)"
+                  },
+                  {
+                    "pattern": "com.fasterxml.jackson.core.json.async.$CLASS(...)"
+                  },
+                  {
+                    "pattern": "class $CLASS extends com.fasterxml.jackson.core.json.async.$CLASS{...}"
+                  }
+                ]
+              },
+              {
+                "metavariable-regex": {
+                  "metavariable": "$CLASS",
+                  "regex": "^(NonBlockingJsonParser|NonBlockingByteBufferJsonParser)$"
+                }
+              }
+            ]
+          },
+          {
+            "patterns": [
+              {
+                "pattern-either": [
+                  {
+                    "pattern": "new tools.jackson.core.json.async.$CLASS(...)"
+                  },
+                  {
+                    "pattern": "tools.jackson.core.json.async.$CLASS(...)"
+                  },
+                  {
+                    "pattern": "class $CLASS extends tools.jackson.core.json.async.$CLASS{...}"
+                  }
+                ]
+              },
+              {
+                "metavariable-regex": {
+                  "metavariable": "$CLASS",
+                  "regex": "^(NonBlockingByteArrayJsonParser|NonBlockingByteBufferJsonParser)$"
+                }
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "com.fasterxml.jackson.core.JsonFactory"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(createNonBlockingByteArrayParser|createNonBlockingByteBufferParser)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.core.JsonFactory { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(createNonBlockingByteArrayParser|createNonBlockingByteBufferParser)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends com.fasterxml.jackson.core.JsonFactory {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(createNonBlockingByteArrayParser|createNonBlockingByteBufferParser)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends com.fasterxml.jackson.core.JsonFactory {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.core.JsonFactory {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(createNonBlockingByteArrayParser|createNonBlockingByteBufferParser)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "tools.jackson.core.json.JsonFactory"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(createNonBlockingByteArrayParser|createNonBlockingByteBufferParser)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends tools.jackson.core.json.JsonFactory { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(createNonBlockingByteArrayParser|createNonBlockingByteBufferParser)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends tools.jackson.core.json.JsonFactory {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(createNonBlockingByteArrayParser|createNonBlockingByteBufferParser)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends tools.jackson.core.json.JsonFactory {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends tools.jackson.core.json.JsonFactory {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(createNonBlockingByteArrayParser|createNonBlockingByteBufferParser)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-core",
+          "versionSpecifier": ">=2.0.0, <=2.18.5"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-core",
+          "versionSpecifier": "3.1.0"
+        },
+        {
+          "name": "com.fasterxml.jackson.core:jackson-core",
+          "versionSpecifier": "2.21.1"
+        },
+        {
+          "name": "com.fasterxml.jackson.core:jackson-core",
+          "versionSpecifier": "2.18.6"
+        },
+        {
+          "name": "tools.jackson.core:jackson-core",
+          "versionSpecifier": "3.1.0"
+        },
+        {
+          "name": "tools.jackson.core:jackson-core",
+          "versionSpecifier": "2.21.1"
+        },
+        {
+          "name": "tools.jackson.core:jackson-core",
+          "versionSpecifier": "2.18.6"
+        }
+      ],
+      "ghsa": "GHSA-72hv-8253-57qq",
+      "reachableIf": "",
+      "cve": ""
+    }
+  ],
+  "totalCount": "1"
+}

@@ -1,0 +1,134 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-dc19be37-63ef-445b-a9f6-6168e77453a3",
+      "title": "Improper Input Validation in org.apache.thrift:libthrift",
+      "description": "Affected versions of org.apache.thrift:libthrift are vulnerable to Improper Certificate Validation / Improper Input Validation. An assert in the TSaslTransport class that verifies SASL handshake completion can be disabled when Java assertions are turned off, causing the isComplete check to be skipped. This allows a malicious or man-in-the-middle server to bypass SASL authentication and send unauthorized RPC calls.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2018-1320"
+        ],
+        "cweIds": [
+          "CWE-20: Improper Input Validation",
+          "CWE-295: Improper Certificate Validation"
+        ],
+        "owaspIds": [
+          "A03:2017 - Sensitive Data Exposure",
+          "A03:2021 - Injection",
+          "A05:2025 - Injection",
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A07:2021 - Identification and Authentication Failures",
+          "A07:2025 - Authentication Failures"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-wjxj-f8rg-99wx",
+          "https://nvd.nist.gov/vuln/detail/CVE-2018-1320"
+        ]
+      },
+      "announcedAt": "2019-01-17T13:56:40Z",
+      "ruleText": {
+        "id": "ssc-dc19be37-63ef-445b-a9f6-6168e77453a3",
+        "message": "Affected versions of org.apache.thrift:libthrift are vulnerable to Improper Certificate Validation / Improper Input Validation. An assert in the TSaslTransport class that verifies SASL handshake completion can be disabled when Java assertions are turned off, causing the isComplete check to be skipped. This allows a malicious or man-in-the-middle server to bypass SASL authentication and send unauthorized RPC calls.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2018-1320",
+          "cwe": [
+            "CWE-20: Improper Input Validation",
+            "CWE-295: Improper Certificate Validation"
+          ],
+          "ghsa": "GHSA-wjxj-f8rg-99wx",
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "publish-date": "2019-01-17T13:56:40Z",
+          "references": [
+            "https://github.com/advisories/GHSA-wjxj-f8rg-99wx",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-1320"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.thrift:libthrift": "0.9.3-1"
+            },
+            {
+              "org.apache.thrift:libthrift": "0.12.0"
+            }
+          ],
+          "sca-kind": "upgrade-only",
+          "sca-reachable-if": "you run Apache Thrift with Java assertions turned off, which is the default behavior when the JVM flag -ea is not passed",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2018-1320",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authentication",
+            "Improper Validation"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 239133,
+              "rv_id": 1242734,
+              "rule_id": "9AUe7Lw",
+              "version_id": "e1TyXWd",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-dc19be37-63ef-445b-a9f6-6168e77453a3",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.apache.thrift:libthrift",
+              "version": ">=0.10.0, <0.12.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.apache.thrift:libthrift",
+              "version": ">=0.5.0, <0.9.3-1"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "MANUAL_REVIEW_REACHABLE",
+      "vulnerableDependencies": [
+        {
+          "name": "org.apache.thrift:libthrift",
+          "versionSpecifier": ">=0.10.0, <0.12.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.apache.thrift:libthrift",
+          "versionSpecifier": "0.9.3-1"
+        },
+        {
+          "name": "org.apache.thrift:libthrift",
+          "versionSpecifier": "0.12.0"
+        }
+      ],
+      "reachableIf": "you run Apache Thrift with Java assertions turned off, which is the default behavior when the JVM flag -ea is not passed",
+      "cve": "CVE-2018-1320",
+      "ghsa": "GHSA-wjxj-f8rg-99wx"
+    }
+  ],
+  "totalCount": "1"
+}

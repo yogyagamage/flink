@@ -1,0 +1,120 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-c6c23366-1fdf-4d3f-a66b-fb5a1843cd0b",
+      "title": "Uncontrolled Recursion in org.codehaus.jettison:jettison",
+      "description": "org.codehaus.jettison:jettison versions before 1.5.4 are vulnerable to Uncontrolled Recursion when constructing a `JSONArray` from a Collection that contains a self-reference in one of its elements. This leads to a StackOverflowError exception being thrown.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2023-1436"
+        ],
+        "cweIds": [
+          "CWE-674: Uncontrolled Recursion"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-q6g2-g7f3-rr83",
+          "https://nvd.nist.gov/vuln/detail/CVE-2023-1436"
+        ]
+      },
+      "announcedAt": "2023-03-22T06:30:21Z",
+      "ruleText": {
+        "id": "ssc-c6c23366-1fdf-4d3f-a66b-fb5a1843cd0b",
+        "message": "org.codehaus.jettison:jettison versions before 1.5.4 are vulnerable to Uncontrolled Recursion when constructing a `JSONArray` from a Collection that contains a self-reference in one of its elements. This leads to a StackOverflowError exception being thrown.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2023-1436",
+          "cwe": [
+            "CWE-674: Uncontrolled Recursion"
+          ],
+          "ghsa": "GHSA-q6g2-g7f3-rr83",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-03-22T06:30:21Z",
+          "references": [
+            "https://github.com/advisories/GHSA-q6g2-g7f3-rr83",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-1436"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.codehaus.jettison:jettison": "1.5.4"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2023-1436",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 94103,
+              "rv_id": 951918,
+              "rule_id": "wdU9JBY",
+              "version_id": "DkTN1lL",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6c23366-1fdf-4d3f-a66b-fb5a1843cd0b",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.codehaus.jettison:jettison",
+              "version": "<1.5.4"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern-either": [
+              {
+                "pattern": "new org.codehaus.jettison.json.JSONArray(...)"
+              },
+              {
+                "pattern": "org.codehaus.jettison.json.JSONArray(...)"
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "org.codehaus.jettison:jettison",
+          "versionSpecifier": "<1.5.4"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.codehaus.jettison:jettison",
+          "versionSpecifier": "1.5.4"
+        }
+      ],
+      "cve": "CVE-2023-1436",
+      "ghsa": "GHSA-q6g2-g7f3-rr83",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

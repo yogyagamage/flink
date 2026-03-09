@@ -1,0 +1,2346 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-7326e6d5-59b8-4fd3-80de-2f9bf2b8d78f",
+      "title": "Deserialization of Untrusted Data in org.codehaus.jackson:jackson-mapper-asl",
+      "description": "Affected versions of org.codehaus.jackson:jackson-mapper-asl are vulnerable to Deserialization of Untrusted Data. A flaw in jackson-mapper-asl allows untrusted JSON to be deserialized into arbitrary Java types via ObjectMapper data-binding APIs, so attacker-controlled input can trigger unsafe object instantiation during deserialization, enabling critical impact when such input reaches these code paths.Note:This repository is archived.",
+      "ecosystem": "maven",
+      "severity": "CRITICAL",
+      "references": {
+        "cveIds": [
+          "CVE-2019-10202"
+        ],
+        "cweIds": [
+          "CWE-502: Deserialization of Untrusted Data"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A08:2017 - Insecure Deserialization",
+          "A08:2021 - Software and Data Integrity Failures",
+          "A08:2025 - Software or Data Integrity Failures"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-c27h-mcmw-48hv",
+          "https://nvd.nist.gov/vuln/detail/CVE-2019-10202"
+        ]
+      },
+      "announcedAt": "2022-05-24T16:57:28Z",
+      "ruleText": {
+        "id": "ssc-7326e6d5-59b8-4fd3-80de-2f9bf2b8d78f",
+        "message": "Affected versions of org.codehaus.jackson:jackson-mapper-asl are vulnerable to Deserialization of Untrusted Data. A flaw in jackson-mapper-asl allows untrusted JSON to be deserialized into arbitrary Java types via ObjectMapper data-binding APIs, so attacker-controlled input can trigger unsafe object instantiation during deserialization, enabling critical impact when such input reaches these code paths.Note:This repository is archived.",
+        "severity": "CRITICAL",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2019-10202",
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "ghsa": "GHSA-c27h-mcmw-48hv",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A08:2017 - Insecure Deserialization",
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "publish-date": "2022-05-24T16:57:28Z",
+          "references": [
+            "https://github.com/advisories/GHSA-c27h-mcmw-48hv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-10202"
+          ],
+          "sca-fix-versions": [],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "CRITICAL",
+          "sca-vuln-database-identifier": "CVE-2019-10202",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Insecure Deserialization "
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 275381,
+              "rv_id": 1267120,
+              "rule_id": "qNU1ppG",
+              "version_id": "vdT0PJ4",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-7326e6d5-59b8-4fd3-80de-2f9bf2b8d78f",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.codehaus.jackson:jackson-mapper-asl",
+              "version": "<=1.9.13"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.ObjectMapper"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(readValue|readValues|readTree|treeToValue|readerForUpdating)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.ObjectMapper { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(readValue|readValues|readTree|treeToValue|readerForUpdating)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.ObjectMapper {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(readValue|readValues|readTree|treeToValue|readerForUpdating)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.ObjectMapper {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.ObjectMapper {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(readValue|readValues|readTree|treeToValue|readerForUpdating)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.ObjectReader"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(readValue|readValues)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.ObjectReader { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(readValue|readValues)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.ObjectReader {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(readValue|readValues)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.ObjectReader {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.ObjectReader {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(readValue|readValues)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "pattern": "new org.codehaus.jackson.map.DeserializationContext(...)"
+              },
+              {
+                "pattern": "org.codehaus.jackson.map.DeserializationContext(...)"
+              },
+              {
+                "pattern": "class $CLASS extends org.codehaus.jackson.map.DeserializationContext{...}"
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.JsonDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.JsonDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.JsonDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.JsonDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.JsonDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.jsontype.impl.AsArrayTypeDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromArray|deserializeTypedFromAny|deserializeTypedFromObject|deserializeTypedFromScalar)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsArrayTypeDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromArray|deserializeTypedFromAny|deserializeTypedFromObject|deserializeTypedFromScalar)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsArrayTypeDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromArray|deserializeTypedFromAny|deserializeTypedFromObject|deserializeTypedFromScalar)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsArrayTypeDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsArrayTypeDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromArray|deserializeTypedFromAny|deserializeTypedFromObject|deserializeTypedFromScalar)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.jsontype.impl.AsPropertyTypeDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsPropertyTypeDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsPropertyTypeDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsPropertyTypeDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsPropertyTypeDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.AbstractDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.AbstractDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.AbstractDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.AbstractDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.AbstractDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.BeanDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.BeanDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.BeanDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.BeanDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.BeanDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.impl.CreatorProperty"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.impl.CreatorProperty { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.impl.CreatorProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.impl.CreatorProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.impl.CreatorProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.SettableAnyProperty"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.SettableAnyProperty { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.SettableAnyProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.SettableAnyProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.SettableAnyProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.SettableBeanProperty"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeAndSet)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.SettableBeanProperty { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeAndSet)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.SettableBeanProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeAndSet)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.SettableBeanProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.SettableBeanProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeAndSet)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "pattern": "new org.codehaus.jackson.map.deser.impl.BeanPropertyMap(...)"
+              },
+              {
+                "pattern": "org.codehaus.jackson.map.deser.impl.BeanPropertyMap(...)"
+              },
+              {
+                "pattern": "class $CLASS extends org.codehaus.jackson.map.deser.impl.BeanPropertyMap{...}"
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.FieldProperty"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.FieldProperty { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.FieldProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.FieldProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.FieldProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.InnerClassProperty"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.InnerClassProperty { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.InnerClassProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.InnerClassProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.InnerClassProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.ManagedReferenceProperty"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|withValueDeserializer|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.ManagedReferenceProperty { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|withValueDeserializer|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.ManagedReferenceProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|withValueDeserializer|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.ManagedReferenceProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.ManagedReferenceProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|withValueDeserializer|deserialize)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.MethodProperty"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.MethodProperty { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.MethodProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.MethodProperty {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.MethodProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeAndSet|deserialize)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.impl.UnwrappedPropertyHandler"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(processUnwrapped)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.impl.UnwrappedPropertyHandler { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(processUnwrapped)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.impl.UnwrappedPropertyHandler {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(processUnwrapped)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.impl.UnwrappedPropertyHandler {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.impl.UnwrappedPropertyHandler {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(processUnwrapped)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.EnumMapDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.EnumMapDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.EnumMapDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.EnumMapDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.EnumMapDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.EnumSetDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.EnumSetDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.EnumSetDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.EnumSetDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.EnumSetDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.JsonNodeDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.JsonNodeDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.JsonNodeDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.JsonNodeDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.JsonNodeDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.MapDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.MapDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.MapDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.MapDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.MapDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.ObjectArrayDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.ObjectArrayDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.ObjectArrayDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.ObjectArrayDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.ObjectArrayDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.PrimitiveArrayDeserializers"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.PrimitiveArrayDeserializers { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.PrimitiveArrayDeserializers {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.PrimitiveArrayDeserializers {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.PrimitiveArrayDeserializers {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.StdDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.StdDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.StdDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType|deserialize)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.StdDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.StdDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType|deserialize)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.StdScalarDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.StdScalarDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.StdScalarDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.StdScalarDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.StdScalarDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.StringCollectionDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.StringCollectionDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.StringCollectionDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.StringCollectionDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.StringCollectionDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.ThrowableDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeFromObject)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.ThrowableDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeFromObject)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.ThrowableDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeFromObject)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.ThrowableDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.ThrowableDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeFromObject)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.deser.std.UntypedObjectDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.deser.std.UntypedObjectDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.UntypedObjectDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.UntypedObjectDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.deser.std.UntypedObjectDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserialize|deserializeWithType)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.codehaus.jackson.map.jsontype.impl.AsWrapperTypeDeserializer"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsWrapperTypeDeserializer { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsWrapperTypeDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsWrapperTypeDeserializer {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.codehaus.jackson.map.jsontype.impl.AsWrapperTypeDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "pattern": "new org.codehaus.jackson.map.deser.std.CollectionDeserializer(...)"
+              },
+              {
+                "pattern": "org.codehaus.jackson.map.deser.std.CollectionDeserializer(...)"
+              },
+              {
+                "pattern": "class $CLASS extends org.codehaus.jackson.map.deser.std.CollectionDeserializer{...}"
+              }
+            ]
+          },
+          {
+            "pattern-either": [
+              {
+                "pattern": "new org.codehaus.jackson.map.deser.std.EnumDeserializer(...)"
+              },
+              {
+                "pattern": "org.codehaus.jackson.map.deser.std.EnumDeserializer(...)"
+              },
+              {
+                "pattern": "class $CLASS extends org.codehaus.jackson.map.deser.std.EnumDeserializer{...}"
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "org.codehaus.jackson:jackson-mapper-asl",
+          "versionSpecifier": "<=1.9.13"
+        }
+      ],
+      "cve": "CVE-2019-10202",
+      "ghsa": "GHSA-c27h-mcmw-48hv",
+      "reachableIf": "",
+      "safeDependencies": []
+    }
+  ],
+  "totalCount": "1"
+}

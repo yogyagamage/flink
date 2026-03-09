@@ -1,0 +1,122 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-1820109331e8784383877d50e751f13311d9504c",
+      "title": "HTTP Request/Response Smuggling in io.netty:netty",
+      "description": "Affected versions of io.netty:netty, io.netty:netty-codec-http2, and org.jboss.netty:netty are vulnerable to Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling').",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2021-21409"
+        ],
+        "cweIds": [
+          "CWE-444: Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')"
+        ],
+        "owaspIds": [
+          "A04:2021 - Insecure Design",
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A06:2025 - Insecure Design"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-f256-j965-7f32",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21409"
+        ]
+      },
+      "announcedAt": "2021-03-30T15:10:38Z",
+      "ruleText": {
+        "id": "ssc-parity-1820109331e8784383877d50e751f13311d9504c",
+        "message": "Affected versions of io.netty:netty, io.netty:netty-codec-http2, and org.jboss.netty:netty are vulnerable to Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling').",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2021-21409",
+          "cwe": [
+            "CWE-444: Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')"
+          ],
+          "ghsa": "GHSA-f256-j965-7f32",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A06:2025 - Insecure Design"
+          ],
+          "publish-date": "2021-03-30T15:10:38Z",
+          "references": [
+            "https://github.com/advisories/GHSA-f256-j965-7f32",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-21409"
+          ],
+          "sca-fix-versions": [
+            {
+              "io.netty:netty-codec-http2": "4.1.61.Final"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2021-21409",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Validation"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 98911,
+              "rv_id": 1251647,
+              "rule_id": "v8UY9pW",
+              "version_id": "l4TJkY3",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-1820109331e8784383877d50e751f13311d9504c",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "io.netty:netty",
+              "version": "<4.0.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "io.netty:netty-codec-http2",
+              "version": ">=4.0.0, <4.1.61.Final"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.jboss.netty:netty",
+              "version": "<4.0.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "io.netty:netty",
+          "versionSpecifier": "<4.0.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "io.netty:netty-codec-http2",
+          "versionSpecifier": "4.1.61.Final"
+        }
+      ],
+      "cve": "CVE-2021-21409",
+      "ghsa": "GHSA-f256-j965-7f32",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

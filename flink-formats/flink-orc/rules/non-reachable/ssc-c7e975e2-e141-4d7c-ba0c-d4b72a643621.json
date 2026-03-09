@@ -1,0 +1,138 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-c7e975e2-e141-4d7c-ba0c-d4b72a643621",
+      "title": "Out-of-bounds Write in org.codehaus.jettison:jettison",
+      "description": "Affected versions of org.codehaus.jettison:jettison are vulnerable to Out-Of-Bounds Write. The `org.codehaus.jettison.json.JSONObject` constructor is vulnerable to a `StackOverflowError` when accepting a HashMap as input. This can lead to Denial of Service (DoS) via crafted string.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2022-45693"
+        ],
+        "cweIds": [
+          "CWE-787: Out-of-bounds Write"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-grr4-wv38-f68w",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-45693"
+        ]
+      },
+      "announcedAt": "2022-12-13T15:30:27Z",
+      "ruleText": {
+        "id": "ssc-c7e975e2-e141-4d7c-ba0c-d4b72a643621",
+        "message": "Affected versions of org.codehaus.jettison:jettison are vulnerable to Out-Of-Bounds Write. The `org.codehaus.jettison.json.JSONObject` constructor is vulnerable to a `StackOverflowError` when accepting a HashMap as input. This can lead to Denial of Service (DoS) via crafted string.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2022-45693",
+          "cwe": [
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-grr4-wv38-f68w",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-12-13T15:30:27Z",
+          "references": [
+            "https://github.com/advisories/GHSA-grr4-wv38-f68w",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-45693"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.codehaus.jettison:jettison": "1.5.2"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2022-45693",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 93966,
+              "rv_id": 951107,
+              "rule_id": "EwUj2y3",
+              "version_id": "RGTA3kQ",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c7e975e2-e141-4d7c-ba0c-d4b72a643621",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.codehaus.jettison:jettison",
+              "version": "<1.5.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern-either": [
+              {
+                "pattern": "org.codehaus.jettison.json.JSONObject((HashMap $MAP))"
+              },
+              {
+                "pattern": "new org.codehaus.jettison.json.JSONObject((HashMap $MAP))"
+              },
+              {
+                "pattern": "org.codehaus.jettison.json.JSONObject((Map $MAP))"
+              },
+              {
+                "pattern": "new org.codehaus.jettison.json.JSONObject((Map $MAP))"
+              },
+              {
+                "pattern": "org.codehaus.jettison.json.JSONObject((HashMap<$KEY,$VALUE> $MAP))"
+              },
+              {
+                "pattern": "new org.codehaus.jettison.json.JSONObject((HashMap<$KEY,$VALUE> $MAP))"
+              },
+              {
+                "pattern": "org.codehaus.jettison.json.JSONObject((Map<$KEY,$VALUE> $MAP))"
+              },
+              {
+                "pattern": "new org.codehaus.jettison.json.JSONObject((Map<$KEY,$VALUE> $MAP))"
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "org.codehaus.jettison:jettison",
+          "versionSpecifier": "<1.5.2"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.codehaus.jettison:jettison",
+          "versionSpecifier": "1.5.2"
+        }
+      ],
+      "cve": "CVE-2022-45693",
+      "ghsa": "GHSA-grr4-wv38-f68w",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

@@ -1,0 +1,113 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-2d656153-6858-4870-ac0d-8b56875415e5",
+      "title": "Uncontrolled Recursion in net.minidev:json-smart",
+      "description": "net.minidev:json-smart versions before 2.4.9 are vulnerable to Uncontrolled Recursion leading to Denial of Service (DoS) due to a StackOverflowError when parsing a deeply nested JSON array or object.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2023-1370"
+        ],
+        "cweIds": [
+          "CWE-674: Uncontrolled Recursion"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-493p-pfq6-5258",
+          "https://nvd.nist.gov/vuln/detail/CVE-2023-1370"
+        ]
+      },
+      "announcedAt": "2023-03-23T20:32:03Z",
+      "ruleText": {
+        "id": "ssc-2d656153-6858-4870-ac0d-8b56875415e5",
+        "message": "net.minidev:json-smart versions before 2.4.9 are vulnerable to Uncontrolled Recursion leading to Denial of Service (DoS) due to a StackOverflowError when parsing a deeply nested JSON array or object.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2023-1370",
+          "cwe": [
+            "CWE-674: Uncontrolled Recursion"
+          ],
+          "ghsa": "GHSA-493p-pfq6-5258",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-03-23T20:32:03Z",
+          "references": [
+            "https://github.com/advisories/GHSA-493p-pfq6-5258",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-1370"
+          ],
+          "sca-fix-versions": [
+            {
+              "net.minidev:json-smart": "2.4.9"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2023-1370",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 93716,
+              "rv_id": 949483,
+              "rule_id": "JDUNyGJ",
+              "version_id": "gETeYng",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2d656153-6858-4870-ac0d-8b56875415e5",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "net.minidev:json-smart",
+              "version": "<2.4.9"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern": "(net.minidev.json.parser.JSONParser $ANY).parse(...)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "net.minidev:json-smart",
+          "versionSpecifier": "<2.4.9"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "net.minidev:json-smart",
+          "versionSpecifier": "2.4.9"
+        }
+      ],
+      "cve": "CVE-2023-1370",
+      "ghsa": "GHSA-493p-pfq6-5258",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

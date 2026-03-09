@@ -1,0 +1,129 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-74c37554-5da7-4d4b-b86f-00e36f95b2c9",
+      "title": "Improper Restriction of XML External Entity Reference in com.jamesmurty.utils:java-xmlbuilder",
+      "description": "com.jamesmurty.utils:java-xmlbuilder versions before 1.2 are vulnerable to Improper Restriction Of Xml External Entity Reference. The parser in `XMLBuilder` and `XMLBuilder2` is vulnerable to XML External Entity (XXE) injection.",
+      "ecosystem": "maven",
+      "severity": "CRITICAL",
+      "references": {
+        "cveIds": [
+          "CVE-2014-125087"
+        ],
+        "cweIds": [
+          "CWE-611: Improper Restriction of XML External Entity Reference"
+        ],
+        "owaspIds": [
+          "A02:2025 - Security Misconfiguration",
+          "A04:2017 - XML External Entities (XXE)",
+          "A05:2021 - Security Misconfiguration",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-3vrc-rrpw-r5pw",
+          "https://nvd.nist.gov/vuln/detail/CVE-2014-125087"
+        ]
+      },
+      "announcedAt": "2023-02-19T18:30:21Z",
+      "ruleText": {
+        "id": "ssc-74c37554-5da7-4d4b-b86f-00e36f95b2c9",
+        "message": "com.jamesmurty.utils:java-xmlbuilder versions before 1.2 are vulnerable to Improper Restriction Of Xml External Entity Reference. The parser in `XMLBuilder` and `XMLBuilder2` is vulnerable to XML External Entity (XXE) injection.",
+        "severity": "CRITICAL",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2014-125087",
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "ghsa": "GHSA-3vrc-rrpw-r5pw",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-02-19T18:30:21Z",
+          "references": [
+            "https://github.com/advisories/GHSA-3vrc-rrpw-r5pw",
+            "https://nvd.nist.gov/vuln/detail/CVE-2014-125087"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.jamesmurty.utils:java-xmlbuilder": "1.2"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "CRITICAL",
+          "sca-vuln-database-identifier": "CVE-2014-125087",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 93700,
+              "rv_id": 1238225,
+              "rule_id": "x8UKn0b",
+              "version_id": "yeTxY9Q",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-74c37554-5da7-4d4b-b86f-00e36f95b2c9",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.jamesmurty.utils:java-xmlbuilder",
+              "version": "<1.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern-either": [
+              {
+                "pattern": "(XMLBuilder $M).parse(...)"
+              },
+              {
+                "pattern": "(XMLBuilder2 $M).parse(...)"
+              }
+            ]
+          },
+          {
+            "pattern-inside": "import com.jamesmurty.utils;\n...\n"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "com.jamesmurty.utils:java-xmlbuilder",
+          "versionSpecifier": "<1.2"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.jamesmurty.utils:java-xmlbuilder",
+          "versionSpecifier": "1.2"
+        }
+      ],
+      "cve": "CVE-2014-125087",
+      "ghsa": "GHSA-3vrc-rrpw-r5pw",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

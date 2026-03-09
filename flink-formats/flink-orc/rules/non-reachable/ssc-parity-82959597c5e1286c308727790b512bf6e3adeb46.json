@@ -1,0 +1,114 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-82959597c5e1286c308727790b512bf6e3adeb46",
+      "title": "XML Injection (aka Blind XPath Injection) in xerces:xercesImpl",
+      "description": "Affected versions of xerces:xercesImpl are vulnerable to XML Injection (aka Blind XPath Injection).",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2022-23437"
+        ],
+        "cweIds": [
+          "CWE-91: XML Injection (aka Blind XPath Injection)"
+        ],
+        "owaspIds": [
+          "A01:2017 - Injection",
+          "A03:2021 - Injection",
+          "A05:2025 - Injection",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-h65f-jvqw-m9fj",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-23437"
+        ]
+      },
+      "announcedAt": "2022-01-27T16:13:07Z",
+      "ruleText": {
+        "id": "ssc-parity-82959597c5e1286c308727790b512bf6e3adeb46",
+        "message": "Affected versions of xerces:xercesImpl are vulnerable to XML Injection (aka Blind XPath Injection).",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2022-23437",
+          "cwe": [
+            "CWE-91: XML Injection (aka Blind XPath Injection)"
+          ],
+          "ghsa": "GHSA-h65f-jvqw-m9fj",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-01-27T16:13:07Z",
+          "references": [
+            "https://github.com/advisories/GHSA-h65f-jvqw-m9fj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-23437"
+          ],
+          "sca-fix-versions": [
+            {
+              "xerces:xercesImpl": "2.12.2"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2022-23437",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 101669,
+              "rv_id": 1253646,
+              "rule_id": "X5UQgpE",
+              "version_id": "nWT235e",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-82959597c5e1286c308727790b512bf6e3adeb46",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "xerces:xercesImpl",
+              "version": "<2.12.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "xerces:xercesImpl",
+          "versionSpecifier": "<2.12.2"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "xerces:xercesImpl",
+          "versionSpecifier": "2.12.2"
+        }
+      ],
+      "cve": "CVE-2022-23437",
+      "ghsa": "GHSA-h65f-jvqw-m9fj",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

@@ -1,0 +1,173 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-d5da6fdd-42e9-4bb2-81ce-ca5e7e9a52f8",
+      "title": "Improper Access Control in commons-beanutils:commons-beanutils",
+      "description": "Affected versions of commons-beanutils:commons-beanutils and org.apache.commons:commons-beanutils2 are vulnerable to Improper Access Control. Apache Commons BeanUtils is vulnerable to improper access control where attackers can supply untrusted property paths to methods like getProperty, enabling access to the enums internal declaredClass property. This bypasses protection mechanisms and could allow remote attackers to gain control of the ClassLoader, potentially leading to arbitrary code execution.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2025-48734"
+        ],
+        "cweIds": [
+          "CWE-284: Improper Access Control"
+        ],
+        "owaspIds": [
+          "A01:2021 - Broken Access Control",
+          "A01:2025 - Broken Access Control",
+          "A05:2017 - Broken Access Control",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-wxr5-93ph-8wr9",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-48734"
+        ]
+      },
+      "announcedAt": "2025-05-28T15:34:34Z",
+      "ruleText": {
+        "id": "ssc-d5da6fdd-42e9-4bb2-81ce-ca5e7e9a52f8",
+        "message": "Affected versions of commons-beanutils:commons-beanutils and org.apache.commons:commons-beanutils2 are vulnerable to Improper Access Control. Apache Commons BeanUtils is vulnerable to improper access control where attackers can supply untrusted property paths to methods like getProperty, enabling access to the enums internal declaredClass property. This bypasses protection mechanisms and could allow remote attackers to gain control of the ClassLoader, potentially leading to arbitrary code execution.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2025-48734",
+          "cwe": [
+            "CWE-284: Improper Access Control"
+          ],
+          "ghsa": "GHSA-wxr5-93ph-8wr9",
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control",
+            "A05:2017 - Broken Access Control",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-05-28T15:34:34Z",
+          "references": [
+            "https://github.com/advisories/GHSA-wxr5-93ph-8wr9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-48734"
+          ],
+          "sca-fix-versions": [
+            {
+              "commons-beanutils:commons-beanutils": "1.11.0"
+            },
+            {
+              "org.apache.commons:commons-beanutils2": "2.0.0-M2"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-reachable-if": "you pass untrusted input as the name argument (i.e., a user-controlled property path) and the target bean contains or references an enum object (directly or via nested properties)",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2025-48734",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 197259,
+              "rv_id": 1242835,
+              "rule_id": "BYUxpwd",
+              "version_id": "e1TyXd9",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-d5da6fdd-42e9-4bb2-81ce-ca5e7e9a52f8",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "commons-beanutils:commons-beanutils",
+              "version": ">=1.0, <=1.10.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.apache.commons:commons-beanutils2",
+              "version": ">=2.0.0-M1, <2.0.0-M2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern-either": [
+              {
+                "pattern": "(org.apache.commons.beanutils.PropertyUtilsBean $ANY). ... .getNestedProperty(...)"
+              },
+              {
+                "pattern": "(org.apache.commons.beanutils.PropertyUtilsBean $ANY). ... .getProperty(...)"
+              },
+              {
+                "pattern": "(org.apache.commons.beanutils.BeanUtilsBean $ANY). ... .getNestedProperty(...)"
+              },
+              {
+                "pattern": "(org.apache.commons.beanutils.BeanUtilsBean $ANY). ... .getProperty(...)"
+              },
+              {
+                "pattern": "(org.apache.commons.beanutils.PropertyUtils $ANY). ... .getNestedProperty(...)"
+              },
+              {
+                "pattern": "(org.apache.commons.beanutils.PropertyUtils $ANY). ... .getProperty(...)"
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "$VAR = org.apache.commons.beanutils.$CLASS(...);\n...\n"
+                  },
+                  {
+                    "pattern": "$VAR. ... .$FUNCNAME(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$CLASS",
+                      "regex": "^(PropertyUtilsBean|BeanUtilsBean|PropertyUtils)$"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNCNAME",
+                      "regex": "^(getNestedProperty|getProperty)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "MANUAL_REVIEW_REACHABLE",
+      "vulnerableDependencies": [
+        {
+          "name": "commons-beanutils:commons-beanutils",
+          "versionSpecifier": ">=1.0, <=1.10.1"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "commons-beanutils:commons-beanutils",
+          "versionSpecifier": "1.11.0"
+        },
+        {
+          "name": "org.apache.commons:commons-beanutils2",
+          "versionSpecifier": "2.0.0-M2"
+        }
+      ],
+      "reachableIf": "you pass untrusted input as the name argument (i.e., a user-controlled property path) and the target bean contains or references an enum object (directly or via nested properties)",
+      "cve": "CVE-2025-48734",
+      "ghsa": "GHSA-wxr5-93ph-8wr9"
+    }
+  ],
+  "totalCount": "1"
+}

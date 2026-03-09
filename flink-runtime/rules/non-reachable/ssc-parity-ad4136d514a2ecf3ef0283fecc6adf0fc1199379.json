@@ -1,0 +1,142 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-ad4136d514a2ecf3ef0283fecc6adf0fc1199379",
+      "title": "Deserialization of Untrusted Data in com.google.guava:guava",
+      "description": "Affected versions of com.google.guava:guava, com.google.guava:guava-jdk5, com.googlecode.guava-osgi:guava-osgi, de.mhus.ports:vaadin-shared-deps, org.hudsonci.lib.guava:guava, and org.sonatype.sisu:sisu-guava are vulnerable to Allocation of Resources Without Limits or Throttling / Deserialization of Untrusted Data.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2018-10237"
+        ],
+        "cweIds": [
+          "CWE-502: Deserialization of Untrusted Data",
+          "CWE-770: Allocation of Resources Without Limits or Throttling"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A08:2017 - Insecure Deserialization",
+          "A08:2021 - Software and Data Integrity Failures",
+          "A08:2025 - Software or Data Integrity Failures"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-mvr2-9pj6-7w5j",
+          "https://nvd.nist.gov/vuln/detail/CVE-2018-10237"
+        ]
+      },
+      "announcedAt": "2020-06-15T20:35:11Z",
+      "ruleText": {
+        "id": "ssc-parity-ad4136d514a2ecf3ef0283fecc6adf0fc1199379",
+        "message": "Affected versions of com.google.guava:guava, com.google.guava:guava-jdk5, com.googlecode.guava-osgi:guava-osgi, de.mhus.ports:vaadin-shared-deps, org.hudsonci.lib.guava:guava, and org.sonatype.sisu:sisu-guava are vulnerable to Allocation of Resources Without Limits or Throttling / Deserialization of Untrusted Data.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2018-10237",
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data",
+            "CWE-770: Allocation of Resources Without Limits or Throttling"
+          ],
+          "ghsa": "GHSA-mvr2-9pj6-7w5j",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A08:2017 - Insecure Deserialization",
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "publish-date": "2020-06-15T20:35:11Z",
+          "references": [
+            "https://github.com/advisories/GHSA-mvr2-9pj6-7w5j",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-10237"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.google.guava:guava": "24.1.1-android"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2018-10237",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Insecure Deserialization ",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 97705,
+              "rv_id": 1256146,
+              "rule_id": "L1UqrpD",
+              "version_id": "K3TK1kq",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-ad4136d514a2ecf3ef0283fecc6adf0fc1199379",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.google.guava:guava",
+              "version": ">=11.0, <24.1.1-android"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.guava:guava-jdk5",
+              "version": "<=17.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.googlecode.guava-osgi:guava-osgi",
+              "version": "<=11.0.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "de.mhus.ports:vaadin-shared-deps",
+              "version": "<=7.4.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.hudsonci.lib.guava:guava",
+              "version": "<=14.0.1-h-3"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.sonatype.sisu:sisu-guava",
+              "version": "==0.11.1"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "com.google.guava:guava",
+          "versionSpecifier": ">=11.0, <24.1.1-android"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.google.guava:guava",
+          "versionSpecifier": "24.1.1-android"
+        }
+      ],
+      "cve": "CVE-2018-10237",
+      "ghsa": "GHSA-mvr2-9pj6-7w5j",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

@@ -1,0 +1,112 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+      "title": "Improper Validation of Certificate with Host Mismatch in org.apache.logging.log4j:log4j-core",
+      "description": "Affected versions of org.apache.logging.log4j:log4j-core are vulnerable to Improper Validation of Certificate with Host Mismatch.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2025-68161"
+        ],
+        "cweIds": [
+          "CWE-297: Improper Validation of Certificate with Host Mismatch"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A07:2021 - Identification and Authentication Failures",
+          "A07:2025 - Authentication Failures"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-vc5p-v9hr-52mj",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-68161"
+        ]
+      },
+      "announcedAt": "2025-12-18T21:31:44Z",
+      "ruleText": {
+        "id": "ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+        "message": "Affected versions of org.apache.logging.log4j:log4j-core are vulnerable to Improper Validation of Certificate with Host Mismatch.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-68161",
+          "cwe": [
+            "CWE-297: Improper Validation of Certificate with Host Mismatch"
+          ],
+          "ghsa": "GHSA-vc5p-v9hr-52mj",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "publish-date": "2025-12-18T21:31:44Z",
+          "references": [
+            "https://github.com/advisories/GHSA-vc5p-v9hr-52mj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-68161"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.logging.log4j:log4j-core": "2.25.3"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2025-68161",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authentication"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 272499,
+              "rv_id": 1259409,
+              "rule_id": "JDU369L",
+              "version_id": "QkTGrLJ",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-19e744de45e3689f32722eabc2a6f673bb2ebae6",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.apache.logging.log4j:log4j-core",
+              "version": ">=2.0-beta9, <2.25.3"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "org.apache.logging.log4j:log4j-core",
+          "versionSpecifier": ">=2.0-beta9, <2.25.3"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.apache.logging.log4j:log4j-core",
+          "versionSpecifier": "2.25.3"
+        }
+      ],
+      "cve": "CVE-2025-68161",
+      "ghsa": "GHSA-vc5p-v9hr-52mj",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

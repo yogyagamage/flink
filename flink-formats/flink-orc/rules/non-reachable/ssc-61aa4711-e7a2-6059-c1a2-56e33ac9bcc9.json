@@ -1,0 +1,154 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-61aa4711-e7a2-6059-c1a2-56e33ac9bcc9",
+      "title": "Out-of-bounds Read in io.airlift:aircompressor",
+      "description": "Affected versions of io.airlift:aircompressor are vulnerable to Out-of-bounds Read / Out-of-bounds Write. An attacker that provides arbitrary data to be decompressed by airlift can cause the JVM to crash, and in some cases leak memory content.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2024-36114"
+        ],
+        "cweIds": [
+          "CWE-125: Out-of-bounds Read",
+          "CWE-787: Out-of-bounds Write"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-973x-65j7-xcf4",
+          "https://nvd.nist.gov/vuln/detail/CVE-2024-36114"
+        ]
+      },
+      "announcedAt": "2024-06-02T22:30:02Z",
+      "ruleText": {
+        "id": "ssc-61aa4711-e7a2-6059-c1a2-56e33ac9bcc9",
+        "message": "Affected versions of io.airlift:aircompressor are vulnerable to Out-of-bounds Read / Out-of-bounds Write. An attacker that provides arbitrary data to be decompressed by airlift can cause the JVM to crash, and in some cases leak memory content.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2024-36114",
+          "cwe": [
+            "CWE-125: Out-of-bounds Read",
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-973x-65j7-xcf4",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2024-06-02T22:30:02Z",
+          "references": [
+            "https://github.com/advisories/GHSA-973x-65j7-xcf4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-36114"
+          ],
+          "sca-fix-versions": [
+            {
+              "io.airlift:aircompressor": "0.27"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2024-36114",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 136013,
+              "rv_id": 950448,
+              "rule_id": "yyURW0N",
+              "version_id": "8KTKxbj",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-61aa4711-e7a2-6059-c1a2-56e33ac9bcc9",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "io.airlift:aircompressor",
+              "version": "<0.27"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "mode": "taint",
+        "pattern-sources": [
+          {
+            "pattern-either": [
+              {
+                "pattern": "new io.airlift.compress.zstd.ZstdDecompressor(...)"
+              },
+              {
+                "pattern": "new io.airlift.compress.lz4.Lz4Decompressor(...)"
+              },
+              {
+                "pattern": "new io.airlift.compress.lzo.LzoDecompressor(...)"
+              },
+              {
+                "pattern": "new io.airlift.compress.snappy.SnappyDecompressor(...)"
+              },
+              {
+                "pattern": "io.airlift.compress.zstd.ZstdDecompressor(...)"
+              },
+              {
+                "pattern": "io.airlift.compress.lz4.Lz4Decompressor(...)"
+              },
+              {
+                "pattern": "io.airlift.compress.lzo.LzoDecompressor(...)"
+              },
+              {
+                "pattern": "io.airlift.compress.snappy.SnappyDecompressor(...)"
+              }
+            ]
+          }
+        ],
+        "pattern-sinks": [
+          {
+            "patterns": [
+              {
+                "pattern": "$DECOMPRESSOR.decompress(...)"
+              },
+              {
+                "focus-metavariable": "$DECOMPRESSOR"
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "io.airlift:aircompressor",
+          "versionSpecifier": "<0.27"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "io.airlift:aircompressor",
+          "versionSpecifier": "0.27"
+        }
+      ],
+      "cve": "CVE-2024-36114",
+      "ghsa": "GHSA-973x-65j7-xcf4",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

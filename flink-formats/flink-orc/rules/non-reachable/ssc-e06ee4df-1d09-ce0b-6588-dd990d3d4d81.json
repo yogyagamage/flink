@@ -1,0 +1,147 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-e06ee4df-1d09-ce0b-6588-dd990d3d4d81",
+      "title": "Out-of-bounds Read in io.airlift:aircompressor",
+      "description": "Affected versions of io.airlift:aircompressor and io.airlift:aircompressor-v3 are vulnerable to Insertion of Sensitive Information Into Sent Data / Out-of-bounds Read. Aircompressor's Java\u2010based Snappy and LZ4 decompressors do not properly handle malformed compressed data: a crafted input can cause bytes from a previously used output buffer to be emitted in the new uncompressed output. In systems that reuse or don't clear the same decompression buffer across calls, this can leak sensitive data to an attacker.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2025-67721"
+        ],
+        "cweIds": [
+          "CWE-125: Out-of-bounds Read",
+          "CWE-201: Insertion of Sensitive Information Into Sent Data"
+        ],
+        "owaspIds": [
+          "A01:2021 - Broken Access Control",
+          "A01:2025 - Broken Access Control",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-vx9q-rhv9-3jvg",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-67721"
+        ]
+      },
+      "announcedAt": "2025-12-12T22:12:22Z",
+      "ruleText": {
+        "id": "ssc-e06ee4df-1d09-ce0b-6588-dd990d3d4d81",
+        "message": "Affected versions of io.airlift:aircompressor and io.airlift:aircompressor-v3 are vulnerable to Insertion of Sensitive Information Into Sent Data / Out-of-bounds Read. Aircompressor's Java\u2010based Snappy and LZ4 decompressors do not properly handle malformed compressed data: a crafted input can cause bytes from a previously used output buffer to be emitted in the new uncompressed output. In systems that reuse or don't clear the same decompression buffer across calls, this can leak sensitive data to an attacker.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2025-67721",
+          "cwe": [
+            "CWE-125: Out-of-bounds Read",
+            "CWE-201: Insertion of Sensitive Information Into Sent Data"
+          ],
+          "ghsa": "GHSA-vx9q-rhv9-3jvg",
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-12-12T22:12:22Z",
+          "references": [
+            "https://github.com/advisories/GHSA-vx9q-rhv9-3jvg",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-67721"
+          ],
+          "sca-fix-versions": [
+            {
+              "io.airlift:aircompressor": "2.0.3"
+            },
+            {
+              "io.airlift:aircompressor-v3": "3.4"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2025-67721",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 271971,
+              "rv_id": 1274059,
+              "rule_id": "nJU8GdZ",
+              "version_id": "5PTo5PX",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-e06ee4df-1d09-ce0b-6588-dd990d3d4d81",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "io.airlift:aircompressor",
+              "version": "<2.0.3"
+            },
+            {
+              "namespace": "maven",
+              "package": "io.airlift:aircompressor-v3",
+              "version": "<3.4"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "(io.airlift.compress.v3.lz4.Lz4JavaDecompressor $_).decompress(...)"
+          },
+          {
+            "pattern": "(io.airlift.compress.v2.lz4.Lz4JavaDecompressor $_).decompress(...)"
+          },
+          {
+            "pattern": "(io.airlift.compress.lz4.Lz4JavaDecompressor $_).decompress(...)"
+          },
+          {
+            "pattern": "(io.airlift.compress.v3.snappy.SnappyJavaDecompressor $_).decompress(...)"
+          },
+          {
+            "pattern": "(io.airlift.compress.v2.snappy.SnappyJavaDecompressor $_).decompress(...)"
+          },
+          {
+            "pattern": "(io.airlift.compress.snappy.SnappyJavaDecompressor $_).decompress(...)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "io.airlift:aircompressor",
+          "versionSpecifier": "<2.0.3"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "io.airlift:aircompressor",
+          "versionSpecifier": "2.0.3"
+        },
+        {
+          "name": "io.airlift:aircompressor-v3",
+          "versionSpecifier": "3.4"
+        }
+      ],
+      "cve": "CVE-2025-67721",
+      "ghsa": "GHSA-vx9q-rhv9-3jvg",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

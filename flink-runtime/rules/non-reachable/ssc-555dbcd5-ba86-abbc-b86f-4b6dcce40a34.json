@@ -1,0 +1,128 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-555dbcd5-ba86-abbc-b86f-4b6dcce40a34",
+      "title": "Improper Certificate Validation in com.squareup.okhttp3:okhttp",
+      "description": "Affected versions of com.squareup.okhttp3:okhttp are vulnerable to Improper Certificate Validation. Improper hostname verification in OkHttp's OkHostnameVerifier.verifyHostName can allow an attacker to present a certificate for the wrong domain, bypassing TLS checks and causing OkHttp to accept a malicious cert for an unintended host. This can lead to remote information disclosure without any user interaction.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2021-0341"
+        ],
+        "cweIds": [
+          "CWE-295: Improper Certificate Validation"
+        ],
+        "owaspIds": [
+          "A03:2017 - Sensitive Data Exposure",
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A07:2021 - Identification and Authentication Failures",
+          "A07:2025 - Authentication Failures"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-3cqm-mf7h-prrj",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-0341"
+        ]
+      },
+      "announcedAt": "2022-05-24T17:41:45Z",
+      "ruleText": {
+        "id": "ssc-555dbcd5-ba86-abbc-b86f-4b6dcce40a34",
+        "message": "Affected versions of com.squareup.okhttp3:okhttp are vulnerable to Improper Certificate Validation. Improper hostname verification in OkHttp's OkHostnameVerifier.verifyHostName can allow an attacker to present a certificate for the wrong domain, bypassing TLS checks and causing OkHttp to accept a malicious cert for an unintended host. This can lead to remote information disclosure without any user interaction.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2021-0341",
+          "cwe": [
+            "CWE-295: Improper Certificate Validation"
+          ],
+          "ghsa": "GHSA-3cqm-mf7h-prrj",
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "publish-date": "2022-05-24T17:41:45Z",
+          "references": [
+            "https://github.com/advisories/GHSA-3cqm-mf7h-prrj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-0341"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.squareup.okhttp3:okhttp": "4.9.2"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2021-0341",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authentication"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 221438,
+              "rv_id": 1238105,
+              "rule_id": "5rUk27W",
+              "version_id": "RGT0Nd4",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-555dbcd5-ba86-abbc-b86f-4b6dcce40a34",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.squareup.okhttp3:okhttp",
+              "version": "<4.9.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "okhttp3.internal.tls.OkHostnameVerifier.verify(...)"
+          },
+          {
+            "pattern": "okhttp3.internal.tls.OkHostnameVerifier.INSTANCE.verify(...)"
+          },
+          {
+            "pattern": "(okhttp3.internal.tls.OkHostnameVerifier $_).verify(...)"
+          },
+          {
+            "pattern": "(okhttp3.OkHttpClient $_).newCall(...).execute(...)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "com.squareup.okhttp3:okhttp",
+          "versionSpecifier": "<4.9.2"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.squareup.okhttp3:okhttp",
+          "versionSpecifier": "4.9.2"
+        }
+      ],
+      "cve": "CVE-2021-0341",
+      "ghsa": "GHSA-3cqm-mf7h-prrj",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

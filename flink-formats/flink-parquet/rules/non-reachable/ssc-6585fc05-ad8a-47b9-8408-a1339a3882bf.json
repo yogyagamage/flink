@@ -1,0 +1,114 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-6585fc05-ad8a-47b9-8408-a1339a3882bf",
+      "title": "Improper Restriction of XML External Entity Reference in com.sun.jersey:jersey-core",
+      "description": "Affected versions of com.sun.jersey:jersey-core are vulnerable to Improper Restriction of XML External Entity Reference. Jersey's built-in SAX XML parser does not disable parameter entity processing, leaving any XML-consuming endpoint vulnerable to XXE. An attacker can submit crafted XML with external parameter entities to read internal files or trigger server-side requests.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2014-3643"
+        ],
+        "cweIds": [
+          "CWE-611: Improper Restriction of XML External Entity Reference"
+        ],
+        "owaspIds": [
+          "A02:2025 - Security Misconfiguration",
+          "A04:2017 - XML External Entities (XXE)",
+          "A05:2021 - Security Misconfiguration",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-5m48-vr54-vmh3",
+          "https://nvd.nist.gov/vuln/detail/CVE-2014-3643"
+        ]
+      },
+      "announcedAt": "2022-05-17T19:57:08Z",
+      "ruleText": {
+        "id": "ssc-6585fc05-ad8a-47b9-8408-a1339a3882bf",
+        "message": "Affected versions of com.sun.jersey:jersey-core are vulnerable to Improper Restriction of XML External Entity Reference. Jersey's built-in SAX XML parser does not disable parameter entity processing, leaving any XML-consuming endpoint vulnerable to XXE. An attacker can submit crafted XML with external parameter entities to read internal files or trigger server-side requests.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2014-3643",
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "ghsa": "GHSA-5m48-vr54-vmh3",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-05-17T19:57:08Z",
+          "references": [
+            "https://github.com/advisories/GHSA-5m48-vr54-vmh3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2014-3643"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.sun.jersey:jersey-core": "1.13"
+            }
+          ],
+          "sca-kind": "upgrade-only",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2014-3643",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 272321,
+              "rv_id": 1238687,
+              "rule_id": "bwUKzrO",
+              "version_id": "rxTABvP",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-6585fc05-ad8a-47b9-8408-a1339a3882bf",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.sun.jersey:jersey-core",
+              "version": "<1.13"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "ALWAYS_REACHABLE",
+      "vulnerableDependencies": [
+        {
+          "name": "com.sun.jersey:jersey-core",
+          "versionSpecifier": "<1.13"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.sun.jersey:jersey-core",
+          "versionSpecifier": "1.13"
+        }
+      ],
+      "cve": "CVE-2014-3643",
+      "ghsa": "GHSA-5m48-vr54-vmh3",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

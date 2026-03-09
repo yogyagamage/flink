@@ -1,0 +1,114 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-b2b77220ac318b6de391abc03cd5bd1c17d7d4a9",
+      "title": "Creation of Temporary File in Directory with Insecure Permissions in com.google.guava:guava",
+      "description": "Affected versions of com.google.guava:guava are vulnerable to Creation of Temporary File in Directory with Insecure Permissions / Files or Directories Accessible to External Parties.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2023-2976"
+        ],
+        "cweIds": [
+          "CWE-379: Creation of Temporary File in Directory with Insecure Permissions",
+          "CWE-552: Files or Directories Accessible to External Parties"
+        ],
+        "owaspIds": [
+          "A01:2021 - Broken Access Control",
+          "A01:2025 - Broken Access Control",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-7g45-4rm6-3mm3",
+          "https://nvd.nist.gov/vuln/detail/CVE-2023-2976"
+        ]
+      },
+      "announcedAt": "2023-06-14T18:30:38Z",
+      "ruleText": {
+        "id": "ssc-parity-b2b77220ac318b6de391abc03cd5bd1c17d7d4a9",
+        "message": "Affected versions of com.google.guava:guava are vulnerable to Creation of Temporary File in Directory with Insecure Permissions / Files or Directories Accessible to External Parties.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2023-2976",
+          "cwe": [
+            "CWE-379: Creation of Temporary File in Directory with Insecure Permissions",
+            "CWE-552: Files or Directories Accessible to External Parties"
+          ],
+          "ghsa": "GHSA-7g45-4rm6-3mm3",
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-06-14T18:30:38Z",
+          "references": [
+            "https://github.com/advisories/GHSA-7g45-4rm6-3mm3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-2976"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.google.guava:guava": "32.0.0-android"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2023-2976",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 109882,
+              "rv_id": 1248341,
+              "rule_id": "DbU6nrR",
+              "version_id": "8KT56lg",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-b2b77220ac318b6de391abc03cd5bd1c17d7d4a9",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.google.guava:guava",
+              "version": ">=1.0, <32.0.0-android"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "com.google.guava:guava",
+          "versionSpecifier": ">=1.0, <32.0.0-android"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.google.guava:guava",
+          "versionSpecifier": "32.0.0-android"
+        }
+      ],
+      "cve": "CVE-2023-2976",
+      "ghsa": "GHSA-7g45-4rm6-3mm3",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

@@ -1,0 +1,134 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-7f0b48272bda7936c6c69e7c617953c9577d910f",
+      "title": "Signed to Unsigned Conversion Error in com.squareup.okio:okio",
+      "description": "Affected versions of com.squareup.okio:okio and com.squareup.okio:okio-jvm are vulnerable to Incorrect Conversion between Numeric Types / Signed to Unsigned Conversion Error.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2023-3635"
+        ],
+        "cweIds": [
+          "CWE-195: Signed to Unsigned Conversion Error",
+          "CWE-681: Incorrect Conversion between Numeric Types"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-w33c-445m-f8w7",
+          "https://nvd.nist.gov/vuln/detail/CVE-2023-3635"
+        ]
+      },
+      "announcedAt": "2023-07-12T21:30:50Z",
+      "ruleText": {
+        "id": "ssc-parity-7f0b48272bda7936c6c69e7c617953c9577d910f",
+        "message": "Affected versions of com.squareup.okio:okio and com.squareup.okio:okio-jvm are vulnerable to Incorrect Conversion between Numeric Types / Signed to Unsigned Conversion Error.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2023-3635",
+          "cwe": [
+            "CWE-195: Signed to Unsigned Conversion Error",
+            "CWE-681: Incorrect Conversion between Numeric Types"
+          ],
+          "ghsa": "GHSA-w33c-445m-f8w7",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-07-12T21:30:50Z",
+          "references": [
+            "https://github.com/advisories/GHSA-w33c-445m-f8w7",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-3635"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.squareup.okio:okio": "3.4.0"
+            },
+            {
+              "com.squareup.okio:okio": "1.17.6"
+            },
+            {
+              "com.squareup.okio:okio-jvm": "3.4.0"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2023-3635",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 110104,
+              "rv_id": 971600,
+              "rule_id": "6JUvJYR",
+              "version_id": "LjTX93g",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-7f0b48272bda7936c6c69e7c617953c9577d910f",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.squareup.okio:okio",
+              "version": "<1.17.6"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.squareup.okio:okio",
+              "version": ">=2.0.0-RC1, <3.4.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.squareup.okio:okio-jvm",
+              "version": ">=2.0.0-RC1, <3.4.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "com.squareup.okio:okio",
+          "versionSpecifier": "<1.17.6"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.squareup.okio:okio",
+          "versionSpecifier": "3.4.0"
+        },
+        {
+          "name": "com.squareup.okio:okio",
+          "versionSpecifier": "1.17.6"
+        },
+        {
+          "name": "com.squareup.okio:okio-jvm",
+          "versionSpecifier": "3.4.0"
+        }
+      ],
+      "cve": "CVE-2023-3635",
+      "ghsa": "GHSA-w33c-445m-f8w7",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

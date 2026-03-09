@@ -1,0 +1,144 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-8fda0a1e-0820-a08b-f663-4cd2ee49b3c7",
+      "title": "External Control of File Name or Path in org.apache.parquet:parquet-avro",
+      "description": "Affected versions of org.apache.parquet:parquet-avro are vulnerable to External Control of File Name or Path. Parquet Javas Avro module is vulnerable to arbitrary code execution when using its `specific` or `reflect` deserialization models. A malicious actor could leverage this flaw during schema parsing to trigger execution of an injected, malicious class, potentially compromising system security.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2025-46762"
+        ],
+        "cweIds": [
+          "CWE-73: External Control of File Name or Path"
+        ],
+        "owaspIds": [
+          "A04:2021 - Insecure Design",
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A06:2025 - Insecure Design"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-53wx-pr6q-m3j5",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-46762"
+        ]
+      },
+      "announcedAt": "2025-05-06T12:30:23Z",
+      "ruleText": {
+        "id": "ssc-8fda0a1e-0820-a08b-f663-4cd2ee49b3c7",
+        "message": "Affected versions of org.apache.parquet:parquet-avro are vulnerable to External Control of File Name or Path. Parquet Javas Avro module is vulnerable to arbitrary code execution when using its `specific` or `reflect` deserialization models. A malicious actor could leverage this flaw during schema parsing to trigger execution of an injected, malicious class, potentially compromising system security.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2025-46762",
+          "cwe": [
+            "CWE-73: External Control of File Name or Path"
+          ],
+          "ghsa": "GHSA-53wx-pr6q-m3j5",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A06:2025 - Insecure Design"
+          ],
+          "publish-date": "2025-05-06T12:30:23Z",
+          "references": [
+            "https://github.com/advisories/GHSA-53wx-pr6q-m3j5",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-46762"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.parquet:parquet-avro": "1.15.2"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2025-46762",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Path Traversal"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 195743,
+              "rv_id": 1238530,
+              "rule_id": "AbUkXzB",
+              "version_id": "bZT5P2l",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-8fda0a1e-0820-a08b-f663-4cd2ee49b3c7",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.apache.parquet:parquet-avro",
+              "version": "<1.15.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "org.apache.avro.specific.SpecificData"
+          },
+          {
+            "pattern": "org.apache.avro.reflect.ReflectData"
+          },
+          {
+            "pattern": "org.apache.avro.specific.SpecificData(...)"
+          },
+          {
+            "pattern": "org.apache.avro.reflect.ReflectData(...)"
+          },
+          {
+            "pattern": "new org.apache.avro.specific.SpecificData(...)"
+          },
+          {
+            "pattern": "new org.apache.avro.reflect.ReflectData(...)"
+          },
+          {
+            "pattern": "new org.apache.parquet.avro.ReflectDataSupplier(...)"
+          },
+          {
+            "pattern": "new org.apache.parquet.avro.SpecificDataSupplier(...)"
+          },
+          {
+            "pattern": "org.apache.parquet.avro.ReflectDataSupplier(...)"
+          },
+          {
+            "pattern": "org.apache.parquet.avro.SpecificDataSupplier(...)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "org.apache.parquet:parquet-avro",
+          "versionSpecifier": "<1.15.2"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.apache.parquet:parquet-avro",
+          "versionSpecifier": "1.15.2"
+        }
+      ],
+      "cve": "CVE-2025-46762",
+      "ghsa": "GHSA-53wx-pr6q-m3j5",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

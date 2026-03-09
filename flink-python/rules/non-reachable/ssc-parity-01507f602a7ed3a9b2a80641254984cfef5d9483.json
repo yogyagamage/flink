@@ -1,0 +1,114 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-01507f602a7ed3a9b2a80641254984cfef5d9483",
+      "title": "Improper Restriction of XML External Entity Reference in io.github.classgraph:classgraph",
+      "description": "Affected versions of io.github.classgraph:classgraph are vulnerable to Improper Restriction of XML External Entity Reference.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2021-47621"
+        ],
+        "cweIds": [
+          "CWE-611: Improper Restriction of XML External Entity Reference"
+        ],
+        "owaspIds": [
+          "A02:2025 - Security Misconfiguration",
+          "A04:2017 - XML External Entities (XXE)",
+          "A05:2021 - Security Misconfiguration",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-v2xm-76pq-phcf",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-47621"
+        ]
+      },
+      "announcedAt": "2024-06-21T06:31:12Z",
+      "ruleText": {
+        "id": "ssc-parity-01507f602a7ed3a9b2a80641254984cfef5d9483",
+        "message": "Affected versions of io.github.classgraph:classgraph are vulnerable to Improper Restriction of XML External Entity Reference.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2021-47621",
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "ghsa": "GHSA-v2xm-76pq-phcf",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2024-06-21T06:31:12Z",
+          "references": [
+            "https://github.com/advisories/GHSA-v2xm-76pq-phcf",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-47621"
+          ],
+          "sca-fix-versions": [
+            {
+              "io.github.classgraph:classgraph": "4.8.112"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2021-47621",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 137483,
+              "rv_id": 1259053,
+              "rule_id": "9AUdGQG",
+              "version_id": "JdTzrzj",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-01507f602a7ed3a9b2a80641254984cfef5d9483",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "io.github.classgraph:classgraph",
+              "version": "<4.8.112"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "io.github.classgraph:classgraph",
+          "versionSpecifier": "<4.8.112"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "io.github.classgraph:classgraph",
+          "versionSpecifier": "4.8.112"
+        }
+      ],
+      "cve": "CVE-2021-47621",
+      "ghsa": "GHSA-v2xm-76pq-phcf",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

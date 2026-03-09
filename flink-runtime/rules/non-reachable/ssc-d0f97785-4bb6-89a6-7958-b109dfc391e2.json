@@ -1,0 +1,155 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-d0f97785-4bb6-89a6-7958-b109dfc391e2",
+      "title": "Incorrect Behavior Order in com.google.protobuf:protobuf-java",
+      "description": "Affected versions of com.google.protobuf:protobuf-java and com.google.protobuf:protobuf-kotlin are vulnerable to Incorrect Behavior Order. Parsing of unknown fields in the Java Protobuf runtime can be abused by a crafted binary payload (~800 KB) to trigger excessive short-lived object allocations, causing repeated GC pauses and prolonged parsing times, resulting in a Denial of Service.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2021-22569"
+        ],
+        "cweIds": [
+          "CWE-696: Incorrect Behavior Order"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-wrvw-hg22-4m67",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-22569"
+        ]
+      },
+      "announcedAt": "2022-01-07T22:31:44Z",
+      "ruleText": {
+        "id": "ssc-d0f97785-4bb6-89a6-7958-b109dfc391e2",
+        "message": "Affected versions of com.google.protobuf:protobuf-java and com.google.protobuf:protobuf-kotlin are vulnerable to Incorrect Behavior Order. Parsing of unknown fields in the Java Protobuf runtime can be abused by a crafted binary payload (~800 KB) to trigger excessive short-lived object allocations, causing repeated GC pauses and prolonged parsing times, resulting in a Denial of Service.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2021-22569",
+          "cwe": [
+            "CWE-696: Incorrect Behavior Order"
+          ],
+          "ghsa": "GHSA-wrvw-hg22-4m67",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-01-07T22:31:44Z",
+          "references": [
+            "https://github.com/advisories/GHSA-wrvw-hg22-4m67",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-22569"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.google.protobuf:protobuf-java": "3.19.2"
+            },
+            {
+              "com.google.protobuf:protobuf-java": "3.18.2"
+            },
+            {
+              "com.google.protobuf:protobuf-java": "3.16.1"
+            },
+            {
+              "com.google.protobuf:protobuf-kotlin": "3.19.2"
+            },
+            {
+              "com.google.protobuf:protobuf-kotlin": "3.18.2"
+            }
+          ],
+          "sca-kind": "upgrade-only",
+          "sca-reachable-if": "you deserialize untrusted protobuf data into a class of any of your Java protobuf packages, using a function such as `parseFrom(...)`",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2021-22569",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 238618,
+              "rv_id": 1180863,
+              "rule_id": "lBUlDxz",
+              "version_id": "xyTp54r",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-d0f97785-4bb6-89a6-7958-b109dfc391e2",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-java",
+              "version": "<3.16.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-java",
+              "version": ">=3.18.0, <3.18.2"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-java",
+              "version": ">=3.19.0, <3.19.2"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-kotlin",
+              "version": ">=3.18.0, <3.18.2"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.google.protobuf:protobuf-kotlin",
+              "version": ">=3.19.0, <3.19.2"
+            }
+          ]
+        },
+        "languages": [
+          "generic"
+        ]
+      },
+      "reachability": "MANUAL_REVIEW_REACHABLE",
+      "vulnerableDependencies": [
+        {
+          "name": "com.google.protobuf:protobuf-java",
+          "versionSpecifier": "<3.16.1"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.google.protobuf:protobuf-java",
+          "versionSpecifier": "3.19.2"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-java",
+          "versionSpecifier": "3.18.2"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-java",
+          "versionSpecifier": "3.16.1"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-kotlin",
+          "versionSpecifier": "3.19.2"
+        },
+        {
+          "name": "com.google.protobuf:protobuf-kotlin",
+          "versionSpecifier": "3.18.2"
+        }
+      ],
+      "reachableIf": "you deserialize untrusted protobuf data into a class of any of your Java protobuf packages, using a function such as `parseFrom(...)`",
+      "cve": "CVE-2021-22569",
+      "ghsa": "GHSA-wrvw-hg22-4m67"
+    }
+  ],
+  "totalCount": "1"
+}

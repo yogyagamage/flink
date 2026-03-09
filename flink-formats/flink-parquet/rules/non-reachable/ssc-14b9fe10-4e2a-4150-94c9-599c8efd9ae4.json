@@ -1,0 +1,105 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-14b9fe10-4e2a-4150-94c9-599c8efd9ae4",
+      "title": "Improper Restriction of XML External Entity Reference in org.codehaus.jackson:jackson-mapper-asl",
+      "description": "Affected versions of org.codehaus.jackson:jackson-mapper-asl are vulnerable to Improper Restriction Of Xml External Entity Reference. The primary threat from this flaw is data integrity. The repo was archived in Nov 2022 and is no longer supported. The recommendation is to remove Codehaus and update to FasterXML.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2019-10172"
+        ],
+        "cweIds": [
+          "CWE-611: Improper Restriction of XML External Entity Reference"
+        ],
+        "owaspIds": [
+          "A02:2025 - Security Misconfiguration",
+          "A04:2017 - XML External Entities (XXE)",
+          "A05:2021 - Security Misconfiguration",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-r6j9-8759-g62w",
+          "https://nvd.nist.gov/vuln/detail/CVE-2019-10172"
+        ]
+      },
+      "announcedAt": "2020-02-04T22:39:19Z",
+      "ruleText": {
+        "id": "ssc-14b9fe10-4e2a-4150-94c9-599c8efd9ae4",
+        "message": "Affected versions of org.codehaus.jackson:jackson-mapper-asl are vulnerable to Improper Restriction Of Xml External Entity Reference. The primary threat from this flaw is data integrity. The repo was archived in Nov 2022 and is no longer supported. The recommendation is to remove Codehaus and update to FasterXML.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2019-10172",
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "ghsa": "GHSA-r6j9-8759-g62w",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2020-02-04T22:39:19Z",
+          "references": [
+            "https://github.com/advisories/GHSA-r6j9-8759-g62w",
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-10172"
+          ],
+          "sca-fix-versions": [],
+          "sca-kind": "upgrade-only",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2019-10172",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 121513,
+              "rv_id": 1242120,
+              "rule_id": "KxUv3We",
+              "version_id": "yeTx9Wk",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-14b9fe10-4e2a-4150-94c9-599c8efd9ae4",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.codehaus.jackson:jackson-mapper-asl",
+              "version": "<=1.9.13"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "ALWAYS_REACHABLE",
+      "vulnerableDependencies": [
+        {
+          "name": "org.codehaus.jackson:jackson-mapper-asl",
+          "versionSpecifier": "<=1.9.13"
+        }
+      ],
+      "cve": "CVE-2019-10172",
+      "ghsa": "GHSA-r6j9-8759-g62w",
+      "reachableIf": "",
+      "safeDependencies": []
+    }
+  ],
+  "totalCount": "1"
+}

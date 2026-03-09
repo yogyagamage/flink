@@ -1,0 +1,137 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-0c7f00df-e7c4-38cf-0ce3-0e51af14798c",
+      "title": "Uncontrolled Resource Consumption in org.codehaus.jettison:jettison",
+      "description": "Affected versions of org.codehaus.jettison:jettison are vulnerable to Uncontrolled Recursion / Uncontrolled Resource Consumption. Jettison's internal XML/JSON parser may trigger an out-of-memory condition when processing specially crafted untrusted input, leading to a denial of service attack.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2022-40150"
+        ],
+        "cweIds": [
+          "CWE-400: Uncontrolled Resource Consumption",
+          "CWE-674: Uncontrolled Recursion"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-x27m-9w8j-5vcw",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-40150"
+        ]
+      },
+      "announcedAt": "2022-09-17T00:00:41Z",
+      "ruleText": {
+        "id": "ssc-0c7f00df-e7c4-38cf-0ce3-0e51af14798c",
+        "message": "Affected versions of org.codehaus.jettison:jettison are vulnerable to Uncontrolled Recursion / Uncontrolled Resource Consumption. Jettison's internal XML/JSON parser may trigger an out-of-memory condition when processing specially crafted untrusted input, leading to a denial of service attack.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2022-40150",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-674: Uncontrolled Recursion"
+          ],
+          "ghsa": "GHSA-x27m-9w8j-5vcw",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-09-17T00:00:41Z",
+          "references": [
+            "https://github.com/advisories/GHSA-x27m-9w8j-5vcw",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-40150"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.codehaus.jettison:jettison": "1.5.2"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2022-40150",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 198063,
+              "rv_id": 1042803,
+              "rule_id": "5rUkoe3",
+              "version_id": "ExTN1lp",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-0c7f00df-e7c4-38cf-0ce3-0e51af14798c",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.codehaus.jettison:jettison",
+              "version": "<1.5.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "new org.codehaus.jettison.json.JSONObject(...)"
+          },
+          {
+            "pattern": "new org.codehaus.jettison.json.JSONArray(...)"
+          },
+          {
+            "pattern": "new org.codehaus.jettison.mapped.MappedXMLStreamReader(...)"
+          },
+          {
+            "pattern": "new org.codehaus.jettison.badgerfish.BadgerFishXMLInputFactory(...)"
+          },
+          {
+            "pattern": "org.codehaus.jettison.json.JSONObject(...)"
+          },
+          {
+            "pattern": "org.codehaus.jettison.json.JSONArray(...)"
+          },
+          {
+            "pattern": "org.codehaus.jettison.mapped.MappedXMLStreamReader(...)"
+          },
+          {
+            "pattern": "org.codehaus.jettison.badgerfish.BadgerFishXMLInputFactory(...)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "org.codehaus.jettison:jettison",
+          "versionSpecifier": "<1.5.2"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.codehaus.jettison:jettison",
+          "versionSpecifier": "1.5.2"
+        }
+      ],
+      "cve": "CVE-2022-40150",
+      "ghsa": "GHSA-x27m-9w8j-5vcw",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

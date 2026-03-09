@@ -1,0 +1,120 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-393935011c9ba17d22547e0547f30e936b097ae8",
+      "title": "Improper Handling of Alternate Encoding in com.google.guava:guava",
+      "description": "Affected versions of com.google.guava:guava are vulnerable to Creation of Temporary File With Insecure Permissions / Exposure of Sensitive Information to an Unauthorized Actor / Improper Handling of Alternate Encoding / Incorrect Permission Assignment for Critical Resource.",
+      "ecosystem": "maven",
+      "severity": "LOW",
+      "references": {
+        "cveIds": [
+          "CVE-2020-8908"
+        ],
+        "cweIds": [
+          "CWE-173: Improper Handling of Alternate Encoding",
+          "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+          "CWE-378: Creation of Temporary File With Insecure Permissions",
+          "CWE-732: Incorrect Permission Assignment for Critical Resource"
+        ],
+        "owaspIds": [
+          "A01:2021 - Broken Access Control",
+          "A01:2025 - Broken Access Control",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-5mg8-w23w-74h3",
+          "https://nvd.nist.gov/vuln/detail/CVE-2020-8908"
+        ]
+      },
+      "announcedAt": "2021-03-25T17:04:19Z",
+      "ruleText": {
+        "id": "ssc-parity-393935011c9ba17d22547e0547f30e936b097ae8",
+        "message": "Affected versions of com.google.guava:guava are vulnerable to Creation of Temporary File With Insecure Permissions / Exposure of Sensitive Information to an Unauthorized Actor / Improper Handling of Alternate Encoding / Incorrect Permission Assignment for Critical Resource.",
+        "severity": "INFO",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2020-8908",
+          "cwe": [
+            "CWE-173: Improper Handling of Alternate Encoding",
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+            "CWE-378: Creation of Temporary File With Insecure Permissions",
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "ghsa": "GHSA-5mg8-w23w-74h3",
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2021-03-25T17:04:19Z",
+          "references": [
+            "https://github.com/advisories/GHSA-5mg8-w23w-74h3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-8908"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.google.guava:guava": "32.0.0-android"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "LOW",
+          "sca-vuln-database-identifier": "CVE-2020-8908",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization",
+            "Mishandled Sensitive Information",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 98936,
+              "rv_id": 1246563,
+              "rule_id": "YGUpDRG",
+              "version_id": "9lT4GBD",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-393935011c9ba17d22547e0547f30e936b097ae8",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.google.guava:guava",
+              "version": "<32.0.0-android"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "com.google.guava:guava",
+          "versionSpecifier": "<32.0.0-android"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.google.guava:guava",
+          "versionSpecifier": "32.0.0-android"
+        }
+      ],
+      "cve": "CVE-2020-8908",
+      "ghsa": "GHSA-5mg8-w23w-74h3",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

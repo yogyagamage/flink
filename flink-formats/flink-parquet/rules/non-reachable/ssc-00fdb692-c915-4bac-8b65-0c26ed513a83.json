@@ -1,0 +1,108 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-00fdb692-c915-4bac-8b65-0c26ed513a83",
+      "title": "Infinite Loop in org.apache.thrift:libthrift",
+      "description": "org.apache.thrift:libthrift versions before and including 0.12.0 are vulnerable to Loop With Unreachable Exit Condition ('Infinite Loop'). A server or client may run into an endless loop when fed with specific input data. This bug only affects certain language bindings; any languages not listed here were either patched in an earlier release or were never affected: `as, cpp, c_gsrc, d, dart, go, javame, js, lua, nodejs, ocaml, py, rb, swift`.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2019-0205"
+        ],
+        "cweIds": [
+          "CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-rj7p-rfgp-852x",
+          "https://nvd.nist.gov/vuln/detail/CVE-2019-0205"
+        ]
+      },
+      "announcedAt": "2022-05-24T17:00:01Z",
+      "ruleText": {
+        "id": "ssc-00fdb692-c915-4bac-8b65-0c26ed513a83",
+        "message": "org.apache.thrift:libthrift versions before and including 0.12.0 are vulnerable to Loop With Unreachable Exit Condition ('Infinite Loop'). A server or client may run into an endless loop when fed with specific input data. This bug only affects certain language bindings; any languages not listed here were either patched in an earlier release or were never affected: `as, cpp, c_gsrc, d, dart, go, javame, js, lua, nodejs, ocaml, py, rb, swift`.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2019-0205",
+          "cwe": [
+            "CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')"
+          ],
+          "ghsa": "GHSA-rj7p-rfgp-852x",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-05-24T17:00:01Z",
+          "references": [
+            "https://github.com/advisories/GHSA-rj7p-rfgp-852x",
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-0205"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.thrift:libthrift": "0.13.0"
+            }
+          ],
+          "sca-kind": "upgrade-only",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2019-0205",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 94139,
+              "rv_id": 952164,
+              "rule_id": "DbU6pPB",
+              "version_id": "LjTX5gy",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-00fdb692-c915-4bac-8b65-0c26ed513a83",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.apache.thrift:libthrift",
+              "version": "<=0.12.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "ALWAYS_REACHABLE",
+      "vulnerableDependencies": [
+        {
+          "name": "org.apache.thrift:libthrift",
+          "versionSpecifier": "<=0.12.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.apache.thrift:libthrift",
+          "versionSpecifier": "0.13.0"
+        }
+      ],
+      "cve": "CVE-2019-0205",
+      "ghsa": "GHSA-rj7p-rfgp-852x",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

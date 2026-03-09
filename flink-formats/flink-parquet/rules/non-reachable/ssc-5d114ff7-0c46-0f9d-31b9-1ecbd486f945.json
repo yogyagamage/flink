@@ -1,0 +1,128 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-5d114ff7-0c46-0f9d-31b9-1ecbd486f945",
+      "title": "Deserialization of Untrusted Data in org.apache.parquet:parquet-avro",
+      "description": "Affected versions of org.apache.parquet:parquet-avro are vulnerable to Deserialization of Untrusted Data. The `parquet-avro` module in this package fails to properly validate input schemas, allowing an attacker to supply a malicious schema that could trigger arbitrary code execution during schema parsing.",
+      "ecosystem": "maven",
+      "severity": "CRITICAL",
+      "references": {
+        "cveIds": [
+          "CVE-2025-30065"
+        ],
+        "cweIds": [
+          "CWE-502: Deserialization of Untrusted Data"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A08:2017 - Insecure Deserialization",
+          "A08:2021 - Software and Data Integrity Failures",
+          "A08:2025 - Software or Data Integrity Failures"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-2c59-37c4-qrx5",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-30065"
+        ]
+      },
+      "announcedAt": "2025-04-01T09:30:20Z",
+      "ruleText": {
+        "id": "ssc-5d114ff7-0c46-0f9d-31b9-1ecbd486f945",
+        "message": "Affected versions of org.apache.parquet:parquet-avro are vulnerable to Deserialization of Untrusted Data. The `parquet-avro` module in this package fails to properly validate input schemas, allowing an attacker to supply a malicious schema that could trigger arbitrary code execution during schema parsing.",
+        "severity": "CRITICAL",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2025-30065",
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "ghsa": "GHSA-2c59-37c4-qrx5",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A08:2017 - Insecure Deserialization",
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "publish-date": "2025-04-01T09:30:20Z",
+          "references": [
+            "https://github.com/advisories/GHSA-2c59-37c4-qrx5",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-30065"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.parquet:parquet-avro": "1.15.1"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "CRITICAL",
+          "sca-vuln-database-identifier": "CVE-2025-30065",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Insecure Deserialization "
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 192584,
+              "rv_id": 1274874,
+              "rule_id": "ZqU63yL",
+              "version_id": "0bTKOZq",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-5d114ff7-0c46-0f9d-31b9-1ecbd486f945",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.apache.parquet:parquet-avro",
+              "version": "<1.15.1"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "org.apache.parquet.avro.AvroConverters.FieldStringableConverter(...)"
+          },
+          {
+            "pattern": "new org.apache.parquet.avro.AvroConverters.FieldStringableConverter(...)"
+          },
+          {
+            "pattern": "org.apache.parquet.avro.AvroRecordConverter(...)"
+          },
+          {
+            "pattern": "new org.apache.parquet.avro.AvroRecordConverter(...)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "org.apache.parquet:parquet-avro",
+          "versionSpecifier": "<1.15.1"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.apache.parquet:parquet-avro",
+          "versionSpecifier": "1.15.1"
+        }
+      ],
+      "cve": "CVE-2025-30065",
+      "ghsa": "GHSA-2c59-37c4-qrx5",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

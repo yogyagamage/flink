@@ -1,0 +1,129 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-48a6b91a-28da-4723-85d1-6ffc7e806624",
+      "title": "Out-of-bounds Write in org.codehaus.jettison:jettison",
+      "description": "Affected versions of org.codehaus.jettison:jettison are vulnerable to Out-Of-Bounds Write. The vulnerability involves a stack overflow, enabling attackers to trigger a Denial of Service (DoS) by employing specially crafted JSON data.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2022-45685"
+        ],
+        "cweIds": [
+          "CWE-787: Out-of-bounds Write"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-7rf3-mqpx-h7xg",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-45685"
+        ]
+      },
+      "announcedAt": "2022-12-13T15:30:26Z",
+      "ruleText": {
+        "id": "ssc-48a6b91a-28da-4723-85d1-6ffc7e806624",
+        "message": "Affected versions of org.codehaus.jettison:jettison are vulnerable to Out-Of-Bounds Write. The vulnerability involves a stack overflow, enabling attackers to trigger a Denial of Service (DoS) by employing specially crafted JSON data.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2022-45685",
+          "cwe": [
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-7rf3-mqpx-h7xg",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-12-13T15:30:26Z",
+          "references": [
+            "https://github.com/advisories/GHSA-7rf3-mqpx-h7xg",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-45685"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.codehaus.jettison:jettison": "1.5.2"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2022-45685",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 93835,
+              "rv_id": 950189,
+              "rule_id": "BYUXNGg",
+              "version_id": "8KTKxlG",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-48a6b91a-28da-4723-85d1-6ffc7e806624",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.codehaus.jettison:jettison",
+              "version": "<1.5.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "metavariable-regex": {
+              "metavariable": "$PACKAGE",
+              "regex": "(org.codehaus.jettison.json)"
+            }
+          },
+          {
+            "pattern-inside": "import $PACKAGE;\n...\n"
+          },
+          {
+            "pattern-either": [
+              {
+                "pattern": "JSONObject(...);"
+              },
+              {
+                "pattern": "new JSONObject(...);"
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "org.codehaus.jettison:jettison",
+          "versionSpecifier": "<1.5.2"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.codehaus.jettison:jettison",
+          "versionSpecifier": "1.5.2"
+        }
+      ],
+      "cve": "CVE-2022-45685",
+      "ghsa": "GHSA-7rf3-mqpx-h7xg",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

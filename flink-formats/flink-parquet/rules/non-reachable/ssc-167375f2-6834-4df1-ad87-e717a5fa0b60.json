@@ -1,0 +1,127 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-167375f2-6834-4df1-ad87-e717a5fa0b60",
+      "title": "HTTP Request/Response Smuggling in io.netty:netty",
+      "description": "io.netty:netty versions before 4.0.0, org.jboss.netty:netty versions before 4.0.0, and io.netty:netty-codec-http versions >= 4.0.0 before 4.1.44 are vulnerable to Inconsistent Interpretation Of Http Requests ('Http Request/Response Smuggling').",
+      "ecosystem": "maven",
+      "severity": "CRITICAL",
+      "references": {
+        "cveIds": [
+          "CVE-2019-20444"
+        ],
+        "cweIds": [
+          "CWE-444: Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')"
+        ],
+        "owaspIds": [
+          "A04:2021 - Insecure Design",
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A06:2025 - Insecure Design"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-cqqj-4p63-rrmm",
+          "https://nvd.nist.gov/vuln/detail/CVE-2019-20444"
+        ]
+      },
+      "announcedAt": "2020-02-21T18:55:24Z",
+      "ruleText": {
+        "id": "ssc-167375f2-6834-4df1-ad87-e717a5fa0b60",
+        "message": "io.netty:netty versions before 4.0.0, org.jboss.netty:netty versions before 4.0.0, and io.netty:netty-codec-http versions >= 4.0.0 before 4.1.44 are vulnerable to Inconsistent Interpretation Of Http Requests ('Http Request/Response Smuggling').",
+        "severity": "CRITICAL",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2019-20444",
+          "cwe": [
+            "CWE-444: Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')"
+          ],
+          "ghsa": "GHSA-cqqj-4p63-rrmm",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A06:2025 - Insecure Design"
+          ],
+          "publish-date": "2020-02-21T18:55:24Z",
+          "references": [
+            "https://github.com/advisories/GHSA-cqqj-4p63-rrmm",
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-20444"
+          ],
+          "sca-fix-versions": [
+            {
+              "io.netty:netty-codec-http": "4.1.44"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "CRITICAL",
+          "sca-vuln-database-identifier": "CVE-2019-20444",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Validation"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 93912,
+              "rv_id": 1240141,
+              "rule_id": "8GUQj03",
+              "version_id": "jQTneAg",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-167375f2-6834-4df1-ad87-e717a5fa0b60",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "io.netty:netty",
+              "version": "<4.0.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "io.netty:netty-codec-http",
+              "version": "<4.1.44"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.jboss.netty:netty",
+              "version": "<4.0.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern": "(io.netty.handler.codec.http.HttpObjectDecoder $X)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "io.netty:netty",
+          "versionSpecifier": "<4.0.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "io.netty:netty-codec-http",
+          "versionSpecifier": "4.1.44"
+        }
+      ],
+      "cve": "CVE-2019-20444",
+      "ghsa": "GHSA-cqqj-4p63-rrmm",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

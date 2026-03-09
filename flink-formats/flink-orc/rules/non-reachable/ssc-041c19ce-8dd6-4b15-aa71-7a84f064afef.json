@@ -1,0 +1,145 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-041c19ce-8dd6-4b15-aa71-7a84f064afef",
+      "title": "Improper Input Validation in io.netty:netty-handler",
+      "description": "Affected versions of io.netty:netty-handler are vulnerable to Improper Input Validation. A crafted packet sent to the SslHandler in Netty may not be validated correctly, leading to a potential native crash. If an attacker exploits this vulnerability by sending specially crafted SSL packets, it risks destabilizing the application, particularly in high-performance protocol servers relying on Netty",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2025-24970"
+        ],
+        "cweIds": [
+          "CWE-20: Improper Input Validation"
+        ],
+        "owaspIds": [
+          "A03:2021 - Injection",
+          "A05:2025 - Injection",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-4g8c-wm8x-jfhw",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-24970"
+        ]
+      },
+      "announcedAt": "2025-02-10T17:38:10Z",
+      "ruleText": {
+        "id": "ssc-041c19ce-8dd6-4b15-aa71-7a84f064afef",
+        "message": "Affected versions of io.netty:netty-handler are vulnerable to Improper Input Validation. A crafted packet sent to the SslHandler in Netty may not be validated correctly, leading to a potential native crash. If an attacker exploits this vulnerability by sending specially crafted SSL packets, it risks destabilizing the application, particularly in high-performance protocol servers relying on Netty",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2025-24970",
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ],
+          "ghsa": "GHSA-4g8c-wm8x-jfhw",
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-02-10T17:38:10Z",
+          "references": [
+            "https://github.com/advisories/GHSA-4g8c-wm8x-jfhw",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-24970"
+          ],
+          "sca-fix-versions": [
+            {
+              "io.netty:netty-handler": "4.1.118.Final"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2025-24970",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Validation"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 155562,
+              "rv_id": 1238377,
+              "rule_id": "9AUdblL",
+              "version_id": "pZT0R8r",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-041c19ce-8dd6-4b15-aa71-7a84f064afef",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "io.netty:netty-handler",
+              "version": ">=4.1.91.Final, <=4.1.117.Final"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "(io.netty.handler.ssl.SslContext $ANY).newHandler(...)"
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CONTEXT.newHandler(...)"
+                  },
+                  {
+                    "pattern-inside": "$CONTEXT = io.netty.handler.ssl.SslContext.$FUNC(...);\n...\n"
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CONTEXT.newHandler(...)"
+                  },
+                  {
+                    "pattern-inside": "import io.netty.handler.ssl;\n...\n"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "io.netty:netty-handler",
+          "versionSpecifier": ">=4.1.91.Final, <=4.1.117.Final"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "io.netty:netty-handler",
+          "versionSpecifier": "4.1.118.Final"
+        }
+      ],
+      "cve": "CVE-2025-24970",
+      "ghsa": "GHSA-4g8c-wm8x-jfhw",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

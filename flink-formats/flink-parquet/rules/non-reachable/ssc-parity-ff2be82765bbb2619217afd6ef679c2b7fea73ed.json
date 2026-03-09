@@ -1,0 +1,99 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-ff2be82765bbb2619217afd6ef679c2b7fea73ed",
+      "title": "Uncontrolled Resource Consumption in commons-configuration:commons-configuration",
+      "description": "Affected versions of commons-configuration:commons-configuration are vulnerable to Uncontrolled Resource Consumption.",
+      "ecosystem": "maven",
+      "severity": "LOW",
+      "references": {
+        "cveIds": [
+          "CVE-2025-46392"
+        ],
+        "cweIds": [
+          "CWE-400: Uncontrolled Resource Consumption"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-pvp8-3xj6-8c6x",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-46392"
+        ]
+      },
+      "announcedAt": "2025-05-09T12:31:33Z",
+      "ruleText": {
+        "id": "ssc-parity-ff2be82765bbb2619217afd6ef679c2b7fea73ed",
+        "message": "Affected versions of commons-configuration:commons-configuration are vulnerable to Uncontrolled Resource Consumption.",
+        "severity": "INFO",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-46392",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption"
+          ],
+          "ghsa": "GHSA-pvp8-3xj6-8c6x",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-05-09T12:31:33Z",
+          "references": [
+            "https://github.com/advisories/GHSA-pvp8-3xj6-8c6x",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-46392"
+          ],
+          "sca-fix-versions": [],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "LOW",
+          "sca-vuln-database-identifier": "CVE-2025-46392",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 195500,
+              "rv_id": 1193714,
+              "rule_id": "10UzYg5",
+              "version_id": "0bTKxRd",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-ff2be82765bbb2619217afd6ef679c2b7fea73ed",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "commons-configuration:commons-configuration",
+              "version": "<=1.10"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "commons-configuration:commons-configuration",
+          "versionSpecifier": "<=1.10"
+        }
+      ],
+      "cve": "CVE-2025-46392",
+      "ghsa": "GHSA-pvp8-3xj6-8c6x",
+      "reachableIf": "",
+      "safeDependencies": []
+    }
+  ],
+  "totalCount": "1"
+}

@@ -1,0 +1,146 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-62f73c89-9858-4a64-903f-a5b5fdba7c01",
+      "title": "Improper Check for Unusual or Exceptional Conditions in net.minidev:json-smart",
+      "description": "Affected versions of net.minidev:json-smart 2.3.x before 2.3.1, net.minidev:json-smart 2.4.x before 2.4.1, net.minidev:json-smart-mini 1.3.x before 1.3.2, and net.minidev:json-smart 1.3.x before 1.3.2 are vulnerable to Improper Check For Unusual Or Exceptional Conditions. The vulnerability arises from an uncaught exception (e.g., NumberFormatException) thrown from a function, potentially causing program crashes or sensitive information exposure, as the parser fails to generate a ParseException when expecting float number input that is not valid, resulting in unhandled exceptions and potential Denial-of-Service (DoS) scenarios due to unexpected input.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2021-27568"
+        ],
+        "cweIds": [
+          "CWE-754: Improper Check for Unusual or Exceptional Conditions"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A10:2025 - Mishandling of Exceptional Conditions"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-v528-7hrm-frqp",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-27568"
+        ]
+      },
+      "announcedAt": "2021-06-16T18:03:47Z",
+      "ruleText": {
+        "id": "ssc-62f73c89-9858-4a64-903f-a5b5fdba7c01",
+        "message": "Affected versions of net.minidev:json-smart 2.3.x before 2.3.1, net.minidev:json-smart 2.4.x before 2.4.1, net.minidev:json-smart-mini 1.3.x before 1.3.2, and net.minidev:json-smart 1.3.x before 1.3.2 are vulnerable to Improper Check For Unusual Or Exceptional Conditions. The vulnerability arises from an uncaught exception (e.g., NumberFormatException) thrown from a function, potentially causing program crashes or sensitive information exposure, as the parser fails to generate a ParseException when expecting float number input that is not valid, resulting in unhandled exceptions and potential Denial-of-Service (DoS) scenarios due to unexpected input.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2021-27568",
+          "cwe": [
+            "CWE-754: Improper Check for Unusual or Exceptional Conditions"
+          ],
+          "ghsa": "GHSA-v528-7hrm-frqp",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A10:2025 - Mishandling of Exceptional Conditions"
+          ],
+          "publish-date": "2021-06-16T18:03:47Z",
+          "references": [
+            "https://github.com/advisories/GHSA-v528-7hrm-frqp",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-27568"
+          ],
+          "sca-fix-versions": [
+            {
+              "net.minidev:json-smart": "2.4.1"
+            },
+            {
+              "net.minidev:json-smart": "2.3.1"
+            },
+            {
+              "net.minidev:json-smart": "1.3.2"
+            },
+            {
+              "net.minidev:json-smart-mini": "1.3.2"
+            }
+          ],
+          "sca-kind": "upgrade-only",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2021-27568",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 94161,
+              "rv_id": 1242338,
+              "rule_id": "x8UKnEK",
+              "version_id": "8KT5OR2",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-62f73c89-9858-4a64-903f-a5b5fdba7c01",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "net.minidev:json-smart",
+              "version": "<1.3.2"
+            },
+            {
+              "namespace": "maven",
+              "package": "net.minidev:json-smart",
+              "version": ">=2.0.0, <2.3.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "net.minidev:json-smart",
+              "version": ">=2.4.0, <2.4.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "net.minidev:json-smart-mini",
+              "version": "<1.3.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "ALWAYS_REACHABLE",
+      "vulnerableDependencies": [
+        {
+          "name": "net.minidev:json-smart",
+          "versionSpecifier": "<1.3.2"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "net.minidev:json-smart",
+          "versionSpecifier": "2.4.1"
+        },
+        {
+          "name": "net.minidev:json-smart",
+          "versionSpecifier": "2.3.1"
+        },
+        {
+          "name": "net.minidev:json-smart",
+          "versionSpecifier": "1.3.2"
+        },
+        {
+          "name": "net.minidev:json-smart-mini",
+          "versionSpecifier": "1.3.2"
+        }
+      ],
+      "cve": "CVE-2021-27568",
+      "ghsa": "GHSA-v528-7hrm-frqp",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

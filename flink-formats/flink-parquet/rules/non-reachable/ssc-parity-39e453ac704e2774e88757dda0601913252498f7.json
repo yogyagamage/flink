@@ -1,0 +1,115 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-39e453ac704e2774e88757dda0601913252498f7",
+      "title": "Improper Privilege Management in org.apache.hadoop:hadoop-common",
+      "description": "Affected versions of org.apache.hadoop:hadoop-common are vulnerable to Creation of Temporary File With Insecure Permissions / Improper Privilege Management.",
+      "ecosystem": "maven",
+      "severity": "LOW",
+      "references": {
+        "cveIds": [
+          "CVE-2024-23454"
+        ],
+        "cweIds": [
+          "CWE-269: Improper Privilege Management",
+          "CWE-378: Creation of Temporary File With Insecure Permissions"
+        ],
+        "owaspIds": [
+          "A04:2021 - Insecure Design",
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A06:2025 - Insecure Design"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-f5fw-25gw-5m92",
+          "https://nvd.nist.gov/vuln/detail/CVE-2024-23454"
+        ]
+      },
+      "announcedAt": "2024-09-25T09:30:46Z",
+      "ruleText": {
+        "id": "ssc-parity-39e453ac704e2774e88757dda0601913252498f7",
+        "message": "Affected versions of org.apache.hadoop:hadoop-common are vulnerable to Creation of Temporary File With Insecure Permissions / Improper Privilege Management.",
+        "severity": "INFO",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2024-23454",
+          "cwe": [
+            "CWE-269: Improper Privilege Management",
+            "CWE-378: Creation of Temporary File With Insecure Permissions"
+          ],
+          "ghsa": "GHSA-f5fw-25gw-5m92",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A06:2025 - Insecure Design"
+          ],
+          "publish-date": "2024-09-25T09:30:46Z",
+          "references": [
+            "https://github.com/advisories/GHSA-f5fw-25gw-5m92",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-23454"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.hadoop:hadoop-common": "3.4.0"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "LOW",
+          "sca-vuln-database-identifier": "CVE-2024-23454",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 143576,
+              "rv_id": 1251787,
+              "rule_id": "qNU26Xj",
+              "version_id": "DkTRl4E",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-39e453ac704e2774e88757dda0601913252498f7",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.apache.hadoop:hadoop-common",
+              "version": "<3.4.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "org.apache.hadoop:hadoop-common",
+          "versionSpecifier": "<3.4.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.apache.hadoop:hadoop-common",
+          "versionSpecifier": "3.4.0"
+        }
+      ],
+      "cve": "CVE-2024-23454",
+      "ghsa": "GHSA-f5fw-25gw-5m92",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

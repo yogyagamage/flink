@@ -1,0 +1,126 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-2ee1a45e-6fb0-416a-76c4-9863be81fb23",
+      "title": "Uncontrolled Resource Consumption in io.netty:netty",
+      "description": "Affected versions of io.netty:netty, io.netty:netty-codec, and org.jboss.netty:netty are vulnerable to Uncontrolled Resource Consumption. Netty\u2019s Bzip2Decoder fails to impose an upper limit on the size of decompressed data. This flaw lets attackers supply crafted input that triggers out-of-memory errors, potentially leading to a denial-of-service condition.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2021-37136"
+        ],
+        "cweIds": [
+          "CWE-400: Uncontrolled Resource Consumption"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-grg4-wf29-r9vv",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-37136"
+        ]
+      },
+      "announcedAt": "2021-09-09T17:11:21Z",
+      "ruleText": {
+        "id": "ssc-2ee1a45e-6fb0-416a-76c4-9863be81fb23",
+        "message": "Affected versions of io.netty:netty, io.netty:netty-codec, and org.jboss.netty:netty are vulnerable to Uncontrolled Resource Consumption. Netty\u2019s Bzip2Decoder fails to impose an upper limit on the size of decompressed data. This flaw lets attackers supply crafted input that triggers out-of-memory errors, potentially leading to a denial-of-service condition.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2021-37136",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption"
+          ],
+          "ghsa": "GHSA-grg4-wf29-r9vv",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2021-09-09T17:11:21Z",
+          "references": [
+            "https://github.com/advisories/GHSA-grg4-wf29-r9vv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-37136"
+          ],
+          "sca-fix-versions": [
+            {
+              "io.netty:netty-codec": "4.1.68.Final"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2021-37136",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 198043,
+              "rv_id": 1042783,
+              "rule_id": "8GU459e",
+              "version_id": "zyT8Gww",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2ee1a45e-6fb0-416a-76c4-9863be81fb23",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "io.netty:netty",
+              "version": "<4.0.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "io.netty:netty-codec",
+              "version": "<4.1.68.Final"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.jboss.netty:netty",
+              "version": "<4.0.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "io.netty.handler.codec.compression.Bzip2Decoder(...)"
+          },
+          {
+            "pattern": "new io.netty.handler.codec.compression.Bzip2Decoder(...)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "io.netty:netty",
+          "versionSpecifier": "<4.0.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "io.netty:netty-codec",
+          "versionSpecifier": "4.1.68.Final"
+        }
+      ],
+      "cve": "CVE-2021-37136",
+      "ghsa": "GHSA-grg4-wf29-r9vv",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

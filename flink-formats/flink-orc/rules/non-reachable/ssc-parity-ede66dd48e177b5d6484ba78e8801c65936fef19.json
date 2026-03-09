@@ -1,0 +1,120 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-ede66dd48e177b5d6484ba78e8801c65936fef19",
+      "title": "Uncontrolled Recursion in com.nimbusds:nimbus-jose-jwt",
+      "description": "Affected versions of com.nimbusds:nimbus-jose-jwt are vulnerable to Uncontrolled Recursion.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2025-53864"
+        ],
+        "cweIds": [
+          "CWE-674: Uncontrolled Recursion"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-xwmg-2g98-w7v9",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-53864"
+        ]
+      },
+      "announcedAt": "2025-07-11T03:30:34Z",
+      "ruleText": {
+        "id": "ssc-parity-ede66dd48e177b5d6484ba78e8801c65936fef19",
+        "message": "Affected versions of com.nimbusds:nimbus-jose-jwt are vulnerable to Uncontrolled Recursion.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-53864",
+          "cwe": [
+            "CWE-674: Uncontrolled Recursion"
+          ],
+          "ghsa": "GHSA-xwmg-2g98-w7v9",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-07-11T03:30:34Z",
+          "references": [
+            "https://github.com/advisories/GHSA-xwmg-2g98-w7v9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-53864"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.nimbusds:nimbus-jose-jwt": "9.37.4"
+            },
+            {
+              "com.nimbusds:nimbus-jose-jwt": "10.0.2"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2025-53864",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 204880,
+              "rv_id": 1151151,
+              "rule_id": "WAUOGK7",
+              "version_id": "qkTBrPA",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-ede66dd48e177b5d6484ba78e8801c65936fef19",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.nimbusds:nimbus-jose-jwt",
+              "version": "<9.37.4"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.nimbusds:nimbus-jose-jwt",
+              "version": ">=9.38-rc1, <10.0.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "com.nimbusds:nimbus-jose-jwt",
+          "versionSpecifier": "<9.37.4"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.nimbusds:nimbus-jose-jwt",
+          "versionSpecifier": "9.37.4"
+        },
+        {
+          "name": "com.nimbusds:nimbus-jose-jwt",
+          "versionSpecifier": "10.0.2"
+        }
+      ],
+      "cve": "CVE-2025-53864",
+      "ghsa": "GHSA-xwmg-2g98-w7v9",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}
