@@ -69,3 +69,4 @@ tools/japicmp-output
 /docs/.hugo_build.lock
 !/flink-formats/flink-parquet/test_generation_data/*
 !flink-runtime/test_generation_data/*
+!flink-formats/flink-protobuf/test_generation_data/*

@@ -1,0 +1,1603 @@
+Processing all 22 test cases from input file
+Using DeepSeek API with model: deepseek-chat
+
+================================================================================
+PROCESSING TEST CASE 1/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.deserialize.PbCodegenMapDeserializer.codegen(java.lang.String, java.lang.String, int)
+Third Party Method: com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1769 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenMapDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=2152
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2641 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenMapDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=2124
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1721 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenMapDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1984
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1915 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenMapDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=2152
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2796 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenMapDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=2124
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenMapDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests failed to compile or run successfully
+
+
+================================================================================
+PROCESSING TEST CASE 2/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.serialize.PbCodegenMapSerializer.codegen(java.lang.String, java.lang.String, int)
+Third Party Method: com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1122 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenMapSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1948
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2175 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenMapSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=2116
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1657 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenMapSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1061
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2427 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenMapSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=2116
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2618 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenMapSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1061
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenMapSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests failed to compile or run successfully
+
+
+================================================================================
+PROCESSING TEST CASE 3/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)
+Third Party Method: com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 409 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbFormatUtilsgetStrongCamelCaseJsonName_ProtobufInternalUtilsunderScoreToCamelCaseFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)' covered=True
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=True
+[Decide] approved=True (tests passed AND target method covered)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=True
+[Finalize] SUCCESS: Test passed and target method covered
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = True
+✓ Test approved at iteration 1
+  JSON path: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/third_party_apis_full_methods.json
+  Looking for thirdPartyMethod: com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)
+  Looking for directCaller: org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)
+[DEBUG]   ✓ MATCH FOUND at path 2
+✓ Updated 1 record(s) in JSON file as covered
+  Third Party Method: com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)
+  Direct Caller: org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)
+
+================================================================================
+PROCESSING TEST CASE 4/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1358 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilspbDefaultValueCode_FieldDescriptorgetJavaTypeFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=610
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1125 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilspbDefaultValueCode_FieldDescriptorgetJavaTypeFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()' covered=True
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=True
+[Decide] approved=True (tests passed AND target method covered)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=True
+[Finalize] SUCCESS: Test passed and target method covered
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = True
+✓ Test approved at iteration 2
+  JSON path: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/third_party_apis_full_methods.json
+  Looking for thirdPartyMethod: com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()
+  Looking for directCaller: org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)
+[DEBUG]   ✓ MATCH FOUND at path 3
+✓ Updated 1 record(s) in JSON file as covered
+  Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()
+  Direct Caller: org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)
+
+================================================================================
+PROCESSING TEST CASE 5/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1205 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilspbDefaultValueCode_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1654 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilspbDefaultValueCode_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1654 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilspbDefaultValueCode_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1633 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilspbDefaultValueCode_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1643 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilspbDefaultValueCode_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilspbDefaultValueCode_JavaTypeordinalFikaTest.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests passed but target third-party method was NOT covered
+   Target: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+
+
+================================================================================
+PROCESSING TEST CASE 6/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1264 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenSimpleDeserializercodegen_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1244 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenSimpleDeserializercodegen_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1222 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenSimpleDeserializercodegen_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1244 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenSimpleDeserializercodegen_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1244 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenSimpleDeserializercodegen_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenSimpleDeserializercodegen_JavaTypeordinalFikaTest.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests passed but target third-party method was NOT covered
+   Target: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+
+
+================================================================================
+PROCESSING TEST CASE 7/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+Third Party Method: com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 6981 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] FAILED - hard constraints violated
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (hard constraint violation, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 6110 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] FAILED - hard constraints violated
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (hard constraint violation, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 6556 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1748
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1803 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=True
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=True
+[Decide] approved=True (tests passed AND target method covered)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=True
+[Finalize] SUCCESS: Test passed and target method covered
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = True
+✓ Test approved at iteration 4
+  JSON path: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/third_party_apis_full_methods.json
+  Looking for thirdPartyMethod: com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)
+  Looking for directCaller: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+[DEBUG]   ✓ MATCH FOUND at path 6
+✓ Updated 1 record(s) in JSON file as covered
+  Third Party Method: com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)
+  Direct Caller: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+
+================================================================================
+PROCESSING TEST CASE 8/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 968 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_FieldDescriptorgetJavaTypeFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()' covered=True
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=True
+[Decide] approved=True (tests passed AND target method covered)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=True
+[Finalize] SUCCESS: Test passed and target method covered
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = True
+✓ Test approved at iteration 1
+  JSON path: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/third_party_apis_full_methods.json
+  Looking for thirdPartyMethod: com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()
+  Looking for directCaller: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+[DEBUG]   ✓ MATCH FOUND at path 7
+✓ Updated 1 record(s) in JSON file as covered
+  Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()
+  Direct Caller: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+
+================================================================================
+PROCESSING TEST CASE 9/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1109 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenSimpleDeserializercodegen_FieldDescriptorgetJavaTypeFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()' covered=True
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=True
+[Decide] approved=True (tests passed AND target method covered)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=True
+[Finalize] SUCCESS: Test passed and target method covered
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = True
+✓ Test approved at iteration 1
+  JSON path: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/third_party_apis_full_methods.json
+  Looking for thirdPartyMethod: com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()
+  Looking for directCaller: org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)
+[DEBUG]   ✓ MATCH FOUND at path 8
+✓ Updated 1 record(s) in JSON file as covered
+  Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()
+  Direct Caller: org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)
+
+================================================================================
+PROCESSING TEST CASE 10/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1517 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 916 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1004 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1002 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1004 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtilsgetTypeStrFromProto_JavaTypeordinalFikaTest.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests passed but target third-party method was NOT covered
+   Target: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+
+
+================================================================================
+PROCESSING TEST CASE 11/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.deserialize.PbCodegenRowDeserializer.codegen(java.lang.String, java.lang.String, int)
+Third Party Method: com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2000 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenRowDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1988
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 3037 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenRowDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=2765
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 3641 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenRowDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=951
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2536 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenRowDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1664
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1902 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenRowDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1622
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/deserialize/PbCodegenRowDeserializercodegen_DescriptorfindFieldByNameFikaTest.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests failed to compile or run successfully
+
+
+================================================================================
+PROCESSING TEST CASE 12/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.serialize.PbCodegenRowSerializer.codegen(java.lang.String, java.lang.String, int)
+Third Party Method: com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1324 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenRowSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1958
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2568 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenRowSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1260
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2663 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenRowSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1936
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2209 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenRowSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1832
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2213 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenRowSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=606
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/serialize/PbCodegenRowSerializercodegen_DescriptorfindFieldByNameFikaTest.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests failed to compile or run successfully
+
+
+================================================================================
+PROCESSING TEST CASE 13/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.flinkContainerElementCode(java.lang.String, java.lang.String, org.apache.flink.table.types.logical.LogicalType)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 871 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 506 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 696 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 522 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 511 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests passed but target third-party method was NOT covered
+   Target: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+
+
+================================================================================
+PROCESSING TEST CASE 14/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromLogicType(org.apache.flink.table.types.logical.LogicalType)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 898 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest2.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1966
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 496 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest2.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 435 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest2.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1143 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest2.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1374 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest2.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest2.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests passed but target third-party method was NOT covered
+   Target: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+
+
+================================================================================
+PROCESSING TEST CASE 15/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1670 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest3.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1143 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest3.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1086 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest3.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1093 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest3.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1160 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest3.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=978
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest3.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests failed to compile or run successfully
+
+
+================================================================================
+PROCESSING TEST CASE 16/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.flinkContainerElementCode(java.lang.String, java.lang.String, org.apache.flink.table.types.logical.LogicalType)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 959 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=566
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 638 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 497 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 609 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 790 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests passed but target third-party method was NOT covered
+   Target: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()
+
+
+================================================================================
+PROCESSING TEST CASE 17/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromLogicType(org.apache.flink.table.types.logical.LogicalType)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 434 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest2.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 434 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest2.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 434 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest2.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 434 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest2.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 434 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest2.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest2.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests passed but target third-party method was NOT covered
+   Target: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()
+
+
+================================================================================
+PROCESSING TEST CASE 18/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1746 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest3.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1874
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2461 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest3.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=3639
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 3184 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest3.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=903
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1723 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest3.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1266
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1031 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest3.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1852
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest3.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests failed to compile or run successfully
+
+
+================================================================================
+PROCESSING TEST CASE 19/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2695 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest4.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] FAILED - hard constraints violated
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (hard constraint violation, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1695 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest4.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=586
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 723 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest4.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=586
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 723 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest4.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=586
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 723 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest4.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=586
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypeordinalFikaTest4.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests failed to compile or run successfully
+
+
+================================================================================
+PROCESSING TEST CASE 20/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1053 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest4.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] FAILED - hard constraints violated
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (hard constraint violation, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1576 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest4.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 1163 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest4.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests passed but target method NOT covered, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 722 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest4.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=585
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 722 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest4.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=585
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbCodegenUtils_1method_JavaTypevaluesFikaTest4.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests failed to compile or run successfully
+
+
+================================================================================
+PROCESSING TEST CASE 21/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)
+Third Party Method: com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2963 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbToRowTypeUtilgenerateFieldTypeInformation_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1562
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 4567 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbToRowTypeUtilgenerateFieldTypeInformation_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=5413
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 4365 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbToRowTypeUtilgenerateFieldTypeInformation_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1973
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 3390 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbToRowTypeUtilgenerateFieldTypeInformation_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1000
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 3326 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbToRowTypeUtilgenerateFieldTypeInformation_DescriptorfindFieldByNameFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=1558
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)' covered=False
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=False
+[Decide] approved=False (tests failed, will retry if iteration<5)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=False
+[Finalize] Cleaned up unsuccessful test file: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbToRowTypeUtilgenerateFieldTypeInformation_DescriptorfindFieldByNameFikaTest.java
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = False
+
+=== FAILURE REASON ===
+Tests failed to compile or run successfully
+
+
+================================================================================
+PROCESSING TEST CASE 22/22
+================================================================================
+Entry Point: org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)
+Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.equals(java.lang.Object)
+================================================================================
+
+[DEBUG-STREAM] Processing node: generate, has iteration_log: True, approved=False
+[Generate] produced 2800 chars
+/part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf
+[DEBUG-STREAM] Processing node: write, has iteration_log: True, approved=False
+[Write] wrote to /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/src/test/java/org/apache/flink/formats/protobuf/util/PbToRowTypeUtilgenerateFieldTypeInformation_JavaTypeequalsFikaTest.java
+[DEBUG-STREAM] Processing node: validate_constraints, has iteration_log: True, approved=False
+[Validate] PASSED - hard constraints satisfied
+[DEBUG-STREAM] Processing node: run, has iteration_log: True, approved=False
+[Run] feedback_chars=12195
+[DEBUG-STREAM] Processing node: check_coverage, has iteration_log: True, approved=False
+[Coverage] target 'com.google.protobuf.Descriptors.FieldDescriptor.JavaType.equals(java.lang.Object)' covered=True
+[DEBUG-STREAM] Processing node: decide, has iteration_log: True, approved=True
+[Decide] approved=True (tests passed AND target method covered)
+[DEBUG-STREAM] Processing node: finalize, has iteration_log: True, approved=True
+[Finalize] SUCCESS: Test passed and target method covered
+
+[DEBUG] Stream completed. final_state is set
+[DEBUG] final_state keys: ['repo_root', 'mvn_cmd', 'max_iterations', 'run_only_generated_test', 'entryPoint', 'thirdPartyMethod', 'directCaller', 'path', 'methodSources', 'constructors', 'setters', 'fieldDeclarations', 'imports', 'testTemplate', 'conditionCount', 'callCount', 'covered', 'test_package', 'test_class_name', 'iteration', 'java_source', 'last_run_output', 'last_exit_code', 'success', 'approved', 'test_rel_path', 'trace', 'target_method_covered', 'coverage_total_lines', 'coverage_error', 'path_coverage_details', 'iteration_log', 'last_prompt']
+[DEBUG] approved (after bool()) = True
+✓ Test approved at iteration 1
+  JSON path: /part/01/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-protobuf/third_party_apis_full_methods.json
+  Looking for thirdPartyMethod: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.equals(java.lang.Object)
+  Looking for directCaller: org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+[DEBUG]   ✓ MATCH FOUND at path 21
+✓ Updated 1 record(s) in JSON file as covered
+  Third Party Method: com.google.protobuf.Descriptors.FieldDescriptor.JavaType.equals(java.lang.Object)
+  Direct Caller: org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)
+
+================================================================================
+=== OVERALL SUMMARY ===
+================================================================================
+Total Test Cases: 22
+Processed: 22
+Approved: 6
+Failed: 16
+Success Rate: 27.3%
+================================================================================
+
+Approval Details:
+  Test 3: Approved at iteration 1
+  Test 4: Approved at iteration 2
+  Test 7: Approved at iteration 4
+  Test 8: Approved at iteration 1
+  Test 9: Approved at iteration 1
+  Test 22: Approved at iteration 1
+================================================================================
+

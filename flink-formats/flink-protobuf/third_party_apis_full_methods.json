@@ -1,311 +1,792 @@
 {
-  "fullMethodsPaths" : [ {
-    "entryPoint" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenMapDeserializer.codegen(java.lang.String, java.lang.String, int)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
-    "directCaller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenMapDeserializer.codegen(java.lang.String, java.lang.String, int)",
-    "path" : [ "org.apache.flink.formats.protobuf.deserialize.PbCodegenMapDeserializer.codegen(java.lang.String, java.lang.String, int)", "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)" ],
-    "methodSources" : [ "@Override\npublic String codegen(String resultVar, String pbObjectCode, int indent) throws PbCodegenException {\n    // The type of pbObjectCode is a general Map object,\n    // it should be converted to MapData of flink internal type as resultVariable\n    PbCodegenVarId varUid = PbCodegenVarId.getInstance();\n    int uid = varUid.getAndIncrement();\n    LogicalType keyType = mapType.getKeyType();\n    LogicalType valueType = mapType.getValueType();\n    // PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n    Descriptors.FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n    Descriptors.FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    String pbKeyTypeStr = PbCodegenUtils.getTypeStrFromProto(keyFd, false);\n    String pbValueTypeStr = PbCodegenUtils.getTypeStrFromProto(valueFd, false);\n    String pbMapVar = \"pbMap\" + uid;\n    String pbMapEntryVar = \"pbEntry\" + uid;\n    String resultDataMapVar = \"resultDataMap\" + uid;\n    String flinkKeyVar = \"keyDataVar\" + uid;\n    String flinkValueVar = \"valueDataVar\" + uid;\n    appender.appendLine((((((((\"Map<\" + pbKeyTypeStr) + \",\") + pbValueTypeStr) + \"> \") + pbMapVar) + \" = \") + pbObjectCode) + \";\");\n    appender.appendLine((\"Map \" + resultDataMapVar) + \" = new HashMap()\");\n    appender.begin((((((((\"for(Map.Entry<\" + pbKeyTypeStr) + \",\") + pbValueTypeStr) + \"> \") + pbMapEntryVar) + \": \") + pbMapVar) + \".entrySet()){\");\n    appender.appendLine((\"Object \" + flinkKeyVar) + \"= null\");\n    appender.appendLine((\"Object \" + flinkValueVar) + \"= null\");\n    PbCodegenDeserializer keyDes = PbCodegenDeserializeFactory.getPbCodegenDes(keyFd, keyType, formatContext);\n    PbCodegenDeserializer valueDes = PbCodegenDeserializeFactory.getPbCodegenDes(valueFd, valueType, formatContext);\n    String keyGenCode = keyDes.codegen(flinkKeyVar, (((\"((\" + pbKeyTypeStr) + \")\") + pbMapEntryVar) + \".getKey())\", appender.currentIndent());\n    appender.appendSegment(keyGenCode);\n    String valueGenCode = valueDes.codegen(flinkValueVar, (((\"((\" + pbValueTypeStr) + \")\") + pbMapEntryVar) + \".getValue())\", appender.currentIndent());\n    appender.appendSegment(valueGenCode);\n    appender.appendLine(((((resultDataMapVar + \".put(\") + flinkKeyVar) + \", \") + flinkValueVar) + \")\");\n    appender.end(\"}\");\n    appender.appendLine(((resultVar + \" = new GenericMapData(\") + resultDataMapVar) + \")\");\n    return appender.code();\n}" ],
-    "constructors" : [ "public PbCodegenMapDeserializer(Descriptors.FieldDescriptor fd, MapType mapType, PbFormatContext formatContext) {\n    this.fd = fd;\n    this.mapType = mapType;\n    this.formatContext = formatContext;\n}" ],
-    "fieldDeclarations" : [ "private final Descriptors.FieldDescriptor fd;", "private final MapType mapType;", "private final PbFormatContext formatContext;" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbConstant", "org.apache.flink.formats.protobuf.PbFormatContext", "org.apache.flink.formats.protobuf.util.PbCodegenAppender", "org.apache.flink.formats.protobuf.util.PbCodegenUtils", "org.apache.flink.formats.protobuf.util.PbCodegenVarId", "org.apache.flink.table.types.logical.LogicalType", "org.apache.flink.table.types.logical.MapType" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.deserialize;\n\npublic class PbCodegenMapDeserializercodegen_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
-    "conditionCount" : 0,
-    "callCount" : 2,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.serialize.PbCodegenMapSerializer.codegen(java.lang.String, java.lang.String, int)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
-    "directCaller" : "org.apache.flink.formats.protobuf.serialize.PbCodegenMapSerializer.codegen(java.lang.String, java.lang.String, int)",
-    "path" : [ "org.apache.flink.formats.protobuf.serialize.PbCodegenMapSerializer.codegen(java.lang.String, java.lang.String, int)", "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)" ],
-    "methodSources" : [ "@Override\npublic String codegen(String resultVar, String flinkObjectCode, int indent) throws PbCodegenException {\n    // The type of flinkObjectCode is a MapData of flink,\n    // it should be converted to map of protobuf as resultVariable.\n    PbCodegenVarId varUid = PbCodegenVarId.getInstance();\n    int uid = varUid.getAndIncrement();\n    LogicalType keyType = mapType.getKeyType();\n    LogicalType valueType = mapType.getValueType();\n    // PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n    Descriptors.FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n    Descriptors.FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    String keyProtoTypeStr = PbCodegenUtils.getTypeStrFromProto(keyFd, false);\n    String valueProtoTypeStr = PbCodegenUtils.getTypeStrFromProto(valueFd, false);\n    String flinkKeyArrDataVar = \"keyArrData\" + uid;\n    String flinkValueArrDataVar = \"valueArrData\" + uid;\n    String iVar = \"i\" + uid;\n    String pbMapVar = \"resultPbMap\" + uid;\n    String keyPbVar = \"keyPbVar\" + uid;\n    String valuePbVar = \"valuePbVar\" + uid;\n    appender.appendLine((((\"ArrayData \" + flinkKeyArrDataVar) + \" = \") + flinkObjectCode) + \".keyArray()\");\n    appender.appendLine((((\"ArrayData \" + flinkValueArrDataVar) + \" = \") + flinkObjectCode) + \".valueArray()\");\n    appender.appendLine((((((\"Map<\" + keyProtoTypeStr) + \", \") + valueProtoTypeStr) + \"> \") + pbMapVar) + \" = new HashMap()\");\n    appender.begin((((((((\"for(int \" + iVar) + \" = 0; \") + iVar) + \" < \") + flinkKeyArrDataVar) + \".size(); \") + iVar) + \"++){\");\n    // process key\n    String convertFlinkKeyArrayElementToPbCode = PbCodegenUtils.convertFlinkArrayElementToPbWithDefaultValueCode(flinkKeyArrDataVar, iVar, keyPbVar, keyFd, keyType, formatContext, appender.currentIndent());\n    appender.appendSegment(convertFlinkKeyArrayElementToPbCode);\n    // process value\n    String convertFlinkValueArrayElementToPbCode = PbCodegenUtils.convertFlinkArrayElementToPbWithDefaultValueCode(flinkValueArrDataVar, iVar, valuePbVar, valueFd, valueType, formatContext, appender.currentIndent());\n    appender.appendSegment(convertFlinkValueArrayElementToPbCode);\n    appender.appendLine(((((pbMapVar + \".put(\") + keyPbVar) + \", \") + valuePbVar) + \")\");\n    appender.end(\"}\");\n    appender.appendLine((resultVar + \" = \") + pbMapVar);\n    return appender.code();\n}" ],
-    "constructors" : [ "public PbCodegenMapSerializer(Descriptors.FieldDescriptor fd, MapType mapType, PbFormatContext formatContext) {\n    this.fd = fd;\n    this.mapType = mapType;\n    this.formatContext = formatContext;\n}" ],
-    "fieldDeclarations" : [ "private final Descriptors.FieldDescriptor fd;", "private final MapType mapType;", "private final PbFormatContext formatContext;" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbConstant", "org.apache.flink.formats.protobuf.PbFormatContext", "org.apache.flink.formats.protobuf.util.PbCodegenAppender", "org.apache.flink.formats.protobuf.util.PbCodegenUtils", "org.apache.flink.formats.protobuf.util.PbCodegenVarId", "org.apache.flink.table.types.logical.LogicalType", "org.apache.flink.table.types.logical.MapType" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.serialize;\n\npublic class PbCodegenMapSerializercodegen_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
-    "conditionCount" : 0,
-    "callCount" : 2,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)",
-    "thirdPartyMethod" : "com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)", "com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)" ],
-    "methodSources" : [ "public static String getStrongCamelCaseJsonName(String name) {\n    // PATH: Test should invoke the next ProtobufInternalUtils.underScoreToCamelCase(...) [step in execution path]\n    return ProtobufInternalUtils.underScoreToCamelCase(name, true);\n}" ],
-    "constructors" : [ "PbFormatUtils() {\n}" ],
-    "fieldDeclarations" : [ ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.ProtobufInternalUtils", "com.google.protobuf.SchemaUtil" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbFormatUtilsgetStrongCamelCaseJsonName_ProtobufInternalUtilsunderScoreToCamelCaseFikaTest {\n\n    @Test\n    public void testGetStrongCamelCaseJsonName() {\n    }\n}",
-    "conditionCount" : 0,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)", "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()" ],
-    "methodSources" : [ "/**\n * Get protobuf default value from {@link FieldDescriptor}.\n *\n * @return The java code phrase which represents default value calculation.\n */\npublic static String pbDefaultValueCode(FieldDescriptor fieldDescriptor, PbFormatContext pbFormatContext) throws PbCodegenException {\n    String nullLiteral = pbFormatContext.getPbFormatConfig().getWriteNullStringLiterals();\n    // PATH: Test should invoke the next Descriptors$FieldDescriptor.getJavaType(...) [step in execution path]\n    switch (fieldDescriptor.getJavaType()) {\n        case MESSAGE :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getMessageType()) + \".getDefaultInstance()\";\n        case INT :\n            return \"0\";\n        case LONG :\n            return \"0L\";\n        case STRING :\n            return (\"\\\"\" + nullLiteral) + \"\\\"\";\n        case ENUM :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getEnumType()) + \".values()[0]\";\n        case FLOAT :\n            return \"0.0f\";\n        case DOUBLE :\n            return \"0.0d\";\n        case BYTE_STRING :\n            return \"ByteString.EMPTY\";\n        case BOOLEAN :\n            return \"false\";\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fieldDescriptor.getJavaType());\n    }\n}" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.EnumDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbFormatConfig", "org.apache.flink.formats.protobuf.PbFormatContext", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtilspbDefaultValueCode_FieldDescriptorgetJavaTypeFikaTest {\n\n    @Test\n    public void testPbDefaultValueCode() {\n    }\n}",
-    "conditionCount" : 1,
-    "callCount" : 2,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()" ],
-    "methodSources" : [ "/**\n * Get protobuf default value from {@link FieldDescriptor}.\n *\n * @return The java code phrase which represents default value calculation.\n */\npublic static String pbDefaultValueCode(FieldDescriptor fieldDescriptor, PbFormatContext pbFormatContext) throws PbCodegenException {\n    String nullLiteral = pbFormatContext.getPbFormatConfig().getWriteNullStringLiterals();\n    switch (fieldDescriptor.getJavaType()) {\n        case MESSAGE :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getMessageType()) + \".getDefaultInstance()\";\n        case INT :\n            return \"0\";\n        case LONG :\n            return \"0L\";\n        case STRING :\n            return (\"\\\"\" + nullLiteral) + \"\\\"\";\n        case ENUM :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getEnumType()) + \".values()[0]\";\n        case FLOAT :\n            return \"0.0f\";\n        case DOUBLE :\n            return \"0.0d\";\n        case BYTE_STRING :\n            return \"ByteString.EMPTY\";\n        case BOOLEAN :\n            return \"false\";\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fieldDescriptor.getJavaType());\n    }\n}" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.EnumDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbFormatConfig", "org.apache.flink.formats.protobuf.PbFormatContext", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtilspbDefaultValueCode_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testPbDefaultValueCode() {\n    }\n}",
-    "conditionCount" : 1,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
-    "directCaller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
-    "path" : [ "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()" ],
-    "methodSources" : [ "@Override\npublic String codegen(String resultVar, String pbObjectCode, int indent) throws PbCodegenException {\n    // the type of pbObjectCode must not be primitive type,\n    // it should convert to internal flink row type like StringData.\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    switch (fd.getJavaType()) {\n        case INT :\n        case LONG :\n        case FLOAT :\n        case DOUBLE :\n        case BOOLEAN :\n            appender.appendLine((resultVar + \" = \") + pbObjectCode);\n            break;\n        case BYTE_STRING :\n            appender.appendLine(((resultVar + \" = \") + pbObjectCode) + \".toByteArray()\");\n            break;\n        case STRING :\n            appender.appendLine(((resultVar + \" = BinaryStringData.fromString(\") + pbObjectCode) + \".toString())\");\n            break;\n        case ENUM :\n            if ((logicalType.getTypeRoot() == LogicalTypeRoot.CHAR) || (logicalType.getTypeRoot() == LogicalTypeRoot.VARCHAR)) {\n                appender.appendLine(((resultVar + \" = BinaryStringData.fromString(\") + pbObjectCode) + \".toString())\");\n            } else if ((((logicalType.getTypeRoot() == LogicalTypeRoot.TINYINT) || (logicalType.getTypeRoot() == LogicalTypeRoot.SMALLINT)) || (logicalType.getTypeRoot() == LogicalTypeRoot.INTEGER)) || (logicalType.getTypeRoot() == LogicalTypeRoot.BIGINT)) {\n                appender.appendLine(((resultVar + \" = \") + pbObjectCode) + \".getNumber()\");\n            } else {\n                throw new PbCodegenException(\"Illegal type for protobuf enum, only char/vachar/int/bigint is supported\");\n            }\n            break;\n        default :\n            throw new PbCodegenException(\"Unsupported protobuf simple type: \" + fd.getJavaType());\n    }\n    return appender.code();\n}" ],
-    "constructors" : [ "public PbCodegenSimpleDeserializer(Descriptors.FieldDescriptor fd, LogicalType logicalType) {\n    this.fd = fd;\n    this.logicalType = logicalType;\n}" ],
-    "fieldDeclarations" : [ "private final Descriptors.FieldDescriptor fd;", "private final LogicalType logicalType;" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.util.PbCodegenAppender", "org.apache.flink.table.types.logical.LogicalType", "org.apache.flink.table.types.logical.LogicalTypeRoot" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.deserialize;\n\npublic class PbCodegenSimpleDeserializercodegen_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
-    "conditionCount" : 3,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)", "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)" ],
-    "methodSources" : [ "/**\n * Get java type str from {@link FieldDescriptor} which directly fetched from protobuf object.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n * @throws PbCodegenException\n */\npublic static String getTypeStrFromProto(FieldDescriptor fd, boolean isList) throws PbCodegenException {\n    String typeStr;\n    switch (fd.getJavaType()) {\n        case MESSAGE :\n            if (fd.isMapField()) {\n                // map\n                // PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n                FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n                FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n                // key and value cannot be repeated\n                String keyTypeStr = PbCodegenUtils.getTypeStrFromProto(keyFd, false);\n                String valueTypeStr = PbCodegenUtils.getTypeStrFromProto(valueFd, false);\n                typeStr = (((\"Map<\" + keyTypeStr) + \",\") + valueTypeStr) + \">\";\n            } else {\n                // simple message\n                typeStr = PbFormatUtils.getFullJavaName(fd.getMessageType());\n            }\n            break;\n        case INT :\n            typeStr = \"Integer\";\n            break;\n        case LONG :\n            typeStr = \"Long\";\n            break;\n        case STRING :\n            typeStr = \"String\";\n            break;\n        case ENUM :\n            typeStr = PbFormatUtils.getFullJavaName(fd.getEnumType());\n            break;\n        case FLOAT :\n            typeStr = \"Float\";\n            break;\n        case DOUBLE :\n            typeStr = \"Double\";\n            break;\n        case BYTE_STRING :\n            typeStr = \"ByteString\";\n            break;\n        case BOOLEAN :\n            typeStr = \"Boolean\";\n            break;\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fd.getJavaType());\n    }\n    if (isList) {\n        return (\"List<\" + typeStr) + \">\";\n    } else {\n        return typeStr;\n    }\n}" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.EnumDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbConstant", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtilsgetTypeStrFromProto_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testGetTypeStrFromProto() {\n    }\n}",
-    "conditionCount" : 3,
-    "callCount" : 2,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)", "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()" ],
-    "methodSources" : [ "/**\n * Get java type str from {@link FieldDescriptor} which directly fetched from protobuf object.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n * @throws PbCodegenException\n */\npublic static String getTypeStrFromProto(FieldDescriptor fd, boolean isList) throws PbCodegenException {\n    String typeStr;\n    // PATH: Test should invoke the next Descriptors$FieldDescriptor.getJavaType(...) [step in execution path]\n    switch (fd.getJavaType()) {\n        case MESSAGE :\n            if (fd.isMapField()) {\n                // map\n                FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n                FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n                // key and value cannot be repeated\n                String keyTypeStr = PbCodegenUtils.getTypeStrFromProto(keyFd, false);\n                String valueTypeStr = PbCodegenUtils.getTypeStrFromProto(valueFd, false);\n                typeStr = (((\"Map<\" + keyTypeStr) + \",\") + valueTypeStr) + \">\";\n            } else {\n                // simple message\n                typeStr = PbFormatUtils.getFullJavaName(fd.getMessageType());\n            }\n            break;\n        case INT :\n            typeStr = \"Integer\";\n            break;\n        case LONG :\n            typeStr = \"Long\";\n            break;\n        case STRING :\n            typeStr = \"String\";\n            break;\n        case ENUM :\n            typeStr = PbFormatUtils.getFullJavaName(fd.getEnumType());\n            break;\n        case FLOAT :\n            typeStr = \"Float\";\n            break;\n        case DOUBLE :\n            typeStr = \"Double\";\n            break;\n        case BYTE_STRING :\n            typeStr = \"ByteString\";\n            break;\n        case BOOLEAN :\n            typeStr = \"Boolean\";\n            break;\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fd.getJavaType());\n    }\n    if (isList) {\n        return (\"List<\" + typeStr) + \">\";\n    } else {\n        return typeStr;\n    }\n}" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.EnumDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbConstant", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtilsgetTypeStrFromProto_FieldDescriptorgetJavaTypeFikaTest {\n\n    @Test\n    public void testGetTypeStrFromProto() {\n    }\n}",
-    "conditionCount" : 3,
-    "callCount" : 2,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()",
-    "directCaller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
-    "path" : [ "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)", "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()" ],
-    "methodSources" : [ "@Override\npublic String codegen(String resultVar, String pbObjectCode, int indent) throws PbCodegenException {\n    // the type of pbObjectCode must not be primitive type,\n    // it should convert to internal flink row type like StringData.\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    // PATH: Test should invoke the next Descriptors$FieldDescriptor.getJavaType(...) [step in execution path]\n    switch (fd.getJavaType()) {\n        case INT :\n        case LONG :\n        case FLOAT :\n        case DOUBLE :\n        case BOOLEAN :\n            appender.appendLine((resultVar + \" = \") + pbObjectCode);\n            break;\n        case BYTE_STRING :\n            appender.appendLine(((resultVar + \" = \") + pbObjectCode) + \".toByteArray()\");\n            break;\n        case STRING :\n            appender.appendLine(((resultVar + \" = BinaryStringData.fromString(\") + pbObjectCode) + \".toString())\");\n            break;\n        case ENUM :\n            if ((logicalType.getTypeRoot() == LogicalTypeRoot.CHAR) || (logicalType.getTypeRoot() == LogicalTypeRoot.VARCHAR)) {\n                appender.appendLine(((resultVar + \" = BinaryStringData.fromString(\") + pbObjectCode) + \".toString())\");\n            } else if ((((logicalType.getTypeRoot() == LogicalTypeRoot.TINYINT) || (logicalType.getTypeRoot() == LogicalTypeRoot.SMALLINT)) || (logicalType.getTypeRoot() == LogicalTypeRoot.INTEGER)) || (logicalType.getTypeRoot() == LogicalTypeRoot.BIGINT)) {\n                appender.appendLine(((resultVar + \" = \") + pbObjectCode) + \".getNumber()\");\n            } else {\n                throw new PbCodegenException(\"Illegal type for protobuf enum, only char/vachar/int/bigint is supported\");\n            }\n            break;\n        default :\n            throw new PbCodegenException(\"Unsupported protobuf simple type: \" + fd.getJavaType());\n    }\n    return appender.code();\n}" ],
-    "constructors" : [ "public PbCodegenSimpleDeserializer(Descriptors.FieldDescriptor fd, LogicalType logicalType) {\n    this.fd = fd;\n    this.logicalType = logicalType;\n}" ],
-    "fieldDeclarations" : [ "private final Descriptors.FieldDescriptor fd;", "private final LogicalType logicalType;" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.util.PbCodegenAppender", "org.apache.flink.table.types.logical.LogicalType", "org.apache.flink.table.types.logical.LogicalTypeRoot" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.deserialize;\n\npublic class PbCodegenSimpleDeserializercodegen_FieldDescriptorgetJavaTypeFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
-    "conditionCount" : 3,
-    "callCount" : 2,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()" ],
-    "methodSources" : [ "/**\n * Get java type str from {@link FieldDescriptor} which directly fetched from protobuf object.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n * @throws PbCodegenException\n */\npublic static String getTypeStrFromProto(FieldDescriptor fd, boolean isList) throws PbCodegenException {\n    String typeStr;\n    switch (fd.getJavaType()) {\n        case MESSAGE :\n            if (fd.isMapField()) {\n                // map\n                FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n                FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n                // key and value cannot be repeated\n                String keyTypeStr = getTypeStrFromProto(keyFd, false);\n                String valueTypeStr = getTypeStrFromProto(valueFd, false);\n                typeStr = (((\"Map<\" + keyTypeStr) + \",\") + valueTypeStr) + \">\";\n            } else {\n                // simple message\n                typeStr = PbFormatUtils.getFullJavaName(fd.getMessageType());\n            }\n            break;\n        case INT :\n            typeStr = \"Integer\";\n            break;\n        case LONG :\n            typeStr = \"Long\";\n            break;\n        case STRING :\n            typeStr = \"String\";\n            break;\n        case ENUM :\n            typeStr = PbFormatUtils.getFullJavaName(fd.getEnumType());\n            break;\n        case FLOAT :\n            typeStr = \"Float\";\n            break;\n        case DOUBLE :\n            typeStr = \"Double\";\n            break;\n        case BYTE_STRING :\n            typeStr = \"ByteString\";\n            break;\n        case BOOLEAN :\n            typeStr = \"Boolean\";\n            break;\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fd.getJavaType());\n    }\n    if (isList) {\n        return (\"List<\" + typeStr) + \">\";\n    } else {\n        return typeStr;\n    }\n}" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.EnumDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbConstant", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtilsgetTypeStrFromProto_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testGetTypeStrFromProto() {\n    }\n}",
-    "conditionCount" : 3,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenRowDeserializer.codegen(java.lang.String, java.lang.String, int)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
-    "directCaller" : "org.apache.flink.formats.protobuf.deserialize.PbCodegenRowDeserializer.codegen(java.lang.String, java.lang.String, int)",
-    "path" : [ "org.apache.flink.formats.protobuf.deserialize.PbCodegenRowDeserializer.codegen(java.lang.String, java.lang.String, int)", "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)" ],
-    "methodSources" : [ "@Override\npublic String codegen(String resultVar, String pbObjectCode, int indent) throws PbCodegenException {\n    // The type of pbObjectCode is a general pb object,\n    // it should be converted to RowData of flink internal type as resultVariable\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    PbCodegenVarId varUid = PbCodegenVarId.getInstance();\n    int uid = varUid.getAndIncrement();\n    String pbMessageVar = \"message\" + uid;\n    String flinkRowDataVar = \"rowData\" + uid;\n    int fieldSize = rowType.getFieldNames().size();\n    String pbMessageTypeStr = PbFormatUtils.getFullJavaName(descriptor);\n    appender.appendLine((((pbMessageTypeStr + \" \") + pbMessageVar) + \" = \") + pbObjectCode);\n    appender.appendLine((((\"GenericRowData \" + flinkRowDataVar) + \" = new GenericRowData(\") + fieldSize) + \")\");\n    int index = 0;\n    PbCodegenAppender splitAppender = new PbCodegenAppender(indent);\n    for (String fieldName : rowType.getFieldNames()) {\n        int subUid = varUid.getAndIncrement();\n        String flinkRowEleVar = \"elementDataVar\" + subUid;\n        LogicalType subType = rowType.getTypeAt(rowType.getFieldIndex(fieldName));\n        // PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n        FieldDescriptor elementFd = descriptor.findFieldByName(fieldName);\n        String strongCamelFieldName = PbFormatUtils.getStrongCamelCaseJsonName(fieldName);\n        PbCodegenDeserializer codegen = PbCodegenDeserializeFactory.getPbCodegenDes(elementFd, subType, formatContext);\n        splitAppender.appendLine((\"Object \" + flinkRowEleVar) + \" = null\");\n        boolean readDefaultValues = formatContext.getPbFormatConfig().isReadDefaultValues();\n        if (PbFormatUtils.isSimpleType(subType)) {\n            readDefaultValues = formatContext.getReadDefaultValuesForPrimitiveTypes();\n        }\n        if (!readDefaultValues) {\n            // works for both syntax=proto2/proto3 and readDefaultValues=false for non-primitive\n            // types\n            // readDefaultValues must be true in pb3 mode for primitive types\n            String isMessageElementNonEmptyCode = isMessageElementNonEmptyCode(pbMessageVar, strongCamelFieldName, PbFormatUtils.isRepeatedType(subType));\n            splitAppender.begin((\"if(\" + isMessageElementNonEmptyCode) + \"){\");\n        }\n        String pbGetMessageElementCode = pbGetMessageElementCode(pbMessageVar, strongCamelFieldName, elementFd, PbFormatUtils.isArrayType(subType));\n        String code = codegen.codegen(flinkRowEleVar, pbGetMessageElementCode, splitAppender.currentIndent());\n        splitAppender.appendSegment(code);\n        if (!readDefaultValues) {\n            splitAppender.end(\"}\");\n        }\n        splitAppender.appendLine(((((flinkRowDataVar + \".setField(\") + index) + \", \") + flinkRowEleVar) + \")\");\n        if (PbCodegenUtils.needToSplit(splitAppender.code().length())) {\n            String splitMethod = formatContext.splitDeserializerRowTypeMethod(flinkRowDataVar, pbMessageTypeStr, pbMessageVar, splitAppender.code());\n            appender.appendSegment(splitMethod);\n            splitAppender = new PbCodegenAppender();\n        }\n        index += 1;\n    }\n    if (!splitAppender.code().isEmpty()) {\n        appender.appendSegment(splitAppender.code());\n    }\n    appender.appendLine((resultVar + \" = \") + flinkRowDataVar);\n    return appender.code();\n}" ],
-    "constructors" : [ "public PbCodegenRowDeserializer(Descriptor descriptor, RowType rowType, PbFormatContext formatContext) {\n    this.rowType = rowType;\n    this.descriptor = descriptor;\n    this.formatContext = formatContext;\n}" ],
-    "fieldDeclarations" : [ "private final Descriptor descriptor;", "private final RowType rowType;", "private final PbFormatContext formatContext;" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbFormatConfig", "org.apache.flink.formats.protobuf.PbFormatContext", "org.apache.flink.formats.protobuf.util.PbCodegenAppender", "org.apache.flink.formats.protobuf.util.PbCodegenUtils", "org.apache.flink.formats.protobuf.util.PbCodegenVarId", "org.apache.flink.formats.protobuf.util.PbFormatUtils", "org.apache.flink.table.types.logical.LogicalType", "org.apache.flink.table.types.logical.RowType" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.deserialize;\n\npublic class PbCodegenRowDeserializercodegen_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
-    "conditionCount" : 6,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.serialize.PbCodegenRowSerializer.codegen(java.lang.String, java.lang.String, int)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
-    "directCaller" : "org.apache.flink.formats.protobuf.serialize.PbCodegenRowSerializer.codegen(java.lang.String, java.lang.String, int)",
-    "path" : [ "org.apache.flink.formats.protobuf.serialize.PbCodegenRowSerializer.codegen(java.lang.String, java.lang.String, int)", "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)" ],
-    "methodSources" : [ "@Override\npublic String codegen(String resultVar, String flinkObjectCode, int indent) throws PbCodegenException {\n    // The type of flinkObjectCode is a RowData of flink,\n    // it should be converted to object of protobuf as resultVariable.\n    PbCodegenVarId varUid = PbCodegenVarId.getInstance();\n    int uid = varUid.getAndIncrement();\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    String flinkRowDataVar = \"rowData\" + uid;\n    String pbMessageTypeStr = PbFormatUtils.getFullJavaName(descriptor);\n    String messageBuilderVar = \"messageBuilder\" + uid;\n    appender.appendLine(((\"RowData \" + flinkRowDataVar) + \" = \") + flinkObjectCode);\n    appender.appendLine(((((pbMessageTypeStr + \".Builder \") + messageBuilderVar) + \" = \") + pbMessageTypeStr) + \".newBuilder()\");\n    int index = 0;\n    PbCodegenAppender splitAppender = new PbCodegenAppender(indent);\n    for (String fieldName : rowType.getFieldNames()) {\n        // PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n        Descriptors.FieldDescriptor elementFd = descriptor.findFieldByName(fieldName);\n        LogicalType subType = rowType.getTypeAt(rowType.getFieldIndex(fieldName));\n        int subUid = varUid.getAndIncrement();\n        String elementPbVar = \"elementPbVar\" + subUid;\n        String elementPbTypeStr;\n        if (elementFd.isMapField()) {\n            elementPbTypeStr = PbCodegenUtils.getTypeStrFromProto(elementFd, false);\n        } else {\n            elementPbTypeStr = PbCodegenUtils.getTypeStrFromProto(elementFd, PbFormatUtils.isArrayType(subType));\n        }\n        String strongCamelFieldName = PbFormatUtils.getStrongCamelCaseJsonName(fieldName);\n        // Only set non-null element of flink row to proto object. The real value in proto\n        // result depends on protobuf implementation.\n        splitAppender.begin((((\"if(!\" + flinkRowDataVar) + \".isNullAt(\") + index) + \")){\");\n        splitAppender.appendLine((elementPbTypeStr + \" \") + elementPbVar);\n        String flinkRowElementCode = PbCodegenUtils.flinkContainerElementCode(flinkRowDataVar, index + \"\", subType);\n        PbCodegenSerializer codegen = PbCodegenSerializeFactory.getPbCodegenSer(elementFd, subType, formatContext);\n        String code = codegen.codegen(elementPbVar, flinkRowElementCode, splitAppender.currentIndent());\n        splitAppender.appendSegment(code);\n        if (subType.getTypeRoot() == LogicalTypeRoot.ARRAY) {\n            splitAppender.appendLine(((((messageBuilderVar + \".addAll\") + strongCamelFieldName) + \"(\") + elementPbVar) + \")\");\n        } else if (subType.getTypeRoot() == LogicalTypeRoot.MAP) {\n            splitAppender.appendLine(((((messageBuilderVar + \".putAll\") + strongCamelFieldName) + \"(\") + elementPbVar) + \")\");\n        } else {\n            splitAppender.appendLine(((((messageBuilderVar + \".set\") + strongCamelFieldName) + \"(\") + elementPbVar) + \")\");\n        }\n        splitAppender.end(\"}\");\n        if (PbCodegenUtils.needToSplit(splitAppender.code().length())) {\n            String splitMethod = formatContext.splitSerializerRowTypeMethod(flinkRowDataVar, pbMessageTypeStr + \".Builder\", messageBuilderVar, splitAppender.code());\n            appender.appendSegment(splitMethod);\n            splitAppender = new PbCodegenAppender();\n        }\n        index += 1;\n    }\n    if (!splitAppender.code().isEmpty()) {\n        appender.appendSegment(splitAppender.code());\n    }\n    appender.appendLine(((resultVar + \" = \") + messageBuilderVar) + \".build()\");\n    return appender.code();\n}" ],
-    "constructors" : [ "public PbCodegenRowSerializer(Descriptors.Descriptor descriptor, RowType rowType, PbFormatContext formatContext) {\n    this.rowType = rowType;\n    this.descriptor = descriptor;\n    this.formatContext = formatContext;\n}" ],
-    "fieldDeclarations" : [ "private final Descriptors.Descriptor descriptor;", "private final RowType rowType;", "private final PbFormatContext formatContext;" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbFormatContext", "org.apache.flink.formats.protobuf.util.PbCodegenAppender", "org.apache.flink.formats.protobuf.util.PbCodegenUtils", "org.apache.flink.formats.protobuf.util.PbCodegenVarId", "org.apache.flink.formats.protobuf.util.PbFormatUtils", "org.apache.flink.table.types.logical.LogicalType", "org.apache.flink.table.types.logical.LogicalTypeRoot", "org.apache.flink.table.types.logical.RowType" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.serialize;\n\npublic class PbCodegenRowSerializercodegen_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
-    "conditionCount" : 6,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.flinkContainerElementCode(java.lang.String, java.lang.String, org.apache.flink.table.types.logical.LogicalType)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.flinkContainerElementCode(java.lang.String, java.lang.String, org.apache.flink.table.types.logical.LogicalType)", "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()" ],
-    "methodSources" : [ "/**\n *\n * @param flinkContainerCode\n * \t\tcode phrase which represent flink container type like row/array in\n * \t\tcodegen sections\n * @param index\n * \t\tthe index number in flink container type\n * @param eleType\n * \t\tthe element type\n */\npublic static String flinkContainerElementCode(String flinkContainerCode, String index, LogicalType eleType) {\n    switch (eleType.getTypeRoot()) {\n        case INTEGER :\n            return ((flinkContainerCode + \".getInt(\") + index) + \")\";\n        case BIGINT :\n            return ((flinkContainerCode + \".getLong(\") + index) + \")\";\n        case FLOAT :\n            return ((flinkContainerCode + \".getFloat(\") + index) + \")\";\n        case DOUBLE :\n            return ((flinkContainerCode + \".getDouble(\") + index) + \")\";\n        case BOOLEAN :\n            return ((flinkContainerCode + \".getBoolean(\") + index) + \")\";\n        case VARCHAR :\n        case CHAR :\n            return ((flinkContainerCode + \".getString(\") + index) + \")\";\n        case VARBINARY :\n        case BINARY :\n            return ((flinkContainerCode + \".getBinary(\") + index) + \")\";\n        case ROW :\n            int size = eleType.getChildren().size();\n            return ((((flinkContainerCode + \".getRow(\") + index) + \", \") + size) + \")\";\n        case MAP :\n            return ((flinkContainerCode + \".getMap(\") + index) + \")\";\n        case ARRAY :\n            return ((flinkContainerCode + \".getArray(\") + index) + \")\";\n        default :\n            throw new IllegalArgumentException(\"Unsupported data type in schema: \" + eleType);\n    }\n}", "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.table.types.logical.LogicalType", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger", "org.slf4j.LoggerFactory" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testFlinkContainerElementCode() {\n    }\n}",
-    "conditionCount" : 1,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromLogicType(org.apache.flink.table.types.logical.LogicalType)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromLogicType(org.apache.flink.table.types.logical.LogicalType)", "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()" ],
-    "methodSources" : [ "/**\n * Get java type str from {@link LogicalType} which directly fetched from flink type.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n */\npublic static String getTypeStrFromLogicType(LogicalType type) {\n    switch (type.getTypeRoot()) {\n        case INTEGER :\n            return \"int\";\n        case BIGINT :\n            return \"long\";\n        case FLOAT :\n            return \"float\";\n        case DOUBLE :\n            return \"double\";\n        case BOOLEAN :\n            return \"boolean\";\n        case VARCHAR :\n        case CHAR :\n            return \"StringData\";\n        case VARBINARY :\n        case BINARY :\n            return \"byte[]\";\n        case ROW :\n            return \"RowData\";\n        case MAP :\n            return \"MapData\";\n        case ARRAY :\n            return \"ArrayData\";\n        default :\n            throw new IllegalArgumentException(\"Unsupported data type in schema: \" + type);\n    }\n}", "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.table.types.logical.LogicalType", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger", "org.slf4j.LoggerFactory" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testGetTypeStrFromLogicType() {\n    }\n}",
-    "conditionCount" : 1,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)", "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()" ],
-    "methodSources" : [ "/**\n * Get protobuf default value from {@link FieldDescriptor}.\n *\n * @return The java code phrase which represents default value calculation.\n */\npublic static String pbDefaultValueCode(FieldDescriptor fieldDescriptor, PbFormatContext pbFormatContext) throws PbCodegenException {\n    String nullLiteral = pbFormatContext.getPbFormatConfig().getWriteNullStringLiterals();\n    switch (fieldDescriptor.getJavaType()) {\n        case MESSAGE :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getMessageType()) + \".getDefaultInstance()\";\n        case INT :\n            return \"0\";\n        case LONG :\n            return \"0L\";\n        case STRING :\n            return (\"\\\"\" + nullLiteral) + \"\\\"\";\n        case ENUM :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getEnumType()) + \".values()[0]\";\n        case FLOAT :\n            return \"0.0f\";\n        case DOUBLE :\n            return \"0.0d\";\n        case BYTE_STRING :\n            return \"ByteString.EMPTY\";\n        case BOOLEAN :\n            return \"false\";\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fieldDescriptor.getJavaType());\n    }\n}", "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.EnumDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbFormatConfig", "org.apache.flink.formats.protobuf.PbFormatContext", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger", "org.slf4j.LoggerFactory" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testPbDefaultValueCode() {\n    }\n}",
-    "conditionCount" : 1,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.flinkContainerElementCode(java.lang.String, java.lang.String, org.apache.flink.table.types.logical.LogicalType)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.flinkContainerElementCode(java.lang.String, java.lang.String, org.apache.flink.table.types.logical.LogicalType)", "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()" ],
-    "methodSources" : [ "/**\n *\n * @param flinkContainerCode\n * \t\tcode phrase which represent flink container type like row/array in\n * \t\tcodegen sections\n * @param index\n * \t\tthe index number in flink container type\n * @param eleType\n * \t\tthe element type\n */\npublic static String flinkContainerElementCode(String flinkContainerCode, String index, LogicalType eleType) {\n    switch (eleType.getTypeRoot()) {\n        case INTEGER :\n            return ((flinkContainerCode + \".getInt(\") + index) + \")\";\n        case BIGINT :\n            return ((flinkContainerCode + \".getLong(\") + index) + \")\";\n        case FLOAT :\n            return ((flinkContainerCode + \".getFloat(\") + index) + \")\";\n        case DOUBLE :\n            return ((flinkContainerCode + \".getDouble(\") + index) + \")\";\n        case BOOLEAN :\n            return ((flinkContainerCode + \".getBoolean(\") + index) + \")\";\n        case VARCHAR :\n        case CHAR :\n            return ((flinkContainerCode + \".getString(\") + index) + \")\";\n        case VARBINARY :\n        case BINARY :\n            return ((flinkContainerCode + \".getBinary(\") + index) + \")\";\n        case ROW :\n            int size = eleType.getChildren().size();\n            return ((((flinkContainerCode + \".getRow(\") + index) + \", \") + size) + \")\";\n        case MAP :\n            return ((flinkContainerCode + \".getMap(\") + index) + \")\";\n        case ARRAY :\n            return ((flinkContainerCode + \".getArray(\") + index) + \")\";\n        default :\n            throw new IllegalArgumentException(\"Unsupported data type in schema: \" + eleType);\n    }\n}", "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.table.types.logical.LogicalType", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger", "org.slf4j.LoggerFactory" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypevaluesFikaTest {\n\n    @Test\n    public void testFlinkContainerElementCode() {\n    }\n}",
-    "conditionCount" : 1,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromLogicType(org.apache.flink.table.types.logical.LogicalType)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromLogicType(org.apache.flink.table.types.logical.LogicalType)", "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()" ],
-    "methodSources" : [ "/**\n * Get java type str from {@link LogicalType} which directly fetched from flink type.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n */\npublic static String getTypeStrFromLogicType(LogicalType type) {\n    switch (type.getTypeRoot()) {\n        case INTEGER :\n            return \"int\";\n        case BIGINT :\n            return \"long\";\n        case FLOAT :\n            return \"float\";\n        case DOUBLE :\n            return \"double\";\n        case BOOLEAN :\n            return \"boolean\";\n        case VARCHAR :\n        case CHAR :\n            return \"StringData\";\n        case VARBINARY :\n        case BINARY :\n            return \"byte[]\";\n        case ROW :\n            return \"RowData\";\n        case MAP :\n            return \"MapData\";\n        case ARRAY :\n            return \"ArrayData\";\n        default :\n            throw new IllegalArgumentException(\"Unsupported data type in schema: \" + type);\n    }\n}", "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.table.types.logical.LogicalType", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger", "org.slf4j.LoggerFactory" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypevaluesFikaTest {\n\n    @Test\n    public void testGetTypeStrFromLogicType() {\n    }\n}",
-    "conditionCount" : 1,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)", "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()" ],
-    "methodSources" : [ "/**\n * Get protobuf default value from {@link FieldDescriptor}.\n *\n * @return The java code phrase which represents default value calculation.\n */\npublic static String pbDefaultValueCode(FieldDescriptor fieldDescriptor, PbFormatContext pbFormatContext) throws PbCodegenException {\n    String nullLiteral = pbFormatContext.getPbFormatConfig().getWriteNullStringLiterals();\n    switch (fieldDescriptor.getJavaType()) {\n        case MESSAGE :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getMessageType()) + \".getDefaultInstance()\";\n        case INT :\n            return \"0\";\n        case LONG :\n            return \"0L\";\n        case STRING :\n            return (\"\\\"\" + nullLiteral) + \"\\\"\";\n        case ENUM :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getEnumType()) + \".values()[0]\";\n        case FLOAT :\n            return \"0.0f\";\n        case DOUBLE :\n            return \"0.0d\";\n        case BYTE_STRING :\n            return \"ByteString.EMPTY\";\n        case BOOLEAN :\n            return \"false\";\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fieldDescriptor.getJavaType());\n    }\n}", "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.EnumDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbFormatConfig", "org.apache.flink.formats.protobuf.PbFormatContext", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger", "org.slf4j.LoggerFactory" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypevaluesFikaTest {\n\n    @Test\n    public void testPbDefaultValueCode() {\n    }\n}",
-    "conditionCount" : 1,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)", "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()" ],
-    "methodSources" : [ "/**\n * Get java type str from {@link FieldDescriptor} which directly fetched from protobuf object.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n * @throws PbCodegenException\n */\npublic static String getTypeStrFromProto(FieldDescriptor fd, boolean isList) throws PbCodegenException {\n    String typeStr;\n    switch (fd.getJavaType()) {\n        case MESSAGE :\n            if (fd.isMapField()) {\n                // map\n                FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n                FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n                // key and value cannot be repeated\n                String keyTypeStr = getTypeStrFromProto(keyFd, false);\n                String valueTypeStr = getTypeStrFromProto(valueFd, false);\n                typeStr = (((\"Map<\" + keyTypeStr) + \",\") + valueTypeStr) + \">\";\n            } else {\n                // simple message\n                typeStr = PbFormatUtils.getFullJavaName(fd.getMessageType());\n            }\n            break;\n        case INT :\n            typeStr = \"Integer\";\n            break;\n        case LONG :\n            typeStr = \"Long\";\n            break;\n        case STRING :\n            typeStr = \"String\";\n            break;\n        case ENUM :\n            typeStr = PbFormatUtils.getFullJavaName(fd.getEnumType());\n            break;\n        case FLOAT :\n            typeStr = \"Float\";\n            break;\n        case DOUBLE :\n            typeStr = \"Double\";\n            break;\n        case BYTE_STRING :\n            typeStr = \"ByteString\";\n            break;\n        case BOOLEAN :\n            typeStr = \"Boolean\";\n            break;\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fd.getJavaType());\n    }\n    if (isList) {\n        return (\"List<\" + typeStr) + \">\";\n    } else {\n        return typeStr;\n    }\n}", "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.EnumDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbConstant", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger", "org.slf4j.LoggerFactory" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testGetTypeStrFromProto() {\n    }\n}",
-    "conditionCount" : 3,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)", "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()" ],
-    "methodSources" : [ "/**\n * Get java type str from {@link FieldDescriptor} which directly fetched from protobuf object.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n * @throws PbCodegenException\n */\npublic static String getTypeStrFromProto(FieldDescriptor fd, boolean isList) throws PbCodegenException {\n    String typeStr;\n    switch (fd.getJavaType()) {\n        case MESSAGE :\n            if (fd.isMapField()) {\n                // map\n                FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n                FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n                // key and value cannot be repeated\n                String keyTypeStr = getTypeStrFromProto(keyFd, false);\n                String valueTypeStr = getTypeStrFromProto(valueFd, false);\n                typeStr = (((\"Map<\" + keyTypeStr) + \",\") + valueTypeStr) + \">\";\n            } else {\n                // simple message\n                typeStr = PbFormatUtils.getFullJavaName(fd.getMessageType());\n            }\n            break;\n        case INT :\n            typeStr = \"Integer\";\n            break;\n        case LONG :\n            typeStr = \"Long\";\n            break;\n        case STRING :\n            typeStr = \"String\";\n            break;\n        case ENUM :\n            typeStr = PbFormatUtils.getFullJavaName(fd.getEnumType());\n            break;\n        case FLOAT :\n            typeStr = \"Float\";\n            break;\n        case DOUBLE :\n            typeStr = \"Double\";\n            break;\n        case BYTE_STRING :\n            typeStr = \"ByteString\";\n            break;\n        case BOOLEAN :\n            typeStr = \"Boolean\";\n            break;\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fd.getJavaType());\n    }\n    if (isList) {\n        return (\"List<\" + typeStr) + \">\";\n    } else {\n        return typeStr;\n    }\n}", "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n" ],
-    "constructors" : [ "PbCodegenUtils() {\n}" ],
-    "fieldDeclarations" : [ "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);" ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.EnumDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.api.common.InvalidProgramException", "org.apache.flink.formats.protobuf.PbCodegenException", "org.apache.flink.formats.protobuf.PbConstant", "org.codehaus.janino.SimpleCompiler", "org.slf4j.Logger", "org.slf4j.LoggerFactory" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypevaluesFikaTest {\n\n    @Test\n    public void testGetTypeStrFromProto() {\n    }\n}",
-    "conditionCount" : 3,
-    "callCount" : 1,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)", "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)", "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)" ],
-    "methodSources" : [ "public static RowType generateRowType(Descriptors.Descriptor root, boolean enumAsInt) {\n    int size = root.getFields().size();\n    LogicalType[] types = new LogicalType[size];\n    String[] rowFieldNames = new String[size];\n    for (int i = 0; i < size; i++) {\n        FieldDescriptor field = root.getFields().get(i);\n        rowFieldNames[i] = field.getName();\n        // PATH: Test should invoke the next PbToRowTypeUtil.generateFieldTypeInformation(...) [step in execution path]\n        types[i] = generateFieldTypeInformation(field, enumAsInt);\n    }\n    return RowType.of(types, rowFieldNames);\n}", "private static LogicalType generateFieldTypeInformation(FieldDescriptor field, boolean enumAsInt) {\n    JavaType fieldType = field.getJavaType();\n    LogicalType type;\n    if (fieldType.equals(JavaType.MESSAGE)) {\n        if (field.isMapField()) {\n            MapType mapType = new MapType(// PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n            PbToRowTypeUtil.generateFieldTypeInformation(field.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME), enumAsInt), PbToRowTypeUtil.generateFieldTypeInformation(field.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME), enumAsInt));\n            return mapType;\n        } else if (field.isRepeated()) {\n            return new ArrayType(generateRowType(field.getMessageType()));\n        } else {\n            return generateRowType(field.getMessageType());\n        }\n    } else {\n        if (fieldType.equals(JavaType.STRING)) {\n            type = new VarCharType(Integer.MAX_VALUE);\n        } else if (fieldType.equals(JavaType.LONG)) {\n            type = new BigIntType();\n        } else if (fieldType.equals(JavaType.BOOLEAN)) {\n            type = new BooleanType();\n        } else if (fieldType.equals(JavaType.INT)) {\n            type = new IntType();\n        } else if (fieldType.equals(JavaType.DOUBLE)) {\n            type = new DoubleType();\n        } else if (fieldType.equals(JavaType.FLOAT)) {\n            type = new FloatType();\n        } else if (fieldType.equals(JavaType.ENUM)) {\n            if (enumAsInt) {\n                type = new IntType();\n            } else {\n                type = new VarCharType(Integer.MAX_VALUE);\n            }\n        } else if (fieldType.equals(JavaType.BYTE_STRING)) {\n            type = new VarBinaryType(Integer.MAX_VALUE);\n        } else {\n            throw new ValidationException(\"unsupported field type: \" + fieldType);\n        }\n        if (field.isRepeated()) {\n            return new ArrayType(type);\n        }\n        return type;\n    }\n}" ],
-    "constructors" : [ "PbToRowTypeUtil() {\n}" ],
-    "fieldDeclarations" : [ ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.formats.protobuf.PbConstant", "org.apache.flink.table.api.ValidationException", "org.apache.flink.table.types.logical.ArrayType", "org.apache.flink.table.types.logical.BigIntType", "org.apache.flink.table.types.logical.BooleanType", "org.apache.flink.table.types.logical.DoubleType", "org.apache.flink.table.types.logical.FloatType", "org.apache.flink.table.types.logical.IntType", "org.apache.flink.table.types.logical.LogicalType", "org.apache.flink.table.types.logical.MapType", "org.apache.flink.table.types.logical.RowType", "org.apache.flink.table.types.logical.VarBinaryType", "org.apache.flink.table.types.logical.VarCharType" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbToRowTypeUtilgenerateFieldTypeInformation_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testGenerateRowType() {\n    }\n}",
-    "conditionCount" : 14,
-    "callCount" : 2,
-    "covered" : false
-  }, {
-    "entryPoint" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)",
-    "thirdPartyMethod" : "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.equals(java.lang.Object)",
-    "directCaller" : "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
-    "path" : [ "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)", "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.equals(java.lang.Object)" ],
-    "methodSources" : [ "public static RowType generateRowType(Descriptors.Descriptor root, boolean enumAsInt) {\n    int size = root.getFields().size();\n    LogicalType[] types = new LogicalType[size];\n    String[] rowFieldNames = new String[size];\n    for (int i = 0; i < size; i++) {\n        FieldDescriptor field = root.getFields().get(i);\n        rowFieldNames[i] = field.getName();\n        // PATH: Test should invoke the next PbToRowTypeUtil.generateFieldTypeInformation(...) [step in execution path]\n        types[i] = generateFieldTypeInformation(field, enumAsInt);\n    }\n    return RowType.of(types, rowFieldNames);\n}", "private static LogicalType generateFieldTypeInformation(FieldDescriptor field, boolean enumAsInt) {\n    JavaType fieldType = field.getJavaType();\n    LogicalType type;\n    if (fieldType.equals(JavaType.MESSAGE)) {\n        if (field.isMapField()) {\n            MapType mapType = new MapType(generateFieldTypeInformation(field.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME), enumAsInt), generateFieldTypeInformation(field.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME), enumAsInt));\n            return mapType;\n        } else if (field.isRepeated()) {\n            return new ArrayType(generateRowType(field.getMessageType()));\n        } else {\n            return generateRowType(field.getMessageType());\n        }\n    } else {\n        if (fieldType.equals(JavaType.STRING)) {\n            type = new VarCharType(Integer.MAX_VALUE);\n        } else if (fieldType.equals(JavaType.LONG)) {\n            type = new BigIntType();\n        } else if (fieldType.equals(JavaType.BOOLEAN)) {\n            type = new BooleanType();\n        } else if (fieldType.equals(JavaType.INT)) {\n            type = new IntType();\n        } else if (fieldType.equals(JavaType.DOUBLE)) {\n            type = new DoubleType();\n        } else if (fieldType.equals(JavaType.FLOAT)) {\n            type = new FloatType();\n        } else if (fieldType.equals(JavaType.ENUM)) {\n            if (enumAsInt) {\n                type = new IntType();\n            } else {\n                type = new VarCharType(Integer.MAX_VALUE);\n            }\n        } else if (fieldType.equals(JavaType.BYTE_STRING)) {\n            type = new VarBinaryType(Integer.MAX_VALUE);\n        } else {\n            throw new ValidationException(\"unsupported field type: \" + fieldType);\n        }\n        if (field.isRepeated()) {\n            return new ArrayType(type);\n        }\n        return type;\n    }\n}" ],
-    "constructors" : [ "PbToRowTypeUtil() {\n}" ],
-    "fieldDeclarations" : [ ],
-    "setters" : [ ],
-    "imports" : [ "com.google.protobuf.Descriptors", "com.google.protobuf.Descriptors.Descriptor", "com.google.protobuf.Descriptors.FieldDescriptor", "com.google.protobuf.Descriptors.FieldDescriptor.JavaType", "org.apache.flink.formats.protobuf.PbConstant", "org.apache.flink.table.api.ValidationException", "org.apache.flink.table.types.logical.ArrayType", "org.apache.flink.table.types.logical.BigIntType", "org.apache.flink.table.types.logical.BooleanType", "org.apache.flink.table.types.logical.DoubleType", "org.apache.flink.table.types.logical.FloatType", "org.apache.flink.table.types.logical.IntType", "org.apache.flink.table.types.logical.LogicalType", "org.apache.flink.table.types.logical.MapType", "org.apache.flink.table.types.logical.RowType", "org.apache.flink.table.types.logical.VarBinaryType", "org.apache.flink.table.types.logical.VarCharType" ],
-    "testTemplate" : "package org.apache.flink.formats.protobuf.util;\n\npublic class PbToRowTypeUtilgenerateFieldTypeInformation_JavaTypeequalsFikaTest {\n\n    @Test\n    public void testGenerateRowType() {\n    }\n}",
-    "conditionCount" : 14,
-    "callCount" : 1,
-    "covered" : false
-  } ]
+  "fullMethodsPaths": [
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.deserialize.PbCodegenMapDeserializer.codegen(java.lang.String, java.lang.String, int)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
+      "directCaller": "org.apache.flink.formats.protobuf.deserialize.PbCodegenMapDeserializer.codegen(java.lang.String, java.lang.String, int)",
+      "path": [
+        "org.apache.flink.formats.protobuf.deserialize.PbCodegenMapDeserializer.codegen(java.lang.String, java.lang.String, int)",
+        "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+      ],
+      "methodSources": [
+        "@Override\npublic String codegen(String resultVar, String pbObjectCode, int indent) throws PbCodegenException {\n    // The type of pbObjectCode is a general Map object,\n    // it should be converted to MapData of flink internal type as resultVariable\n    PbCodegenVarId varUid = PbCodegenVarId.getInstance();\n    int uid = varUid.getAndIncrement();\n    LogicalType keyType = mapType.getKeyType();\n    LogicalType valueType = mapType.getValueType();\n    // PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n    Descriptors.FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n    Descriptors.FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    String pbKeyTypeStr = PbCodegenUtils.getTypeStrFromProto(keyFd, false);\n    String pbValueTypeStr = PbCodegenUtils.getTypeStrFromProto(valueFd, false);\n    String pbMapVar = \"pbMap\" + uid;\n    String pbMapEntryVar = \"pbEntry\" + uid;\n    String resultDataMapVar = \"resultDataMap\" + uid;\n    String flinkKeyVar = \"keyDataVar\" + uid;\n    String flinkValueVar = \"valueDataVar\" + uid;\n    appender.appendLine((((((((\"Map<\" + pbKeyTypeStr) + \",\") + pbValueTypeStr) + \"> \") + pbMapVar) + \" = \") + pbObjectCode) + \";\");\n    appender.appendLine((\"Map \" + resultDataMapVar) + \" = new HashMap()\");\n    appender.begin((((((((\"for(Map.Entry<\" + pbKeyTypeStr) + \",\") + pbValueTypeStr) + \"> \") + pbMapEntryVar) + \": \") + pbMapVar) + \".entrySet()){\");\n    appender.appendLine((\"Object \" + flinkKeyVar) + \"= null\");\n    appender.appendLine((\"Object \" + flinkValueVar) + \"= null\");\n    PbCodegenDeserializer keyDes = PbCodegenDeserializeFactory.getPbCodegenDes(keyFd, keyType, formatContext);\n    PbCodegenDeserializer valueDes = PbCodegenDeserializeFactory.getPbCodegenDes(valueFd, valueType, formatContext);\n    String keyGenCode = keyDes.codegen(flinkKeyVar, (((\"((\" + pbKeyTypeStr) + \")\") + pbMapEntryVar) + \".getKey())\", appender.currentIndent());\n    appender.appendSegment(keyGenCode);\n    String valueGenCode = valueDes.codegen(flinkValueVar, (((\"((\" + pbValueTypeStr) + \")\") + pbMapEntryVar) + \".getValue())\", appender.currentIndent());\n    appender.appendSegment(valueGenCode);\n    appender.appendLine(((((resultDataMapVar + \".put(\") + flinkKeyVar) + \", \") + flinkValueVar) + \")\");\n    appender.end(\"}\");\n    appender.appendLine(((resultVar + \" = new GenericMapData(\") + resultDataMapVar) + \")\");\n    return appender.code();\n}"
+      ],
+      "constructors": [
+        "public PbCodegenMapDeserializer(Descriptors.FieldDescriptor fd, MapType mapType, PbFormatContext formatContext) {\n    this.fd = fd;\n    this.mapType = mapType;\n    this.formatContext = formatContext;\n}"
+      ],
+      "fieldDeclarations": [
+        "private final Descriptors.FieldDescriptor fd;",
+        "private final MapType mapType;",
+        "private final PbFormatContext formatContext;"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbConstant",
+        "org.apache.flink.formats.protobuf.PbFormatContext",
+        "org.apache.flink.formats.protobuf.util.PbCodegenAppender",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils",
+        "org.apache.flink.formats.protobuf.util.PbCodegenVarId",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.apache.flink.table.types.logical.MapType"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.deserialize;\n\npublic class PbCodegenMapDeserializercodegen_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
+      "conditionCount": 0,
+      "callCount": 2,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.serialize.PbCodegenMapSerializer.codegen(java.lang.String, java.lang.String, int)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
+      "directCaller": "org.apache.flink.formats.protobuf.serialize.PbCodegenMapSerializer.codegen(java.lang.String, java.lang.String, int)",
+      "path": [
+        "org.apache.flink.formats.protobuf.serialize.PbCodegenMapSerializer.codegen(java.lang.String, java.lang.String, int)",
+        "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+      ],
+      "methodSources": [
+        "@Override\npublic String codegen(String resultVar, String flinkObjectCode, int indent) throws PbCodegenException {\n    // The type of flinkObjectCode is a MapData of flink,\n    // it should be converted to map of protobuf as resultVariable.\n    PbCodegenVarId varUid = PbCodegenVarId.getInstance();\n    int uid = varUid.getAndIncrement();\n    LogicalType keyType = mapType.getKeyType();\n    LogicalType valueType = mapType.getValueType();\n    // PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n    Descriptors.FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n    Descriptors.FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    String keyProtoTypeStr = PbCodegenUtils.getTypeStrFromProto(keyFd, false);\n    String valueProtoTypeStr = PbCodegenUtils.getTypeStrFromProto(valueFd, false);\n    String flinkKeyArrDataVar = \"keyArrData\" + uid;\n    String flinkValueArrDataVar = \"valueArrData\" + uid;\n    String iVar = \"i\" + uid;\n    String pbMapVar = \"resultPbMap\" + uid;\n    String keyPbVar = \"keyPbVar\" + uid;\n    String valuePbVar = \"valuePbVar\" + uid;\n    appender.appendLine((((\"ArrayData \" + flinkKeyArrDataVar) + \" = \") + flinkObjectCode) + \".keyArray()\");\n    appender.appendLine((((\"ArrayData \" + flinkValueArrDataVar) + \" = \") + flinkObjectCode) + \".valueArray()\");\n    appender.appendLine((((((\"Map<\" + keyProtoTypeStr) + \", \") + valueProtoTypeStr) + \"> \") + pbMapVar) + \" = new HashMap()\");\n    appender.begin((((((((\"for(int \" + iVar) + \" = 0; \") + iVar) + \" < \") + flinkKeyArrDataVar) + \".size(); \") + iVar) + \"++){\");\n    // process key\n    String convertFlinkKeyArrayElementToPbCode = PbCodegenUtils.convertFlinkArrayElementToPbWithDefaultValueCode(flinkKeyArrDataVar, iVar, keyPbVar, keyFd, keyType, formatContext, appender.currentIndent());\n    appender.appendSegment(convertFlinkKeyArrayElementToPbCode);\n    // process value\n    String convertFlinkValueArrayElementToPbCode = PbCodegenUtils.convertFlinkArrayElementToPbWithDefaultValueCode(flinkValueArrDataVar, iVar, valuePbVar, valueFd, valueType, formatContext, appender.currentIndent());\n    appender.appendSegment(convertFlinkValueArrayElementToPbCode);\n    appender.appendLine(((((pbMapVar + \".put(\") + keyPbVar) + \", \") + valuePbVar) + \")\");\n    appender.end(\"}\");\n    appender.appendLine((resultVar + \" = \") + pbMapVar);\n    return appender.code();\n}"
+      ],
+      "constructors": [
+        "public PbCodegenMapSerializer(Descriptors.FieldDescriptor fd, MapType mapType, PbFormatContext formatContext) {\n    this.fd = fd;\n    this.mapType = mapType;\n    this.formatContext = formatContext;\n}"
+      ],
+      "fieldDeclarations": [
+        "private final Descriptors.FieldDescriptor fd;",
+        "private final MapType mapType;",
+        "private final PbFormatContext formatContext;"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbConstant",
+        "org.apache.flink.formats.protobuf.PbFormatContext",
+        "org.apache.flink.formats.protobuf.util.PbCodegenAppender",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils",
+        "org.apache.flink.formats.protobuf.util.PbCodegenVarId",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.apache.flink.table.types.logical.MapType"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.serialize;\n\npublic class PbCodegenMapSerializercodegen_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
+      "conditionCount": 0,
+      "callCount": 2,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)",
+      "thirdPartyMethod": "com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)",
+        "com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)"
+      ],
+      "methodSources": [
+        "public static String getStrongCamelCaseJsonName(String name) {\n    // PATH: Test should invoke the next ProtobufInternalUtils.underScoreToCamelCase(...) [step in execution path]\n    return ProtobufInternalUtils.underScoreToCamelCase(name, true);\n}"
+      ],
+      "constructors": [
+        "PbFormatUtils() {\n}"
+      ],
+      "fieldDeclarations": [],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.ProtobufInternalUtils",
+        "com.google.protobuf.SchemaUtil"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbFormatUtilsgetStrongCamelCaseJsonName_ProtobufInternalUtilsunderScoreToCamelCaseFikaTest {\n\n    @Test\n    public void testGetStrongCamelCaseJsonName() {\n    }\n}",
+      "conditionCount": 0,
+      "callCount": 1,
+      "covered": true
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+        "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()"
+      ],
+      "methodSources": [
+        "/**\n * Get protobuf default value from {@link FieldDescriptor}.\n *\n * @return The java code phrase which represents default value calculation.\n */\npublic static String pbDefaultValueCode(FieldDescriptor fieldDescriptor, PbFormatContext pbFormatContext) throws PbCodegenException {\n    String nullLiteral = pbFormatContext.getPbFormatConfig().getWriteNullStringLiterals();\n    // PATH: Test should invoke the next Descriptors$FieldDescriptor.getJavaType(...) [step in execution path]\n    switch (fieldDescriptor.getJavaType()) {\n        case MESSAGE :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getMessageType()) + \".getDefaultInstance()\";\n        case INT :\n            return \"0\";\n        case LONG :\n            return \"0L\";\n        case STRING :\n            return (\"\\\"\" + nullLiteral) + \"\\\"\";\n        case ENUM :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getEnumType()) + \".values()[0]\";\n        case FLOAT :\n            return \"0.0f\";\n        case DOUBLE :\n            return \"0.0d\";\n        case BYTE_STRING :\n            return \"ByteString.EMPTY\";\n        case BOOLEAN :\n            return \"false\";\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fieldDescriptor.getJavaType());\n    }\n}"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.EnumDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbFormatConfig",
+        "org.apache.flink.formats.protobuf.PbFormatContext",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtilspbDefaultValueCode_FieldDescriptorgetJavaTypeFikaTest {\n\n    @Test\n    public void testPbDefaultValueCode() {\n    }\n}",
+      "conditionCount": 1,
+      "callCount": 2,
+      "covered": true
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+      ],
+      "methodSources": [
+        "/**\n * Get protobuf default value from {@link FieldDescriptor}.\n *\n * @return The java code phrase which represents default value calculation.\n */\npublic static String pbDefaultValueCode(FieldDescriptor fieldDescriptor, PbFormatContext pbFormatContext) throws PbCodegenException {\n    String nullLiteral = pbFormatContext.getPbFormatConfig().getWriteNullStringLiterals();\n    switch (fieldDescriptor.getJavaType()) {\n        case MESSAGE :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getMessageType()) + \".getDefaultInstance()\";\n        case INT :\n            return \"0\";\n        case LONG :\n            return \"0L\";\n        case STRING :\n            return (\"\\\"\" + nullLiteral) + \"\\\"\";\n        case ENUM :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getEnumType()) + \".values()[0]\";\n        case FLOAT :\n            return \"0.0f\";\n        case DOUBLE :\n            return \"0.0d\";\n        case BYTE_STRING :\n            return \"ByteString.EMPTY\";\n        case BOOLEAN :\n            return \"false\";\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fieldDescriptor.getJavaType());\n    }\n}"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.EnumDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbFormatConfig",
+        "org.apache.flink.formats.protobuf.PbFormatContext",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtilspbDefaultValueCode_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testPbDefaultValueCode() {\n    }\n}",
+      "conditionCount": 1,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
+      "directCaller": "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
+      "path": [
+        "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+      ],
+      "methodSources": [
+        "@Override\npublic String codegen(String resultVar, String pbObjectCode, int indent) throws PbCodegenException {\n    // the type of pbObjectCode must not be primitive type,\n    // it should convert to internal flink row type like StringData.\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    switch (fd.getJavaType()) {\n        case INT :\n        case LONG :\n        case FLOAT :\n        case DOUBLE :\n        case BOOLEAN :\n            appender.appendLine((resultVar + \" = \") + pbObjectCode);\n            break;\n        case BYTE_STRING :\n            appender.appendLine(((resultVar + \" = \") + pbObjectCode) + \".toByteArray()\");\n            break;\n        case STRING :\n            appender.appendLine(((resultVar + \" = BinaryStringData.fromString(\") + pbObjectCode) + \".toString())\");\n            break;\n        case ENUM :\n            if ((logicalType.getTypeRoot() == LogicalTypeRoot.CHAR) || (logicalType.getTypeRoot() == LogicalTypeRoot.VARCHAR)) {\n                appender.appendLine(((resultVar + \" = BinaryStringData.fromString(\") + pbObjectCode) + \".toString())\");\n            } else if ((((logicalType.getTypeRoot() == LogicalTypeRoot.TINYINT) || (logicalType.getTypeRoot() == LogicalTypeRoot.SMALLINT)) || (logicalType.getTypeRoot() == LogicalTypeRoot.INTEGER)) || (logicalType.getTypeRoot() == LogicalTypeRoot.BIGINT)) {\n                appender.appendLine(((resultVar + \" = \") + pbObjectCode) + \".getNumber()\");\n            } else {\n                throw new PbCodegenException(\"Illegal type for protobuf enum, only char/vachar/int/bigint is supported\");\n            }\n            break;\n        default :\n            throw new PbCodegenException(\"Unsupported protobuf simple type: \" + fd.getJavaType());\n    }\n    return appender.code();\n}"
+      ],
+      "constructors": [
+        "public PbCodegenSimpleDeserializer(Descriptors.FieldDescriptor fd, LogicalType logicalType) {\n    this.fd = fd;\n    this.logicalType = logicalType;\n}"
+      ],
+      "fieldDeclarations": [
+        "private final Descriptors.FieldDescriptor fd;",
+        "private final LogicalType logicalType;"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.util.PbCodegenAppender",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.apache.flink.table.types.logical.LogicalTypeRoot"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.deserialize;\n\npublic class PbCodegenSimpleDeserializercodegen_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
+      "conditionCount": 3,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+        "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+      ],
+      "methodSources": [
+        "/**\n * Get java type str from {@link FieldDescriptor} which directly fetched from protobuf object.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n * @throws PbCodegenException\n */\npublic static String getTypeStrFromProto(FieldDescriptor fd, boolean isList) throws PbCodegenException {\n    String typeStr;\n    switch (fd.getJavaType()) {\n        case MESSAGE :\n            if (fd.isMapField()) {\n                // map\n                // PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n                FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n                FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n                // key and value cannot be repeated\n                String keyTypeStr = PbCodegenUtils.getTypeStrFromProto(keyFd, false);\n                String valueTypeStr = PbCodegenUtils.getTypeStrFromProto(valueFd, false);\n                typeStr = (((\"Map<\" + keyTypeStr) + \",\") + valueTypeStr) + \">\";\n            } else {\n                // simple message\n                typeStr = PbFormatUtils.getFullJavaName(fd.getMessageType());\n            }\n            break;\n        case INT :\n            typeStr = \"Integer\";\n            break;\n        case LONG :\n            typeStr = \"Long\";\n            break;\n        case STRING :\n            typeStr = \"String\";\n            break;\n        case ENUM :\n            typeStr = PbFormatUtils.getFullJavaName(fd.getEnumType());\n            break;\n        case FLOAT :\n            typeStr = \"Float\";\n            break;\n        case DOUBLE :\n            typeStr = \"Double\";\n            break;\n        case BYTE_STRING :\n            typeStr = \"ByteString\";\n            break;\n        case BOOLEAN :\n            typeStr = \"Boolean\";\n            break;\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fd.getJavaType());\n    }\n    if (isList) {\n        return (\"List<\" + typeStr) + \">\";\n    } else {\n        return typeStr;\n    }\n}"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.EnumDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbConstant",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtilsgetTypeStrFromProto_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testGetTypeStrFromProto() {\n    }\n}",
+      "conditionCount": 3,
+      "callCount": 2,
+      "covered": true
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+        "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()"
+      ],
+      "methodSources": [
+        "/**\n * Get java type str from {@link FieldDescriptor} which directly fetched from protobuf object.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n * @throws PbCodegenException\n */\npublic static String getTypeStrFromProto(FieldDescriptor fd, boolean isList) throws PbCodegenException {\n    String typeStr;\n    // PATH: Test should invoke the next Descriptors$FieldDescriptor.getJavaType(...) [step in execution path]\n    switch (fd.getJavaType()) {\n        case MESSAGE :\n            if (fd.isMapField()) {\n                // map\n                FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n                FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n                // key and value cannot be repeated\n                String keyTypeStr = PbCodegenUtils.getTypeStrFromProto(keyFd, false);\n                String valueTypeStr = PbCodegenUtils.getTypeStrFromProto(valueFd, false);\n                typeStr = (((\"Map<\" + keyTypeStr) + \",\") + valueTypeStr) + \">\";\n            } else {\n                // simple message\n                typeStr = PbFormatUtils.getFullJavaName(fd.getMessageType());\n            }\n            break;\n        case INT :\n            typeStr = \"Integer\";\n            break;\n        case LONG :\n            typeStr = \"Long\";\n            break;\n        case STRING :\n            typeStr = \"String\";\n            break;\n        case ENUM :\n            typeStr = PbFormatUtils.getFullJavaName(fd.getEnumType());\n            break;\n        case FLOAT :\n            typeStr = \"Float\";\n            break;\n        case DOUBLE :\n            typeStr = \"Double\";\n            break;\n        case BYTE_STRING :\n            typeStr = \"ByteString\";\n            break;\n        case BOOLEAN :\n            typeStr = \"Boolean\";\n            break;\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fd.getJavaType());\n    }\n    if (isList) {\n        return (\"List<\" + typeStr) + \">\";\n    } else {\n        return typeStr;\n    }\n}"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.EnumDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbConstant",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtilsgetTypeStrFromProto_FieldDescriptorgetJavaTypeFikaTest {\n\n    @Test\n    public void testGetTypeStrFromProto() {\n    }\n}",
+      "conditionCount": 3,
+      "callCount": 2,
+      "covered": true
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()",
+      "directCaller": "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
+      "path": [
+        "org.apache.flink.formats.protobuf.deserialize.PbCodegenSimpleDeserializer.codegen(java.lang.String, java.lang.String, int)",
+        "com.google.protobuf.Descriptors.FieldDescriptor.getJavaType()"
+      ],
+      "methodSources": [
+        "@Override\npublic String codegen(String resultVar, String pbObjectCode, int indent) throws PbCodegenException {\n    // the type of pbObjectCode must not be primitive type,\n    // it should convert to internal flink row type like StringData.\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    // PATH: Test should invoke the next Descriptors$FieldDescriptor.getJavaType(...) [step in execution path]\n    switch (fd.getJavaType()) {\n        case INT :\n        case LONG :\n        case FLOAT :\n        case DOUBLE :\n        case BOOLEAN :\n            appender.appendLine((resultVar + \" = \") + pbObjectCode);\n            break;\n        case BYTE_STRING :\n            appender.appendLine(((resultVar + \" = \") + pbObjectCode) + \".toByteArray()\");\n            break;\n        case STRING :\n            appender.appendLine(((resultVar + \" = BinaryStringData.fromString(\") + pbObjectCode) + \".toString())\");\n            break;\n        case ENUM :\n            if ((logicalType.getTypeRoot() == LogicalTypeRoot.CHAR) || (logicalType.getTypeRoot() == LogicalTypeRoot.VARCHAR)) {\n                appender.appendLine(((resultVar + \" = BinaryStringData.fromString(\") + pbObjectCode) + \".toString())\");\n            } else if ((((logicalType.getTypeRoot() == LogicalTypeRoot.TINYINT) || (logicalType.getTypeRoot() == LogicalTypeRoot.SMALLINT)) || (logicalType.getTypeRoot() == LogicalTypeRoot.INTEGER)) || (logicalType.getTypeRoot() == LogicalTypeRoot.BIGINT)) {\n                appender.appendLine(((resultVar + \" = \") + pbObjectCode) + \".getNumber()\");\n            } else {\n                throw new PbCodegenException(\"Illegal type for protobuf enum, only char/vachar/int/bigint is supported\");\n            }\n            break;\n        default :\n            throw new PbCodegenException(\"Unsupported protobuf simple type: \" + fd.getJavaType());\n    }\n    return appender.code();\n}"
+      ],
+      "constructors": [
+        "public PbCodegenSimpleDeserializer(Descriptors.FieldDescriptor fd, LogicalType logicalType) {\n    this.fd = fd;\n    this.logicalType = logicalType;\n}"
+      ],
+      "fieldDeclarations": [
+        "private final Descriptors.FieldDescriptor fd;",
+        "private final LogicalType logicalType;"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.util.PbCodegenAppender",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.apache.flink.table.types.logical.LogicalTypeRoot"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.deserialize;\n\npublic class PbCodegenSimpleDeserializercodegen_FieldDescriptorgetJavaTypeFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
+      "conditionCount": 3,
+      "callCount": 2,
+      "covered": true
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+      ],
+      "methodSources": [
+        "/**\n * Get java type str from {@link FieldDescriptor} which directly fetched from protobuf object.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n * @throws PbCodegenException\n */\npublic static String getTypeStrFromProto(FieldDescriptor fd, boolean isList) throws PbCodegenException {\n    String typeStr;\n    switch (fd.getJavaType()) {\n        case MESSAGE :\n            if (fd.isMapField()) {\n                // map\n                FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n                FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n                // key and value cannot be repeated\n                String keyTypeStr = getTypeStrFromProto(keyFd, false);\n                String valueTypeStr = getTypeStrFromProto(valueFd, false);\n                typeStr = (((\"Map<\" + keyTypeStr) + \",\") + valueTypeStr) + \">\";\n            } else {\n                // simple message\n                typeStr = PbFormatUtils.getFullJavaName(fd.getMessageType());\n            }\n            break;\n        case INT :\n            typeStr = \"Integer\";\n            break;\n        case LONG :\n            typeStr = \"Long\";\n            break;\n        case STRING :\n            typeStr = \"String\";\n            break;\n        case ENUM :\n            typeStr = PbFormatUtils.getFullJavaName(fd.getEnumType());\n            break;\n        case FLOAT :\n            typeStr = \"Float\";\n            break;\n        case DOUBLE :\n            typeStr = \"Double\";\n            break;\n        case BYTE_STRING :\n            typeStr = \"ByteString\";\n            break;\n        case BOOLEAN :\n            typeStr = \"Boolean\";\n            break;\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fd.getJavaType());\n    }\n    if (isList) {\n        return (\"List<\" + typeStr) + \">\";\n    } else {\n        return typeStr;\n    }\n}"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.EnumDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbConstant",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtilsgetTypeStrFromProto_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testGetTypeStrFromProto() {\n    }\n}",
+      "conditionCount": 3,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.deserialize.PbCodegenRowDeserializer.codegen(java.lang.String, java.lang.String, int)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
+      "directCaller": "org.apache.flink.formats.protobuf.deserialize.PbCodegenRowDeserializer.codegen(java.lang.String, java.lang.String, int)",
+      "path": [
+        "org.apache.flink.formats.protobuf.deserialize.PbCodegenRowDeserializer.codegen(java.lang.String, java.lang.String, int)",
+        "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+      ],
+      "methodSources": [
+        "@Override\npublic String codegen(String resultVar, String pbObjectCode, int indent) throws PbCodegenException {\n    // The type of pbObjectCode is a general pb object,\n    // it should be converted to RowData of flink internal type as resultVariable\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    PbCodegenVarId varUid = PbCodegenVarId.getInstance();\n    int uid = varUid.getAndIncrement();\n    String pbMessageVar = \"message\" + uid;\n    String flinkRowDataVar = \"rowData\" + uid;\n    int fieldSize = rowType.getFieldNames().size();\n    String pbMessageTypeStr = PbFormatUtils.getFullJavaName(descriptor);\n    appender.appendLine((((pbMessageTypeStr + \" \") + pbMessageVar) + \" = \") + pbObjectCode);\n    appender.appendLine((((\"GenericRowData \" + flinkRowDataVar) + \" = new GenericRowData(\") + fieldSize) + \")\");\n    int index = 0;\n    PbCodegenAppender splitAppender = new PbCodegenAppender(indent);\n    for (String fieldName : rowType.getFieldNames()) {\n        int subUid = varUid.getAndIncrement();\n        String flinkRowEleVar = \"elementDataVar\" + subUid;\n        LogicalType subType = rowType.getTypeAt(rowType.getFieldIndex(fieldName));\n        // PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n        FieldDescriptor elementFd = descriptor.findFieldByName(fieldName);\n        String strongCamelFieldName = PbFormatUtils.getStrongCamelCaseJsonName(fieldName);\n        PbCodegenDeserializer codegen = PbCodegenDeserializeFactory.getPbCodegenDes(elementFd, subType, formatContext);\n        splitAppender.appendLine((\"Object \" + flinkRowEleVar) + \" = null\");\n        boolean readDefaultValues = formatContext.getPbFormatConfig().isReadDefaultValues();\n        if (PbFormatUtils.isSimpleType(subType)) {\n            readDefaultValues = formatContext.getReadDefaultValuesForPrimitiveTypes();\n        }\n        if (!readDefaultValues) {\n            // works for both syntax=proto2/proto3 and readDefaultValues=false for non-primitive\n            // types\n            // readDefaultValues must be true in pb3 mode for primitive types\n            String isMessageElementNonEmptyCode = isMessageElementNonEmptyCode(pbMessageVar, strongCamelFieldName, PbFormatUtils.isRepeatedType(subType));\n            splitAppender.begin((\"if(\" + isMessageElementNonEmptyCode) + \"){\");\n        }\n        String pbGetMessageElementCode = pbGetMessageElementCode(pbMessageVar, strongCamelFieldName, elementFd, PbFormatUtils.isArrayType(subType));\n        String code = codegen.codegen(flinkRowEleVar, pbGetMessageElementCode, splitAppender.currentIndent());\n        splitAppender.appendSegment(code);\n        if (!readDefaultValues) {\n            splitAppender.end(\"}\");\n        }\n        splitAppender.appendLine(((((flinkRowDataVar + \".setField(\") + index) + \", \") + flinkRowEleVar) + \")\");\n        if (PbCodegenUtils.needToSplit(splitAppender.code().length())) {\n            String splitMethod = formatContext.splitDeserializerRowTypeMethod(flinkRowDataVar, pbMessageTypeStr, pbMessageVar, splitAppender.code());\n            appender.appendSegment(splitMethod);\n            splitAppender = new PbCodegenAppender();\n        }\n        index += 1;\n    }\n    if (!splitAppender.code().isEmpty()) {\n        appender.appendSegment(splitAppender.code());\n    }\n    appender.appendLine((resultVar + \" = \") + flinkRowDataVar);\n    return appender.code();\n}"
+      ],
+      "constructors": [
+        "public PbCodegenRowDeserializer(Descriptor descriptor, RowType rowType, PbFormatContext formatContext) {\n    this.rowType = rowType;\n    this.descriptor = descriptor;\n    this.formatContext = formatContext;\n}"
+      ],
+      "fieldDeclarations": [
+        "private final Descriptor descriptor;",
+        "private final RowType rowType;",
+        "private final PbFormatContext formatContext;"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbFormatConfig",
+        "org.apache.flink.formats.protobuf.PbFormatContext",
+        "org.apache.flink.formats.protobuf.util.PbCodegenAppender",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils",
+        "org.apache.flink.formats.protobuf.util.PbCodegenVarId",
+        "org.apache.flink.formats.protobuf.util.PbFormatUtils",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.apache.flink.table.types.logical.RowType"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.deserialize;\n\npublic class PbCodegenRowDeserializercodegen_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
+      "conditionCount": 6,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.serialize.PbCodegenRowSerializer.codegen(java.lang.String, java.lang.String, int)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
+      "directCaller": "org.apache.flink.formats.protobuf.serialize.PbCodegenRowSerializer.codegen(java.lang.String, java.lang.String, int)",
+      "path": [
+        "org.apache.flink.formats.protobuf.serialize.PbCodegenRowSerializer.codegen(java.lang.String, java.lang.String, int)",
+        "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+      ],
+      "methodSources": [
+        "@Override\npublic String codegen(String resultVar, String flinkObjectCode, int indent) throws PbCodegenException {\n    // The type of flinkObjectCode is a RowData of flink,\n    // it should be converted to object of protobuf as resultVariable.\n    PbCodegenVarId varUid = PbCodegenVarId.getInstance();\n    int uid = varUid.getAndIncrement();\n    PbCodegenAppender appender = new PbCodegenAppender(indent);\n    String flinkRowDataVar = \"rowData\" + uid;\n    String pbMessageTypeStr = PbFormatUtils.getFullJavaName(descriptor);\n    String messageBuilderVar = \"messageBuilder\" + uid;\n    appender.appendLine(((\"RowData \" + flinkRowDataVar) + \" = \") + flinkObjectCode);\n    appender.appendLine(((((pbMessageTypeStr + \".Builder \") + messageBuilderVar) + \" = \") + pbMessageTypeStr) + \".newBuilder()\");\n    int index = 0;\n    PbCodegenAppender splitAppender = new PbCodegenAppender(indent);\n    for (String fieldName : rowType.getFieldNames()) {\n        // PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n        Descriptors.FieldDescriptor elementFd = descriptor.findFieldByName(fieldName);\n        LogicalType subType = rowType.getTypeAt(rowType.getFieldIndex(fieldName));\n        int subUid = varUid.getAndIncrement();\n        String elementPbVar = \"elementPbVar\" + subUid;\n        String elementPbTypeStr;\n        if (elementFd.isMapField()) {\n            elementPbTypeStr = PbCodegenUtils.getTypeStrFromProto(elementFd, false);\n        } else {\n            elementPbTypeStr = PbCodegenUtils.getTypeStrFromProto(elementFd, PbFormatUtils.isArrayType(subType));\n        }\n        String strongCamelFieldName = PbFormatUtils.getStrongCamelCaseJsonName(fieldName);\n        // Only set non-null element of flink row to proto object. The real value in proto\n        // result depends on protobuf implementation.\n        splitAppender.begin((((\"if(!\" + flinkRowDataVar) + \".isNullAt(\") + index) + \")){\");\n        splitAppender.appendLine((elementPbTypeStr + \" \") + elementPbVar);\n        String flinkRowElementCode = PbCodegenUtils.flinkContainerElementCode(flinkRowDataVar, index + \"\", subType);\n        PbCodegenSerializer codegen = PbCodegenSerializeFactory.getPbCodegenSer(elementFd, subType, formatContext);\n        String code = codegen.codegen(elementPbVar, flinkRowElementCode, splitAppender.currentIndent());\n        splitAppender.appendSegment(code);\n        if (subType.getTypeRoot() == LogicalTypeRoot.ARRAY) {\n            splitAppender.appendLine(((((messageBuilderVar + \".addAll\") + strongCamelFieldName) + \"(\") + elementPbVar) + \")\");\n        } else if (subType.getTypeRoot() == LogicalTypeRoot.MAP) {\n            splitAppender.appendLine(((((messageBuilderVar + \".putAll\") + strongCamelFieldName) + \"(\") + elementPbVar) + \")\");\n        } else {\n            splitAppender.appendLine(((((messageBuilderVar + \".set\") + strongCamelFieldName) + \"(\") + elementPbVar) + \")\");\n        }\n        splitAppender.end(\"}\");\n        if (PbCodegenUtils.needToSplit(splitAppender.code().length())) {\n            String splitMethod = formatContext.splitSerializerRowTypeMethod(flinkRowDataVar, pbMessageTypeStr + \".Builder\", messageBuilderVar, splitAppender.code());\n            appender.appendSegment(splitMethod);\n            splitAppender = new PbCodegenAppender();\n        }\n        index += 1;\n    }\n    if (!splitAppender.code().isEmpty()) {\n        appender.appendSegment(splitAppender.code());\n    }\n    appender.appendLine(((resultVar + \" = \") + messageBuilderVar) + \".build()\");\n    return appender.code();\n}"
+      ],
+      "constructors": [
+        "public PbCodegenRowSerializer(Descriptors.Descriptor descriptor, RowType rowType, PbFormatContext formatContext) {\n    this.rowType = rowType;\n    this.descriptor = descriptor;\n    this.formatContext = formatContext;\n}"
+      ],
+      "fieldDeclarations": [
+        "private final Descriptors.Descriptor descriptor;",
+        "private final RowType rowType;",
+        "private final PbFormatContext formatContext;"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbFormatContext",
+        "org.apache.flink.formats.protobuf.util.PbCodegenAppender",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils",
+        "org.apache.flink.formats.protobuf.util.PbCodegenVarId",
+        "org.apache.flink.formats.protobuf.util.PbFormatUtils",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.apache.flink.table.types.logical.LogicalTypeRoot",
+        "org.apache.flink.table.types.logical.RowType"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.serialize;\n\npublic class PbCodegenRowSerializercodegen_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testCodegen() {\n    }\n}",
+      "conditionCount": 6,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.flinkContainerElementCode(java.lang.String, java.lang.String, org.apache.flink.table.types.logical.LogicalType)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.flinkContainerElementCode(java.lang.String, java.lang.String, org.apache.flink.table.types.logical.LogicalType)",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+      ],
+      "methodSources": [
+        "/**\n *\n * @param flinkContainerCode\n * \t\tcode phrase which represent flink container type like row/array in\n * \t\tcodegen sections\n * @param index\n * \t\tthe index number in flink container type\n * @param eleType\n * \t\tthe element type\n */\npublic static String flinkContainerElementCode(String flinkContainerCode, String index, LogicalType eleType) {\n    switch (eleType.getTypeRoot()) {\n        case INTEGER :\n            return ((flinkContainerCode + \".getInt(\") + index) + \")\";\n        case BIGINT :\n            return ((flinkContainerCode + \".getLong(\") + index) + \")\";\n        case FLOAT :\n            return ((flinkContainerCode + \".getFloat(\") + index) + \")\";\n        case DOUBLE :\n            return ((flinkContainerCode + \".getDouble(\") + index) + \")\";\n        case BOOLEAN :\n            return ((flinkContainerCode + \".getBoolean(\") + index) + \")\";\n        case VARCHAR :\n        case CHAR :\n            return ((flinkContainerCode + \".getString(\") + index) + \")\";\n        case VARBINARY :\n        case BINARY :\n            return ((flinkContainerCode + \".getBinary(\") + index) + \")\";\n        case ROW :\n            int size = eleType.getChildren().size();\n            return ((((flinkContainerCode + \".getRow(\") + index) + \", \") + size) + \")\";\n        case MAP :\n            return ((flinkContainerCode + \".getMap(\") + index) + \")\";\n        case ARRAY :\n            return ((flinkContainerCode + \".getArray(\") + index) + \")\";\n        default :\n            throw new IllegalArgumentException(\"Unsupported data type in schema: \" + eleType);\n    }\n}",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger",
+        "org.slf4j.LoggerFactory"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testFlinkContainerElementCode() {\n    }\n}",
+      "conditionCount": 1,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromLogicType(org.apache.flink.table.types.logical.LogicalType)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromLogicType(org.apache.flink.table.types.logical.LogicalType)",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+      ],
+      "methodSources": [
+        "/**\n * Get java type str from {@link LogicalType} which directly fetched from flink type.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n */\npublic static String getTypeStrFromLogicType(LogicalType type) {\n    switch (type.getTypeRoot()) {\n        case INTEGER :\n            return \"int\";\n        case BIGINT :\n            return \"long\";\n        case FLOAT :\n            return \"float\";\n        case DOUBLE :\n            return \"double\";\n        case BOOLEAN :\n            return \"boolean\";\n        case VARCHAR :\n        case CHAR :\n            return \"StringData\";\n        case VARBINARY :\n        case BINARY :\n            return \"byte[]\";\n        case ROW :\n            return \"RowData\";\n        case MAP :\n            return \"MapData\";\n        case ARRAY :\n            return \"ArrayData\";\n        default :\n            throw new IllegalArgumentException(\"Unsupported data type in schema: \" + type);\n    }\n}",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger",
+        "org.slf4j.LoggerFactory"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testGetTypeStrFromLogicType() {\n    }\n}",
+      "conditionCount": 1,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+      ],
+      "methodSources": [
+        "/**\n * Get protobuf default value from {@link FieldDescriptor}.\n *\n * @return The java code phrase which represents default value calculation.\n */\npublic static String pbDefaultValueCode(FieldDescriptor fieldDescriptor, PbFormatContext pbFormatContext) throws PbCodegenException {\n    String nullLiteral = pbFormatContext.getPbFormatConfig().getWriteNullStringLiterals();\n    switch (fieldDescriptor.getJavaType()) {\n        case MESSAGE :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getMessageType()) + \".getDefaultInstance()\";\n        case INT :\n            return \"0\";\n        case LONG :\n            return \"0L\";\n        case STRING :\n            return (\"\\\"\" + nullLiteral) + \"\\\"\";\n        case ENUM :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getEnumType()) + \".values()[0]\";\n        case FLOAT :\n            return \"0.0f\";\n        case DOUBLE :\n            return \"0.0d\";\n        case BYTE_STRING :\n            return \"ByteString.EMPTY\";\n        case BOOLEAN :\n            return \"false\";\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fieldDescriptor.getJavaType());\n    }\n}",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.EnumDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbFormatConfig",
+        "org.apache.flink.formats.protobuf.PbFormatContext",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger",
+        "org.slf4j.LoggerFactory"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testPbDefaultValueCode() {\n    }\n}",
+      "conditionCount": 1,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.flinkContainerElementCode(java.lang.String, java.lang.String, org.apache.flink.table.types.logical.LogicalType)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.flinkContainerElementCode(java.lang.String, java.lang.String, org.apache.flink.table.types.logical.LogicalType)",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()"
+      ],
+      "methodSources": [
+        "/**\n *\n * @param flinkContainerCode\n * \t\tcode phrase which represent flink container type like row/array in\n * \t\tcodegen sections\n * @param index\n * \t\tthe index number in flink container type\n * @param eleType\n * \t\tthe element type\n */\npublic static String flinkContainerElementCode(String flinkContainerCode, String index, LogicalType eleType) {\n    switch (eleType.getTypeRoot()) {\n        case INTEGER :\n            return ((flinkContainerCode + \".getInt(\") + index) + \")\";\n        case BIGINT :\n            return ((flinkContainerCode + \".getLong(\") + index) + \")\";\n        case FLOAT :\n            return ((flinkContainerCode + \".getFloat(\") + index) + \")\";\n        case DOUBLE :\n            return ((flinkContainerCode + \".getDouble(\") + index) + \")\";\n        case BOOLEAN :\n            return ((flinkContainerCode + \".getBoolean(\") + index) + \")\";\n        case VARCHAR :\n        case CHAR :\n            return ((flinkContainerCode + \".getString(\") + index) + \")\";\n        case VARBINARY :\n        case BINARY :\n            return ((flinkContainerCode + \".getBinary(\") + index) + \")\";\n        case ROW :\n            int size = eleType.getChildren().size();\n            return ((((flinkContainerCode + \".getRow(\") + index) + \", \") + size) + \")\";\n        case MAP :\n            return ((flinkContainerCode + \".getMap(\") + index) + \")\";\n        case ARRAY :\n            return ((flinkContainerCode + \".getArray(\") + index) + \")\";\n        default :\n            throw new IllegalArgumentException(\"Unsupported data type in schema: \" + eleType);\n    }\n}",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger",
+        "org.slf4j.LoggerFactory"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypevaluesFikaTest {\n\n    @Test\n    public void testFlinkContainerElementCode() {\n    }\n}",
+      "conditionCount": 1,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromLogicType(org.apache.flink.table.types.logical.LogicalType)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromLogicType(org.apache.flink.table.types.logical.LogicalType)",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()"
+      ],
+      "methodSources": [
+        "/**\n * Get java type str from {@link LogicalType} which directly fetched from flink type.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n */\npublic static String getTypeStrFromLogicType(LogicalType type) {\n    switch (type.getTypeRoot()) {\n        case INTEGER :\n            return \"int\";\n        case BIGINT :\n            return \"long\";\n        case FLOAT :\n            return \"float\";\n        case DOUBLE :\n            return \"double\";\n        case BOOLEAN :\n            return \"boolean\";\n        case VARCHAR :\n        case CHAR :\n            return \"StringData\";\n        case VARBINARY :\n        case BINARY :\n            return \"byte[]\";\n        case ROW :\n            return \"RowData\";\n        case MAP :\n            return \"MapData\";\n        case ARRAY :\n            return \"ArrayData\";\n        default :\n            throw new IllegalArgumentException(\"Unsupported data type in schema: \" + type);\n    }\n}",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger",
+        "org.slf4j.LoggerFactory"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypevaluesFikaTest {\n\n    @Test\n    public void testGetTypeStrFromLogicType() {\n    }\n}",
+      "conditionCount": 1,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.pbDefaultValueCode(com.google.protobuf.Descriptors.FieldDescriptor, org.apache.flink.formats.protobuf.PbFormatContext)",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()"
+      ],
+      "methodSources": [
+        "/**\n * Get protobuf default value from {@link FieldDescriptor}.\n *\n * @return The java code phrase which represents default value calculation.\n */\npublic static String pbDefaultValueCode(FieldDescriptor fieldDescriptor, PbFormatContext pbFormatContext) throws PbCodegenException {\n    String nullLiteral = pbFormatContext.getPbFormatConfig().getWriteNullStringLiterals();\n    switch (fieldDescriptor.getJavaType()) {\n        case MESSAGE :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getMessageType()) + \".getDefaultInstance()\";\n        case INT :\n            return \"0\";\n        case LONG :\n            return \"0L\";\n        case STRING :\n            return (\"\\\"\" + nullLiteral) + \"\\\"\";\n        case ENUM :\n            return PbFormatUtils.getFullJavaName(fieldDescriptor.getEnumType()) + \".values()[0]\";\n        case FLOAT :\n            return \"0.0f\";\n        case DOUBLE :\n            return \"0.0d\";\n        case BYTE_STRING :\n            return \"ByteString.EMPTY\";\n        case BOOLEAN :\n            return \"false\";\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fieldDescriptor.getJavaType());\n    }\n}",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.EnumDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbFormatConfig",
+        "org.apache.flink.formats.protobuf.PbFormatContext",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger",
+        "org.slf4j.LoggerFactory"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypevaluesFikaTest {\n\n    @Test\n    public void testPbDefaultValueCode() {\n    }\n}",
+      "conditionCount": 1,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.ordinal()"
+      ],
+      "methodSources": [
+        "/**\n * Get java type str from {@link FieldDescriptor} which directly fetched from protobuf object.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n * @throws PbCodegenException\n */\npublic static String getTypeStrFromProto(FieldDescriptor fd, boolean isList) throws PbCodegenException {\n    String typeStr;\n    switch (fd.getJavaType()) {\n        case MESSAGE :\n            if (fd.isMapField()) {\n                // map\n                FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n                FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n                // key and value cannot be repeated\n                String keyTypeStr = getTypeStrFromProto(keyFd, false);\n                String valueTypeStr = getTypeStrFromProto(valueFd, false);\n                typeStr = (((\"Map<\" + keyTypeStr) + \",\") + valueTypeStr) + \">\";\n            } else {\n                // simple message\n                typeStr = PbFormatUtils.getFullJavaName(fd.getMessageType());\n            }\n            break;\n        case INT :\n            typeStr = \"Integer\";\n            break;\n        case LONG :\n            typeStr = \"Long\";\n            break;\n        case STRING :\n            typeStr = \"String\";\n            break;\n        case ENUM :\n            typeStr = PbFormatUtils.getFullJavaName(fd.getEnumType());\n            break;\n        case FLOAT :\n            typeStr = \"Float\";\n            break;\n        case DOUBLE :\n            typeStr = \"Double\";\n            break;\n        case BYTE_STRING :\n            typeStr = \"ByteString\";\n            break;\n        case BOOLEAN :\n            typeStr = \"Boolean\";\n            break;\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fd.getJavaType());\n    }\n    if (isList) {\n        return (\"List<\" + typeStr) + \">\";\n    } else {\n        return typeStr;\n    }\n}",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.EnumDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbConstant",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger",
+        "org.slf4j.LoggerFactory"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypeordinalFikaTest {\n\n    @Test\n    public void testGetTypeStrFromProto() {\n    }\n}",
+      "conditionCount": 3,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.getTypeStrFromProto(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils.<clinit>()",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.values()"
+      ],
+      "methodSources": [
+        "/**\n * Get java type str from {@link FieldDescriptor} which directly fetched from protobuf object.\n *\n * @return The returned code phrase will be used as java type str in codegen sections.\n * @throws PbCodegenException\n */\npublic static String getTypeStrFromProto(FieldDescriptor fd, boolean isList) throws PbCodegenException {\n    String typeStr;\n    switch (fd.getJavaType()) {\n        case MESSAGE :\n            if (fd.isMapField()) {\n                // map\n                FieldDescriptor keyFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME);\n                FieldDescriptor valueFd = fd.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME);\n                // key and value cannot be repeated\n                String keyTypeStr = getTypeStrFromProto(keyFd, false);\n                String valueTypeStr = getTypeStrFromProto(valueFd, false);\n                typeStr = (((\"Map<\" + keyTypeStr) + \",\") + valueTypeStr) + \">\";\n            } else {\n                // simple message\n                typeStr = PbFormatUtils.getFullJavaName(fd.getMessageType());\n            }\n            break;\n        case INT :\n            typeStr = \"Integer\";\n            break;\n        case LONG :\n            typeStr = \"Long\";\n            break;\n        case STRING :\n            typeStr = \"String\";\n            break;\n        case ENUM :\n            typeStr = PbFormatUtils.getFullJavaName(fd.getEnumType());\n            break;\n        case FLOAT :\n            typeStr = \"Float\";\n            break;\n        case DOUBLE :\n            typeStr = \"Double\";\n            break;\n        case BYTE_STRING :\n            typeStr = \"ByteString\";\n            break;\n        case BOOLEAN :\n            typeStr = \"Boolean\";\n            break;\n        default :\n            throw new PbCodegenException(\"do not support field type: \" + fd.getJavaType());\n    }\n    if (isList) {\n        return (\"List<\" + typeStr) + \">\";\n    } else {\n        return typeStr;\n    }\n}",
+        "org.apache.flink.formats.protobuf.util.PbCodegenUtils\n\n// Static field initializations\nprivate static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);\n"
+      ],
+      "constructors": [
+        "PbCodegenUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PbCodegenUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.EnumDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.api.common.InvalidProgramException",
+        "org.apache.flink.formats.protobuf.PbCodegenException",
+        "org.apache.flink.formats.protobuf.PbConstant",
+        "org.codehaus.janino.SimpleCompiler",
+        "org.slf4j.Logger",
+        "org.slf4j.LoggerFactory"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbCodegenUtils_1method_JavaTypevaluesFikaTest {\n\n    @Test\n    public void testGetTypeStrFromProto() {\n    }\n}",
+      "conditionCount": 3,
+      "callCount": 1,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)",
+        "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+        "com.google.protobuf.Descriptors.Descriptor.findFieldByName(java.lang.String)"
+      ],
+      "methodSources": [
+        "public static RowType generateRowType(Descriptors.Descriptor root, boolean enumAsInt) {\n    int size = root.getFields().size();\n    LogicalType[] types = new LogicalType[size];\n    String[] rowFieldNames = new String[size];\n    for (int i = 0; i < size; i++) {\n        FieldDescriptor field = root.getFields().get(i);\n        rowFieldNames[i] = field.getName();\n        // PATH: Test should invoke the next PbToRowTypeUtil.generateFieldTypeInformation(...) [step in execution path]\n        types[i] = generateFieldTypeInformation(field, enumAsInt);\n    }\n    return RowType.of(types, rowFieldNames);\n}",
+        "private static LogicalType generateFieldTypeInformation(FieldDescriptor field, boolean enumAsInt) {\n    JavaType fieldType = field.getJavaType();\n    LogicalType type;\n    if (fieldType.equals(JavaType.MESSAGE)) {\n        if (field.isMapField()) {\n            MapType mapType = new MapType(// PATH: Test should invoke the next Descriptors$Descriptor.findFieldByName(...) [step in execution path]\n            PbToRowTypeUtil.generateFieldTypeInformation(field.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME), enumAsInt), PbToRowTypeUtil.generateFieldTypeInformation(field.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME), enumAsInt));\n            return mapType;\n        } else if (field.isRepeated()) {\n            return new ArrayType(generateRowType(field.getMessageType()));\n        } else {\n            return generateRowType(field.getMessageType());\n        }\n    } else {\n        if (fieldType.equals(JavaType.STRING)) {\n            type = new VarCharType(Integer.MAX_VALUE);\n        } else if (fieldType.equals(JavaType.LONG)) {\n            type = new BigIntType();\n        } else if (fieldType.equals(JavaType.BOOLEAN)) {\n            type = new BooleanType();\n        } else if (fieldType.equals(JavaType.INT)) {\n            type = new IntType();\n        } else if (fieldType.equals(JavaType.DOUBLE)) {\n            type = new DoubleType();\n        } else if (fieldType.equals(JavaType.FLOAT)) {\n            type = new FloatType();\n        } else if (fieldType.equals(JavaType.ENUM)) {\n            if (enumAsInt) {\n                type = new IntType();\n            } else {\n                type = new VarCharType(Integer.MAX_VALUE);\n            }\n        } else if (fieldType.equals(JavaType.BYTE_STRING)) {\n            type = new VarBinaryType(Integer.MAX_VALUE);\n        } else {\n            throw new ValidationException(\"unsupported field type: \" + fieldType);\n        }\n        if (field.isRepeated()) {\n            return new ArrayType(type);\n        }\n        return type;\n    }\n}"
+      ],
+      "constructors": [
+        "PbToRowTypeUtil() {\n}"
+      ],
+      "fieldDeclarations": [],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.formats.protobuf.PbConstant",
+        "org.apache.flink.table.api.ValidationException",
+        "org.apache.flink.table.types.logical.ArrayType",
+        "org.apache.flink.table.types.logical.BigIntType",
+        "org.apache.flink.table.types.logical.BooleanType",
+        "org.apache.flink.table.types.logical.DoubleType",
+        "org.apache.flink.table.types.logical.FloatType",
+        "org.apache.flink.table.types.logical.IntType",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.apache.flink.table.types.logical.MapType",
+        "org.apache.flink.table.types.logical.RowType",
+        "org.apache.flink.table.types.logical.VarBinaryType",
+        "org.apache.flink.table.types.logical.VarCharType"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbToRowTypeUtilgenerateFieldTypeInformation_DescriptorfindFieldByNameFikaTest {\n\n    @Test\n    public void testGenerateRowType() {\n    }\n}",
+      "conditionCount": 14,
+      "callCount": 2,
+      "covered": false
+    },
+    {
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)",
+      "thirdPartyMethod": "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.equals(java.lang.Object)",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateRowType(com.google.protobuf.Descriptors.Descriptor, boolean)",
+        "org.apache.flink.formats.protobuf.util.PbToRowTypeUtil.generateFieldTypeInformation(com.google.protobuf.Descriptors.FieldDescriptor, boolean)",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType.equals(java.lang.Object)"
+      ],
+      "methodSources": [
+        "public static RowType generateRowType(Descriptors.Descriptor root, boolean enumAsInt) {\n    int size = root.getFields().size();\n    LogicalType[] types = new LogicalType[size];\n    String[] rowFieldNames = new String[size];\n    for (int i = 0; i < size; i++) {\n        FieldDescriptor field = root.getFields().get(i);\n        rowFieldNames[i] = field.getName();\n        // PATH: Test should invoke the next PbToRowTypeUtil.generateFieldTypeInformation(...) [step in execution path]\n        types[i] = generateFieldTypeInformation(field, enumAsInt);\n    }\n    return RowType.of(types, rowFieldNames);\n}",
+        "private static LogicalType generateFieldTypeInformation(FieldDescriptor field, boolean enumAsInt) {\n    JavaType fieldType = field.getJavaType();\n    LogicalType type;\n    if (fieldType.equals(JavaType.MESSAGE)) {\n        if (field.isMapField()) {\n            MapType mapType = new MapType(generateFieldTypeInformation(field.getMessageType().findFieldByName(PbConstant.PB_MAP_KEY_NAME), enumAsInt), generateFieldTypeInformation(field.getMessageType().findFieldByName(PbConstant.PB_MAP_VALUE_NAME), enumAsInt));\n            return mapType;\n        } else if (field.isRepeated()) {\n            return new ArrayType(generateRowType(field.getMessageType()));\n        } else {\n            return generateRowType(field.getMessageType());\n        }\n    } else {\n        if (fieldType.equals(JavaType.STRING)) {\n            type = new VarCharType(Integer.MAX_VALUE);\n        } else if (fieldType.equals(JavaType.LONG)) {\n            type = new BigIntType();\n        } else if (fieldType.equals(JavaType.BOOLEAN)) {\n            type = new BooleanType();\n        } else if (fieldType.equals(JavaType.INT)) {\n            type = new IntType();\n        } else if (fieldType.equals(JavaType.DOUBLE)) {\n            type = new DoubleType();\n        } else if (fieldType.equals(JavaType.FLOAT)) {\n            type = new FloatType();\n        } else if (fieldType.equals(JavaType.ENUM)) {\n            if (enumAsInt) {\n                type = new IntType();\n            } else {\n                type = new VarCharType(Integer.MAX_VALUE);\n            }\n        } else if (fieldType.equals(JavaType.BYTE_STRING)) {\n            type = new VarBinaryType(Integer.MAX_VALUE);\n        } else {\n            throw new ValidationException(\"unsupported field type: \" + fieldType);\n        }\n        if (field.isRepeated()) {\n            return new ArrayType(type);\n        }\n        return type;\n    }\n}"
+      ],
+      "constructors": [
+        "PbToRowTypeUtil() {\n}"
+      ],
+      "fieldDeclarations": [],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.Descriptors",
+        "com.google.protobuf.Descriptors.Descriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor",
+        "com.google.protobuf.Descriptors.FieldDescriptor.JavaType",
+        "org.apache.flink.formats.protobuf.PbConstant",
+        "org.apache.flink.table.api.ValidationException",
+        "org.apache.flink.table.types.logical.ArrayType",
+        "org.apache.flink.table.types.logical.BigIntType",
+        "org.apache.flink.table.types.logical.BooleanType",
+        "org.apache.flink.table.types.logical.DoubleType",
+        "org.apache.flink.table.types.logical.FloatType",
+        "org.apache.flink.table.types.logical.IntType",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.apache.flink.table.types.logical.MapType",
+        "org.apache.flink.table.types.logical.RowType",
+        "org.apache.flink.table.types.logical.VarBinaryType",
+        "org.apache.flink.table.types.logical.VarCharType"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbToRowTypeUtilgenerateFieldTypeInformation_JavaTypeequalsFikaTest {\n\n    @Test\n    public void testGenerateRowType() {\n    }\n}",
+      "conditionCount": 14,
+      "callCount": 1,
+      "covered": true
+    }
+  ]
 }
