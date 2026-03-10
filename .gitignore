@@ -70,3 +70,4 @@ tools/japicmp-output
 !/flink-formats/flink-parquet/test_generation_data/*
 !flink-runtime/test_generation_data/*
 !flink-formats/flink-protobuf/test_generation_data/*
+!flink-metrics/flink-metrics-datadog/test_generation_data/*
