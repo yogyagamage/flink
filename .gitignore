@@ -68,3 +68,4 @@ tools/japicmp-output
 /docs/go.sum
 /docs/.hugo_build.lock
 !/flink-formats/flink-parquet/test_generation_data/*
+!flink-runtime/test_generation_data/*

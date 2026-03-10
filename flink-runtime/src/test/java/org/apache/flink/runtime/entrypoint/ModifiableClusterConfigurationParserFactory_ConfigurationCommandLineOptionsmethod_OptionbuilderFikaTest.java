@@ -1,0 +1,17 @@
+package org.apache.flink.runtime.entrypoint;
+
+import org.apache.commons.cli.Option;
+import org.apache.commons.cli.Options;
+import org.apache.flink.runtime.entrypoint.parser.ConfigurationCommandLineOptions;
+import org.junit.jupiter.api.Test;
+
+public class ModifiableClusterConfigurationParserFactory_ConfigurationCommandLineOptionsmethod_OptionbuilderFikaTest {
+
+    @Test
+    public void testOptionsMethodTriggersOptionBuilder() {
+        ModifiableClusterConfigurationParserFactory factory = new ModifiableClusterConfigurationParserFactory();
+        Options options = factory.options();
+        // The call to options() triggers static initialization of
+        // ConfigurationCommandLineOptions which calls Option.builder()
+    }
+}
