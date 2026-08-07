@@ -1,0 +1,113 @@
+[{
+      "entryPoint": "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
+      "thirdPartyMethod": "org.apache.parquet.avro.AvroParquetReader.Builder.withDataModel(org.apache.avro.generic.GenericData)",
+      "directCaller": "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
+      "path": [
+        "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
+        "org.apache.parquet.avro.AvroParquetReader.Builder.withDataModel(org.apache.avro.generic.GenericData)"
+      ],
+      "methodSources": [
+        "/**\n * Creates a new reader to read avro {@link GenericRecord} from Parquet input stream.\n *\n * <p>Several wrapper classes haven be created to Flink abstraction become compatible with the\n * parquet abstraction. Please refer to the inner classes {@link AvroParquetRecordReader},\n * {@link ParquetInputFile}, {@code FSDataInputStreamAdapter} for details.\n */\n@Override\npublic Reader<E> createReader(Configuration config, FSDataInputStream stream, long fileLen, long splitEnd) throws IOException {\n    // current version does not support splitting.\n    checkNotSplit(fileLen, splitEnd);\n    return new AvroParquetRecordReader<E>(AvroParquetReader.<E>builder(new ParquetInputFile(stream, fileLen)).withDataModel(getDataModel()).withConf(HadoopUtils.getHadoopConfiguration(config)).build());\n}"
+      ],
+      "constructors": [
+        "AvroParquetRecordFormat(TypeInformation<E> type, SerializableSupplier<GenericData> dataModelSupplier) {\n    this.type = type;\n    this.dataModelSupplier = dataModelSupplier;\n}",
+        "private AvroParquetRecordReader(ParquetReader<E> parquetReader) {\n    this(parquetReader, 0, false);\n}",
+        "private AvroParquetRecordReader(ParquetReader<E> parquetReader, long skipCount, boolean checkpointed) {\n    this.parquetReader = parquetReader;\n    this.skipCount = skipCount;\n    this.checkpointed = checkpointed;\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final long serialVersionUID = 1L;",
+        "static final Logger LOG = LoggerFactory.getLogger(AvroParquetRecordFormat.class);",
+        "private final TypeInformation<E> type;",
+        "private final SerializableSupplier<GenericData> dataModelSupplier;"
+      ],
+      "setters": [],
+      "imports": [
+        "org.apache.avro.generic.GenericData",
+        "org.apache.flink.api.common.typeinfo.TypeInformation",
+        "org.apache.flink.configuration.Configuration",
+        "org.apache.flink.core.fs.FSDataInputStream",
+        "org.apache.flink.formats.parquet.ParquetInputFile",
+        "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.AvroParquetRecordReader",
+        "org.apache.flink.runtime.util.HadoopUtils",
+        "org.apache.flink.util.function.SerializableSupplier",
+        "org.apache.hadoop.fs.Path",
+        "org.apache.parquet.avro.AvroParquetReader",
+        "org.apache.parquet.avro.AvroParquetReader.Builder",
+        "org.apache.parquet.hadoop.ParquetReader",
+        "org.slf4j.Logger"
+      ],
+      "testTemplate": "package org.apache.flink.formats.parquet.avro;\n\npublic class AvroParquetRecordFormatcreateReader_BuilderwithDataModelFikaTest {\n\n    @Test\n    public void testCreateReader() {\n    }\n}",
+      "conditionCount": 0,
+      "callCount": 1,
+      "lineNumber": 85,
+      "covered": true
+    },{
+      "entryPoint": "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<init>(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType, boolean, org.apache.hadoop.conf.Configuration)",
+      "thirdPartyMethod": "org.apache.hadoop.conf.Configuration.getBoolean(java.lang.String, boolean)",
+      "directCaller": "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<init>(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType, boolean, org.apache.hadoop.conf.Configuration)",
+      "path": [
+        "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<init>(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType, boolean, org.apache.hadoop.conf.Configuration)",
+        "org.apache.hadoop.conf.Configuration.getBoolean(java.lang.String, boolean)"
+      ],
+      "methodSources": [
+        "public (RecordConsumer recordConsumer, RowType rowType, GroupType schema, boolean utcTimestamp, Configuration conf) {\n    this.recordConsumer = recordConsumer;\n    this.utcTimestamp = utcTimestamp;\n    this.conf = conf;\n    if (this.conf != null) {\n        // PATH: Test should invoke the next Configuration.getBoolean(...) [step in execution path]\n        useInt64 = this.conf.getBoolean((IDENTIFIER + \".\") + WRITE_INT64_TIMESTAMP.key(), WRITE_INT64_TIMESTAMP.defaultValue());\n        if (useInt64) {\n            timeUnit = LogicalTypeAnnotation.TimeUnit.valueOf(this.conf.get((IDENTIFIER + \".\") + TIMESTAMP_TIME_UNIT.key(), TIMESTAMP_TIME_UNIT.defaultValue()).toUpperCase());\n        }\n    }\n    rowWriter = new RowWriter(rowType, schema);\n}"
+      ],
+      "constructors": [
+        "public ParquetRowDataWriter(RecordConsumer recordConsumer, RowType rowType, GroupType schema, boolean utcTimestamp, Configuration conf) {\n    this.recordConsumer = recordConsumer;\n    this.utcTimestamp = utcTimestamp;\n    this.conf = conf;\n    if (this.conf != null) {\n        useInt64 = this.conf.getBoolean((IDENTIFIER + \".\") + WRITE_INT64_TIMESTAMP.key(), WRITE_INT64_TIMESTAMP.defaultValue());\n        if (useInt64) {\n            timeUnit = LogicalTypeAnnotation.TimeUnit.valueOf(this.conf.get((IDENTIFIER + \".\") + TIMESTAMP_TIME_UNIT.key(), TIMESTAMP_TIME_UNIT.defaultValue()).toUpperCase());\n        }\n    }\n    rowWriter = new RowWriter(rowType, schema);\n}",
+        "BooleanWriter() {\n}",
+        "ByteWriter() {\n}",
+        "ShortWriter() {\n}",
+        "LongWriter() {\n}",
+        "FloatWriter() {\n}",
+        "DoubleWriter() {\n}",
+        "StringWriter() {\n}",
+        "BinaryWriter() {\n}",
+        "IntWriter() {\n}",
+        "private TimestampWriter(int precision) {\n    this.precision = precision;\n}",
+        "private MapWriter(LogicalType keyType, LogicalType valueType, GroupType groupType) {\n    // Get the internal map structure (MAP_KEY_VALUE)\n    GroupType repeatedType = groupType.getType(0).asGroupType();\n    this.repeatedGroupName = repeatedType.getName();\n    // Get key element information\n    Type type = repeatedType.getType(0);\n    this.keyName = type.getName();\n    this.keyWriter = createWriter(keyType, type);\n    // Get value element information\n    Type valuetype = repeatedType.getType(1);\n    this.valueName = valuetype.getName();\n    this.valueWriter = createWriter(valueType, valuetype);\n}",
+        "private ArrayWriter(LogicalType t, GroupType groupType) {\n    // Get the internal array structure\n    GroupType repeatedType = groupType.getType(0).asGroupType();\n    this.repeatedGroupName = repeatedType.getName();\n    Type elementType = repeatedType.getType(0);\n    this.elementName = elementType.getName();\n    this.elementWriter = createWriter(t, elementType);\n}",
+        "public RowWriter(RowType rowType, GroupType groupType) {\n    this.fieldNames = rowType.getFieldNames().toArray(new String[0]);\n    this.logicalTypes = rowType.getChildren();\n    this.fieldWriters = new FieldWriter[rowType.getFieldCount()];\n    for (int i = 0; i < fieldWriters.length; i++) {\n        fieldWriters[i] = createWriter(logicalTypes.get(i), groupType.getType(i));\n    }\n}",
+        "private LongUnscaledBytesWriter() {\n    this.numBytes = computeMinBytesForDecimalPrecision(precision);\n    this.initShift = 8 * (numBytes - 1);\n    this.decimalBuffer = new byte[numBytes];\n}",
+        "private UnscaledBytesWriter() {\n    this.numBytes = computeMinBytesForDecimalPrecision(precision);\n    this.decimalBuffer = new byte[numBytes];\n}"
+      ],
+      "fieldDeclarations": [
+        "private final RowWriter rowWriter;",
+        "private final RecordConsumer recordConsumer;",
+        "private final boolean utcTimestamp;",
+        "private final Configuration conf;",
+        "private boolean useInt64 = false;",
+        "private LogicalTypeAnnotation.TimeUnit timeUnit;"
+      ],
+      "setters": [
+        "/**\n * It writes a record to Parquet.\n *\n * @param record\n * \t\tContains the record that is going to be written.\n */\npublic void write(final RowData record) {\n    recordConsumer.startMessage();\n    rowWriter.write(record);\n    recordConsumer.endMessage();\n}"
+      ],
+      "imports": [
+        "org.apache.flink.formats.parquet.ConfigOption",
+        "org.apache.flink.formats.parquet.ParquetFileFormatFactory",
+        "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.ArrayWriter",
+        "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.FieldWriter",
+        "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.MapWriter",
+        "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.RowWriter",
+        "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.TimestampWriter",
+        "org.apache.flink.formats.parquet.utils.ParquetSchemaConverter",
+        "org.apache.flink.table.data.ArrayData",
+        "org.apache.flink.table.data.RowData",
+        "org.apache.flink.table.types.logical.DecimalType",
+        "org.apache.flink.table.types.logical.LogicalType",
+        "org.apache.flink.table.types.logical.RowType",
+        "org.apache.flink.util.Preconditions",
+        "org.apache.hadoop.conf.Configuration",
+        "org.apache.parquet.io.api.Binary",
+        "org.apache.parquet.io.api.RecordConsumer",
+        "org.apache.parquet.schema.GroupType",
+        "org.apache.parquet.schema.LogicalTypeAnnotation",
+        "org.apache.parquet.schema.LogicalTypeAnnotation.TimeUnit",
+        "org.apache.parquet.schema.Type"
+      ],
+      "testTemplate": "package org.apache.flink.formats.parquet.row;\n\npublic class ParquetRowDataWritermethod_ConfigurationgetBooleanFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
+      "conditionCount": 2,
+      "callCount": 1,
+      "lineNumber": 84,
+      "covered": true
+    }
+]

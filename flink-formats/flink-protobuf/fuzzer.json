@@ -1,0 +1,26 @@
+[{
+      "entryPoint": "org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)",
+      "thirdPartyMethod": "com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)",
+      "directCaller": "org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)",
+      "path": [
+        "org.apache.flink.formats.protobuf.util.PbFormatUtils.getStrongCamelCaseJsonName(java.lang.String)",
+        "com.google.protobuf.ProtobufInternalUtils.underScoreToCamelCase(java.lang.String, boolean)"
+      ],
+      "methodSources": [
+        "public static String getStrongCamelCaseJsonName(String name) {\n    // PATH: Test should invoke the next ProtobufInternalUtils.underScoreToCamelCase(...) [step in execution path]\n    return ProtobufInternalUtils.underScoreToCamelCase(name, true);\n}"
+      ],
+      "constructors": [
+        "PbFormatUtils() {\n}"
+      ],
+      "fieldDeclarations": [],
+      "setters": [],
+      "imports": [
+        "com.google.protobuf.ProtobufInternalUtils",
+        "com.google.protobuf.SchemaUtil"
+      ],
+      "testTemplate": "package org.apache.flink.formats.protobuf.util;\n\npublic class PbFormatUtilsgetStrongCamelCaseJsonName_ProtobufInternalUtilsunderScoreToCamelCaseFikaTest {\n\n    @Test\n    public void testGetStrongCamelCaseJsonName() {\n    }\n}",
+      "conditionCount": 0,
+      "callCount": 1,
+      "lineNumber": 72,
+      "covered": true
+    }]

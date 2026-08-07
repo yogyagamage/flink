@@ -1,0 +1,117 @@
+[{
+      "entryPoint": "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile.WriterOptions)",
+      "thirdPartyMethod": "com.google.protobuf.CodedOutputStream.newInstance(java.io.OutputStream)",
+      "directCaller": "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile.WriterOptions)",
+      "path": [
+        "org.apache.flink.orc.writer.PhysicalWriterImpl.<init>(org.apache.flink.core.fs.FSDataOutputStream, org.apache.orc.OrcFile.WriterOptions)",
+        "com.google.protobuf.CodedOutputStream.newInstance(java.io.OutputStream)"
+      ],
+      "methodSources": [
+        "public (FSDataOutputStream out, OrcFile.WriterOptions opts) throws IOException {\n    if (opts.isEnforceBufferSize()) {\n        this.bufferSize = opts.getBufferSize();\n    } else {\n        this.bufferSize = getEstimatedBufferSize(opts.getStripeSize(), opts.getSchema().getMaximumId() + 1, opts.getBufferSize());\n    }\n    this.out = out;\n    this.blockOffset = 0;\n    this.blockSize = opts.getBlockSize();\n    this.maxPadding = ((int) (opts.getPaddingTolerance() * ((double) (opts.getBufferSize()))));\n    this.compress = opts.getCompress();\n    this.codec = OrcCodecPool.getCodec(this.compress);\n    this.streams = new TreeMap<>();\n    this.writer = new OutStream(\"metadata\", this.bufferSize, this.codec, new DirectStream(this.out));\n    this.shims = opts.getHadoopShims();\n    this.addBlockPadding = opts.getBlockPadding();\n    // PATH: Test should invoke the next CodedOutputStream.newInstance(...) [step in execution path]\n    this.protobufWriter = CodedOutputStream.newInstance(this.writer);\n    this.writeVariableLengthBlocks = opts.getWriteVariableLengthBlocks();\n}"
+      ],
+      "constructors": [
+        "public PhysicalWriterImpl(FSDataOutputStream out, OrcFile.WriterOptions opts) throws IOException {\n    if (opts.isEnforceBufferSize()) {\n        this.bufferSize = opts.getBufferSize();\n    } else {\n        this.bufferSize = getEstimatedBufferSize(opts.getStripeSize(), opts.getSchema().getMaximumId() + 1, opts.getBufferSize());\n    }\n    this.out = out;\n    this.blockOffset = 0;\n    this.blockSize = opts.getBlockSize();\n    this.maxPadding = ((int) (opts.getPaddingTolerance() * ((double) (opts.getBufferSize()))));\n    this.compress = opts.getCompress();\n    this.codec = OrcCodecPool.getCodec(this.compress);\n    this.streams = new TreeMap<>();\n    this.writer = new OutStream(\"metadata\", this.bufferSize, this.codec, new DirectStream(this.out));\n    this.shims = opts.getHadoopShims();\n    this.addBlockPadding = opts.getBlockPadding();\n    this.protobufWriter = CodedOutputStream.newInstance(this.writer);\n    this.writeVariableLengthBlocks = opts.getWriteVariableLengthBlocks();\n}",
+        "DirectStream(FSDataOutputStream output) {\n    this.output = output;\n}",
+        "BufferedStream() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(PhysicalWriterImpl.class);",
+        "private static final byte[] ZEROS = new byte[64 * 1024];",
+        "private static final int HDFS_BUFFER_SIZE = 256 * 1024;",
+        "protected final OutStream writer;",
+        "private final CodedOutputStream protobufWriter;",
+        "private final CompressionKind compress;",
+        "private final Map<StreamName, BufferedStream> streams;",
+        "private final HadoopShims shims;",
+        "private final int maxPadding;",
+        "private final int bufferSize;",
+        "private final long blockSize;",
+        "private final boolean addBlockPadding;",
+        "private final boolean writeVariableLengthBlocks;",
+        "private CompressionCodec codec;",
+        "private FSDataOutputStream out;",
+        "private long headerLength;",
+        "private long stripeStart;",
+        "private long blockOffset;",
+        "private int metadataLength;",
+        "private int footerLength;"
+      ],
+      "setters": [
+        "@Override\npublic void appendRawStripe(ByteBuffer buffer, OrcProto.StripeInformation.Builder dirEntry) throws IOException {\n    long start = out.getPos();\n    int length = buffer.remaining();\n    long availBlockSpace = blockSize - (start % blockSize);\n    // see if stripe can fit in the current hdfs block, else pad the remaining\n    // space in the block\n    if (((length < blockSize) && (length > availBlockSpace)) && addBlockPadding) {\n        byte[] pad = new byte[((int) (Math.min(HDFS_BUFFER_SIZE, availBlockSpace)))];\n        LOG.info(String.format(\"Padding ORC by %d bytes while merging..\", availBlockSpace));\n        start += availBlockSpace;\n        while (availBlockSpace > 0) {\n            int writeLen = ((int) (Math.min(availBlockSpace, pad.length)));\n            out.write(pad, 0, writeLen);\n            availBlockSpace -= writeLen;\n        } \n    }\n    out.write(buffer.array(), buffer.arrayOffset() + buffer.position(), length);\n    dirEntry.setOffset(start);\n}",
+        "@Override\npublic void close() {\n    // Just release the codec but don't close the internal stream here to avoid\n    // Stream Closed or ClosedChannelException when Flink performs checkpoint.\n    OrcCodecPool.returnCodec(compress, codec);\n    codec = null;\n}",
+        "@Override\npublic void finalizeStripe(OrcProto.StripeFooter.Builder footerBuilder, OrcProto.StripeInformation.Builder dirEntry) throws IOException {\n    long indexSize = 0;\n    long dataSize = 0;\n    for (Map.Entry<StreamName, BufferedStream> pair : streams.entrySet()) {\n        BufferedStream receiver = pair.getValue();\n        if (!receiver.isSuppressed) {\n            long streamSize = receiver.getOutputSize();\n            StreamName name = pair.getKey();\n            footerBuilder.addStreams(OrcProto.Stream.newBuilder().setColumn(name.getColumn()).setKind(name.getKind()).setLength(streamSize));\n            if (StreamName.Area.INDEX == name.getArea()) {\n                indexSize += streamSize;\n            } else {\n                dataSize += streamSize;\n            }\n        }\n    }\n    dirEntry.setIndexLength(indexSize).setDataLength(dataSize);\n    OrcProto.StripeFooter footer = footerBuilder.build();\n    // Do we need to pad the file so the stripe doesn't straddle a block boundary?\n    padStripe((indexSize + dataSize) + footer.getSerializedSize());\n    // write out the data streams\n    for (Map.Entry<StreamName, BufferedStream> pair : streams.entrySet()) {\n        pair.getValue().spillToDiskAndClear(out);\n    }\n    // Write out the footer.\n    writeStripeFooter(footer, dataSize, indexSize, dirEntry);\n}",
+        "@Override\npublic void flush() throws IOException {\n    out.flush();\n}",
+        "private void padStripe(long stripeSize) throws IOException {\n    this.stripeStart = out.getPos();\n    long previousBytesInBlock = (stripeStart - blockOffset) % blockSize;\n    // We only have options if this isn't the first stripe in the block\n    if (previousBytesInBlock > 0) {\n        if ((previousBytesInBlock + stripeSize) >= blockSize) {\n            // Try making a short block\n            if (writeVariableLengthBlocks && shims.endVariableLengthBlock(out)) {\n                blockOffset = stripeStart;\n            } else if (addBlockPadding) {\n                // if we cross the block boundary, figure out what we should do\n                long padding = blockSize - previousBytesInBlock;\n                if (padding <= maxPadding) {\n                    writeZeros(out, padding);\n                    stripeStart += padding;\n                }\n            }\n        }\n    }\n}",
+        "@Override\npublic void writeFileFooter(OrcProto.Footer.Builder builder) throws IOException {\n    long bodyLength = out.getPos() - metadataLength;\n    builder.setContentLength(bodyLength);\n    builder.setHeaderLength(headerLength);\n    long startPosition = out.getPos();\n    OrcProto.Footer footer = builder.build();\n    writeFileFooter(footer);\n    this.footerLength = ((int) (out.getPos() - startPosition));\n}",
+        "protected void writeFileFooter(OrcProto.Footer footer) throws IOException {\n    footer.writeTo(protobufWriter);\n    protobufWriter.flush();\n    writer.flush();\n}",
+        "@Override\npublic void writeFileMetadata(OrcProto.Metadata.Builder builder) throws IOException {\n    long startPosition = out.getPos();\n    OrcProto.Metadata metadata = builder.build();\n    writeMetadata(metadata);\n    this.metadataLength = ((int) (out.getPos() - startPosition));\n}",
+        "@Override\npublic void writeHeader() throws IOException {\n    this.out.write(\"ORC\".getBytes());\n    this.headerLength = this.out.getPos();\n}",
+        "protected void writeMetadata(OrcProto.Metadata metadata) throws IOException {\n    metadata.writeTo(protobufWriter);\n    protobufWriter.flush();\n    writer.flush();\n}",
+        "protected void writeStripeFooter(OrcProto.StripeFooter footer) throws IOException {\n    footer.writeTo(protobufWriter);\n    protobufWriter.flush();\n    writer.flush();\n}",
+        "private void writeStripeFooter(OrcProto.StripeFooter footer, long dataSize, long indexSize, OrcProto.StripeInformation.Builder dirEntry) throws IOException {\n    writeStripeFooter(footer);\n    dirEntry.setOffset(stripeStart);\n    dirEntry.setFooterLength(((out.getPos() - stripeStart) - dataSize) - indexSize);\n}"
+      ],
+      "imports": [
+        "com.google.protobuf.CodedOutputStream",
+        "org.apache.flink.core.fs.FSDataOutputStream",
+        "org.apache.flink.orc.writer.PhysicalWriterImpl.BufferedStream",
+        "org.apache.flink.orc.writer.PhysicalWriterImpl.DirectStream",
+        "org.apache.orc.CompressionCodec",
+        "org.apache.orc.CompressionKind",
+        "org.apache.orc.OrcFile",
+        "org.apache.orc.OrcFile.WriterOptions",
+        "org.apache.orc.OrcProto",
+        "org.apache.orc.OrcProto.Footer",
+        "org.apache.orc.OrcProto.Footer.Builder",
+        "org.apache.orc.OrcProto.Metadata",
+        "org.apache.orc.OrcProto.Metadata.Builder",
+        "org.apache.orc.OrcProto.PostScript",
+        "org.apache.orc.OrcProto.PostScript.Builder",
+        "org.apache.orc.OrcProto.Stream",
+        "org.apache.orc.OrcProto.Stream.Builder",
+        "org.apache.orc.OrcProto.Stream.Kind",
+        "org.apache.orc.OrcProto.StripeFooter",
+        "org.apache.orc.OrcProto.StripeFooter.Builder",
+        "org.apache.orc.OrcProto.StripeInformation",
+        "org.apache.orc.OrcProto.StripeInformation.Builder",
+        "org.apache.orc.PhysicalWriter",
+        "org.apache.orc.PhysicalWriter.OutputReceiver",
+        "org.apache.orc.TypeDescription",
+        "org.apache.orc.impl.HadoopShims",
+        "org.apache.orc.impl.OrcCodecPool",
+        "org.apache.orc.impl.OutStream",
+        "org.apache.orc.impl.StreamName",
+        "org.apache.orc.impl.StreamName.Area",
+        "org.apache.orc.impl.WriterImpl",
+        "org.slf4j.Logger"
+      ],
+      "testTemplate": "package org.apache.flink.orc.writer;\n\npublic class PhysicalWriterImplmethod_CodedOutputStreamnewInstanceFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
+      "conditionCount": 1,
+      "callCount": 1,
+      "lineNumber": 105,
+      "covered": true
+    },{
+      "entryPoint": "org.apache.flink.orc.writer.ThreadLocalClassLoaderConfiguration.<init>(org.apache.hadoop.conf.Configuration)",
+      "thirdPartyMethod": "org.apache.hadoop.conf.Configuration.<init>(org.apache.hadoop.conf.Configuration)",
+      "directCaller": "org.apache.flink.orc.writer.ThreadLocalClassLoaderConfiguration.<init>(org.apache.hadoop.conf.Configuration)",
+      "path": [
+        "org.apache.flink.orc.writer.ThreadLocalClassLoaderConfiguration.<init>(org.apache.hadoop.conf.Configuration)",
+        "org.apache.hadoop.conf.Configuration.<init>(org.apache.hadoop.conf.Configuration)"
+      ],
+      "methodSources": [
+        "public ThreadLocalClassLoaderConfiguration(Configuration other) {\n    super(other);\n}"
+      ],
+      "constructors": [
+        "public ThreadLocalClassLoaderConfiguration() {\n}",
+        "public ThreadLocalClassLoaderConfiguration(Configuration other) {\n    super(other);\n}"
+      ],
+      "fieldDeclarations": [],
+      "setters": [],
+      "imports": [
+        "org.apache.hadoop.conf.Configuration"
+      ],
+      "testTemplate": "package org.apache.flink.orc.writer;\n\npublic class ThreadLocalClassLoaderConfigurationmethod_ConfigurationmethodFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
+      "conditionCount": 0,
+      "callCount": 1,
+      "lineNumber": 37,
+      "covered": true
+    }]

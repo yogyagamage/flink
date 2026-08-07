@@ -1,0 +1,28 @@
+[
+    {
+        "entryPoint": "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
+        "directCaller": "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
+        "thirdPartyMethod": "org.apache.parquet.avro.AvroParquetReader.Builder.withDataModel(org.apache.avro.generic.GenericData)",
+        "lineNumber": 85,
+        "maxTime": 112,
+        "timeSource": "jsonl",
+        "coverageStatus": "covered",
+        "coverageDetail": "Line 85 fully covered",
+        "crashFound": false,
+        "fuzzerSuccess": true,
+        "coverageReportFile": "/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-parquet/fuzz-coverage-reports/AvroParquetRecordFormat_85_report.txt"
+    },
+    {
+        "entryPoint": "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<init>(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType, boolean, org.apache.hadoop.conf.Configuration)",
+        "directCaller": "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<init>(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType, boolean, org.apache.hadoop.conf.Configuration)",
+        "thirdPartyMethod": "org.apache.hadoop.conf.Configuration.getBoolean(java.lang.String, boolean)",
+        "lineNumber": 84,
+        "maxTime": 140,
+        "timeSource": "jsonl",
+        "coverageStatus": "covered",
+        "coverageDetail": "Line 84 fully covered",
+        "crashFound": false,
+        "fuzzerSuccess": true,
+        "coverageReportFile": "/Tmp/gamageyo/fika/experiments/flink/flink-formats/flink-parquet/fuzz-coverage-reports/ParquetRowDataWriter_84_report.txt"
+    }
+]

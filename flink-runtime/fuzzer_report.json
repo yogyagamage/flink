@@ -1,0 +1,28 @@
+[
+    {
+        "entryPoint": "org.apache.flink.runtime.hadoop.HadoopUserUtils.hasUserKerberosAuthMethod(org.apache.hadoop.security.UserGroupInformation)",
+        "directCaller": "org.apache.flink.runtime.hadoop.HadoopUserUtils.hasUserKerberosAuthMethod(org.apache.hadoop.security.UserGroupInformation)",
+        "thirdPartyMethod": "org.apache.hadoop.security.UserGroupInformation.isSecurityEnabled()",
+        "lineNumber": 41,
+        "maxTime": 81,
+        "timeSource": "jsonl",
+        "coverageStatus": "uncovered_class",
+        "coverageDetail": "HadoopUserUtils.java line coverage is 0.00%",
+        "crashFound": true,
+        "fuzzerSuccess": false,
+        "coverageReportFile": "/Tmp/gamageyo/fika/experiments/flink/flink-runtime/fuzz-coverage-reports/HadoopUserUtils_41_report.txt"
+    },
+    {
+        "entryPoint": "org.apache.flink.runtime.jobmaster.event.ExecutionVertexResetEvent.toString()",
+        "directCaller": "org.apache.flink.runtime.jobmaster.event.ExecutionVertexResetEvent.toString()",
+        "thirdPartyMethod": "org.apache.commons.lang3.StringUtils.join(java.lang.Iterable, java.lang.String)",
+        "lineNumber": 47,
+        "maxTime": 85,
+        "timeSource": "jsonl",
+        "coverageStatus": "covered",
+        "coverageDetail": "Line 47 fully covered",
+        "crashFound": false,
+        "fuzzerSuccess": true,
+        "coverageReportFile": "/Tmp/gamageyo/fika/experiments/flink/flink-runtime/fuzz-coverage-reports/ExecutionVertexResetEvent_47_report.txt"
+    }
+]

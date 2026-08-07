@@ -1,0 +1,58 @@
+[{
+      "entryPoint": "org.apache.flink.runtime.hadoop.HadoopUserUtils.hasUserKerberosAuthMethod(org.apache.hadoop.security.UserGroupInformation)",
+      "thirdPartyMethod": "org.apache.hadoop.security.UserGroupInformation.isSecurityEnabled()",
+      "directCaller": "org.apache.flink.runtime.hadoop.HadoopUserUtils.hasUserKerberosAuthMethod(org.apache.hadoop.security.UserGroupInformation)",
+      "path": [
+        "org.apache.flink.runtime.hadoop.HadoopUserUtils.hasUserKerberosAuthMethod(org.apache.hadoop.security.UserGroupInformation)",
+        "org.apache.hadoop.security.UserGroupInformation.isSecurityEnabled()"
+      ],
+      "methodSources": [
+        "public static boolean hasUserKerberosAuthMethod(UserGroupInformation ugi) {\n    // PATH: Test should invoke the next UserGroupInformation.isSecurityEnabled(...) [step in execution path]\n    return UserGroupInformation.isSecurityEnabled() && (ugi.getAuthenticationMethod() == UserGroupInformation.AuthenticationMethod.KERBEROS);\n}"
+      ],
+      "constructors": [
+        "HadoopUserUtils() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOG = LoggerFactory.getLogger(HadoopUserUtils.class);"
+      ],
+      "setters": [],
+      "imports": [
+        "org.apache.hadoop.security.UserGroupInformation",
+        "org.apache.hadoop.security.UserGroupInformation.AuthenticationMethod",
+        "org.apache.hadoop.security.token.delegation.AbstractDelegationTokenIdentifier",
+        "org.slf4j.Logger"
+      ],
+      "testTemplate": "package org.apache.flink.runtime.hadoop;\n\npublic class HadoopUserUtilshasUserKerberosAuthMethod_UserGroupInformationisSecurityEnabledFikaTest {\n\n    @Test\n    public void testHasUserKerberosAuthMethod() {\n    }\n}",
+      "conditionCount": 0,
+      "callCount": 1,
+      "lineNumber": 41,
+      "covered": true
+    }, {
+      "entryPoint": "org.apache.flink.runtime.jobmaster.event.ExecutionVertexResetEvent.toString()",
+      "thirdPartyMethod": "org.apache.commons.lang3.StringUtils.join(java.lang.Iterable, java.lang.String)",
+      "directCaller": "org.apache.flink.runtime.jobmaster.event.ExecutionVertexResetEvent.toString()",
+      "path": [
+        "org.apache.flink.runtime.jobmaster.event.ExecutionVertexResetEvent.toString()",
+        "org.apache.commons.lang3.StringUtils.join(java.lang.Iterable, java.lang.String)"
+      ],
+      "methodSources": [
+        "@Override\npublic String toString() {\n    // PATH: Test should invoke the next StringUtils.join(...) [step in execution path]\n    return ((\"ExecutionVertexResetEvent(\" + \"ExecutionVertexIds={\") + StringUtils.join(executionVertexIds, \",\")) + \"})\";\n}"
+      ],
+      "constructors": [
+        "public ExecutionVertexResetEvent(List<ExecutionVertexID> executionVertexIds) {\n    this.executionVertexIds = checkNotNull(executionVertexIds);\n}"
+      ],
+      "fieldDeclarations": [
+        "private final List<ExecutionVertexID> executionVertexIds;"
+      ],
+      "setters": [],
+      "imports": [
+        "org.apache.commons.lang3.StringUtils",
+        "org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID",
+        "org.apache.flink.util.Preconditions"
+      ],
+      "testTemplate": "package org.apache.flink.runtime.jobmaster.event;\n\npublic class ExecutionVertexResetEventtoString_StringUtilsjoinFikaTest {\n\n    @Test\n    public void testToString() {\n    }\n}",
+      "conditionCount": 0,
+      "callCount": 1,
+      "lineNumber": 47,
+      "covered": true
+    }]
