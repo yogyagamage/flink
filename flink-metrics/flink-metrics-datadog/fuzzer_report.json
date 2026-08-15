@@ -1,0 +1,15 @@
+[
+    {
+        "entryPoint": "org.apache.flink.metrics.datadog.DatadogHttpClient.<init>(java.lang.String, java.lang.String, int, org.apache.flink.metrics.datadog.DataCenter, boolean)",
+        "directCaller": "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+        "thirdPartyMethod": "okhttp3.OkHttpClient.newCall(okhttp3.Request)",
+        "lineNumber": 101,
+        "maxTime": 160,
+        "timeSource": "jsonl",
+        "coverageStatus": "no_report",
+        "coverageDetail": "Coverage report was not generated",
+        "crashFound": true,
+        "fuzzerSuccess": false,
+        "coverageReportFile": "/Tmp/gamageyo/fika/experiments/flink/flink-metrics/flink-metrics-datadog/fuzz-coverage-reports/DatadogHttpClient_101_report.txt"
+    }
+]

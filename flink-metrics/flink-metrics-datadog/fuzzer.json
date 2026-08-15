@@ -1,0 +1,59 @@
+[{
+      "entryPoint": "org.apache.flink.metrics.datadog.DatadogHttpClient.<init>(java.lang.String, java.lang.String, int, org.apache.flink.metrics.datadog.DataCenter, boolean)",
+      "thirdPartyMethod": "okhttp3.OkHttpClient.newCall(okhttp3.Request)",
+      "directCaller": "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+      "path": [
+        "org.apache.flink.metrics.datadog.DatadogHttpClient.<init>(java.lang.String, java.lang.String, int, org.apache.flink.metrics.datadog.DataCenter, boolean)",
+        "org.apache.flink.metrics.datadog.DatadogHttpClient.validateApiKey()",
+        "okhttp3.OkHttpClient.newCall(okhttp3.Request)"
+      ],
+      "methodSources": [
+        "public (String dgApiKey, String dgProxyHost, int dgProxyPort, DataCenter dataCenter, boolean validateApiKey) {\n    if ((dgApiKey == null) || dgApiKey.isEmpty()) {\n        throw new IllegalArgumentException(\"Invalid API key:\" + dgApiKey);\n    }\n    apiKey = dgApiKey;\n    proxyHost = dgProxyHost;\n    proxyPort = dgProxyPort;\n    Proxy proxy = getProxy();\n    client = new OkHttpClient.Builder().connectTimeout(TIMEOUT, TimeUnit.SECONDS).writeTimeout(TIMEOUT, TimeUnit.SECONDS).readTimeout(TIMEOUT, TimeUnit.SECONDS).proxy(proxy).build();\n    seriesUrl = String.format(SERIES_URL_FORMAT, dataCenter.getDomain(), apiKey);\n    validateUrl = String.format(VALIDATE_URL_FORMAT, dataCenter.getDomain(), apiKey);\n    if (validateApiKey) // PATH: Test should invoke the next DatadogHttpClient.validateApiKey(...) [step in execution path]\n    {\n        validateApiKey();\n    }\n}",
+        "private void validateApiKey() {\n    Request r = new Request.Builder().url(validateUrl).get().build();\n    try (Response response = // PATH: Test should invoke the next OkHttpClient.newCall(...) [step in execution path]\n    client.newCall(r).execute()) {\n        if (!response.isSuccessful()) {\n            throw new IllegalArgumentException(String.format(\"API key: %s is invalid\", apiKey));\n        }\n    } catch (IOException e) {\n        throw new IllegalStateException(\"Failed contacting Datadog to validate API key\", e);\n    }\n}"
+      ],
+      "constructors": [
+        "public DatadogHttpClient(String dgApiKey, String dgProxyHost, int dgProxyPort, DataCenter dataCenter, boolean validateApiKey) {\n    if ((dgApiKey == null) || dgApiKey.isEmpty()) {\n        throw new IllegalArgumentException(\"Invalid API key:\" + dgApiKey);\n    }\n    apiKey = dgApiKey;\n    proxyHost = dgProxyHost;\n    proxyPort = dgProxyPort;\n    Proxy proxy = getProxy();\n    client = new OkHttpClient.Builder().connectTimeout(TIMEOUT, TimeUnit.SECONDS).writeTimeout(TIMEOUT, TimeUnit.SECONDS).readTimeout(TIMEOUT, TimeUnit.SECONDS).proxy(proxy).build();\n    seriesUrl = String.format(SERIES_URL_FORMAT, dataCenter.getDomain(), apiKey);\n    validateUrl = String.format(VALIDATE_URL_FORMAT, dataCenter.getDomain(), apiKey);\n    if (validateApiKey) {\n        validateApiKey();\n    }\n}",
+        "EmptyCallback() {\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final Logger LOGGER = LoggerFactory.getLogger(DatadogHttpClient.class);",
+        "private static final String SERIES_URL_FORMAT = \"https://app.datadoghq.%s/api/v1/series?api_key=%s\";",
+        "private static final String VALIDATE_URL_FORMAT = \"https://app.datadoghq.%s/api/v1/validate?api_key=%s\";",
+        "private static final MediaType MEDIA_TYPE = MediaType.parse(\"application/json; charset=utf-8\");",
+        "private static final int TIMEOUT = 3;",
+        "private static final ObjectMapper MAPPER = new ObjectMapper();",
+        "private final String seriesUrl;",
+        "private final String validateUrl;",
+        "private final OkHttpClient client;",
+        "private final String apiKey;",
+        "private final String proxyHost;",
+        "private final int proxyPort;"
+      ],
+      "setters": [
+        "public void close() {\n    client.dispatcher().executorService().shutdown();\n    client.connectionPool().evictAll();\n}",
+        "public void send(DSeries request) throws Exception {\n    String postBody = serialize(request);\n    Request r = new Request.Builder().url(seriesUrl).post(RequestBody.create(MEDIA_TYPE, postBody)).build();\n    client.newCall(r).enqueue(EmptyCallback.getEmptyCallback());\n}",
+        "private void validateApiKey() {\n    Request r = new Request.Builder().url(validateUrl).get().build();\n    try (Response response = client.newCall(r).execute()) {\n        if (!response.isSuccessful()) {\n            throw new IllegalArgumentException(String.format(\"API key: %s is invalid\", apiKey));\n        }\n    } catch (IOException e) {\n        throw new IllegalStateException(\"Failed contacting Datadog to validate API key\", e);\n    }\n}"
+      ],
+      "imports": [
+        "okhttp3.Call",
+        "okhttp3.Callback",
+        "okhttp3.ConnectionPool",
+        "okhttp3.Dispatcher",
+        "okhttp3.MediaType",
+        "okhttp3.OkHttpClient",
+        "okhttp3.OkHttpClient.Builder",
+        "okhttp3.Request",
+        "okhttp3.Request.Builder",
+        "okhttp3.RequestBody",
+        "okhttp3.Response",
+        "org.apache.flink.metrics.datadog.DatadogHttpClient.EmptyCallback",
+        "org.apache.flink.shaded.jackson2.com.fasterxml.jackson.core.JsonProcessingException",
+        "org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper",
+        "org.slf4j.Logger"
+      ],
+      "testTemplate": "package org.apache.flink.metrics.datadog;\n\npublic class DatadogHttpClientvalidateApiKey_OkHttpClientnewCallFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
+      "conditionCount": 3,
+      "callCount": 1,
+      "lineNumber": 101,
+      "covered": false
+    }]

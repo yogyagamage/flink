@@ -1,47 +1,4 @@
 [{
-      "entryPoint": "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
-      "thirdPartyMethod": "org.apache.parquet.avro.AvroParquetReader.Builder.withDataModel(org.apache.avro.generic.GenericData)",
-      "directCaller": "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
-      "path": [
-        "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.createReader(org.apache.flink.configuration.Configuration, org.apache.flink.core.fs.FSDataInputStream, long, long)",
-        "org.apache.parquet.avro.AvroParquetReader.Builder.withDataModel(org.apache.avro.generic.GenericData)"
-      ],
-      "methodSources": [
-        "/**\n * Creates a new reader to read avro {@link GenericRecord} from Parquet input stream.\n *\n * <p>Several wrapper classes haven be created to Flink abstraction become compatible with the\n * parquet abstraction. Please refer to the inner classes {@link AvroParquetRecordReader},\n * {@link ParquetInputFile}, {@code FSDataInputStreamAdapter} for details.\n */\n@Override\npublic Reader<E> createReader(Configuration config, FSDataInputStream stream, long fileLen, long splitEnd) throws IOException {\n    // current version does not support splitting.\n    checkNotSplit(fileLen, splitEnd);\n    return new AvroParquetRecordReader<E>(AvroParquetReader.<E>builder(new ParquetInputFile(stream, fileLen)).withDataModel(getDataModel()).withConf(HadoopUtils.getHadoopConfiguration(config)).build());\n}"
-      ],
-      "constructors": [
-        "AvroParquetRecordFormat(TypeInformation<E> type, SerializableSupplier<GenericData> dataModelSupplier) {\n    this.type = type;\n    this.dataModelSupplier = dataModelSupplier;\n}",
-        "private AvroParquetRecordReader(ParquetReader<E> parquetReader) {\n    this(parquetReader, 0, false);\n}",
-        "private AvroParquetRecordReader(ParquetReader<E> parquetReader, long skipCount, boolean checkpointed) {\n    this.parquetReader = parquetReader;\n    this.skipCount = skipCount;\n    this.checkpointed = checkpointed;\n}"
-      ],
-      "fieldDeclarations": [
-        "private static final long serialVersionUID = 1L;",
-        "static final Logger LOG = LoggerFactory.getLogger(AvroParquetRecordFormat.class);",
-        "private final TypeInformation<E> type;",
-        "private final SerializableSupplier<GenericData> dataModelSupplier;"
-      ],
-      "setters": [],
-      "imports": [
-        "org.apache.avro.generic.GenericData",
-        "org.apache.flink.api.common.typeinfo.TypeInformation",
-        "org.apache.flink.configuration.Configuration",
-        "org.apache.flink.core.fs.FSDataInputStream",
-        "org.apache.flink.formats.parquet.ParquetInputFile",
-        "org.apache.flink.formats.parquet.avro.AvroParquetRecordFormat.AvroParquetRecordReader",
-        "org.apache.flink.runtime.util.HadoopUtils",
-        "org.apache.flink.util.function.SerializableSupplier",
-        "org.apache.hadoop.fs.Path",
-        "org.apache.parquet.avro.AvroParquetReader",
-        "org.apache.parquet.avro.AvroParquetReader.Builder",
-        "org.apache.parquet.hadoop.ParquetReader",
-        "org.slf4j.Logger"
-      ],
-      "testTemplate": "package org.apache.flink.formats.parquet.avro;\n\npublic class AvroParquetRecordFormatcreateReader_BuilderwithDataModelFikaTest {\n\n    @Test\n    public void testCreateReader() {\n    }\n}",
-      "conditionCount": 0,
-      "callCount": 1,
-      "lineNumber": 85,
-      "covered": true
-    },{
       "entryPoint": "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<init>(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType, boolean, org.apache.hadoop.conf.Configuration)",
       "thirdPartyMethod": "org.apache.hadoop.conf.Configuration.getBoolean(java.lang.String, boolean)",
       "directCaller": "org.apache.flink.formats.parquet.row.ParquetRowDataWriter.<init>(org.apache.parquet.io.api.RecordConsumer, org.apache.flink.table.types.logical.RowType, org.apache.parquet.schema.GroupType, boolean, org.apache.hadoop.conf.Configuration)",
