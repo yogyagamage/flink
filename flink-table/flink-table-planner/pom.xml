@@ -328,7 +328,7 @@ under the License.
 				<artifactId>maven-shade-plugin</artifactId>
 				<configuration>
 					<!-- Base config -->
-					<createDependencyReducedPom>true</createDependencyReducedPom>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
 					<keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
 					<filters combine.children="append">
 						<filter>
