@@ -1,0 +1,31 @@
+{
+  "skippedPaths" : [ {
+    "entryPoint" : "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.values()",
+    "thirdPartyMethod" : "org.apache.commons.compress.utils.Sets.newHashSet(java.lang.Object[])",
+    "directCaller" : "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.<clinit>()",
+    "path" : [ "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.values()", "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.<clinit>()", "org.apache.commons.compress.utils.Sets.newHashSet(java.lang.Object[])" ],
+    "methodSources" : [ null, "org.apache.flink.configuration.RestartStrategyOptions$RestartStrategyType\n\n// Static field initializations\nNO_RESTART_STRATEGY(\"disable\", Sets.newHashSet(\"none\", \"off\"))\nFIXED_DELAY(\"fixed-delay\", Sets.newHashSet(\"fixeddelay\"))\nFAILURE_RATE(\"failure-rate\", Sets.newHashSet(\"failurerate\"))\nEXPONENTIAL_DELAY(\"exponential-delay\", Sets.newHashSet(\"exponentialdelay\"))\n" ],
+    "constructors" : [ "RestartStrategyType(String mainValue, Set<String> otherAvailableValues) {\n    this.mainValue = mainValue;\n    this.allAvailableValues = Sets.newHashSet(mainValue);\n    allAvailableValues.addAll(otherAvailableValues);\n}", "/**\n * Return the corresponding RestartStrategyType based on the displayed value.\n */\npublic static RestartStrategyType of(String value) {\n    for (RestartStrategyType restartStrategyType : RestartStrategyType.values()) {\n        if (restartStrategyType.getAllAvailableValues().contains(value)) {\n            return restartStrategyType;\n        }\n    }\n    throw new IllegalArgumentException(String.format(\"%s is an unknown value of RestartStrategyType.\", value));\n}" ],
+    "fieldDeclarations" : [ "NO_RESTART_STRATEGY(\"disable\", Sets.newHashSet(\"none\", \"off\"))", "FIXED_DELAY(\"fixed-delay\", Sets.newHashSet(\"fixeddelay\"))", "FAILURE_RATE(\"failure-rate\", Sets.newHashSet(\"failurerate\"))", "EXPONENTIAL_DELAY(\"exponential-delay\", Sets.newHashSet(\"exponentialdelay\"))", "private final String mainValue;", "private final Set<String> allAvailableValues;" ],
+    "setters" : [ ],
+    "imports" : [ "org.apache.commons.compress.utils.Sets", "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType", "org.apache.flink.configuration.description.TextElement" ],
+    "testTemplate" : "package org.apache.flink.configuration;\n\npublic class RestartStrategyTypemethod_SetsnewHashSetFikaTest {\n\n    @Test\n    public void testValues() {\n    }\n}",
+    "conditionCount" : 999,
+    "callCount" : 1,
+    "covered" : false
+  }, {
+    "entryPoint" : "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.values()",
+    "thirdPartyMethod" : "org.apache.commons.compress.utils.Sets.newHashSet(java.lang.Object[])",
+    "directCaller" : "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.<init>(java.lang.String, int, java.lang.String, java.util.Set)",
+    "path" : [ "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.values()", "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.<clinit>()", "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.<init>(java.lang.String, int, java.lang.String, java.util.Set)", "org.apache.commons.compress.utils.Sets.newHashSet(java.lang.Object[])" ],
+    "methodSources" : [ null, "org.apache.flink.configuration.RestartStrategyOptions$RestartStrategyType\n\n// Static field initializations\nNO_RESTART_STRATEGY(\"disable\", Sets.newHashSet(\"none\", \"off\"))\nFIXED_DELAY(\"fixed-delay\", Sets.newHashSet(\"fixeddelay\"))\nFAILURE_RATE(\"failure-rate\", Sets.newHashSet(\"failurerate\"))\nEXPONENTIAL_DELAY(\"exponential-delay\", Sets.newHashSet(\"exponentialdelay\"))\n", "(String mainValue, Set<String> otherAvailableValues) {\n    this.mainValue = mainValue;\n    // PATH: Test should invoke the next Sets.newHashSet(...) [step in execution path]\n    this.allAvailableValues = Sets.newHashSet(mainValue);\n    allAvailableValues.addAll(otherAvailableValues);\n}" ],
+    "constructors" : [ "RestartStrategyType(String mainValue, Set<String> otherAvailableValues) {\n    this.mainValue = mainValue;\n    this.allAvailableValues = Sets.newHashSet(mainValue);\n    allAvailableValues.addAll(otherAvailableValues);\n}", "/**\n * Return the corresponding RestartStrategyType based on the displayed value.\n */\npublic static RestartStrategyType of(String value) {\n    for (RestartStrategyType restartStrategyType : RestartStrategyType.values()) {\n        if (restartStrategyType.getAllAvailableValues().contains(value)) {\n            return restartStrategyType;\n        }\n    }\n    throw new IllegalArgumentException(String.format(\"%s is an unknown value of RestartStrategyType.\", value));\n}" ],
+    "fieldDeclarations" : [ "NO_RESTART_STRATEGY(\"disable\", Sets.newHashSet(\"none\", \"off\"))", "FIXED_DELAY(\"fixed-delay\", Sets.newHashSet(\"fixeddelay\"))", "FAILURE_RATE(\"failure-rate\", Sets.newHashSet(\"failurerate\"))", "EXPONENTIAL_DELAY(\"exponential-delay\", Sets.newHashSet(\"exponentialdelay\"))", "private final String mainValue;", "private final Set<String> allAvailableValues;" ],
+    "setters" : [ ],
+    "imports" : [ "org.apache.commons.compress.utils.Sets", "org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType", "org.apache.flink.configuration.description.TextElement" ],
+    "testTemplate" : "package org.apache.flink.configuration;\n\npublic class RestartStrategyTypemethod_SetsnewHashSetFikaTest {\n\n    @Test\n    public void testValues() {\n    }\n}",
+    "conditionCount" : 999,
+    "callCount" : 1,
+    "covered" : false
+  } ]
+}
